@@ -104,8 +104,14 @@ jobs:
               echo "::error::The secret does not start with sk-ant-oat01-."
               exit 1 ;;
           esac
-          if [ "$CLEAN_LEN" -lt 40 ]; then
-            echo "::error::The token is only $CLEAN_LEN characters, which is too short to be valid."
+          # A real subscription token runs to roughly 100 characters. A value of about
+          # 48 is the first line of a wrapped token, which is what a paste that stops at
+          # the first newline produces.
+          if [ "$CLEAN_LEN" -lt 80 ]; then
+            python3 .github/scripts/marker.py fail "$RUN_ID" \
+              "The CLAUDE_CODE_OAUTH_TOKEN secret is only $CLEAN_LEN characters. A real one is roughly 100. The token wraps onto three lines in a terminal, and a paste that stops at the first newline leaves exactly the first 48. Set it without a clipboard: claude setup-token | tr -d '[:space:]' | grep -o 'sk-ant-oat01-[A-Za-z0-9_-]*' | gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}"
+            .github/scripts/publish.sh "Run $RUN_ID: failed, truncated token"
+            echo "::error::The token is $CLEAN_LEN characters, expected roughly 100. It looks truncated at the first line break."
             exit 1
           fi
 
