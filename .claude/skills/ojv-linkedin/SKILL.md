@@ -1,5 +1,6 @@
 ---
 name: ojv-linkedin
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch
 description: Weekly LinkedIn content engine for Orange Juice Ventures (oj.ventures), the Hong Kong venture studio positioning as APAC's super-connector. One run produces three scheduling-ready posts for Monday, Wednesday and Friday: researches candidate stories, picks one of five archetypes per post (China signal to tour, West into Asia, Asia into the West, rejection to raise, inside the room), drafts in OJV voice, assigns an image from the tagged library or asks the author to attach one, writes alt text, tags links with UTMs, and refuses to repeat an archetype, hook pattern, story, company or image that went out recently. The author schedules the posts themselves; this skill never publishes. Use whenever the user says "run the week", "plan the OJV week", "generate this week's posts", "three posts for next week", "OJV post", "draft a LinkedIn post for OJV", "post from this link", "post from this photo", "intake images", "tag the new photos", "log performance", "log LinkedIn numbers", "monthly LinkedIn review", "which archetype is working", or names the China Tech Trek in a content context.
 ---
 

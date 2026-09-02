@@ -1,0 +1,176 @@
+name: Generate OJV week
+
+# Triggered by the Vercel front end, or by hand from the Actions tab.
+# Runs the real ojv-linkedin skill in Claude Code, billed to the Claude
+# subscription behind CLAUDE_CODE_OAUTH_TOKEN. No Anthropic API key.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Correlation id the front end polls for"
+        required: true
+        type: string
+      ojv_news:
+        description: "What OJV itself has done lately (archetype E has no other input)"
+        required: false
+        type: string
+        default: ""
+      keyword:
+        description: "DM keyword for the offer"
+        required: false
+        type: string
+        default: ""
+      enquiry_url:
+        description: "Enquiry destination"
+        required: false
+        type: string
+        default: ""
+      offer:
+        description: "Current flagship offer"
+        required: false
+        type: string
+        default: "China Tech Trek, Hong Kong and Shenzhen, 13 to 17 October 2026, run with ContraVC as official partner"
+
+concurrency:
+  group: ojv-week
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Record that the run started
+        run: |
+          mkdir -p "runs/${{ inputs.run_id }}"
+          cat > "runs/${{ inputs.run_id }}/status.json" <<JSON
+          {
+            "runId": "${{ inputs.run_id }}",
+            "state": "running",
+            "startedAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "workflowRunUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }
+          JSON
+
+      - name: Publish the running marker
+        run: |
+          git config user.name "ojv-linkedin bot"
+          git config user.email "actions@github.com"
+          git add "runs/${{ inputs.run_id }}/status.json"
+          git commit -q -m "Run ${{ inputs.run_id }}: started"
+          git push -q
+
+      - name: Run the skill
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_args: |
+            --max-turns 80
+            --allowedTools "Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch"
+          prompt: |
+            /ojv-linkedin
+
+            Run the weekly run, all ten steps, for the next Monday, Wednesday and Friday.
+
+            You are running headless in CI, so nobody can answer a question. Where the skill
+            says to ask, record the request in the output instead and carry on with the rest.
+
+            Config for this run, overriding the config table where a value is given:
+            - DM keyword for tour enquiries: ${{ inputs.keyword }}
+            - Enquiry destination: ${{ inputs.enquiry_url }}
+            - Current flagship offer: ${{ inputs.offer }}
+            - Raw image folder: not available in CI, so skip image intake entirely and pair
+              only from assets/images/manifest.csv
+
+            What OJV itself has done lately, the only valid input for archetype E:
+            ${{ inputs.ojv_news }}
+
+            If that is empty and you need archetype E, do not invent an OJV event. Say so in
+            needsFromAuthor and use a different archetype for that slot.
+
+            Additional required output for this CI run. After writing the drafts and updating
+            the trackers as the skill specifies, ALSO write runs/${{ inputs.run_id }}/result.json
+            with exactly this shape:
+
+            {
+              "runId": "${{ inputs.run_id }}",
+              "state": "done",
+              "week": "YYYY-Www",
+              "generatedAt": "ISO 8601",
+              "posts": [
+                {
+                  "postId": "...",
+                  "day": "Monday",
+                  "date": "YYYY-MM-DD",
+                  "slot": "awareness",
+                  "archetype": "A",
+                  "archetypeName": "...",
+                  "ctaTier": "soft",
+                  "hookPattern": "...",
+                  "copy": "the finished post, real newlines",
+                  "charCount": 0,
+                  "entities": ["..."],
+                  "sourceUrl": "...",
+                  "sourcePublisher": "...",
+                  "firstComment": "",
+                  "disclosure": "",
+                  "verified": true,
+                  "verificationNotes": "...",
+                  "styleGate": [],
+                  "image": "filename from the manifest, or empty if none fits",
+                  "altText": "",
+                  "needsTeamPhoto": false,
+                  "photoBrief": "",
+                  "photoQuery": "",
+                  "whyThisSlot": "",
+                  "blockers": [],
+                  "draftPath": "..."
+                }
+              ],
+              "rotation": { "blockedArchetypes": [], "blockedEntities": [], "blockedHookPatterns": [] },
+              "needsFromAuthor": ["anything a person must supply or decide"],
+              "notes": ""
+            }
+
+            Rules for that file:
+            - needsTeamPhoto true whenever the post is about OJV, a partner or an OJV event, or
+              whenever nothing in the manifest fits. Then photoBrief must name the shot:
+              subject, setting, framing, and which partner should be in frame.
+            - photoQuery only for a generic scene a licence-free stock photo could honestly
+              carry. Never a person, a named company, a logo or a brand. Leave it empty
+              otherwise.
+            - styleGate must be the actual output of scripts/style-gate.py for that draft.
+            - Run scripts/style-gate.py before writing result.json and fix what it reports.
+            - Valid JSON only. No trailing commas, no comments, no markdown fence.
+
+      - name: Publish the result
+        if: always()
+        run: |
+          git config user.name "ojv-linkedin bot"
+          git config user.email "actions@github.com"
+          DIR="runs/${{ inputs.run_id }}"
+          if [ ! -f "$DIR/result.json" ]; then
+            cat > "$DIR/status.json" <<JSON
+          {
+            "runId": "${{ inputs.run_id }}",
+            "state": "failed",
+            "error": "The run finished without writing result.json. Open the workflow log.",
+            "workflowRunUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }
+          JSON
+          else
+            python3 -c "import json,sys; json.load(open('$DIR/result.json'))" \
+              || echo '{"runId":"${{ inputs.run_id }}","state":"failed","error":"result.json was not valid JSON."}' > "$DIR/status.json"
+            printf '{"runId":"%s","state":"done"}\n' "${{ inputs.run_id }}" > "$DIR/status.json"
+          fi
+          git add -A
+          git diff --cached --quiet || git commit -q -m "Run ${{ inputs.run_id }}: $(python3 -c "import json;print(json.load(open('$DIR/status.json'))['state'])")"
+          git pull --rebase -q origin ${{ github.ref_name }} || true
+          git push -q

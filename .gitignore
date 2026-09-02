@@ -13,3 +13,4 @@ skill/assets/images/raw/*
 # Local dev env pulled by `vercel dev`
 .env.local
 .vercel
+package-lock.json

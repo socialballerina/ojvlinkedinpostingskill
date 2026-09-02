@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "One-button weekly LinkedIn post generator for Orange Juice Ventures",
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.110.0"
-  },
+  "description": "One-button weekly LinkedIn post generator for Orange Juice Ventures. Front end on Vercel, skill runs in Claude Code via GitHub Actions.",
+  "dependencies": {},
   "engines": {
     "node": ">=20"
   },

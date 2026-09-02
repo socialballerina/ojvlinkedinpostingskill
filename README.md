@@ -1,26 +1,94 @@
 # OJV LinkedIn posting skill and one-button tool
 
-Two things in one repo, for Orange Juice Ventures' LinkedIn company page.
+Weekly LinkedIn content for Orange Juice Ventures' company page. Three posts a week, Monday,
+Wednesday and Friday, 09:00 HKT.
 
-| | What it is | Who uses it |
-| --- | --- | --- |
-| **`skill/`** | A Claude Code skill. The full weekly workflow: rotation control, five archetypes, image manifest, CSV trackers, guardrails. | Naman, or anyone working in Claude Code |
-| **`api/` + `public/`** | A one-button web tool deployed on Vercel. Press it, get three scheduling-ready posts. | The intern |
+**There is no Anthropic API key anywhere in this repo.** The model is Claude Code itself, running
+in GitHub Actions, authenticated by an OAuth token tied to a Claude subscription. Vercel only
+starts the run and shows the results.
 
-Both draft only. **Neither publishes, schedules, or sends a DM.** Posts are scheduled by a person, on LinkedIn, after Naman approves them.
+```
+  intern presses the button
+        |
+  Vercel  POST /api/run ......... dispatches the workflow
+        |
+  GitHub Actions ................ runs Claude Code with the ojv-linkedin skill,
+        |                         billed to the Claude subscription
+        |                         commits runs/<id>/result.json back to this repo
+        |
+  Vercel  GET /api/status ....... polls for that file
+        |
+  intern copies each post, picks or attaches a photo, and schedules it on LinkedIn
+```
+
+Nothing publishes. A person schedules every post after Naman approves it.
 
 ---
 
-## The web tool
+## Setup, once
 
-One button. It runs four short steps so no single request has to hold everything:
+### 1. Give GitHub a Claude subscription token
 
-1. **Rotation check.** Reads the saved history in the browser and works out what this week may not repeat: archetypes, hook patterns, subjects used in the last 90 days, and stories already posted.
-2. **Research.** Claude searches the web, opens primary sources, and picks one verified story per slot. Every number it keeps must be quotable from the source it opened.
-3. **Drafting.** One call per post. Monday awareness with a soft close, Wednesday proof with a medium CTA, Friday the week's single hard CTA.
-4. **Photos.** Licence-free options from Openverse, falling back to Wikimedia Commons. Both keyless.
+On a machine with Claude Code installed and logged in:
 
-Then the intern copies each post, picks or attaches a photo, and schedules it on LinkedIn.
+```bash
+claude setup-token
+```
+
+That prints a long-lived token (`sk-ant-oat01-...`) tied to your Claude subscription. Add it as a
+repository secret named `CLAUDE_CODE_OAUTH_TOKEN`:
+
+```bash
+gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo socialballerina/ojvlinkedinpostingskill
+```
+
+It pastes in without echoing. Requires a Pro, Max, Team or Enterprise plan. The token is tied to
+whoever ran the command, and runs are billed to that subscription rather than to API credits.
+
+### 2. Install the Claude GitHub App
+
+Install [github.com/apps/claude](https://github.com/apps/claude) on this repository. The action
+needs its Contents, Issues and Pull requests permissions.
+
+### 3. Give Vercel a GitHub token
+
+Create a **fine-grained** personal access token at
+[github.com/settings/personal-access-tokens/new](https://github.com/settings/personal-access-tokens/new),
+scoped to this repository only:
+
+| Permission | Access |
+| --- | --- |
+| Actions | Read and write |
+| Contents | Read-only |
+
+Then in Vercel, Project Settings, Environment Variables:
+
+| Name | Value |
+| --- | --- |
+| `GITHUB_TOKEN` | that fine-grained token |
+| `APP_PASSWORD` | any long random string, this is what the intern types |
+
+Redeploy. Both endpoints refuse to run with either missing, and say which one.
+
+### 4. Send the intern the URL and the password
+
+She types the password once and the browser remembers it.
+
+### Cost
+
+GitHub Actions minutes are free on a public repository. Model usage comes out of the Claude
+subscription that issued the OAuth token, so there is no per-click API bill. Subscription rate
+limits still apply, and a run is one Claude Code session of roughly 5 to 12 minutes.
+
+---
+
+## Using it
+
+One button. It dispatches the workflow, then polls. The tab can be closed while the run goes; the
+run id is kept in the browser and reconnects on return.
+
+Each finished post shows the copy, the archetype and CTA tier, the source link, the style-gate
+result, whether the sources were verified, and either photo options or a request for a photo.
 
 ### The five archetypes
 
@@ -34,103 +102,92 @@ Every post is exactly one of these, chosen from what the research actually found
 | D | Rejection to raise | A documented rejection count and a documented raise |
 | E | Inside the room | Something OJV actually did: event, workshop, portfolio, partner on stage |
 
-Archetype E is Friday's default and it is the only one where OJV is the subject. It needs the **"what has OJV done lately"** box filled in, because it cannot be researched from the web. If that box is empty the tool says so rather than inventing an OJV event.
+Archetype E is Friday's default and the only one where OJV is the subject. It needs the
+**"what has OJV done lately"** box filled in, because it cannot be researched from the web. Leave
+it empty and the run says so in `needsFromAuthor` rather than inventing an OJV event. Top it up
+monthly.
 
-### Photos, and why some posts ask the intern for one
+### Photos
 
-Stock photography is only offered where a generic scene can honestly illustrate the post. The tool asks the intern for a photo instead whenever the post is about OJV, a partner, or an event, because a stock photo of a stranger in a conference hall standing in for an OJV room is a misrepresentation, not a design shortcut.
+Stock is only offered where a generic scene can honestly illustrate the post, searched from
+Openverse with Wikimedia Commons as a fallback. Both keyless. Only `CC0`, public domain and
+`CC BY` are requested, and `CC BY` results are flagged with the exact credit line to put in the
+first comment.
 
-Nothing is AI-generated. A synthetic image of a factory floor presented as documentary evidence of what Shenzhen looks like would break the same rule the copy guardrails exist to enforce.
+The run asks the intern for a photo instead whenever the post is about OJV, a partner or an event,
+because a stock photo of a stranger standing in for an OJV room is a misrepresentation rather than
+a design shortcut. Archetype E always asks, and has no text-only fallback.
 
-Licences: only `CC0`, public domain and `CC BY` are requested. `CC BY` results are flagged `credit needed` and the tool prints the exact credit line to put in the first comment.
+Nothing is AI-generated. A synthetic factory floor presented as what Shenzhen looks like would
+break the same rule the copy guardrails exist to enforce.
 
 ### How it avoids repeating itself
 
-History lives in the intern's browser (`localStorage`) and is fed into the research step as hard blocks:
+The skill's own rotation check reads the trackers committed in this repo:
 
-| Blocked | Window |
-| --- | --- |
-| The same archetype twice in a week | the week |
-| The same hook pattern | 14 days |
-| The same company, person or city as a post's subject | 90 days |
-| The same story | forever |
+| Blocked | Window | Source of truth |
+| --- | --- | --- |
+| The same archetype twice in a week | the week | `data/content-calendar.csv` |
+| The same archetype in the same slot 3 weeks running | 3 weeks | calendar and posted log |
+| The same hook pattern | 14 days | `hook_pattern` column |
+| The same company, person or city as a post's subject | 90 days | `entities` column |
+| The same story | forever | `data/news-seen.csv` |
+| The same image | 60 days, hard stop at 3 uses | `assets/images/manifest.csv` |
 
-This only works if the intern presses **Mark scheduled** on each post. That is the whole feedback loop. **Download log** exports rows for `skill/data/posted-log.csv` so the Claude Code skill and the web tool share one memory.
-
-Browser storage is per-device, so it is a real limitation: a different laptop starts with a blank history. Moving this to Vercel KV or Postgres is the obvious next step.
-
----
-
-## Deploying it
-
-### 1. Import the repo into Vercel
-
-Go to [vercel.com/new](https://vercel.com/new), pick this repository, and deploy. No build step, no framework preset. Vercel serves `public/` and turns `api/*.js` into functions on its own.
-
-### 2. Set two environment variables
-
-In **Project Settings, Environment Variables**:
-
-| Name | Value |
-| --- | --- |
-| `ANTHROPIC_API_KEY` | An Anthropic API key from [console.anthropic.com](https://console.anthropic.com) |
-| `APP_PASSWORD` | Any long random string. This is what the intern types. |
-
-Optional: `OJV_MODEL` overrides the model, which defaults to `claude-opus-5`.
-
-Redeploy after adding them. The tool refuses to run with either one missing, rather than failing halfway through a run.
-
-### 3. Send the intern the URL and the password
-
-They type the password once and the browser remembers it.
-
-### Cost
-
-Every press of the button is one research call plus three drafting calls against `claude-opus-5` with web search enabled. Budget on the order of a couple of dollars per week at three posts a week, and set a spend limit in the Anthropic console. The password gate exists mainly so that a public URL cannot burn credits.
-
-### Local development
-
-```bash
-npm install
-cp .env.example .env.local   # fill in both values
-npx vercel dev
-```
+Because each run commits its updated trackers and drafts back to this repo, the memory is shared
+and durable rather than living in one browser. **Download log** exports rows for
+`data/posted-log.csv` once posts have actually run, which is what feeds performance back in.
 
 ---
 
-## The Claude Code skill
+## The skill
 
-Everything under `skill/`. Start with [`skill/HANDOFF.md`](skill/HANDOFF.md), which is one page. [`skill/SKILL.md`](skill/SKILL.md) has the config table, the ten-step weekly run, the guardrails and the error table.
+`.claude/skills/ojv-linkedin/`. Clone this repo, open Claude Code in it, and the skill is
+available: say "run the week", or `/ojv-linkedin`. That path is also how the GitHub Actions run
+invokes it, so the web tool and a local Claude Code session execute exactly the same instructions.
+There is no second copy of the voice rules to drift.
+
+Start with [`HANDOFF.md`](.claude/skills/ojv-linkedin/HANDOFF.md), which is one page.
+[`SKILL.md`](.claude/skills/ojv-linkedin/SKILL.md) has the config table, the ten-step weekly run,
+the guardrails and the error table.
 
 Two runnable checks:
 
 ```bash
-python3 skill/scripts/rotation-check.py            # what this week may not repeat
-python3 skill/scripts/style-gate.py skill/drafts/2026-W37/*.md
+python3 .claude/skills/ojv-linkedin/scripts/rotation-check.py
+python3 .claude/skills/ojv-linkedin/scripts/style-gate.py .claude/skills/ojv-linkedin/drafts/2026-W37/*.md
 ```
 
-`skill/drafts/2026-W37/` is a worked week, including a post deliberately held back because no image in the library could carry it honestly.
-
-The skill is the source of truth for voice and archetypes. `api/_voice.js` is a condensed copy of it for the web tool. **If you change the voice in `skill/references/`, update `api/_voice.js` too.**
+`drafts/2026-W37/` is a worked week, including a post deliberately held back because no image in
+the library could carry it honestly.
 
 ---
 
-## Guardrails, enforced in both halves
+## Guardrails
 
-- No invented statistic, funding number, rejection count, date or quote. Every number traces to a source that was actually opened.
+- No invented statistic, funding number, rejection count, date or quote. Every number traces to a
+  source that was actually opened.
 - No implied client relationship. Third-party cases carry an explicit disclosure line in the body.
-- No guaranteed fundraising outcome. The claim is a shorter, better-targeted investor list, never the yes.
+- No guaranteed fundraising outcome. The claim is a shorter, better-targeted investor list, never
+  the yes.
 - No investment advice, no return projections, no valuation from rumour.
 - Nothing about the China Tech Trek that contradicts ContraVC, who are the official partner on it.
-- No em dashes, no "thrilled to announce", 3 to 5 hashtags, 900 to 1,300 characters, hook inside 140 characters, and a close that is a question or a CTA but never both. Checked mechanically by `skill/scripts/style-gate.py` and by the same rules in `api/_lib.js`.
+- No em dashes, no "thrilled to announce", 3 to 5 hashtags, 900 to 1,300 characters, hook inside
+  140 characters, and a close that is a question or a CTA but never both.
+
+The style rules are checked mechanically by `scripts/style-gate.py` inside the run, and again by
+`api/_lib.js` before the page renders anything, so the UI never simply trusts the run's own claim.
 
 ## Why there is no publish button
 
-Posting to a LinkedIn company page programmatically needs the Community Management API: a registered legal entity, a verified page, the Marketing Developer Platform partner programme, the `w_organization_social` scope, and a two-tier app review with a screen recording. Approval runs weeks to months.
+Posting to a LinkedIn company page programmatically needs the Community Management API: a
+registered legal entity, a verified page, the Marketing Developer Platform partner programme, the
+`w_organization_social` scope, and a two-tier app review with a screen recording. Approval runs
+weeks to months.
 
-So this tool hands a person a finished post and that person schedules it. Queuing into a scheduler counts as publishing, because a queued post goes out unattended. See [`skill/references/publish-adapter.md`](skill/references/publish-adapter.md).
-
----
+So the tool hands a person a finished post and that person schedules it. Queuing into a scheduler
+counts as publishing, because a queued post goes out unattended. See
+[`publish-adapter.md`](.claude/skills/ojv-linkedin/references/publish-adapter.md).
 
 ## Tests
 
@@ -138,6 +195,14 @@ So this tool hands a person a finished post and that person schedules it. Queuin
 cd test && node handlers.mjs
 ```
 
-Exercises the auth gate, request routing, the live Creative Commons photo search including query
-relaxation, the licence filter, and the style gate's parity with `skill/scripts/style-gate.py`.
-It does not call Claude, so it needs no API key and costs nothing. 16 checks.
+18 checks over the auth gate, method guards, input validation, GitHub error reporting, the live
+Creative Commons photo search with query relaxation and licence filtering, and the style gate's
+parity with the skill's Python gate. No credentials needed, nothing billed.
+
+## Notes
+
+- `runs/` accumulates one folder per run, committed to this repo. It is a public repository, so
+  drafts are publicly visible. Delete old folders freely; nothing reads them after the intern has
+  scheduled the posts.
+- Only one run at a time. `/api/run` returns 409 if a run is already going, so two presses of the
+  button cannot both push to `main` and collide.
