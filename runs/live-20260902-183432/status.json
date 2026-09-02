@@ -1,6 +1,7 @@
 {
   "runId": "live-20260902-183432",
-  "state": "running",
-  "startedAt": "2026-09-02T18:34:43Z",
+  "state": "failed",
+  "finishedAt": "2026-09-02T18:34:50Z",
+  "error": "Claude Code ran but did not finish the week. The usual cause is an expired CLAUDE_CODE_OAUTH_TOKEN, or the subscription hitting a rate limit. Regenerate with claude setup-token and reset the secret. The workflow log holds the exact error. Nothing was generated.",
   "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/33668054744"
 }
