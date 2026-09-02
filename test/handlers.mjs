@@ -71,6 +71,13 @@ const p1 = await call(photos, { key: KEY, query: { q: "electronics components ma
 check("live CC search -> 200", p1.status, 200);
 if (p1.status === 200) {
   console.log("        source:", p1.body.source, "| count:", p1.body.count);
+  if (p1.body.count === 0) {
+    console.log("        WARN  zero results. On a machine behind a TLS-intercepting proxy this is");
+    console.log("        WARN  the proxy, not the code. Retry with NODE_EXTRA_CA_CERTS set to a");
+    console.log("        WARN  bundle that includes the proxy root, or run it in CI.");
+  } else {
+    check("search returned usable images", p1.body.count > 0, true);
+  }
   for (const i of p1.body.items) console.log("         -", i.license, "| credit needed:", String(i.attributionRequired).padEnd(5), "|", i.provider);
   check("no NC/ND/SA licences", p1.body.items.filter((i) => /(nc|nd|sa)/i.test(i.license.replace(/^CC /, "").split(" ")[0])).length, 0);
 }
