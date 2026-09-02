@@ -46,9 +46,10 @@ concurrency:
   group: ojv-week
   cancel-in-progress: false
 
+# Only what the job actually does: commit the drafts it produced. The Claude Code
+# GitHub App is not used, so no app-token exchange and no id-token permission.
 permissions:
   contents: write
-  id-token: write
 
 jobs:
   generate:
@@ -80,77 +81,44 @@ jobs:
           fi
           echo "Token is present."
 
+      - name: Install Claude Code
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          set -euo pipefail
+          npm install -g @anthropic-ai/claude-code
+          claude --version
+
+      - name: Build the prompt
+        if: ${{ inputs.dry_run != true }}
+        env:
+          KEYWORD: ${{ inputs.keyword }}
+          ENQUIRY_URL: ${{ inputs.enquiry_url }}
+          OFFER: ${{ inputs.offer }}
+          OJV_NEWS: ${{ inputs.ojv_news }}
+        run: python3 .github/scripts/build-prompt.py
+
       - name: Run the skill in Claude Code
         id: claude
         if: ${{ inputs.dry_run != true }}
         continue-on-error: true
-        uses: anthropics/claude-code-action@v1
-        with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          claude_args: |
-            --max-turns 80
-            --allowedTools "Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch"
-          prompt: |
-            /ojv-linkedin
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          set -euo pipefail
+          claude -p "$(cat /tmp/ojv-prompt.txt)" \
+            --allowed-tools "Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch" \
+            --permission-mode acceptEdits \
+            --max-turns 80 \
+            2>&1 | tee /tmp/ojv-claude.log
+          echo "Claude Code exited cleanly."
 
-            Run the weekly run, all ten steps, for the next Monday, Wednesday and Friday.
-
-            You are running headless in CI, so nobody can answer a question. Where the skill
-            says to ask, record the request in needsFromAuthor and carry on with the rest.
-
-            Config for this run, overriding the config table where a value is given:
-            - DM keyword for tour enquiries: ${{ inputs.keyword }}
-            - Enquiry destination: ${{ inputs.enquiry_url }}
-            - Current flagship offer: ${{ inputs.offer || 'China Tech Trek, Hong Kong and Shenzhen, 13 to 17 October 2026, run with ContraVC as official partner' }}
-            - Raw image folder: not available in CI, so skip image intake entirely and pair
-              only from assets/images/manifest.csv
-
-            What OJV itself has done lately, the only valid input for archetype E:
-            ${{ inputs.ojv_news }}
-
-            If that is empty and you need archetype E, do not invent an OJV event. Say so in
-            needsFromAuthor and use a different archetype for that slot.
-
-            The skill directory is .claude/skills/ojv-linkedin/ and every relative path in
-            SKILL.md is relative to it. Write drafts and update trackers there as normal.
-
-            ALSO REQUIRED for this CI run. After the drafts and trackers are written, write
-            runs/${{ inputs.run_id || format('scheduled-{0}', github.run_id) }}/result.json, relative to the repository root, with this
-            exact shape:
-
-            {
-              "runId": "${{ inputs.run_id || format('scheduled-{0}', github.run_id) }}",
-              "state": "done",
-              "week": "YYYY-Www",
-              "posts": [
-                {
-                  "postId": "...", "day": "Monday", "date": "YYYY-MM-DD",
-                  "slot": "awareness", "archetype": "A", "archetypeName": "...",
-                  "ctaTier": "soft", "hookPattern": "...",
-                  "copy": "the finished post, real newlines",
-                  "entities": ["..."], "sourceUrl": "...", "sourcePublisher": "...",
-                  "firstComment": "", "disclosure": "",
-                  "verified": true, "verificationNotes": "...",
-                  "styleGate": [], "image": "", "altText": "",
-                  "needsTeamPhoto": false, "photoBrief": "", "photoQuery": "",
-                  "whyThisSlot": "", "blockers": [], "draftPath": "..."
-                }
-              ],
-              "rotation": {"blockedArchetypes": [], "blockedEntities": [], "blockedHookPatterns": []},
-              "needsFromAuthor": ["anything a person must supply or decide"],
-              "notes": ""
-            }
-
-            Rules for that file:
-            - needsTeamPhoto true whenever the post is about OJV, a partner or an OJV event, or
-              whenever nothing in the manifest fits. Then photoBrief must name the shot:
-              subject, setting, framing, and which partner should be in frame.
-            - photoQuery only for a generic scene a licence-free stock photo could honestly
-              carry. Never a person, a named company, a logo or a brand. Empty otherwise.
-            - styleGate must be the real output of scripts/style-gate.py for that draft. Run it
-              and fix what it reports before writing this file.
-            - Valid JSON only. No trailing commas, no comments, no markdown fence.
-            - Writing this file is not optional. Without it the run is reported as failed.
+      - name: Show what Claude wrote
+        if: ${{ always() && inputs.dry_run != true }}
+        run: |
+          echo "--- files under runs/ ---"
+          ls -la "runs/$RUN_ID" 2>/dev/null || echo "(nothing)"
+          echo "--- last 40 lines of the Claude log ---"
+          tail -40 /tmp/ojv-claude.log 2>/dev/null || echo "(no log)"
 
       - name: Write a dry-run result instead
         if: ${{ inputs.dry_run == true }}
@@ -162,7 +130,7 @@ jobs:
           set -euo pipefail
           # The commonest setup failure by far, and its error only appears in the log.
           python3 .github/scripts/marker.py fail "$RUN_ID" \
-            "Claude did not run. The usual cause is that the Claude Code GitHub App is not installed on this repository: install it at https://github.com/apps/claude, then press the button again. If it is installed, check the CLAUDE_CODE_OAUTH_TOKEN secret has not expired. Nothing was generated."
+            "Claude Code ran but did not finish the week. The usual cause is an expired CLAUDE_CODE_OAUTH_TOKEN, or the subscription hitting a rate limit. Regenerate with claude setup-token and reset the secret. The workflow log holds the exact error. Nothing was generated."
 
       - name: Publish the result
         if: always()
