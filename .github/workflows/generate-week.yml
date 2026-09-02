@@ -53,7 +53,10 @@ permissions:
 
 jobs:
   generate:
-    runs-on: ubuntu-latest
+    # Set the repo variable OJV_RUNNER to 'self-hosted' to run on your own machine.
+    #   gh variable set OJV_RUNNER --body self-hosted
+    # Unset it, or set it to ubuntu-latest, to go back to GitHub's runners.
+    runs-on: ${{ vars.OJV_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 30
     env:
       RUN_ID: ${{ inputs.run_id || format('scheduled-{0}', github.run_id) }}
@@ -69,58 +72,69 @@ jobs:
           python3 .github/scripts/marker.py start "$RUN_ID"
           .github/scripts/publish.sh "Run $RUN_ID: started"
 
-      - name: Check the token
+      - name: Work out how Claude will authenticate
+        id: auth
         if: ${{ inputs.dry_run != true }}
         env:
           TOK: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
+          # Two valid paths. On a self-hosted runner the local CLI is usually already
+          # logged in, and then no secret is needed at all. On GitHub's runners there is
+          # no local login, so the secret is required.
+          LOCAL="no"
+          if command -v claude >/dev/null 2>&1; then
+            if claude auth status 2>/dev/null | grep -q '"loggedIn": *true'; then
+              LOCAL="yes"
+            fi
+          fi
+          echo "local_login=$LOCAL" >> "$GITHUB_OUTPUT"
+
+          if [ "$LOCAL" = "yes" ]; then
+            echo "The local Claude Code is logged in. Using it, and ignoring any secret."
+            echo "use_token=no" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           if [ -z "${TOK:-}" ]; then
             python3 .github/scripts/marker.py fail "$RUN_ID" \
-              "Setup is not finished: the CLAUDE_CODE_OAUTH_TOKEN secret is missing on this repository. Run 'claude setup-token' on a machine with Claude Code, then 'gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}'. Nothing was generated."
-            .github/scripts/publish.sh "Run $RUN_ID: failed, no Claude token"
-            echo "::error::CLAUDE_CODE_OAUTH_TOKEN is not set on this repository."
+              "No way to authenticate Claude. Either log in on the machine running this job, by running 'claude' once, or set the CLAUDE_CODE_OAUTH_TOKEN secret with 'claude setup-token'. Nothing was generated."
+            .github/scripts/publish.sh "Run $RUN_ID: failed, no Claude auth"
+            echo "::error::No local login and no CLAUDE_CODE_OAUTH_TOKEN secret."
             exit 1
           fi
+
           # Shape check only. Nothing here prints the value.
           CLEAN=$(printf '%s' "$TOK" | tr -d '[:space:]')
-          RAW_LEN=${#TOK}
           CLEAN_LEN=${#CLEAN}
-          echo "Token length: $CLEAN_LEN (raw $RAW_LEN)."
-          if [ "$RAW_LEN" -ne "$CLEAN_LEN" ]; then
-            echo "::warning::The secret contains whitespace, probably a trailing newline from the paste. Using a trimmed copy."
-          fi
+          echo "No local login, so using the secret. Token length: $CLEAN_LEN (raw ${#TOK})."
           case "$CLEAN" in
-            sk-ant-oat01-*) echo "Prefix looks like a subscription OAuth token." ;;
-            sk-ant-api*)
-              python3 .github/scripts/marker.py fail "$RUN_ID" \
-                "The CLAUDE_CODE_OAUTH_TOKEN secret holds a Claude API key, not a subscription OAuth token. Run 'claude setup-token' and set the sk-ant-oat01-... value it prints."
-              .github/scripts/publish.sh "Run $RUN_ID: failed, wrong token type"
-              echo "::error::That secret is an API key, not an OAuth token."
-              exit 1 ;;
+            sk-ant-oat01-*) : ;;
             *)
               python3 .github/scripts/marker.py fail "$RUN_ID" \
-                "The CLAUDE_CODE_OAUTH_TOKEN secret does not look like a subscription OAuth token: it should start with sk-ant-oat01-. Run 'claude setup-token' on a machine where 'claude' is logged in, and set exactly the value it prints."
+                "The CLAUDE_CODE_OAUTH_TOKEN secret does not start with sk-ant-oat01-. Run 'claude setup-token' and store exactly what it prints."
               .github/scripts/publish.sh "Run $RUN_ID: failed, malformed token"
               echo "::error::The secret does not start with sk-ant-oat01-."
               exit 1 ;;
           esac
-          # A real subscription token runs to roughly 100 characters. A value of about
-          # 48 is the first line of a wrapped token, which is what a paste that stops at
-          # the first newline produces.
           if [ "$CLEAN_LEN" -lt 80 ]; then
             python3 .github/scripts/marker.py fail "$RUN_ID" \
-              "The CLAUDE_CODE_OAUTH_TOKEN secret is only $CLEAN_LEN characters. A real one is roughly 100. The token wraps onto three lines in a terminal, and a paste that stops at the first newline leaves exactly the first 48. Set it without a clipboard: claude setup-token | tr -d '[:space:]' | grep -o 'sk-ant-oat01-[A-Za-z0-9_-]*' | gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}"
+              "The CLAUDE_CODE_OAUTH_TOKEN secret is only $CLEAN_LEN characters. A real one is roughly 130. The token wraps onto three lines in a terminal, and a paste that stops at the first newline leaves exactly the first 48. Generate, verify and store it in one go: TOK=\$(claude setup-token | tr -d '[:space:]' | grep -o 'sk-ant-oat01-[A-Za-z0-9_-]*'); CLAUDE_CODE_OAUTH_TOKEN=\$TOK claude -p ok --max-turns 1 && printf '%s' \$TOK | gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}"
             .github/scripts/publish.sh "Run $RUN_ID: failed, truncated token"
-            echo "::error::The token is $CLEAN_LEN characters, expected roughly 100. It looks truncated at the first line break."
+            echo "::error::The token is $CLEAN_LEN characters, expected roughly 130. It looks truncated at a line break."
             exit 1
           fi
+          echo "use_token=yes" >> "$GITHUB_OUTPUT"
 
-      - name: Install Claude Code
+      - name: Make sure Claude Code is available
         if: ${{ inputs.dry_run != true }}
         run: |
           set -euo pipefail
-          npm install -g @anthropic-ai/claude-code
-          claude --version
+          if command -v claude >/dev/null 2>&1; then
+            echo "Already installed: $(claude --version)"
+          else
+            npm install -g @anthropic-ai/claude-code
+            claude --version
+          fi
 
       - name: Build the prompt
         if: ${{ inputs.dry_run != true }}
@@ -137,10 +151,15 @@ jobs:
         continue-on-error: true
         env:
           TOK: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          USE_TOKEN: ${{ steps.auth.outputs.use_token }}
         run: |
           set -euo pipefail
-          # Trim, in case the secret was pasted with a trailing newline.
-          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$TOK" | tr -d '[:space:]')"
+          if [ "${USE_TOKEN:-no}" = "yes" ]; then
+            # Trim, in case the secret was pasted with a trailing newline.
+            export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$TOK" | tr -d '[:space:]')"
+          else
+            echo "Using the machine's own Claude Code login."
+          fi
           claude -p "$(cat /tmp/ojv-prompt.txt)" \
             --allowed-tools "Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch" \
             --permission-mode acceptEdits \
