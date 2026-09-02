@@ -129,3 +129,15 @@ The skill is the source of truth for voice and archetypes. `api/_voice.js` is a 
 Posting to a LinkedIn company page programmatically needs the Community Management API: a registered legal entity, a verified page, the Marketing Developer Platform partner programme, the `w_organization_social` scope, and a two-tier app review with a screen recording. Approval runs weeks to months.
 
 So this tool hands a person a finished post and that person schedules it. Queuing into a scheduler counts as publishing, because a queued post goes out unattended. See [`skill/references/publish-adapter.md`](skill/references/publish-adapter.md).
+
+---
+
+## Tests
+
+```bash
+cd test && node handlers.mjs
+```
+
+Exercises the auth gate, request routing, the live Creative Commons photo search including query
+relaxation, the licence filter, and the style gate's parity with `skill/scripts/style-gate.py`.
+It does not call Claude, so it needs no API key and costs nothing. 16 checks.

@@ -9,5 +9,9 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --experimental-default-type=module test/handlers.mjs",
+    "dev": "vercel dev"
   }
 }

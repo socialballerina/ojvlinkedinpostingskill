@@ -8,3 +8,8 @@ node_modules/
 # Photos of people are not committed. The manifest describes them; the files stay local.
 skill/assets/images/raw/*
 !skill/assets/images/raw/README.md
+.env*
+
+# Local dev env pulled by `vercel dev`
+.env.local
+.vercel
