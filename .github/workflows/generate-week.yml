@@ -156,6 +156,14 @@ jobs:
         if: ${{ inputs.dry_run == true }}
         run: python3 .github/scripts/marker.py dry "$RUN_ID"
 
+      - name: Work out why Claude did not run
+        if: ${{ always() && steps.claude.outcome == 'failure' }}
+        run: |
+          set -euo pipefail
+          # The commonest setup failure by far, and its error only appears in the log.
+          python3 .github/scripts/marker.py fail "$RUN_ID" \
+            "Claude did not run. The usual cause is that the Claude Code GitHub App is not installed on this repository: install it at https://github.com/apps/claude, then press the button again. If it is installed, check the CLAUDE_CODE_OAUTH_TOKEN secret has not expired. Nothing was generated."
+
       - name: Publish the result
         if: always()
         env:
