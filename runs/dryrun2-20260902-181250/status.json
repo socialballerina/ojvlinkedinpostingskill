@@ -1,6 +1,7 @@
 {
   "runId": "dryrun2-20260902-181250",
-  "state": "running",
-  "startedAt": "2026-09-02T18:13:02Z",
+  "state": "done",
+  "finishedAt": "2026-09-02T18:13:03Z",
+  "posts": 3,
   "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/33665833872"
 }
