@@ -66,9 +66,10 @@ jobs:
         if: ${{ !inputs.dry_run }}
         run: |
           if [ -z "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}" ]; then
+            python3 .github/scripts/marker.py fail "$RUN_ID" \
+              "Setup is not finished: the CLAUDE_CODE_OAUTH_TOKEN secret is missing on this repository. Run 'claude setup-token' on a machine with Claude Code, then 'gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}'. Nothing was generated."
+            .github/scripts/publish.sh "Run $RUN_ID: failed, no Claude token"
             echo "::error::CLAUDE_CODE_OAUTH_TOKEN is not set on this repository."
-            echo "Generate one with 'claude setup-token' and add it with:"
-            echo "  gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}"
             exit 1
           fi
           echo "Token is present."

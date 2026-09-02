@@ -27,9 +27,24 @@ if cmd == "start":
     write({"runId": run_id, "state": "running", "startedAt": now, "workflowRunUrl": run_url})
     print("marked running")
 
+elif cmd == "fail":
+    write({"runId": run_id, "state": "failed", "finishedAt": now,
+           "error": sys.argv[3] if len(sys.argv) > 3 else "The run failed.",
+           "workflowRunUrl": run_url})
+    print("marked failed")
+
 elif cmd == "finish":
     claude_outcome = os.environ.get("CLAUDE_OUTCOME", "unknown")
     if not os.path.exists(result_path):
+        if os.path.exists(status_path):
+            try:
+                with open(status_path) as f:
+                    prior = json.load(f)
+                if prior.get("state") == "failed" and prior.get("error"):
+                    print("keeping the earlier failure reason")
+                    sys.exit(0)
+            except (json.JSONDecodeError, OSError):
+                pass
         write({
             "runId": run_id, "state": "failed", "finishedAt": now,
             "error": "The run finished without writing result.json (Claude step: %s). Open the workflow log." % claude_outcome,

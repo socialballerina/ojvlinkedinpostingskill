@@ -7,14 +7,16 @@ export default async function handler(req, res) {
     requireAuth(req);
     const body = await readJsonBody(req);
 
-    // Refuse to queue a second run while one is still going, so two presses of the
-    // button cannot both push to the same branch and collide.
-    const active = await gh(`/repos/${REPO}/actions/workflows/${WORKFLOW}/runs?status=in_progress&per_page=1`);
-    const queued = await gh(`/repos/${REPO}/actions/workflows/${WORKFLOW}/runs?status=queued&per_page=1`);
-    const running = (active?.total_count || 0) + (queued?.total_count || 0);
-    if (running > 0) {
-      const url = active?.workflow_runs?.[0]?.html_url || queued?.workflow_runs?.[0]?.html_url;
-      throw new HttpError(409, `A run is already going. Wait for it to finish.${url ? " " + url : ""}`);
+    // Refuse to queue a second run while one is still going. Best effort: for a few
+    // seconds after a dispatch GitHub has not registered the run yet, so a very fast
+    // double press can slip through. That is harmless, because the workflow's own
+    // concurrency group serialises runs and publish.sh retries a rejected push.
+    const recent = await gh(`/repos/${REPO}/actions/workflows/${WORKFLOW}/runs?per_page=10`);
+    const active = (recent?.workflow_runs || []).filter(
+      (r) => ["queued", "in_progress", "requested", "waiting", "pending"].includes(r.status)
+    );
+    if (active.length) {
+      throw new HttpError(409, `A run is already going. Wait for it to finish. ${active[0].html_url}`);
     }
 
     const runId = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19) + "-" +

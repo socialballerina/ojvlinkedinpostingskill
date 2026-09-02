@@ -90,7 +90,7 @@ async function poll() {
   if (!state.runId) return;
   state.polls++;
   try {
-    const s = await api(`/api/status?runId=${encodeURIComponent(state.runId)}`);
+    const s = await api(`/api/status?runId=${encodeURIComponent(state.runId)}&attempt=${state.polls}`);
     const mins = Math.floor((state.polls * 15) / 60);
     const waited = mins ? ` ${mins} min so far.` : "";
 
@@ -139,6 +139,13 @@ function render(r) {
   const n = (r.posts || []).length;
   setStatus(`Done. ${n} post${n === 1 ? "" : "s"} for ${esc(r.week || "this week")}.` +
     (r.workflowRunUrl ? ` <a href="${esc(r.workflowRunUrl)}" target="_blank" rel="noopener">Run log</a>.` : ""), "done");
+
+  if (r.dryRun) {
+    const d = document.createElement("div");
+    d.className = "err on";
+    d.innerHTML = "<strong>This was a dry run.</strong> The posts below are placeholder text to prove the pipeline works. Do not schedule them.";
+    $("out").appendChild(d);
+  }
 
   if (r.needsFromAuthor && r.needsFromAuthor.length) {
     const d = document.createElement("div");
