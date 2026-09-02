@@ -76,54 +76,69 @@ jobs:
         id: auth
         if: ${{ inputs.dry_run != true }}
         env:
-          TOK: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          # Two valid paths. On a self-hosted runner the local CLI is usually already
-          # logged in, and then no secret is needed at all. On GitHub's runners there is
-          # no local login, so the secret is required.
-          LOCAL="no"
-          if command -v claude >/dev/null 2>&1; then
-            if claude auth status 2>/dev/null | grep -q '"loggedIn": *true'; then
-              LOCAL="yes"
-            fi
-          fi
-          echo "local_login=$LOCAL" >> "$GITHUB_OUTPUT"
+          # Three ways in, tried in this order. Nothing here ever prints a value.
+          #   1. ANTHROPIC_API_KEY secret          the documented path
+          #   2. a local Claude Code login         only on a self-hosted runner
+          #   3. CLAUDE_CODE_OAUTH_TOKEN secret    kept working, not required
+          fail() {
+            python3 .github/scripts/marker.py fail "$RUN_ID" "$1"
+            .github/scripts/publish.sh "Run $RUN_ID: failed, $2"
+            echo "::error::$2"
+            exit 1
+          }
 
-          if [ "$LOCAL" = "yes" ]; then
-            echo "The local Claude Code is logged in. Using it, and ignoring any secret."
-            echo "use_token=no" >> "$GITHUB_OUTPUT"
+          if [ -n "${API_KEY:-}" ]; then
+            CLEAN=$(printf '%s' "$API_KEY" | tr -d '[:space:]')
+            LEN=${#CLEAN}
+            echo "Using the ANTHROPIC_API_KEY secret. Length: $LEN (raw ${#API_KEY})."
+            if [ "${#API_KEY}" -ne "$LEN" ]; then
+              echo "::warning::The secret contains whitespace. Using a trimmed copy."
+            fi
+            case "$CLEAN" in
+              sk-ant-api*) : ;;
+              sk-ant-oat01-*)
+                fail "The ANTHROPIC_API_KEY secret holds a subscription OAuth token, not an API key. Either store it as CLAUDE_CODE_OAUTH_TOKEN instead, or create an API key at https://platform.claude.com and store that." \
+                     "that secret is an OAuth token, not an API key" ;;
+              *)
+                fail "The ANTHROPIC_API_KEY secret does not look like a Claude API key: it should start with sk-ant-api. Create one at https://platform.claude.com, then: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
+                     "the secret does not start with sk-ant-api" ;;
+            esac
+            if [ "$LEN" -lt 80 ]; then
+              fail "The ANTHROPIC_API_KEY secret is only $LEN characters. A real key is roughly 108. This is what a paste that stopped at a line break looks like. Copy the key with the copy button in the console, then: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
+                   "the key is $LEN characters, expected roughly 108, so it looks truncated"
+            fi
+            echo "method=api_key" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          if [ -z "${TOK:-}" ]; then
-            python3 .github/scripts/marker.py fail "$RUN_ID" \
-              "No way to authenticate Claude. Either log in on the machine running this job, by running 'claude' once, or set the CLAUDE_CODE_OAUTH_TOKEN secret with 'claude setup-token'. Nothing was generated."
-            .github/scripts/publish.sh "Run $RUN_ID: failed, no Claude auth"
-            echo "::error::No local login and no CLAUDE_CODE_OAUTH_TOKEN secret."
-            exit 1
+          if command -v claude >/dev/null 2>&1 && claude auth status 2>/dev/null | grep -q '"loggedIn": *true'; then
+            echo "No API key secret, but this machine's Claude Code is logged in. Using that."
+            echo "method=local_login" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
-          # Shape check only. Nothing here prints the value.
-          CLEAN=$(printf '%s' "$TOK" | tr -d '[:space:]')
-          CLEAN_LEN=${#CLEAN}
-          echo "No local login, so using the secret. Token length: $CLEAN_LEN (raw ${#TOK})."
-          case "$CLEAN" in
-            sk-ant-oat01-*) : ;;
-            *)
-              python3 .github/scripts/marker.py fail "$RUN_ID" \
-                "The CLAUDE_CODE_OAUTH_TOKEN secret does not start with sk-ant-oat01-. Run 'claude setup-token' and store exactly what it prints."
-              .github/scripts/publish.sh "Run $RUN_ID: failed, malformed token"
-              echo "::error::The secret does not start with sk-ant-oat01-."
-              exit 1 ;;
-          esac
-          if [ "$CLEAN_LEN" -lt 80 ]; then
-            python3 .github/scripts/marker.py fail "$RUN_ID" \
-              "The CLAUDE_CODE_OAUTH_TOKEN secret is only $CLEAN_LEN characters. A real one is roughly 130. The token wraps onto three lines in a terminal, and a paste that stops at the first newline leaves exactly the first 48. Generate, verify and store it in one go: TOK=\$(claude setup-token | tr -d '[:space:]' | grep -o 'sk-ant-oat01-[A-Za-z0-9_-]*'); CLAUDE_CODE_OAUTH_TOKEN=\$TOK claude -p ok --max-turns 1 && printf '%s' \$TOK | gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}"
-            .github/scripts/publish.sh "Run $RUN_ID: failed, truncated token"
-            echo "::error::The token is $CLEAN_LEN characters, expected roughly 130. It looks truncated at a line break."
-            exit 1
+          if [ -n "${OAUTH_TOKEN:-}" ]; then
+            CLEAN=$(printf '%s' "$OAUTH_TOKEN" | tr -d '[:space:]')
+            LEN=${#CLEAN}
+            echo "No API key secret. Falling back to CLAUDE_CODE_OAUTH_TOKEN. Length: $LEN."
+            case "$CLEAN" in
+              sk-ant-oat01-*) : ;;
+              *) fail "The CLAUDE_CODE_OAUTH_TOKEN secret does not start with sk-ant-oat01-." \
+                      "the OAuth token is malformed" ;;
+            esac
+            if [ "$LEN" -lt 80 ]; then
+              fail "The CLAUDE_CODE_OAUTH_TOKEN secret is only $LEN characters. A real one is roughly 130, and it wraps onto three lines in a terminal, so a paste that stops at the first newline leaves exactly 48. Set ANTHROPIC_API_KEY instead, which is the supported path for this workflow." \
+                   "the OAuth token is $LEN characters, so it looks truncated"
+            fi
+            echo "method=oauth_token" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
-          echo "use_token=yes" >> "$GITHUB_OUTPUT"
+
+          fail "No way to authenticate Claude. Create an API key at https://platform.claude.com and store it: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
+               "no ANTHROPIC_API_KEY secret, no local login, no OAuth token"
 
       - name: Make sure Claude Code is available
         if: ${{ inputs.dry_run != true }}
@@ -150,16 +165,23 @@ jobs:
         if: ${{ inputs.dry_run != true }}
         continue-on-error: true
         env:
-          TOK: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          USE_TOKEN: ${{ steps.auth.outputs.use_token }}
+          API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          METHOD: ${{ steps.auth.outputs.method }}
         run: |
           set -euo pipefail
-          if [ "${USE_TOKEN:-no}" = "yes" ]; then
-            # Trim, in case the secret was pasted with a trailing newline.
-            export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$TOK" | tr -d '[:space:]')"
-          else
-            echo "Using the machine's own Claude Code login."
-          fi
+          # Trim, in case a secret was pasted with a trailing newline.
+          case "$METHOD" in
+            api_key)
+              export ANTHROPIC_API_KEY="$(printf '%s' "$API_KEY" | tr -d '[:space:]')" ;;
+            oauth_token)
+              export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$OAUTH_TOKEN" | tr -d '[:space:]')" ;;
+            local_login)
+              echo "Using this machine's own Claude Code login." ;;
+            *)
+              echo "::error::The auth step did not choose a method."; exit 1 ;;
+          esac
+          echo "Auth method: $METHOD"
           claude -p "$(cat /tmp/ojv-prompt.txt)" \
             --allowed-tools "Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch" \
             --permission-mode acceptEdits \

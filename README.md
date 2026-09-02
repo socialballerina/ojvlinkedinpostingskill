@@ -27,29 +27,25 @@ Nothing publishes. A person schedules every post after Naman approves it.
 
 ## Setup
 
-Two credentials, and only you can create them. Everything else is done.
+One credential, and only you can create it.
 
-### 1. The Claude token, required
+### 1. An Anthropic API key, required
 
-The Claude Code CLI is installed. On this machine:
-
-```bash
-claude setup-token
-```
-
-It prints a long-lived token (`sk-ant-oat01-...`) tied to your Claude subscription. Add it as a
-repository secret:
+Create one at [platform.claude.com](https://platform.claude.com), then store it as a repository
+secret:
 
 ```bash
-gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo socialballerina/ojvlinkedinpostingskill
+gh secret set ANTHROPIC_API_KEY --repo socialballerina/ojvlinkedinpostingskill
 ```
 
-Paste when prompted; it does not echo. Requires a Pro, Max, Team or Enterprise plan. Runs are
-billed to that subscription, not to API credits. Also install
-[github.com/apps/claude](https://github.com/apps/claude) on the repository.
+Paste when prompted; it does not echo. Use the console's copy button rather than selecting the
+text by hand, because a key that wraps in a terminal can be cut at the line break, which produces
+a well-formed but invalid value.
 
-Until this exists, a run fails on its first step and the page says exactly that, rather than
-failing somewhere deep inside the action. Verified.
+The workflow validates the key's shape and length before Claude starts and fails with a specific
+message if it looks truncated, rather than surfacing an opaque 401 four steps later.
+
+Set a spend limit in the Anthropic console while you are there.
 
 ### 2. A GitHub token for the button, optional
 
@@ -72,9 +68,31 @@ Add it in Vercel, Project Settings, Environment Variables, as `GITHUB_TOKEN`, th
 
 ### Cost
 
-GitHub Actions minutes are free on a public repository. Model usage comes out of the Claude
-subscription that issued the OAuth token, so there is no per-click API bill. A run is one Claude
-Code session, roughly 5 to 12 minutes.
+Each run is one Claude Code session with web search: roughly 5 to 12 minutes of work, billed per
+token to the Anthropic account behind the key. Three posts a week is a small bill, but it is a
+real one, so set a console spend limit. GitHub Actions minutes are free on a public repository.
+
+### Other ways to authenticate
+
+The workflow tries three things in order, and the first one present wins:
+
+| Order | Method | When it applies |
+| --- | --- | --- |
+| 1 | `ANTHROPIC_API_KEY` secret | the documented path above |
+| 2 | a local Claude Code login | only when the job runs on your own machine, see below |
+| 3 | `CLAUDE_CODE_OAUTH_TOKEN` secret | a subscription token from `claude setup-token` |
+
+### Running the job on your own machine, optional
+
+Set the repo variable `OJV_RUNNER` to `self-hosted` and register a runner with
+`scripts/setup-local-runner.sh`, and the job executes on your Mac instead of GitHub's servers,
+using its own Claude Code login and no secret at all. The runner polls GitHub outbound, so there
+is no inbound port and no tunnel. Jobs queue while the machine is closed.
+
+Note that GitHub advises against self-hosted runners on public repositories. This workflow never
+triggers on `pull_request` and dispatching needs write access, which limits the exposure, but
+consider making the repository private first. `scripts/setup-local-runner.sh remove` undoes it and
+reverts to GitHub's runners.
 
 ---
 

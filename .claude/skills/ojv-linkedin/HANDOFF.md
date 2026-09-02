@@ -28,6 +28,10 @@ The skill does not schedule and does not publish. That is deliberate, not a miss
 
 ## Before your first run
 
+The web tool needs one credential that is not in this repo: an `ANTHROPIC_API_KEY` secret on the
+GitHub repository. Without it a run fails on its first step and says so. See the repository README.
+
+
 Fill the `TODO` rows in the config table at the top of `SKILL.md`. The two that block real work:
 
 - **Enquiry destination** and **DM keyword.** Without them, Friday's offer post cannot have a
