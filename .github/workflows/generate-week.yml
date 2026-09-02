@@ -72,6 +72,32 @@ jobs:
           python3 .github/scripts/marker.py start "$RUN_ID"
           .github/scripts/publish.sh "Run $RUN_ID: started"
 
+      - name: Make sure Claude Code is available
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          set -euo pipefail
+          # A launchd-started self-hosted runner has a narrow PATH, so add the usual
+          # places a user-level npm install puts things.
+          for d in "$HOME/.local-tools"/*/bin /opt/homebrew/bin /usr/local/bin "$HOME/.npm-global/bin"; do
+            [ -d "$d" ] && echo "$d" >> "$GITHUB_PATH" && export PATH="$d:$PATH"
+          done
+
+          if ! command -v claude >/dev/null 2>&1; then
+            npm install -g --include=optional @anthropic-ai/claude-code
+          fi
+
+          # The native binary is an optional dependency and can be missing even when
+          # the package is installed. That failure looks nothing like an auth failure,
+          # so repair it here rather than letting it surface later.
+          if ! claude --version >/dev/null 2>&1; then
+            echo "The CLI is present but not working. Repairing."
+            PKG="$(npm root -g)/@anthropic-ai/claude-code"
+            [ -f "$PKG/install.cjs" ] && node "$PKG/install.cjs" || true
+            claude --version >/dev/null 2>&1 || npm install -g --include=optional @anthropic-ai/claude-code
+          fi
+          echo "Claude Code: $(claude --version)"
+          echo "Path: $(command -v claude)"
+
       - name: Work out how Claude will authenticate
         id: auth
         if: ${{ inputs.dry_run != true }}
@@ -79,10 +105,10 @@ jobs:
           API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          # Three ways in, tried in this order. Nothing here ever prints a value.
-          #   1. ANTHROPIC_API_KEY secret          the documented path
-          #   2. a local Claude Code login         only on a self-hosted runner
-          #   3. CLAUDE_CODE_OAUTH_TOKEN secret    kept working, not required
+          # Tried in this order, first one that works wins. Nothing prints a value.
+          #   1. a local Claude Code login   free, on a self-hosted runner
+          #   2. ANTHROPIC_API_KEY secret    on GitHub's runners
+          #   3. CLAUDE_CODE_OAUTH_TOKEN     last resort
           fail() {
             python3 .github/scripts/marker.py fail "$RUN_ID" "$1"
             .github/scripts/publish.sh "Run $RUN_ID: failed, $2"
@@ -90,66 +116,56 @@ jobs:
             exit 1
           }
 
+          # Diagnostics, deliberately narrow: the account's email and org id are in the
+          # full output and this log is public.
+          if command -v claude >/dev/null 2>&1; then
+            echo "claude found at $(command -v claude)"
+            STATUS=$(claude auth status 2>&1 || true)
+            echo "auth status: $(printf '%s' "$STATUS" | grep -oE '\"(loggedIn|authMethod|apiProvider)\": *\"?[A-Za-z.]+\"?' | tr '\n' ' ')"
+            if printf '%s' "$STATUS" | grep -q '"loggedIn" *: *true'; then
+              echo "Using this machine's own Claude Code login. No secret needed."
+              echo "method=local_login" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Not logged in locally."
+          else
+            echo "claude is not on PATH at this point."
+          fi
+
           if [ -n "${API_KEY:-}" ]; then
             CLEAN=$(printf '%s' "$API_KEY" | tr -d '[:space:]')
             LEN=${#CLEAN}
-            echo "Using the ANTHROPIC_API_KEY secret. Length: $LEN (raw ${#API_KEY})."
-            if [ "${#API_KEY}" -ne "$LEN" ]; then
-              echo "::warning::The secret contains whitespace. Using a trimmed copy."
-            fi
+            echo "Using the ANTHROPIC_API_KEY secret. Length: $LEN."
             case "$CLEAN" in
               sk-ant-api*) : ;;
               sk-ant-oat01-*)
-                fail "The ANTHROPIC_API_KEY secret holds a subscription OAuth token, not an API key. Either store it as CLAUDE_CODE_OAUTH_TOKEN instead, or create an API key at https://platform.claude.com and store that." \
+                fail "The ANTHROPIC_API_KEY secret holds a subscription OAuth token, not an API key. Store it as CLAUDE_CODE_OAUTH_TOKEN instead, or create an API key at https://platform.claude.com." \
                      "that secret is an OAuth token, not an API key" ;;
               *)
-                fail "The ANTHROPIC_API_KEY secret does not look like a Claude API key: it should start with sk-ant-api. Create one at https://platform.claude.com, then: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
+                fail "The ANTHROPIC_API_KEY secret should start with sk-ant-api. Create one at https://platform.claude.com, then: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
                      "the secret does not start with sk-ant-api" ;;
             esac
             if [ "$LEN" -lt 80 ]; then
-              fail "The ANTHROPIC_API_KEY secret is only $LEN characters. A real key is roughly 108. This is what a paste that stopped at a line break looks like. Copy the key with the copy button in the console, then: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
-                   "the key is $LEN characters, expected roughly 108, so it looks truncated"
+              fail "The ANTHROPIC_API_KEY secret is only $LEN characters. A real key is roughly 108, so this looks cut at a line break. Copy it with the console's copy button and set it again." \
+                   "the key is $LEN characters, so it looks truncated"
             fi
             echo "method=api_key" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          if command -v claude >/dev/null 2>&1 && claude auth status 2>/dev/null | grep -q '"loggedIn": *true'; then
-            echo "No API key secret, but this machine's Claude Code is logged in. Using that."
-            echo "method=local_login" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
           if [ -n "${OAUTH_TOKEN:-}" ]; then
             CLEAN=$(printf '%s' "$OAUTH_TOKEN" | tr -d '[:space:]')
-            LEN=${#CLEAN}
-            echo "No API key secret. Falling back to CLAUDE_CODE_OAUTH_TOKEN. Length: $LEN."
+            echo "Falling back to CLAUDE_CODE_OAUTH_TOKEN. Length: ${#CLEAN}."
             case "$CLEAN" in
               sk-ant-oat01-*) : ;;
-              *) fail "The CLAUDE_CODE_OAUTH_TOKEN secret does not start with sk-ant-oat01-." \
-                      "the OAuth token is malformed" ;;
+              *) fail "The CLAUDE_CODE_OAUTH_TOKEN secret does not start with sk-ant-oat01-." "the OAuth token is malformed" ;;
             esac
-            if [ "$LEN" -lt 80 ]; then
-              fail "The CLAUDE_CODE_OAUTH_TOKEN secret is only $LEN characters. A real one is roughly 130, and it wraps onto three lines in a terminal, so a paste that stops at the first newline leaves exactly 48. Set ANTHROPIC_API_KEY instead, which is the supported path for this workflow." \
-                   "the OAuth token is $LEN characters, so it looks truncated"
-            fi
             echo "method=oauth_token" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          fail "No way to authenticate Claude. Create an API key at https://platform.claude.com and store it: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
-               "no ANTHROPIC_API_KEY secret, no local login, no OAuth token"
-
-      - name: Make sure Claude Code is available
-        if: ${{ inputs.dry_run != true }}
-        run: |
-          set -euo pipefail
-          if command -v claude >/dev/null 2>&1; then
-            echo "Already installed: $(claude --version)"
-          else
-            npm install -g @anthropic-ai/claude-code
-            claude --version
-          fi
+          fail "No way to authenticate Claude. Either log in on the machine running this job by running 'claude' once, or create an API key at https://platform.claude.com and run: gh secret set ANTHROPIC_API_KEY --repo ${{ github.repository }}" \
+               "no local login, no ANTHROPIC_API_KEY secret, no OAuth token"
 
       - name: Build the prompt
         if: ${{ inputs.dry_run != true }}
