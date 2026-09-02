@@ -1,7 +1,0 @@
-{
-  "runId": "2026-09-02T18-09-25-e15y3",
-  "state": "failed",
-  "finishedAt": "2026-09-02T18:09:44Z",
-  "error": "The run finished without writing result.json (Claude step: skipped). Open the workflow log.",
-  "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/33665482503"
-}

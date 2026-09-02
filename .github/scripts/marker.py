@@ -91,7 +91,12 @@ elif cmd == "finish":
         f.write("\n")
     write({"runId": run_id, "state": "done", "finishedAt": now,
            "posts": len(posts), "workflowRunUrl": run_url})
-    print("done: %d posts" % len(posts))
+    # A pointer to the newest good result, so the page can show something without
+    # being told a run id. Public repo, so it is readable with no credential.
+    with open(os.path.join("runs", "latest.json"), "w") as f:
+        json.dump(data, f, indent=2)
+        f.write("\n")
+    print("done: %d posts, latest.json updated" % len(posts))
 
 elif cmd == "dry":
     # Smoke test of the whole handshake without spending a Claude run.

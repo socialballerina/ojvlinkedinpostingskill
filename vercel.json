@@ -10,6 +10,9 @@
     },
     "api/photos.js": {
       "maxDuration": 30
+    },
+    "api/latest.js": {
+      "maxDuration": 30
     }
   },
   "headers": [

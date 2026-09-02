@@ -1,11 +1,19 @@
-import { requireAuth, send, fail, gh, HttpError, REPO, WORKFLOW, BRANCH, styleGate } from "./_lib.js";
+import { requireAuth, send, fail, gh, publicJson, HttpError, REPO, WORKFLOW, styleGate } from "./_lib.js";
 
 const NOT_FINISHED = new Set(["queued", "in_progress", "requested", "waiting", "pending"]);
 
-async function repoJson(path) {
-  const txt = await gh(`/repos/${REPO}/contents/${path}?ref=${BRANCH}`, { raw: true });
-  if (txt === null) return null;
-  try { return JSON.parse(txt); } catch { return null; }
+// The repo is public, so results are readable with no credential. That means the
+// page can show a scheduled run's output before anyone sets up GITHUB_TOKEN.
+const repoJson = publicJson;
+
+async function workflowRuns() {
+  if (!process.env.GITHUB_TOKEN) return [];
+  try {
+    const r = await gh(`/repos/${REPO}/actions/workflows/${WORKFLOW}/runs?per_page=10`);
+    return r?.workflow_runs || [];
+  } catch {
+    return [];
+  }
 }
 
 /** Poll a run: report progress, and return the result once the workflow has written it. */
@@ -36,8 +44,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const runs = await gh(`/repos/${REPO}/actions/workflows/${WORKFLOW}/runs?per_page=10`);
-    const list = runs?.workflow_runs || [];
+    const list = await workflowRuns();
     const active = list.filter((r) => NOT_FINISHED.has(r.status));
     const newest = list[0];
 
@@ -61,7 +68,7 @@ export default async function handler(req, res) {
 
     // No marker yet. Either a runner has not picked the job up, or the dispatch never
     // became a run. Only call it dead after GitHub has had time to register it.
-    if (!active.length && attempt >= 5) {
+    if (!active.length && attempt >= 5 && process.env.GITHUB_TOKEN) {
       return send(res, 200, {
         runId, state: "failed",
         error: "No run ever started for this request. GitHub accepted the dispatch but produced no workflow run, which usually means the workflow file on the default branch changed or Actions is disabled.",

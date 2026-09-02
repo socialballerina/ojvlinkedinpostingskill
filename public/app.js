@@ -339,12 +339,25 @@ $("go").onclick = start;
 PREF_FIELDS.forEach((k) => $(k).addEventListener("change", savePrefs));
 loadPrefs();
 
-// resume a run that was going when the tab was closed
+// On load: resume a run that was going, otherwise show the newest result there is.
 const resume = localStorage.getItem(RUN_KEY);
+$("week").value = "press the button to start a run";
+
 if (resume && $("pw").value) {
   state.runId = resume;
   $("go").disabled = true;
   setStatus("Reconnecting to a run that was already going", "doing");
   poll();
+} else if ($("pw").value) {
+  api("/api/latest")
+    .then((r) => {
+      if (r.state !== "done" || !(r.posts || []).length) return;
+      state.result = r;
+      $("week").value = `showing ${r.week || "the last run"}`;
+      render(r);
+      setStatus(
+        `Showing the most recent run, ${esc(r.week || "")}${r.generatedAt ? " generated " + esc(String(r.generatedAt).slice(0, 16).replace("T", " ")) + " UTC" : ""}. ` +
+        `Press the button for a fresh set.`, "done");
+    })
+    .catch(() => {});
 }
-$("week").value = "press the button to start a run";

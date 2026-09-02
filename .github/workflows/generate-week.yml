@@ -4,6 +4,12 @@ name: Generate OJV week
 # Runs the real ojv-linkedin skill in Claude Code, billed to the Claude
 # subscription behind CLAUDE_CODE_OAUTH_TOKEN. There is no Anthropic API key.
 on:
+  # Thursday 10:00 HKT, so next week's three drafts are ready before Monday even
+  # if nobody presses the button. GitHub runs scheduled workflows from the
+  # default branch only, and disables the schedule after 60 days of no activity
+  # on a public repository.
+  schedule:
+    - cron: "0 2 * * 4"
   workflow_dispatch:
     inputs:
       run_id:
@@ -49,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      RUN_ID: ${{ inputs.run_id }}
+      RUN_ID: ${{ inputs.run_id || format('scheduled-{0}', github.run_id) }}
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - uses: actions/checkout@v6
@@ -63,7 +69,7 @@ jobs:
           .github/scripts/publish.sh "Run $RUN_ID: started"
 
       - name: Check the token is present
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.dry_run != true }}
         run: |
           if [ -z "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}" ]; then
             python3 .github/scripts/marker.py fail "$RUN_ID" \
@@ -76,7 +82,7 @@ jobs:
 
       - name: Run the skill in Claude Code
         id: claude
-        if: ${{ !inputs.dry_run }}
+        if: ${{ inputs.dry_run != true }}
         continue-on-error: true
         uses: anthropics/claude-code-action@v1
         with:
@@ -95,7 +101,7 @@ jobs:
             Config for this run, overriding the config table where a value is given:
             - DM keyword for tour enquiries: ${{ inputs.keyword }}
             - Enquiry destination: ${{ inputs.enquiry_url }}
-            - Current flagship offer: ${{ inputs.offer }}
+            - Current flagship offer: ${{ inputs.offer || 'China Tech Trek, Hong Kong and Shenzhen, 13 to 17 October 2026, run with ContraVC as official partner' }}
             - Raw image folder: not available in CI, so skip image intake entirely and pair
               only from assets/images/manifest.csv
 
@@ -109,11 +115,11 @@ jobs:
             SKILL.md is relative to it. Write drafts and update trackers there as normal.
 
             ALSO REQUIRED for this CI run. After the drafts and trackers are written, write
-            runs/${{ inputs.run_id }}/result.json, relative to the repository root, with this
+            runs/${{ inputs.run_id || format('scheduled-{0}', github.run_id) }}/result.json, relative to the repository root, with this
             exact shape:
 
             {
-              "runId": "${{ inputs.run_id }}",
+              "runId": "${{ inputs.run_id || format('scheduled-{0}', github.run_id) }}",
               "state": "done",
               "week": "YYYY-Www",
               "posts": [
@@ -147,7 +153,7 @@ jobs:
             - Writing this file is not optional. Without it the run is reported as failed.
 
       - name: Write a dry-run result instead
-        if: ${{ inputs.dry_run }}
+        if: ${{ inputs.dry_run == true }}
         run: python3 .github/scripts/marker.py dry "$RUN_ID"
 
       - name: Publish the result

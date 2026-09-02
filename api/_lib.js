@@ -46,6 +46,21 @@ export async function readJsonBody(req) {
   }
 }
 
+/** Read a file from the public repo with no credential. Only dispatching needs a token. */
+export async function publicFile(path) {
+  const url = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${path}`;
+  const res = await fetch(url, { headers: { "User-Agent": "ojv-linkedin-tool/2.0" } });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new HttpError(502, `Could not read ${path} from GitHub (${res.status}).`);
+  return await res.text();
+}
+
+export async function publicJson(path) {
+  const txt = await publicFile(path);
+  if (txt === null) return null;
+  try { return JSON.parse(txt); } catch { return null; }
+}
+
 export async function gh(path, { method = "GET", body, raw = false, token } = {}) {
   const res = await fetch(`https://api.github.com${path}`, {
     method,

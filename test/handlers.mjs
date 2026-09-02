@@ -6,6 +6,7 @@ process.env.GITHUB_TOKEN = "github_pat_not_a_real_token";
 const run = (await import("../api/run.js")).default;
 const status = (await import("../api/status.js")).default;
 const photos = (await import("../api/photos.js")).default;
+const latest = (await import("../api/latest.js")).default;
 const { styleGate } = await import("../api/_lib.js");
 
 function mockRes() {
@@ -51,6 +52,19 @@ console.log("=== github failure is reported, not swallowed ===");
 const bad = await call(run, { method: "POST", key: KEY, body: {} });
 check("run with a bogus token -> 502", bad.status, 502);
 console.log("        message:", String(bad.body.error).slice(0, 78));
+
+console.log("=== latest endpoint reads the public repo with no GitHub token ===");
+const savedTok = process.env.GITHUB_TOKEN;
+delete process.env.GITHUB_TOKEN;
+check("latest: wrong password -> 401", (await call(latest, { key: "no" })).status, 401);
+const lt = await call(latest, { key: KEY });
+check("latest: 200 with no token at all", lt.status, 200);
+console.log("        state:", lt.body.state, "| posts:", (lt.body.posts || []).length, "| week:", lt.body.week || "-");
+const st = await call(status, { key: KEY, query: { runId: process.env.KNOWN_RUN || "dryrun-20260902-180809", attempt: "9" } });
+check("status: reads a run with no token", st.status, 200);
+console.log("        state:", st.body.state, "| posts:", (st.body.posts || []).length);
+check("status: never declares a run dead without a token", st.body.state !== "failed" || Boolean(st.body.error), true);
+if (savedTok) process.env.GITHUB_TOKEN = savedTok;
 
 console.log("=== keyless photo search, live ===");
 const p1 = await call(photos, { key: KEY, query: { q: "electronics components market", limit: "4" } });
