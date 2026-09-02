@@ -1,0 +1,109 @@
+{
+  "runId": "dryrun3-20260902-181627",
+  "state": "done",
+  "week": "2026-W37",
+  "generatedAt": "2026-09-02T18:16:43Z",
+  "dryRun": true,
+  "posts": [
+    {
+      "postId": "OJV-202637-M",
+      "day": "Monday",
+      "date": "2026-09-07",
+      "slot": "awareness",
+      "archetype": "D",
+      "archetypeName": "dry run",
+      "ctaTier": "soft",
+      "hookPattern": "number-first",
+      "copy": "DRY RUN. This is a pipeline smoke test, not a real post.\n\nIt exists to prove the dispatch, commit, poll and render path works before a real Claude Code run is spent on it.\n\nDo not schedule this.\n\n#DryRun #Pipeline #Test",
+      "charCount": 219,
+      "entities": [],
+      "sourceUrl": "",
+      "sourcePublisher": "",
+      "firstComment": "",
+      "disclosure": "",
+      "verified": false,
+      "verificationNotes": "Dry run, nothing was researched.",
+      "styleGate": [],
+      "image": "",
+      "altText": "",
+      "needsTeamPhoto": false,
+      "photoBrief": "Dry run: a real archetype E post would ask for a partner photo here.",
+      "photoQuery": "office meeting",
+      "whyThisSlot": "Dry run.",
+      "blockers": [
+        "This is a dry run. Discard it."
+      ],
+      "draftPath": ""
+    },
+    {
+      "postId": "OJV-202637-W",
+      "day": "Wednesday",
+      "date": "2026-09-09",
+      "slot": "proof",
+      "archetype": "B",
+      "archetypeName": "dry run",
+      "ctaTier": "medium",
+      "hookPattern": "number-first",
+      "copy": "DRY RUN. This is a pipeline smoke test, not a real post.\n\nIt exists to prove the dispatch, commit, poll and render path works before a real Claude Code run is spent on it.\n\nDo not schedule this.\n\n#DryRun #Pipeline #Test",
+      "charCount": 219,
+      "entities": [],
+      "sourceUrl": "",
+      "sourcePublisher": "",
+      "firstComment": "",
+      "disclosure": "",
+      "verified": false,
+      "verificationNotes": "Dry run, nothing was researched.",
+      "styleGate": [],
+      "image": "",
+      "altText": "",
+      "needsTeamPhoto": false,
+      "photoBrief": "Dry run: a real archetype E post would ask for a partner photo here.",
+      "photoQuery": "office meeting",
+      "whyThisSlot": "Dry run.",
+      "blockers": [
+        "This is a dry run. Discard it."
+      ],
+      "draftPath": ""
+    },
+    {
+      "postId": "OJV-202637-F",
+      "day": "Friday",
+      "date": "2026-09-11",
+      "slot": "offer",
+      "archetype": "E",
+      "archetypeName": "dry run",
+      "ctaTier": "hard",
+      "hookPattern": "number-first",
+      "copy": "DRY RUN. This is a pipeline smoke test, not a real post.\n\nIt exists to prove the dispatch, commit, poll and render path works before a real Claude Code run is spent on it.\n\nDo not schedule this.\n\n#DryRun #Pipeline #Test",
+      "charCount": 219,
+      "entities": [],
+      "sourceUrl": "",
+      "sourcePublisher": "",
+      "firstComment": "",
+      "disclosure": "",
+      "verified": false,
+      "verificationNotes": "Dry run, nothing was researched.",
+      "styleGate": [],
+      "image": "",
+      "altText": "",
+      "needsTeamPhoto": true,
+      "photoBrief": "Dry run: a real archetype E post would ask for a partner photo here.",
+      "photoQuery": "",
+      "whyThisSlot": "Dry run.",
+      "blockers": [
+        "This is a dry run. Discard it."
+      ],
+      "draftPath": ""
+    }
+  ],
+  "rotation": {
+    "blockedArchetypes": [],
+    "blockedEntities": [],
+    "blockedHookPatterns": []
+  },
+  "needsFromAuthor": [
+    "This was a dry run. Press the button again without dry run for real posts."
+  ],
+  "notes": "Dry run: the Claude Code step was skipped.",
+  "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/33666201320"
+}
