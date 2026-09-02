@@ -29,7 +29,8 @@ export default async function handler(req, res) {
           ojv_news: String(body.ojvNews || "").slice(0, 4000),
           keyword: String(body.keyword || "").slice(0, 40),
           enquiry_url: String(body.enquiryUrl || "").slice(0, 300),
-          offer: String(body.offer || "").slice(0, 400)
+          offer: String(body.offer || "").slice(0, 400),
+          dry_run: body.dryRun === true ? "true" : "false"
         }
       }
     });

@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     if (req.method !== "GET") throw new HttpError(405, "Use GET.");
     requireAuth(req);
     const runId = String((req.query && req.query.runId) || "").trim();
-    if (!/^[0-9TZ:.\-a-z0-9]{10,60}$/i.test(runId)) throw new HttpError(400, "Pass a valid ?runId=.");
+    if (!/^[0-9a-zA-Z-]{10,60}$/.test(runId)) throw new HttpError(400, "Pass a valid ?runId=.");
 
     const result = await repoJson(`runs/${runId}/result.json`);
     if (result) {
