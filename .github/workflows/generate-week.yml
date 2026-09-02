@@ -69,17 +69,45 @@ jobs:
           python3 .github/scripts/marker.py start "$RUN_ID"
           .github/scripts/publish.sh "Run $RUN_ID: started"
 
-      - name: Check the token is present
+      - name: Check the token
         if: ${{ inputs.dry_run != true }}
+        env:
+          TOK: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
-          if [ -z "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}" ]; then
+          if [ -z "${TOK:-}" ]; then
             python3 .github/scripts/marker.py fail "$RUN_ID" \
               "Setup is not finished: the CLAUDE_CODE_OAUTH_TOKEN secret is missing on this repository. Run 'claude setup-token' on a machine with Claude Code, then 'gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ github.repository }}'. Nothing was generated."
             .github/scripts/publish.sh "Run $RUN_ID: failed, no Claude token"
             echo "::error::CLAUDE_CODE_OAUTH_TOKEN is not set on this repository."
             exit 1
           fi
-          echo "Token is present."
+          # Shape check only. Nothing here prints the value.
+          CLEAN=$(printf '%s' "$TOK" | tr -d '[:space:]')
+          RAW_LEN=${#TOK}
+          CLEAN_LEN=${#CLEAN}
+          echo "Token length: $CLEAN_LEN (raw $RAW_LEN)."
+          if [ "$RAW_LEN" -ne "$CLEAN_LEN" ]; then
+            echo "::warning::The secret contains whitespace, probably a trailing newline from the paste. Using a trimmed copy."
+          fi
+          case "$CLEAN" in
+            sk-ant-oat01-*) echo "Prefix looks like a subscription OAuth token." ;;
+            sk-ant-api*)
+              python3 .github/scripts/marker.py fail "$RUN_ID" \
+                "The CLAUDE_CODE_OAUTH_TOKEN secret holds a Claude API key, not a subscription OAuth token. Run 'claude setup-token' and set the sk-ant-oat01-... value it prints."
+              .github/scripts/publish.sh "Run $RUN_ID: failed, wrong token type"
+              echo "::error::That secret is an API key, not an OAuth token."
+              exit 1 ;;
+            *)
+              python3 .github/scripts/marker.py fail "$RUN_ID" \
+                "The CLAUDE_CODE_OAUTH_TOKEN secret does not look like a subscription OAuth token: it should start with sk-ant-oat01-. Run 'claude setup-token' on a machine where 'claude' is logged in, and set exactly the value it prints."
+              .github/scripts/publish.sh "Run $RUN_ID: failed, malformed token"
+              echo "::error::The secret does not start with sk-ant-oat01-."
+              exit 1 ;;
+          esac
+          if [ "$CLEAN_LEN" -lt 40 ]; then
+            echo "::error::The token is only $CLEAN_LEN characters, which is too short to be valid."
+            exit 1
+          fi
 
       - name: Install Claude Code
         if: ${{ inputs.dry_run != true }}
@@ -102,9 +130,11 @@ jobs:
         if: ${{ inputs.dry_run != true }}
         continue-on-error: true
         env:
-          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          TOK: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
         run: |
           set -euo pipefail
+          # Trim, in case the secret was pasted with a trailing newline.
+          export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$TOK" | tr -d '[:space:]')"
           claude -p "$(cat /tmp/ojv-prompt.txt)" \
             --allowed-tools "Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch" \
             --permission-mode acceptEdits \
