@@ -25,34 +25,39 @@ Nothing publishes. A person schedules every post after Naman approves it.
 
 ---
 
-## Setup, once
+## Setup
 
-### 1. Give GitHub a Claude subscription token
+Two credentials, and only you can create them. Everything else is done.
 
-On a machine with Claude Code installed and logged in:
+### 1. The Claude token, required
+
+The Claude Code CLI is installed. On this machine:
 
 ```bash
 claude setup-token
 ```
 
-That prints a long-lived token (`sk-ant-oat01-...`) tied to your Claude subscription. Add it as a
-repository secret named `CLAUDE_CODE_OAUTH_TOKEN`:
+It prints a long-lived token (`sk-ant-oat01-...`) tied to your Claude subscription. Add it as a
+repository secret:
 
 ```bash
 gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo socialballerina/ojvlinkedinpostingskill
 ```
 
-It pastes in without echoing. Requires a Pro, Max, Team or Enterprise plan. The token is tied to
-whoever ran the command, and runs are billed to that subscription rather than to API credits.
+Paste when prompted; it does not echo. Requires a Pro, Max, Team or Enterprise plan. Runs are
+billed to that subscription, not to API credits. Also install
+[github.com/apps/claude](https://github.com/apps/claude) on the repository.
 
-### 2. Install the Claude GitHub App
+Until this exists, a run fails on its first step and the page says exactly that, rather than
+failing somewhere deep inside the action. Verified.
 
-Install [github.com/apps/claude](https://github.com/apps/claude) on this repository. The action
-needs its Contents, Issues and Pull requests permissions.
+### 2. A GitHub token for the button, optional
 
-### 3. Give Vercel a GitHub token
+Without it, the workflow still runs on its Thursday schedule and the page still shows the result,
+because the repository is public and results are readable with no credential. The token only
+enables the on-demand button.
 
-Create a **fine-grained** personal access token at
+Create a **fine-grained** token at
 [github.com/settings/personal-access-tokens/new](https://github.com/settings/personal-access-tokens/new),
 scoped to this repository only:
 
@@ -61,31 +66,26 @@ scoped to this repository only:
 | Actions | Read and write |
 | Contents | Read-only |
 
-Then in Vercel, Project Settings, Environment Variables:
+Add it in Vercel, Project Settings, Environment Variables, as `GITHUB_TOKEN`, then redeploy.
 
-| Name | Value |
-| --- | --- |
-| `GITHUB_TOKEN` | that fine-grained token |
-| `APP_PASSWORD` | any long random string, this is what the intern types |
-
-Redeploy. Both endpoints refuse to run with either missing, and say which one.
-
-### 4. Send the intern the URL and the password
-
-She types the password once and the browser remembers it.
+`APP_PASSWORD` is already set.
 
 ### Cost
 
 GitHub Actions minutes are free on a public repository. Model usage comes out of the Claude
-subscription that issued the OAuth token, so there is no per-click API bill. Subscription rate
-limits still apply, and a run is one Claude Code session of roughly 5 to 12 minutes.
+subscription that issued the OAuth token, so there is no per-click API bill. A run is one Claude
+Code session, roughly 5 to 12 minutes.
 
 ---
 
 ## Using it
 
 One button. It dispatches the workflow, then polls. The tab can be closed while the run goes; the
-run id is kept in the browser and reconnects on return.
+run id is kept in the browser and reconnects on return. On load, the page shows the most recent
+result there is, so there is usually something to look at before pressing anything.
+
+The workflow also runs itself every Thursday at 10:00 HKT, so next week's three drafts exist
+before Monday whether or not anyone presses the button.
 
 Each finished post shows the copy, the archetype and CTA tier, the source link, the style-gate
 result, whether the sources were verified, and either photo options or a request for a photo.
@@ -195,9 +195,21 @@ counts as publishing, because a queued post goes out unattended. See
 cd test && node handlers.mjs
 ```
 
-18 checks over the auth gate, method guards, input validation, GitHub error reporting, the live
-Creative Commons photo search with query relaxation and licence filtering, and the style gate's
-parity with the skill's Python gate. No credentials needed, nothing billed.
+22 checks over the auth gate on every endpoint, method guards, input validation, GitHub error
+reporting, credential-free reads of the public repo, the live Creative Commons photo search with
+query relaxation and licence filtering, and the style gate's parity with the skill's Python gate.
+No credentials needed, nothing billed.
+
+The pipeline itself was verified by dispatching real workflow runs with `dry_run=true`, which
+skips Claude and writes a synthetic result. To repeat it:
+
+```bash
+gh workflow run generate-week.yml --repo socialballerina/ojvlinkedinpostingskill \
+  -f run_id="dryrun-$(date -u +%Y%m%d-%H%M%S)" -f dry_run=true
+```
+
+That exercises dispatch, the running marker, the commit and push with retry, the result
+validation, the pruning, and the poll path, without spending a Claude run.
 
 ## Notes
 

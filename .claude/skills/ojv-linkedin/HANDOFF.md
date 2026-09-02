@@ -6,11 +6,13 @@ reference you only open when the run tells you to.
 
 ## What you actually do
 
-Once a week, in Claude Code, in this skill's directory:
+Either press the button on the web tool, or, in Claude Code, say:
 
 > run the week
 
-That is it. The skill will check what cannot be repeated, research candidate stories, pick one of
+The web tool runs exactly this skill: the button starts a GitHub Actions job that executes it in
+Claude Code, then shows you the result. It also runs itself every Thursday at 10:00 HKT, so
+next week's drafts usually exist before you ask for them. The skill will check what cannot be repeated, research candidate stories, pick one of
 five archetypes per slot, write the three posts, pair an image with each or ask you to attach one,
 and hand you a scheduling checklist.
 
