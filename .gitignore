@@ -1,0 +1,10 @@
+node_modules/
+.vercel
+.env
+.env.local
+*.log
+.DS_Store
+
+# Photos of people are not committed. The manifest describes them; the files stay local.
+skill/assets/images/raw/*
+!skill/assets/images/raw/README.md

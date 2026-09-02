@@ -1,0 +1,13 @@
+{
+  "name": "ojv-linkedin-posting-tool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One-button weekly LinkedIn post generator for Orange Juice Ventures",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.110.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
