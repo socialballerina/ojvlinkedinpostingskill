@@ -40,7 +40,9 @@ Most lists fail on the first and the third. The deck is usually fine. The deck i
 
 So we cut the list, we fix who is on it, and we work the warm paths into the rooms where your story already makes sense. We do not promise the yes, because nobody honest can.
 
-If you are mid-raise and the meetings are polite but nothing is moving, book a call: TODO(config: booking link)
+If you are mid-raise and the meetings are polite but nothing is moving, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #Fundraising #Founders #APAC #VentureStudio
 
@@ -83,7 +85,7 @@ what OJV does.
    explicit disclaimer is in the copy, in voice, not bolted on.
 8. Archetype F: this is the F2 variant, so no client sign-off is needed. Checked line by line that
    no sentence implies a specific past result, which would make it an F1.
-Hard CTA. Uses the week's single hard CTA. Do not schedule in the same week as OJV-L001 or any
-other hard-CTA post.
+Hard CTA. Uses the week's single hard CTA, meaning the full offer framing above the close. Do
+not schedule in the same week as OJV-L001.
 
 **Blocked on the booking link**, same as OJV-L001.

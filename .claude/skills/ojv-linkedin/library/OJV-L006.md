@@ -29,7 +29,9 @@ Seven nos from seven people who do not fund your stage or your category is not i
 
 On a raise we cut the list hard and spend the time on warm paths into funds that have actually written cheques into this shape of company recently. A shorter, better-targeted list beats a longer one. We can change who hears the pitch and how it lands, not the answer.
 
-How many investors on your list have funded your stage this year?
+If you want your investor list to look like this, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #Fundraising #Founders #APAC #VentureStudio
 

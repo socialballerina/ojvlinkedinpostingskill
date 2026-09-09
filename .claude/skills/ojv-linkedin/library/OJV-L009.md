@@ -34,7 +34,9 @@ The hard part going west is rarely the product. It is the buyer, the pricing and
 
 No relationship with Anker. Commentary only.
 
-Comment CHANNEL and we will send you the sequence we use to test a Western channel before committing to it.
+If you want your move into the West to look like this, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #CrossBorder #Ecommerce #APAC #GoToMarket
 
@@ -78,7 +80,7 @@ The copy rounds 16.605 to 16.6, 7.699 to 7.70, 1.837 to 1.84, 11.350 to 11.35, 5
 2. No implied client relationship: explicit disclosure line in the body.
 4. No investment advice: growth rates are described, no view on the shares.
 7. Consent: photo brief excludes faces and branding.
-Medium CTA with a keyword. **The channel-testing sequence promised by the CHANNEL keyword must be
-written before this post goes out.**
+Medium CTA. The keyword mechanic was dropped on 10 September 2026: the post now closes with
+the mandatory ask and hello@oj.ventures, so no keyword asset is owed to anyone.
 The receipt format is the Chris Walker move from references/brand-voice.md section 2d. It works
 only if the list is complete, so do not trim a line to save characters.

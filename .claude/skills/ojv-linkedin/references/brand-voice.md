@@ -224,11 +224,19 @@ Unsourced comparative claims about whole populations. The length.
 
 This is the most useful single output of the pass. Pick one per post, never two.
 
-| Close | Where it came from | Use it for | Example |
-| --- | --- | --- | --- |
-| **Question** | Sean Upton-McLaughlin, Ashley Dudarenok | Monday, awareness, soft CTA | "How many of the investors on your list have funded your category in the last 18 months?" |
-| **Conviction, no ask** | Chris Walker | Awareness posts where the argument is the point and an ask would cheapen it | "The one-hour radius is the moat. That is not going to be reshored by an announcement." |
-| **Qualified book-a-call** | Charles Wong | Archetype F, and the Friday offer slot only. One per week, maximum. | "If you are a Series A company with a board asking about APAC and no answer yet, book a call: <link>" |
+**Superseded on 10 September 2026.** The house now closes every post with the qualified ask, so
+only the third row survives as a live option. The first two are kept because they explain where
+the third came from and what was given up.
+
+| Close | Where it came from | Status |
+| --- | --- | --- |
+| **Question** | Sean Upton-McLaughlin, Ashley Dudarenok | Retired as a close. Still used inside the body. |
+| **Conviction, no ask** | Chris Walker | Retired as a close. The conviction line now sits immediately before the ask, which is where it does the most work. |
+| **Qualified ask** | Charles Wong | **The only close.** Every post, every tier. "If you want your APAC go-to-market to look like this, work with us." |
+
+The one thing to carry over from the retired rows: a conviction line reads far better before an
+ask than a question does. Where a post used to end on "what would you change?", put the sharpest
+sentence of the argument there instead, then the ask.
 
 #### New hook patterns added by this pass
 
@@ -264,7 +272,8 @@ Add these to the `hook_pattern` vocabulary in `SKILL.md`.
 ## Part 3. Style rules
 
 1. **Hook lands in the first 140 characters**, before LinkedIn truncates. Count it.
-2. **900 to 1,300 characters** for standard posts. Behind-the-scenes posts may run shorter.
+2. **900 to 1,450 characters** for standard posts. The ceiling was 1,300 until the mandatory
+   close below was introduced; the extra 150 is that block, which every post now carries.
 3. **One idea per line.** Generous line breaks. No walls of text.
 4. **Three to five hashtags maximum**, at the end, never inline.
 5. **First person plural** for the company page. "We", "our". Never "OJV believes" in the third
@@ -274,7 +283,26 @@ Add these to the `hook_pattern` vocabulary in `SKILL.md`.
    announce", "game-changer", "in today's fast-paced world", "revolutionizing", "underscores our
    dedication", "stay tuned", "we look forward to supporting".
 8. **Every number carries a source link.** If we cannot source it, we cut it.
-9. **Close with a question or a CTA, never both.**
+9. **Every post closes with a qualified CTA and the contact line.** No exceptions, no tiers
+   exempt. The last two lines of every post are:
+
+   ```
+   If you want <the specific thing this post is about> to look like this, work with us.
+
+   DM us, or write to us at hello@oj.ventures
+   ```
+
+   A question may still appear in the body, and the diagnostic stack in archetype F depends on
+   it, but **a post never ends on a question.** The per-archetype wording, and the forms that are
+   banned, are in `references/post-archetypes.md` under "The mandatory close".
+
+   This is a house decision that overrides the research below. Section 2d found that a company
+   page asking on every post is what makes a page read as an ad account, and the rules held
+   2 value : 1 offer for that reason. Naman decided otherwise on 10 September 2026. What survives
+   of the finding is the *form*: the ask is always the qualified kind Charles Wong uses, never a
+   bare "work with us", because the qualifier filters instead of begging. The ratio rule now
+   governs how much of a post is offer rather than how many posts carry one. See
+   `references/funnel-and-cta.md`.
 
 Supporting mechanics: outbound links go in the first comment or via a DM keyword, not the body,
 except where a post's whole value is the link. Every outbound link is UTM tagged. Numbers get the

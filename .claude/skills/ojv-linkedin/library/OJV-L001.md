@@ -12,7 +12,6 @@ review_by: 2027-03-09
 status: library
 voice: company-page
 queue_no: 4
-blocked_on: config booking link
 ---
 
 ## Copy
@@ -40,7 +39,9 @@ From the inside this almost always looks like a sales problem. Two markets are q
 
 APAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour, so the job is rapid recalibration, not a rigid playbook.
 
-If you are scaling into APAC and your pipeline has gone quiet in two markets, book a call: TODO(config: booking link)
+If you are scaling into APAC and your pipeline has gone quiet in two markets, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #APAC #GoToMarket #Founders #VentureStudio
 
@@ -97,10 +98,3 @@ What was checked, and against what:
    a past result, which would make it an F1.
 9. Style gate: run and passing. See the run note below.
 
-## Blocker
-
-One, and it is the only thing standing between this post and the intern publishing it:
-
-**The booking link.** `TODO(config: booking link)` in the copy needs a real URL, UTM tagged as
-`?utm_source=linkedin&utm_medium=organic&utm_campaign=F2-OJV-L001`. Until that exists, this post
-cannot ship, and neither can any of the other fourteen hard-CTA F2 posts in a full batch.

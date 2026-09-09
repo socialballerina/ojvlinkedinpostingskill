@@ -27,7 +27,9 @@ Read that again. A rule designed to keep a supply chain out is being answered by
 
 This is the thing a spreadsheet will not tell you. The durable asset is not the cell. It is the ability to rebuild a supply chain inside somebody else's border faster than the policy cycle can move.
 
-Comment RADIUS and we will send you the two questions we ask before anyone commits budget to a China-adjacent supply chain.
+If you want to see this on the ground for yourself, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 Source: SNE Research, via CnEVPost, September 2026
 
@@ -72,6 +74,5 @@ euro figure and the Morocco reference, which the post survives without.
 2. No implied client relationship: CATL is not presented as connected to OJV.
 4. No investment advice: no view on CATL as a stock.
 5. ContraVC: trek not mentioned by name or date.
-Medium CTA with a keyword. **The two questions promised by the RADIUS keyword must actually exist
-and be written before this post goes out.** A CTA that promises a deliverable creates an
-obligation, and an unanswered keyword is worse than no keyword.
+Medium CTA. The keyword mechanic was dropped on 10 September 2026: the post now closes with
+the mandatory ask and hello@oj.ventures, so no keyword asset is owed to anyone.

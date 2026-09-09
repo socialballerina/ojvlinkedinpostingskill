@@ -31,7 +31,9 @@ APAC is not one market. It is 15+ ecosystems with different rules and different 
 
 We were not involved in any of this. Commentary only.
 
-Comment DIAL and we will send you the three entry structures we see work most often across APAC.
+If you want your APAC go-to-market to look like this, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #GoToMarket #China #APAC #Strategy
 
@@ -74,8 +76,8 @@ strongest sourcing in this tranche. The joint venture was subsequently announced
 4. No investment advice: no view on Starbucks as a stock and no read on whether either deal was
    a good price. The post is about structure, deliberately.
 7. Consent: photo brief excludes faces and excludes Starbucks branding.
-Medium CTA with a keyword. **The three entry structures promised by the DIAL keyword must be
-written before this post goes out.**
+Medium CTA. The keyword mechanic was dropped on 10 September 2026: the post now closes with
+the mandatory ask and hello@oj.ventures, so no keyword asset is owed to anyone.
 
 Worth noting why this post is honest rather than triumphalist. Writing the 2017 buyout on its own
 would have read as a masterstroke and would have been overtaken by the 2025 reversal. The arc is

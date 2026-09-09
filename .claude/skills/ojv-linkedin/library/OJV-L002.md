@@ -29,7 +29,9 @@ On the ground this shows up as a different kind of conversation. Ask a plant man
 
 The ecosystem is the product, not the company. A robot you can get serviced on Thursday beats a better robot you cannot.
 
-Which part of your line would you automate first if the payback were under a year?
+If you want to see this on the ground for yourself, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #Robotics #Manufacturing #APAC #DeepTech
 

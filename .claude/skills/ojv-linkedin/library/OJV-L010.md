@@ -27,7 +27,9 @@ What an order book of that shape tells you is narrower and more useful. A set of
 
 Capability gets debated at conferences. Purchase orders get delivered on a date.
 
-Comment ORDERBOOK and we will send you the three signals we use to tell a real industrial deployment from a demo.
+If you want to see this on the ground for yourself, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 Source: UBTECH company release, 17 November 2025
 
@@ -75,5 +77,5 @@ targeting". Keep both hedges if the post is edited.
 4. No investment advice: UBTECH is listed and the post offers no view on the shares.
 5. ContraVC: the trek is not named and no dates or itinerary are given, which is what keeps this
    post batchable. A trek post with dates is not a library post.
-Medium CTA with a keyword. **The three deployment signals promised by the ORDERBOOK keyword must be
-written before this post goes out.**
+Medium CTA. The keyword mechanic was dropped on 10 September 2026: the post now closes with
+the mandatory ask and hello@oj.ventures, so no keyword asset is owed to anyone.

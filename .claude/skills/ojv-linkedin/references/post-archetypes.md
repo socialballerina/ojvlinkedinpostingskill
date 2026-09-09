@@ -9,6 +9,82 @@ linked primary source during the research pass and can be lifted as voice models
 time. Never publish a structure demo with the brackets still in it, and never fill a bracket from
 memory.
 
+---
+
+## The mandatory close
+
+**Added 10 September 2026. This overrides the close step in every skeleton below, and every
+worked example on this page has been rewritten to match.**
+
+Every post, every archetype, every CTA tier ends with exactly these two lines, in this order,
+as the last thing before the source line and the hashtags:
+
+```
+<the qualified ask, from the table below>
+
+DM us, or write to us at hello@oj.ventures
+```
+
+Nothing goes after the contact line except the source line, if the post has one, and the
+hashtags. **No post ends on a question.** A question may sit in the body, and archetype F's
+diagnostic stack depends on it, but the last words are always the ask.
+
+### The ask, by archetype
+
+The ask names the specific thing the post was about. That specificity is the whole point: a bare
+"work with us" begs, and a qualified one selects.
+
+| | Archetype | The approved ask |
+| --- | --- | --- |
+| A | China signal | `If you want to see this on the ground for yourself, work with us.` |
+| A | China signal, trek slot | `If you want to walk this ecosystem with us, work with us.` |
+| B | West into Asia | `If you want your APAC go-to-market to look like this, work with us.` |
+| C | Asia into the West | `If you want your move into the West to look like this, work with us.` |
+| D | Rejection to raise | `If you want your investor list to look like this, work with us.` |
+| E | Inside the room | `If you want to be in rooms like this, work with us.` |
+| F1 | Engagement | `If you are <the same situation the post described>, work with us.` |
+| F2 | Diagnostic | `If you are <the situation the diagnostic finds>, work with us.` |
+
+Write a new one where the post's subject is narrower than the archetype, as long as it keeps the
+`If you want <specific thing>, work with us` shape and the object is something OJV controls.
+
+### Banned forms
+
+**The general rule.** The object of "if you want ..." must be something OJV can actually work on:
+a go-to-market, a market entry, a list, a room, a trip, a strategy. Never an outcome somebody
+else decides.
+
+- `Work with us.` on its own. The qualifier is the point.
+- `DM us` with no email, or the email with no `DM us`. The contact line is fixed.
+- Any ask placed before the end of the post, or anything placed after the contact line other
+  than the source line and hashtags.
+- Ending on a question, then asking. It reads as though the question was never sincere.
+
+**Archetype D, specifically.** This is where the outcome rule bites hardest, and it is the same
+test as the archetype D hard rule further down this page: underline the object of the ask, and if
+an investor decides it, rewrite it.
+
+| Banned | Why | Use instead |
+| --- | --- | --- |
+| `If you want your raise to look like this, work with us.` | The raise is the investors' decision | `If you want your investor list to look like this, work with us.` |
+| `If you want to get funded, work with us.` | Promises the outcome | `If you want your targeting to look like this, work with us.` |
+| `If you want a term sheet, work with us.` | Same, more explicitly | `If you want your warm paths to look like this, work with us.` |
+
+### What this replaced
+
+The CTA ladder in `references/funnel-and-cta.md` used to decide whether a post asked at all:
+soft posts closed on a question and carried no offer. It now decides only how much offer language
+sits above the ask. The reasoning, and the research finding it overrides, are in
+`references/brand-voice.md` rule 9.
+
+One practical consequence worth knowing. Because every post now carries a real destination, the
+DM-keyword mechanic is no longer needed to route an enquiry, and the keyword assets it promised
+("comment RADIUS and we will send you ...") are no longer obligations. Keywords are still
+available as a medium-tier device for comment velocity, but they are now a choice rather than the
+only way to get a reply.
+
+---
+
 **Archetype and slot are separate decisions.** The native funnel tier below is the archetype's
 centre of gravity. The slot sets the actual CTA tier, which often means downgrading. An archetype
 A post in Monday's awareness slot ends on a question and does not mention the trek.
@@ -80,7 +156,8 @@ OJV Educate live once the trek is close.
                           section that only OJV can write, so it carries the post.
 5. The generalisation.    One or two lines. The transferable rule, usually a version of "the
                           ecosystem is the product, not the company".
-6. Close.                 Question (soft) OR invitation with dates and keyword (hard). Never both.
+6. Close.                 The mandatory close. On a hard slot, the offer block (dates, cities,
+                          partner) goes above it. See "The mandatory close" below.
 7. Source line.           `Source: <publisher>, <date>: <UTM-tagged link>`
 8. Hashtags.              3 to 5, at the end.
 ```
@@ -110,7 +187,9 @@ OJV Educate live once the trek is close.
 >
 > 📍 Hong Kong and Shenzhen
 > 🗓 13 to 17 October 2026, with ContraVC as official partner
-> 👉 Comment TREK or DM the keyword and we will send the itinerary.
+> If you want to walk this ecosystem with us, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: CNBC, 19 August 2026: <UTM-tagged link>
 >
@@ -138,8 +217,9 @@ question. Every number is in the CNBC piece.
 > Every Western team we take through has the same moment on day two. The question stops being
 > "how are they this cheap" and becomes "how are they this fast".
 >
-> What would change in your product roadmap if your next revision took nine days instead of nine
-> weeks?
+> If you want to see this on the ground for yourself, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: <publisher>, <date>: <UTM-tagged link>
 >
@@ -171,7 +251,7 @@ question. Every number is in the CNBC piece.
 5. Our version of it.     2 to 3 lines. How OJV runs this play, named as a service (GTM advisory,
                           lead generation, fundraising support). Mechanism, not boast.
 6. Disclosure.            One line if the company is not a client. Non-negotiable.
-7. Close.                 Medium CTA or a question.
+7. Close.                 The mandatory close. See "The mandatory close" below.
 8. Source line + hashtags.
 ```
 
@@ -199,8 +279,9 @@ question. Every number is in the CNBC piece.
 >
 > We have never worked with Notion. This is commentary from the outside.
 >
-> Comment PULL and we will send you the three questions we use to test whether a market is pulling
-> or you are pushing.
+> If you want your APAC go-to-market to look like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: Notion, 12 October 2021: <UTM-tagged link>
 >
@@ -229,7 +310,9 @@ carries a date because it is a 2021 figure being used in 2026, and the copy says
 >
 > We were not involved in <Company>'s expansion. This is commentary.
 >
-> Which came first in your Asia entry, the licence or the pipeline?
+> If you want your APAC go-to-market to look like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: <publisher>, <date>: <UTM-tagged link>
 >
@@ -264,7 +347,7 @@ and the story. Say it in the post, in those terms.
 4. What they changed.     2 to 3 lines. Specific, from the source.
 5. Why it generalises.    2 lines. The buyer, the pricing, the story. Never the product.
 6. Our version of it.     2 lines.
-7. Disclosure + close.    Medium CTA or a question.
+7. Disclosure + close.    Disclosure line, then the mandatory close. See below.
 8. Source line + hashtags.
 ```
 
@@ -293,7 +376,9 @@ and the story. Say it in the post, in those terms.
 >
 > We were not involved in <Company>'s expansion. This is commentary.
 >
-> Which of the three broke first for you, the buyer, the pricing or the story?
+> If you want your move into the West to look like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: <publisher>, <date>: <UTM-tagged link>
 >
@@ -319,7 +404,9 @@ and the story. Say it in the post, in those terms.
 >
 > No relationship with <Company>. Commentary only.
 >
-> Comment STORY and we will send the one-page brief we use to rewrite a pitch for a Western buyer.
+> If you want your move into the West to look like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: <publisher>, <date>: <UTM-tagged link>
 >
@@ -349,7 +436,8 @@ and the story. Say it in the post, in those terms.
                           company. It is evidence about the list.
 5. Our claim, bounded.    2 to 3 lines. A shorter, better-targeted list. Cut the list, improve
                           the targeting, get to the right rooms. NEVER the yes.
-6. Close.                 Soft question, or medium CTA. Never a hard sell.
+6. Close.                 The mandatory close, using the archetype D wording only. The object of
+                          the ask is the list, never the raise. See below.
 7. Source line + hashtags.
 ```
 
@@ -377,8 +465,9 @@ and the story. Say it in the post, in those terms.
 > and we work the warm paths into the rooms where your story already makes sense. We do not
 > promise the yes, because nobody honest can.
 >
-> If you are mid-raise: how many of the investors on your list have funded your category in the
-> last 18 months?
+> If you want your investor list to look like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: Inc, on Perkins' 100-plus rejections: <UTM-tagged link>
 >
@@ -386,8 +475,8 @@ and the story. Say it in the post, in those terms.
 
 Notes: sections 5 and 6 are where this archetype lives or dies. "We cut the list, we fix who is on
 it, we work the warm paths" is bounded to things OJV controls. "We do not promise the yes, because
-nobody honest can" is the explicit disclaimer, in the voice, not bolted on. The close is a
-question, not a pitch.
+nobody honest can" is the explicit disclaimer, in the voice, not bolted on. The close is now the mandatory ask, and the object of it is the
+list rather than the raise, which is the whole of the archetype D outcome rule.
 
 ### Example D2 `STRUCTURE DEMO`
 
@@ -409,7 +498,9 @@ question, not a pitch.
 > have actually funded this shape of company in the last two years. A shorter, better-targeted list
 > beats a longer one. What we can change is who hears the pitch and how it lands, not the answer.
 >
-> How long is your current investor list, and how many of them have funded your stage this year?
+> If you want your investor list to look like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > Source: <publisher>, <date>: <UTM-tagged link>
 >
@@ -475,8 +566,8 @@ OJV controls: the list, the targeting, the access, the framing, the preparation.
                                     on access. Our job is to keep building those rooms.
 5. Thanks or credit.                One line, only where a real co-host or partner earned it.
                                     Never a wall of tags.
-6. Close.                           Hard CTA (next date, keyword, enquiry link) or a question.
-                                    Never both.
+6. Close.                           The mandatory close. The next date or the enquiry
+                                    destination may go above it. See below.
 7. Hashtags.                        3 to 5, at the end.
 ```
 
@@ -503,7 +594,9 @@ OJV controls: the list, the targeting, the access, the framing, the preparation.
 >
 > The next one is in October, alongside the China Tech Trek week.
 >
-> 👉 Comment TODO(config: DM keyword) and we will send you the invite.
+> If you want to be in rooms like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > #HongKong #Founders #APAC #VentureStudio
 
@@ -526,7 +619,9 @@ reason, not a fact. Five tags cut to four. The original version of this post ran
 >
 > <Credit line if a co-host earned it.>
 >
-> Which APAC market surprised you most this year?
+> If you want to be in rooms like this, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > #<Sector> #APAC #Founders #<City>
 
@@ -602,7 +697,8 @@ needs the sign-off that F1 needs.
                           qualitatively and do not reach for a number.
 5. The generalisable      1 to 2 lines. Why this was not specific to them.
    line.
-6. Qualified CTA.         `If you are <specific situation>, book a call: <UTM-tagged link>`
+6. Qualified CTA.         `If you are <specific situation>, work with us.` then the contact
+                          line. See "The mandatory close" below.
 7. Hashtags.              3 to 5, at the end.
 ```
 
@@ -621,7 +717,7 @@ needs the sign-off that F1 needs.
                           wrong conclusion they reach instead.
 5. The house line.        1 to 2 lines. Usually the 15+ ecosystems line, which is the reason the
                           diagnostic exists at all.
-6. Qualified CTA.         Same form as F1.
+6. Qualified CTA.         Same form as F1. See "The mandatory close" below.
 7. Hashtags.
 ```
 
@@ -648,7 +744,9 @@ needs the sign-off that F1 needs.
 > None of that was specific to them. <One line on why.>
 >
 > If you are <the same specific situation, stated tightly enough that the wrong reader
-> self-selects out>, book a call: <UTM-tagged link>
+> self-selects out>, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > #APAC #GoToMarket #Founders #VentureStudio
 
@@ -687,8 +785,9 @@ is exactly why it is safe to batch.
 > APAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer
 > behaviour, so the job is rapid recalibration, not a rigid playbook.
 >
-> If you are scaling into APAC and your pipeline has gone quiet in two markets, book a call:
-> <UTM-tagged booking link>
+> If you are scaling into APAC and your pipeline has gone quiet in two markets, work with us.
+>
+> DM us, or write to us at hello@oj.ventures
 >
 > #APAC #GoToMarket #Founders #VentureStudio
 

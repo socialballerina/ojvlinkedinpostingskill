@@ -36,6 +36,28 @@ person, record the request in `needsFromAuthor` and carry on with the rest.
    block and either find another source or cut the number. Do not fill a number from memory.
 8. **Photo brief, not a photo.** Each post ships a `## Photo brief` with PICK, AVOID and FALLBACK
    lines. The intern satisfies it from the shared drive.
+9. **The mandatory close, on every single post.** No exceptions and no tier is exempt. The last
+   two lines of every post, before the source line and the hashtags, are:
+
+   ```
+   <the qualified ask for that archetype>
+
+   DM us, or write to us at hello@oj.ventures
+   ```
+
+   The per-archetype wording is the table under "The mandatory close" in
+   `references/post-archetypes.md`. **No post ends on a question.** A question may sit in the
+   body, and archetype F's diagnostic stack needs one, but the last words are always the ask.
+
+   Two things that will fail the gate: a bare "Work with us." without the "If you want ..."
+   qualifier, and anything placed after the contact line other than the source line and hashtags.
+
+   For archetype D the object of the ask is the investor list, the targeting or the warm paths.
+   **Never the raise and never the funding**, which is the same outcome rule as archetype D
+   itself. `If you want your raise to look like this` is banned.
+
+   Because every post now carries a real destination, do not invent DM keywords or promise
+   keyword assets. A keyword is optional and only for comment velocity.
 
 Config for this run, overriding the config table where a value is given:
 - Booking link for archetype F: {{BOOKING_URL}}
@@ -54,6 +76,8 @@ Then, in this order:
 
 1. Run the style gate and fix every failure in the draft, never in the gate:
    `python3 .claude/skills/ojv-linkedin/scripts/style-gate.py .claude/skills/ojv-linkedin/library/OJV-L*.md`
+   It now checks the mandatory close as well as the 900 to 1,450 band, so a missing contact line
+   or a trailing question is a hard failure, not a style preference.
 2. Rewrite `library/QUEUE.csv` for the whole library, in publishing order: perishable first, then
    interleaved so the rotation rules hold, no two hard-CTA posts within five positions.
 3. Append to `data/news-seen.csv` every story considered, used or not, with a note on why an

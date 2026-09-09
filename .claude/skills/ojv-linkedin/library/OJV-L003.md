@@ -29,7 +29,9 @@ This is what founders in Asia keep missing about going west. The hard part is ra
 
 We had nothing to do with these deals. We just think it is the clearest example around.
 
-What would you give up to reach the buyer two years earlier?
+If you want your move into the West to look like this, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #Biotech #CrossBorder #APAC #Founders
 

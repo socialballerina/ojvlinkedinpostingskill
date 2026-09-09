@@ -9,18 +9,43 @@
 | 3 | **Enquiry** | Offer content. The trek, the advisory, the fundraising support. Dates, keyword, destination. | **Hard** | DM keyword uses, enquiry link submissions, inbound DMs |
 | 4 | **Booked** | Not a post. The handoff out of LinkedIn into a call. | n/a | Calls held, logged in `leads.csv` as `stage=booked` |
 
+## The mandatory close, and what the tiers now mean
+
+**Every post ends with a qualified ask and the contact line**, whatever its tier. Changed
+10 September 2026 by Naman's decision; the reasoning and what it overrode are in
+`references/brand-voice.md` rule 9.
+
+```
+If you want <the specific thing this post is about> to look like this, work with us.
+
+DM us, or write to us at hello@oj.ventures
+```
+
+So the tiers no longer decide *whether* a post asks. They decide **how much offer language sits
+above the ask**:
+
+| Tier | What it may add above the close | What it may not do |
+| --- | --- | --- |
+| **Soft** | Nothing. The ask is the last two lines and there is no offer language anywhere earlier. | Name a price, a date, a keyword or a link |
+| **Medium** | One line naming the relevant service as a mechanism, e.g. "that is most of what our GTM advisory work actually is". | Dates, pricing, capacity |
+| **Hard** | The full offer block: dates, cities, partner, capacity, and the booking or enquiry destination. | Two offers in one post |
+
+**The ratio rule still exists, and now measures the body.** Roughly 2 value : 1 offer meant eight
+value posts to four offer posts in a month. It now means: on a soft post, at most the closing two
+lines are offer; on a medium post, at most three. If more than a quarter of a post's lines are
+about OJV rather than about the subject, it is an offer post whatever its label, and the monthly
+review counts it as one.
+
 ## The CTA ladder
 
-Each tier has permitted forms. Do not mix tiers inside one post.
+Each tier has permitted forms above the mandatory close. Do not mix tiers inside one post.
 
 ### Soft (awareness)
-- A question that invites a real answer, specific enough to be answerable in one line.
-  Good: "How many of the investors on your list have funded your category in the last 18 months?"
-  Bad: "What do you think?"
-- "Follow the page for more APAC market reads."
-- Nothing at all. A strong insight post can end on the insight.
+- The mandatory close, and nothing above it.
+- The line before the ask should be the sharpest sentence of the argument, not a question. A
+  question immediately followed by an ask reads as though the question was never sincere.
 
-No links. No keyword. No offer.
+No links. No keyword. No dates. A question may sit in the body but never last.
 
 ### Medium (interest)
 - "Comment `<KEYWORD>` and we will send you `<the useful thing>`." The useful thing must exist
@@ -38,7 +63,7 @@ One CTA only. No dates, no pricing, no "book a call".
   whole point of the post.
 - Capacity or deadline facts, but only real ones. Never invent scarcity.
 
-Never combine a hard CTA with a closing question. Pick one.
+Never end on a question. The close is always the ask.
 
 ## Weekly pattern
 
@@ -54,10 +79,12 @@ external news, which is what keeps a 3-per-week cadence honest in a thin week.
 
 Rules that bind the pattern:
 
-1. **Ratio.** Roughly 2 value posts to 1 offer post. Over a 4-week month: 8 value, 4 offer, and
-   never 5 offer.
-2. **One hard CTA per week.** Never two. If Friday is behind-the-scenes rather than an offer, the
-   week has zero hard CTAs, which is fine. Two is not.
+1. **Ratio, measured in lines not posts.** See the table above. Every post asks now, so the
+   guard against reading as an ad account is that the ask stays two lines on a soft post and the
+   rest of the post is about the subject.
+2. **One hard CTA per week.** Unchanged, and it now means one post per week may carry the full
+   offer block above the close. Every other post still closes with the ask, just without dates,
+   pricing or a destination.
 3. **Archetype fatigue.** No archetype twice in the same week. No archetype three weeks running in
    the same slot.
 4. **Hook fatigue.** No hook pattern (see the table in `brand-voice.md`) twice in a fortnight.

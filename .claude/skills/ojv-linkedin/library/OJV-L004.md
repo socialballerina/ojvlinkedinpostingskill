@@ -29,7 +29,9 @@ Price has to be rebuilt from the local cost base up, before launch, not defended
 
 We have never worked with IKEA. This is commentary from the outside.
 
-Where does your pricing break when you cross a border?
+If you want your APAC go-to-market to look like this, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 #GoToMarket #India #Retail #APAC
 

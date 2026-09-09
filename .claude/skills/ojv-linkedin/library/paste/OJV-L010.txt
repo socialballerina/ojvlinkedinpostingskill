@@ -10,7 +10,9 @@ What an order book of that shape tells you is narrower and more useful. A set of
 
 Capability gets debated at conferences. Purchase orders get delivered on a date.
 
-Comment ORDERBOOK and we will send you the three signals we use to tell a real industrial deployment from a demo.
+If you want to see this on the ground for yourself, work with us.
+
+DM us, or write to us at hello@oj.ventures
 
 Source: UBTECH company release, 17 November 2025
 

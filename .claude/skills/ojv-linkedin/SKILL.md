@@ -119,7 +119,7 @@ python3 scripts/style-gate.py drafts/YYYY-WW/*.md
 ```
 
 It exits non-zero on failure. Fix the draft, never the gate. Then read each draft against
-guardrails 1 to 8 below, which no script can check.
+guardrails 1 to 9 below, which no script can check.
 
 ### Step 8. Write the scheduling handoff
 
@@ -225,9 +225,10 @@ them.
 | Company page URL | https://www.linkedin.com/company/orange-juice-ventures/ |
 | Posting cadence | 3 per week, Monday / Wednesday / Friday, 09:00 HKT |
 | Current flagship offer | China Tech Trek, Hong Kong and Shenzhen, 13 to 17 October 2026, run with ContraVC as official partner |
-| Enquiry destination | `TODO` (form or calendar link) |
-| Booking link for archetype F | `TODO` (the "book a call" destination; blocks every hard-CTA F post) |
-| DM keyword for tour enquiries | `TODO` (suggested: **TREK**) |
+| Contact for every CTA | **hello@oj.ventures** (fixed; appears in the mandatory close on every post) |
+| Enquiry destination | hello@oj.ventures |
+| Booking link for archetype F | Not needed. F closes with the mandatory close like everything else. |
+| DM keyword for tour enquiries | Optional since 10 Sep 2026. Every post now carries hello@oj.ventures, so a keyword is a comment-velocity device, not the only route in. |
 | Raw image folder | `TODO` (absolute path; drop unlabelled photos here) |
 | Approver | Naman. Every post reviewed before it is scheduled. |
 | Publishing method | `TODO` (manual paste, Buffer, or Taplio) |
@@ -315,21 +316,27 @@ Run these on every draft. Report the result in the run summary.
    author schedules, after approval.
 7. **No named third party's face without consent.** A partner's face is fine. A stranger in a
    conference photo is not, unless the author confirms it.
-8. **Archetype F consent and hedging.** An F1 post claims a commercial relationship, so the
+8. **The mandatory close.** Every post ends with the qualified ask and then
+   `DM us, or write to us at hello@oj.ventures`, with nothing after it but the source line and
+   the hashtags. No post ends on a question. The per-archetype wording and the banned forms,
+   especially for archetype D where the object of the ask must never be the raise, are in
+   `references/post-archetypes.md` under "The mandatory close". The style gate checks this.
+9. **Archetype F consent and hedging.** An F1 post claims a commercial relationship, so the
    relationship must be real, the client is anonymised by default, and every number in it is
    cleared by the client before scheduling, not after. Hedge client numbers (`roughly`, `around`,
    `relatively similar`). An F2 post must not imply a past result; the moment it does it has
    become an F1 and needs the sign-off. Approved and banned phrasings are in
    `references/post-archetypes.md`.
-9. **Style gate.** Run it, do not eyeball it:
+10. **Style gate.** Run it, do not eyeball it:
 
    ```bash
    python3 scripts/style-gate.py drafts/YYYY-WW/*.md
    ```
 
-   It checks em dashes, banned phrases, hook length, the 900 to 1,300 character band, hashtag count
-   and placement, and question-plus-CTA closes. Fix the draft, do not weaken the gate. It cannot
-   check sourcing, disclosure or tone, so guardrails 1 to 8 still need a human read.
+   It checks em dashes, banned phrases, hook length, the 900 to 1,450 character band, hashtag count
+   and placement, and the mandatory close: the contact line present, the ask directly above it,
+   nothing after it but the source line and hashtags, and no post ending on a question. Fix the draft, do not weaken the gate. It cannot
+   check sourcing, disclosure or tone, so guardrails 1 to 9 still need a human read.
 
 ## Error handling
 

@@ -17,8 +17,9 @@ BANNED = [
     "underscores our dedication", "we look forward to supporting",
     "excited to share",
 ]
-CTA_MARKERS = ("Comment ", "DM ", "Enquiries", "Follow the page", "utm_",
-               "book a call", "Book a call")
+# The close is fixed. Both halves are mandatory and the wording does not vary.
+CONTACT = "DM us, or write to us at hello@oj.ventures"
+ASK = "work with us"
 
 
 def check(path):
@@ -44,8 +45,8 @@ def check(path):
             fails.append("banned phrase: %s" % b)
     if len(hook) > 140:
         fails.append("hook is %d chars, limit 140" % len(hook))
-    if not 900 <= len(body) <= 1300:
-        fails.append("length %d chars, band is 900 to 1300" % len(body))
+    if not 900 <= len(body) <= 1450:
+        fails.append("length %d chars, band is 900 to 1450" % len(body))
     if not 3 <= len(tags) <= 5:
         fails.append("%d hashtags, band is 3 to 5" % len(tags))
     if tags:
@@ -53,11 +54,36 @@ def check(path):
         if not tail.strip().startswith("#"):
             fails.append("hashtags are not on the final line")
 
-    close = lines[-2] if lines[-1].lstrip().startswith("#") else lines[-1]
-    has_q = close.rstrip().endswith("?")
-    has_cta = any(m in close for m in CTA_MARKERS)
-    if has_q and has_cta:
-        fails.append("close carries both a question and a CTA")
+    # --- the mandatory close ---
+    # Every post ends with the qualified ask, then the contact line, then at most a
+    # source line and the hashtags. See references/post-archetypes.md.
+    if CONTACT not in body:
+        fails.append("no contact line: %r must appear in the close" % CONTACT)
+    else:
+        idx = max(i for i, l in enumerate(lines) if CONTACT in l)
+        trailing = lines[idx + 1:]
+        stray = [l for l in trailing
+                 if not l.lstrip().startswith("#") and not l.lstrip().startswith("Source:")]
+        if stray:
+            fails.append("%d line(s) after the contact line: %r"
+                         % (len(stray), stray[0][:60]))
+        if idx == 0:
+            fails.append("contact line has no ask above it")
+        else:
+            ask = lines[idx - 1]
+            if ASK not in ask.lower():
+                fails.append("the line above the contact line is not an ask (%r)" % ask[:60])
+            elif ask.lstrip().lower().startswith("work with us"):
+                fails.append("bare 'Work with us' ask, needs the 'If you want ...' qualifier")
+        for l in lines[:idx + 1]:
+            if l.rstrip().endswith("?") and l is lines[idx]:
+                fails.append("the close is a question")
+    if lines[-1].lstrip().startswith("#") and len(lines) > 1:
+        last_prose = lines[-2]
+    else:
+        last_prose = lines[-1]
+    if last_prose.rstrip().endswith("?"):
+        fails.append("post ends on a question; the close must be the ask")
 
     inline = [t for t in tags if body.split(t)[0].rstrip().endswith((".", ",", "and", "in"))
               and not body.split(t)[0].rstrip().endswith("\n")]
