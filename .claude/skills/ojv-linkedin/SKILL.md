@@ -1,7 +1,6 @@
 ---
 name: ojv-linkedin
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch
-description: Weekly LinkedIn content engine for Orange Juice Ventures (oj.ventures), the Hong Kong venture studio positioning as APAC's super-connector. One run produces three scheduling-ready posts for Monday, Wednesday and Friday: researches candidate stories, picks one of five archetypes per post (China signal to tour, West into Asia, Asia into the West, rejection to raise, inside the room), drafts in OJV voice, assigns an image from the tagged library or asks the author to attach one, writes alt text, tags links with UTMs, and refuses to repeat an archetype, hook pattern, story, company or image that went out recently. The author schedules the posts themselves; this skill never publishes. Use whenever the user says "run the week", "plan the OJV week", "generate this week's posts", "three posts for next week", "OJV post", "draft a LinkedIn post for OJV", "post from this link", "post from this photo", "intake images", "tag the new photos", "log performance", "log LinkedIn numbers", "monthly LinkedIn review", "which archetype is working", or names the China Tech Trek in a content context.
+description: Weekly LinkedIn content engine for Orange Juice Ventures (oj.ventures), the Hong Kong venture studio positioning as APAC's super-connector. One run produces three scheduling-ready posts for Monday, Wednesday and Friday: researches candidate stories, picks one of six archetypes per post (China signal to tour, West into Asia, Asia into the West, rejection to raise, inside the room, situation to solved), drafts in OJV voice, assigns an image from the tagged library or asks the author to attach one, writes alt text, tags links with UTMs, and refuses to repeat an archetype, hook pattern, story, company or image that went out recently. It also runs a batch mode that writes tens or hundreds of evergreen posts into a queue so that publishing needs one decision from one person: pick a picture and post. The author schedules the posts themselves; this skill never publishes. Use whenever the user says "run the week", "plan the OJV week", "generate this week's posts", "three posts for next week", "OJV post", "draft a LinkedIn post for OJV", "post from this link", "post from this photo", "intake images", "tag the new photos", "log performance", "log LinkedIn numbers", "monthly LinkedIn review", "which archetype is working", "write 100 posts", "batch of posts", "build the library", "next tranche", "fill the queue", "posts my intern can just publish", or names the China Tech Trek in a content context.
 ---
 
 # OJV LinkedIn Content Engine
@@ -45,7 +44,7 @@ and say so early rather than at the end.
 | --- | --- | --- | --- |
 | Monday 09:00 HKT | awareness | soft | A, B, C or D |
 | Wednesday 09:00 HKT | proof | medium | B, C or D |
-| Friday 09:00 HKT | offer, or first-party proof | hard (max one per week) | E, or A when a China signal is live and the trek is inside 8 weeks |
+| Friday 09:00 HKT | offer, or first-party proof | hard (max one per week) | E or F, or A when a China signal is live and the trek is inside 8 weeks |
 
 Three posts, three different archetypes. Selection rules are in
 `references/post-archetypes.md`, under "Choosing the archetype for a slot". Full funnel and CTA
@@ -63,6 +62,9 @@ detail is in `references/funnel-and-cta.md`.
    or scheduled.
 5. Archetype E needs no external story. It needs something OJV actually did. If nothing is on
    file, ask the author what happened this month rather than inventing a room.
+6. Archetype F1 needs a real engagement and the client's sign-off. Archetype F2 needs no story at
+   all, only an honest description of a service. Never let an F2 drift into implying a past
+   result, because that turns it into an F1 without the sign-off.
 
 ### Step 4. Draft
 
@@ -117,7 +119,7 @@ python3 scripts/style-gate.py drafts/YYYY-WW/*.md
 ```
 
 It exits non-zero on failure. Fix the draft, never the gate. Then read each draft against
-guardrails 1 to 7 below, which no script can check.
+guardrails 1 to 8 below, which no script can check.
 
 ### Step 8. Write the scheduling handoff
 
@@ -146,6 +148,38 @@ The format is at the end of this file. Print it every time.
 
 ## Other things to ask for
 
+### Write a batch of library posts
+
+Triggered by "write 100 posts", "batch of posts", "build the library", "next tranche", "fill the
+queue", "posts my intern can just publish".
+
+Read `references/batch-library.md` in full before writing a single one. It is the mode's spec, and
+the two things it exists to stop are (a) queueing posts that will read wrongly in four months and
+(b) queueing posts that need a judgement call from the person publishing them.
+
+The short version:
+
+1. **Confirm the size and the composition.** Default composition for a hundred is A 25, B 22,
+   C 22, D 16, F2 15. Scale it proportionally for a smaller batch.
+2. **Only A, B, C, D and F2 can be batched.** E and F1 need first-party facts that expire or
+   need sign-off, so they stay in the weekly run. Say this out loud rather than quietly
+   substituting.
+3. **Write in tranches of ten**, each one fully verified, gated, paste-filed and logged before
+   the next starts. Sourcing sets the pace, not drafting.
+4. **Dated past tense, nothing perishable.** No "this week", no "just announced", no deadlines.
+   Every post carries an `expires:` date.
+5. **Photo brief, not a photo.** Library posts ship a brief the intern satisfies from the shared
+   drive, because the right photo may not exist yet and the intern is the one standing in the
+   folder.
+6. **Output is three things:** `library/QUEUE.csv`, `library/OJV-L###.md` per post, and
+   `library/paste/OJV-L###.txt` per post.
+7. **Stop after the first tranche and ask** whether to continue, unless the user has already said
+   to write the whole batch. Ten posts is enough to check the voice is right before spending the
+   sourcing effort on ninety more.
+
+Before tranche four, ask for the numbers on whatever has been published. Writing ninety more
+posts on zero performance data is a choice, and it should be a stated one.
+
 ### Post from a news URL
 WebFetch it. If it fails or is paywalled, say so and stop, do not draft from a headline. Extract
 the verifiable specifics, pick the archetype from the input-trigger table, check `news-seen.csv`,
@@ -173,7 +207,7 @@ to `data/leads.csv` with `source_post_id` and `keyword_used`, then report enquir
 archetype and CTA tier.
 
 ### Monthly review
-Rank the five archetypes by enquiries per post, then comments per post. Print the sample size next
+Rank the six archetypes by enquiries per post, then comments per post. Print the sample size next
 to every rank, and label anything under 3 posts as no signal. Check the shipped value-to-offer
 ratio against the 2:1 target. Flag hook patterns used more than 3 times or with falling median
 impressions. Recommend next month as a concrete slot allocation. Report images used more than
@@ -192,6 +226,7 @@ them.
 | Posting cadence | 3 per week, Monday / Wednesday / Friday, 09:00 HKT |
 | Current flagship offer | China Tech Trek, Hong Kong and Shenzhen, 13 to 17 October 2026, run with ContraVC as official partner |
 | Enquiry destination | `TODO` (form or calendar link) |
+| Booking link for archetype F | `TODO` (the "book a call" destination; blocks every hard-CTA F post) |
 | DM keyword for tour enquiries | `TODO` (suggested: **TREK**) |
 | Raw image folder | `TODO` (absolute path; drop unlabelled photos here) |
 | Approver | Naman. Every post reviewed before it is scheduled. |
@@ -213,6 +248,7 @@ references/brand-voice.md        researched voice rules, style rules, personal v
 references/post-archetypes.md    the five archetypes, selection logic, skeletons, examples
 references/funnel-and-cta.md     four-stage funnel, CTA ladder, weekly pattern, mechanics
 references/image-intake.md       tag vocabulary, rotation, alt-text rules, pairing rule
+references/batch-library.md      batch mode, what can be batched, composition, intern handoff
 references/publish-adapter.md    OPTIONAL, OFF BY DEFAULT. LinkedIn API state, manual handoff.
 data/content-calendar.csv        planned and drafted posts
 data/posted-log.csv              what went out and how it performed
@@ -221,9 +257,10 @@ data/news-seen.csv               story deduplication
 assets/images/manifest.csv       tagged image library
 assets/images/raw/               library copies of images
 drafts/YYYY-WW/                  drafts, SCHEDULE.md, paste/
+library/                         batch queue: QUEUE.csv, OJV-L###.md, paste/
 ```
 
-## The five archetypes
+## The six archetypes
 
 | | Archetype | Native tier | Input trigger |
 | --- | --- | --- | --- |
@@ -232,6 +269,11 @@ drafts/YYYY-WW/                  drafts, SCHEDULE.md, paste/
 | C | Asia into the West | interest to consideration | Asian company with documented traction in the West, and a named mechanism |
 | D | Rejection to raise | interest to consideration | A documented rejection count and a documented raise |
 | E | Inside the room | interest to enquiry | Something OJV actually did: event, workshop, portfolio move, partner on stage, trek update |
+| F | Situation to solved | consideration to enquiry | **F1:** a real OJV engagement, with client sign-off on identifying detail. **F2:** nothing external, just a service OJV sells and a diagnostic it runs. |
+
+Archetype F is the only one that asks for a call directly, so it carries the week's single hard
+CTA and never runs twice in a week. F2 is the only offer-tier post that can be batch-written,
+because it contains no perishable fact.
 
 ## How repetition is prevented
 
@@ -273,7 +315,13 @@ Run these on every draft. Report the result in the run summary.
    author schedules, after approval.
 7. **No named third party's face without consent.** A partner's face is fine. A stranger in a
    conference photo is not, unless the author confirms it.
-8. **Style gate.** Run it, do not eyeball it:
+8. **Archetype F consent and hedging.** An F1 post claims a commercial relationship, so the
+   relationship must be real, the client is anonymised by default, and every number in it is
+   cleared by the client before scheduling, not after. Hedge client numbers (`roughly`, `around`,
+   `relatively similar`). An F2 post must not imply a past result; the moment it does it has
+   become an F1 and needs the sign-off. Approved and banned phrasings are in
+   `references/post-archetypes.md`.
+9. **Style gate.** Run it, do not eyeball it:
 
    ```bash
    python3 scripts/style-gate.py drafts/YYYY-WW/*.md
@@ -281,7 +329,7 @@ Run these on every draft. Report the result in the run summary.
 
    It checks em dashes, banned phrases, hook length, the 900 to 1,300 character band, hashtag count
    and placement, and question-plus-CTA closes. Fix the draft, do not weaken the gate. It cannot
-   check sourcing, disclosure or tone, so guardrails 1 to 7 still need a human read.
+   check sourcing, disclosure or tone, so guardrails 1 to 8 still need a human read.
 
 ## Error handling
 
@@ -316,11 +364,14 @@ Create with exactly these headers. Do not reorder.
 - `assets/images/manifest.csv`
   `filename,description,tags,archetypes,people,used_on,post_id,notes`
 
-`post_id`: `OJV-YYYYWW-<M|W|F>`, for example `OJV-202637-F`. `status`: `draft`, `approved`,
-`scheduled`, `posted`, `killed`. `cta_tier`: `soft`, `medium`, `hard`. `funnel_tier`: `awareness`,
+`post_id`: `OJV-YYYYWW-<M|W|F>` for weekly posts, for example `OJV-202637-F`, and `OJV-L###` for
+library posts, for example `OJV-L047`. `status`: `draft`, `approved`, `library`, `scheduled`,
+`posted`, `killed`. `cta_tier`: `soft`, `medium`, `hard`. `funnel_tier`: `awareness`,
 `interest`, `enquiry`, `booked`. `entities` and `hook_pattern` are semicolon separated.
 `hook_pattern` values: `reframe`, `by-design`, `contrarian-bet`, `local-claim-broken`,
-`number-first`, plus any new one added to `references/brand-voice.md` in the same run.
+`number-first`, `hard-truth`, `time-boxed-claim`, `comparative-receipt`, `promise-to-unpack`,
+`stated-contradiction`, plus any new one added to `references/brand-voice.md` in the same run.
+The last five came from the 9 September 2026 research pass and are documented in section 2d.
 
 ## Run summary
 

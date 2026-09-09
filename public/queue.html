@@ -1,0 +1,679 @@
+<title>OJV Post Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F7F8FA; --surface:#FFFFFF; --sunk:#F0F2F6;
+  --ink:#14181F; --ink-2:#39414D; --muted:#5C6673; --faint:#8B94A1;
+  --line:#DFE3E9; --line-2:#EAEDF2;
+  --accent:#E8590C; --accent-ink:#8A3308; --accent-soft:#FFF1E7; --accent-line:#F7C9A9;
+  --shadow:0 1px 2px rgba(20,24,31,.05), 0 8px 24px -16px rgba(20,24,31,.18);
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1116; --surface:#161A21; --sunk:#1C222B;
+    --ink:#EEF1F5; --ink-2:#C3CAD4; --muted:#8F99A6; --faint:#6B7480;
+    --line:#262D37; --line-2:#1F252E;
+    --accent:#FF7A33; --accent-ink:#FFB185; --accent-soft:#2A1710; --accent-line:#5A2E14;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1116; --surface:#161A21; --sunk:#1C222B;
+  --ink:#EEF1F5; --ink-2:#C3CAD4; --muted:#8F99A6; --faint:#6B7480;
+  --line:#262D37; --line-2:#1F252E;
+  --accent:#FF7A33; --accent-ink:#FFB185; --accent-soft:#2A1710; --accent-line:#5A2E14;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 96px}
+
+/* masthead */
+header.mast{padding:40px 0 0}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent-ink);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+h1{font-family:var(--f-display);font-weight:800;letter-spacing:-.03em;line-height:1.02;
+  font-size:clamp(34px,5.4vw,54px);margin:14px 0 0;text-wrap:balance}
+.standfirst{color:var(--muted);max-width:62ch;margin:14px 0 0;font-size:16px}
+
+/* status bar */
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:3px;margin:32px 0 0;overflow:hidden}
+.stat{background:var(--surface);padding:14px 16px}
+.stat dt{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:0}
+.stat dd{margin:6px 0 0;font-family:var(--f-display);font-weight:700;font-size:26px;
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.stat dd small{font-family:var(--f-body);font-weight:400;font-size:12.5px;color:var(--muted);
+  letter-spacing:0;display:block;margin-top:5px;line-height:1.4}
+.stat.hot dd{color:var(--accent)}
+
+/* how-to */
+.howto{margin:28px 0 0;border-left:2px solid var(--accent);padding:2px 0 2px 18px}
+.howto h2{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent-ink);margin:0 0 8px}
+.howto ol{margin:0;padding-left:20px;color:var(--ink-2);font-size:14.5px}
+.howto li{margin:3px 0}
+.howto strong{color:var(--ink)}
+
+.rule{height:1px;background:var(--line);border:0;margin:44px 0 0}
+
+/* post */
+article{padding:34px 0 0;border-top:1px solid var(--line);margin-top:34px}
+article:first-of-type{border-top:0;margin-top:0}
+article.is-done{opacity:.55}
+.head{display:flex;gap:18px;align-items:flex-start}
+.qno{font-family:var(--f-display);font-weight:800;font-size:34px;line-height:.9;
+  letter-spacing:-.04em;color:var(--line);font-variant-numeric:tabular-nums;flex:none;
+  min-width:52px;padding-top:2px}
+article.is-next .qno{color:var(--accent)}
+.headmain{flex:1;min-width:0}
+.metaline{display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.pid{color:var(--ink);font-weight:500}
+.chip{border:1px solid var(--line);border-radius:2px;padding:2px 7px;font-size:10.5px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:var(--surface)}
+.chip.tier-hard{border-color:var(--accent-line);background:var(--accent-soft);color:var(--accent-ink)}
+.sep{color:var(--line)}
+.hookline{font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:-.015em;
+  line-height:1.34;margin:10px 0 0;text-wrap:balance}
+.donebox{flex:none;display:flex;align-items:center;gap:7px;font-family:var(--f-mono);
+  font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);
+  cursor:pointer;user-select:none;padding-top:4px}
+.donebox input{accent-color:var(--accent);width:15px;height:15px;cursor:pointer;margin:0}
+
+/* flags */
+.flags{display:flex;flex-direction:column;gap:7px;margin:16px 0 0}
+.flag{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.5;
+  border:1px solid var(--line);border-left-width:3px;border-radius:2px;padding:9px 12px;
+  background:var(--surface);color:var(--ink-2)}
+.flag b{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  flex:none;padding-top:2px}
+.flag.block{border-left-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink)}
+.flag.block b{color:var(--accent-ink)}
+.flag.warn{border-left-color:var(--faint)}
+.flag.warn b,.flag.asset b{color:var(--muted)}
+.flag.asset{border-left-color:var(--line)}
+.flag.note{border-left-color:var(--accent-line);background:var(--accent-soft);color:var(--accent-ink)}
+.flag.note b{color:var(--accent-ink)}
+
+/* copy block: the only thing that gets fill + border + shadow */
+.copywrap{margin:18px 0 0;background:var(--surface);border:1px solid var(--line);
+  border-radius:4px;box-shadow:var(--shadow);overflow:hidden}
+.copybar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:9px 14px;border-bottom:1px solid var(--line-2);background:var(--sunk)}
+.copybar .lbl{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted)}
+.copybar .count{font-family:var(--f-mono);font-size:10.5px;color:var(--faint);
+  font-variant-numeric:tabular-nums}
+.copytext{margin:0;padding:20px 22px;white-space:pre-wrap;font-size:15px;line-height:1.68;
+  color:var(--ink);max-width:64ch}
+button.copy{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--ink);color:var(--ground);border:1px solid var(--ink);border-radius:2px;
+  padding:6px 12px;cursor:pointer;transition:background .12s,color .12s,border-color .12s}
+button.copy:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+button.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.copy.ok{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent-ink)}
+@media (prefers-reduced-motion:reduce){button.copy{transition:none}}
+
+/* brief + alt */
+.grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:3px;margin:14px 0 0;overflow:hidden}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+.pane{background:var(--surface);padding:14px 16px;min-width:0}
+.pane h3{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 10px;display:flex;justify-content:space-between;
+  align-items:center;gap:10px}
+.kv{display:grid;grid-template-columns:58px 1fr;gap:5px 10px;font-size:13.5px;line-height:1.52}
+.kv dt{font-family:var(--f-mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--accent-ink);padding-top:3px}
+.kv dd{margin:0;color:var(--ink-2)}
+.alttext{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+button.mini{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;
+  background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:2px;
+  padding:3px 7px;cursor:pointer}
+button.mini:hover{color:var(--accent-ink);border-color:var(--accent-line);background:var(--accent-soft)}
+button.mini:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button.mini.ok{color:var(--accent-ink);border-color:var(--accent-line);background:var(--accent-soft)}
+.fcbox{margin:14px 0 0;border:1px dashed var(--line);border-radius:3px;padding:12px 14px;
+  background:var(--surface)}
+.fcbox h3{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 8px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.fcbox p{margin:0;font-size:13.5px;color:var(--ink-2);word-break:break-word}
+.fcbox a{color:var(--accent-ink)}
+.fcbox .none{color:var(--faint);font-style:italic}
+
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+  color:var(--faint);font-size:13px}
+footer p{max-width:70ch;margin:0 0 8px}
+footer code{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+</style>
+<div class="wrap">
+<header class="mast">
+<div class="eyebrow"><span class="dot"></span><span>Orange Juice Ventures</span><span class="sep">/</span><span>Library tranche 1 of 10</span><span class="sep">/</span><span>Mon Wed Fri, 09:00 HKT</span></div>
+<h1>Post Desk</h1>
+<p class="standfirst">Ten publish-ready posts for the company page, in the order they should go out. The copy is final. Your job is to pick a picture that fits the brief and post it.</p>
+</header>
+<dl class="status">
+<div class="stat"><dt>In queue</dt><dd>10<small>All ten pass the style gate</small></dd></div>
+<div class="stat"><dt>Ready to post</dt><dd>8<small>Copy is final, nothing to edit</small></dd></div>
+<div class="stat hot"><dt>Blocked</dt><dd>2<small>Waiting on the booking link</small></dd></div>
+<div class="stat"><dt>Need an asset first</dt><dd>4<small>Keyword replies to write</small></dd></div>
+<div class="stat"><dt>Ticked off</dt><dd><span id="doneCount">0</span><small>Saved in this browser only</small></dd></div>
+</dl>
+<section class="howto"><h2>How to work the queue</h2><ol><li>Start at <strong>1</strong> and work down. The order is deliberate.</li><li>Hit <strong>Copy post</strong>, paste straight into LinkedIn. Do not edit the text, and do not change a number or a hashtag.</li><li>Pick a photo that satisfies the brief. If nothing fits and the fallback allows it, post without one.</li><li>Paste the alt text into LinkedIn's own alt-text field.</li><li>Post the first comment, where there is one.</li><li>Anything flagged in orange needs Naman before it can go out.</li></ol></section>
+<hr class="rule">
+<article data-pid="OJV-L002" class="is-next">
+<div class="head">
+<div class="qno">1</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L002</span><span class="chip">A &middot; China signal</span><span class="chip tier-soft">soft cta</span><span class="sep">|</span><span>reframe</span><span class="sep">|</span><span>expires 2026-10-31</span></div>
+<p class="hookline">China installed 295,000 industrial robots in 2024. The rest of the world managed 247,000 between them.</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag note"><b>Post first</b><span>Post this one first. Its source is IFR World Robotics 2025 and the 2026 edition supersedes the 2024 figures.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1133 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L002">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L002">China installed 295,000 industrial robots in 2024. The rest of the world managed 247,000 between them.
+
+You can subsidise a factory. You cannot subsidise a habit.
+
+Read from a desk in London, that number looks like industrial policy, and the comfortable conclusion is that it reverts when the subsidy stops.
+
+Here is the part that does not revert. China&#x27;s operational robot stock passed 2 million units in 2024, the largest of any country, and Chinese manufacturers now hold 57% of their own domestic robot market.
+
+That second number is the one to sit with. The buyers stopped importing the tools.
+
+On the ground this shows up as a different kind of conversation. Ask a plant manager in the Pearl River Delta what they automated last and you rarely get a strategy answer. You get a payback period, in months, and the name of a supplier two hours away who will modify the cell for you.
+
+The ecosystem is the product, not the company. A robot you can get serviced on Thursday beats a better robot you cannot.
+
+Which part of your line would you automate first if the payback were under a year?
+
+#Robotics #Manufacturing #APAC #DeepTech</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>a factory or workshop floor with automation visible, mid-shot, machines in focus and a person working at scale behind them. Any Asian manufacturing setting. Landscape.</dd>
+<dt>Avoid</dt><dd>stock-looking white-background robot arms, faces in close focus, any client or partner logo.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L002">Copy</button></h3><p class="alttext" id="a-OJV-L002">A robotic arm working on an assembly line in a factory, with more of the line visible behind it.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L002">Copy</button></h3><p id="f-OJV-L002" data-raw="Source: International Federation of Robotics, World Robotics 2025 report
+https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L002">Source: International Federation of Robotics, World Robotics 2025 report<br><a href="https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L002" target="_blank" rel="noopener">https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L002</a></p></div>
+</article>
+<article data-pid="OJV-L003" class="">
+<div class="head">
+<div class="qno">2</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L003</span><span class="chip">C &middot; Asia into the West</span><span class="chip tier-soft">soft cta</span><span class="sep">|</span><span>contrarian-bet</span><span class="sep">|</span><span>expires 2027-06-30</span></div>
+<p class="hookline">Would you bet against Chinese biotech because you cannot name a single Chinese drug brand?</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1250 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L003">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L003">Would you bet against Chinese biotech because you cannot name a single Chinese drug brand?
+
+You will not find the brand, because the brand was never the plan.
+
+Out-licensing deals from the greater China region rose nearly tenfold from 2021 to reach $137.7 billion in 2025. By September 2026 the average deal size had already hit $1.3 billion, up 76% on 2025, and the average upfront fee was $77.7 million, double the year before.
+
+The mechanism is the part worth studying. These companies are not building American salesforces. They are selling the asset to a partner that already has one, and taking the upfront instead of the brand.
+
+AstraZeneca&#x27;s weight-loss agreement with CSPC Pharmaceutical is worth up to $18.5 billion. AbbVie&#x27;s deal with RemeGen runs to $5.6 billion.
+
+This is what founders in Asia keep missing about going west. The hard part is rarely the product. It is the buyer, the pricing and the story, and there is more than one way to solve for all three. Sometimes the answer is not to enter the market. It is to sell to whoever already has.
+
+We had nothing to do with these deals. We just think it is the clearest example around.
+
+What would you give up to reach the buyer two years earlier?
+
+#Biotech #CrossBorder #APAC #Founders</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>two or three people in a working meeting that reads as a negotiation rather than a presentation, laptop or papers on the table, business dress. Any Asian city setting. Landscape.</dd>
+<dt>Avoid</dt><dd>laboratory or pill imagery, which would imply OJV works in biotech. No stranger&#x27;s face.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L003">Copy</button></h3><p class="alttext" id="a-OJV-L003">Three people sitting around a table in a meeting room with documents and a laptop in front of them.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L003">Copy</button></h3><p id="f-OJV-L003" data-raw="Source: Reuters analysis, carried on Yahoo Finance, data from Pharmcube
+https://finance.yahoo.com/news/analysis-china-biotech-licensing-boom-092338804.html?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=C-OJV-L003">Source: Reuters analysis, carried on Yahoo Finance, data from Pharmcube<br><a href="https://finance.yahoo.com/news/analysis-china-biotech-licensing-boom-092338804.html?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=C-OJV-L003" target="_blank" rel="noopener">https://finance.yahoo.com/news/analysis-china-biotech-licensing-boom-092338804.html?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=C-OJV-L003</a></p></div>
+</article>
+<article data-pid="OJV-L010" class="">
+<div class="head">
+<div class="qno">3</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L010</span><span class="chip">A &middot; China signal</span><span class="chip tier-medium">medium cta</span><span class="sep">|</span><span>stated-contradiction</span><span class="sep">|</span><span>expires 2026-12-31</span></div>
+<p class="hookline">Western manufacturers say humanoid robots are years from being useful. Their Chinese counterparts have been signing purchase orders:</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag asset"><b>ORDERBOOK</b><span>The three deployment signals promised by the keyword must exist before this goes out.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1211 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L010">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L010">Western manufacturers say humanoid robots are years from being useful. Their Chinese counterparts have been signing purchase orders:
+
+BYD. Foxconn. Geely. FAW-Volkswagen Qingdao. Audi FAW. BAIC New Energy. Dongfeng Liuzhou. SF Express.
+
+By November 2025, UBTECH reported accumulated orders above 800 million yuan, roughly $112 million, for its Walker S2 industrial humanoid. A single contract for a data collection centre in Zigong was worth 159 million yuan. The company said it was targeting annual capacity of 5,000 units in 2026, rising to 10,000 by 2027.
+
+The tempting argument is whether the robots are any good yet. That is the wrong argument.
+
+What an order book of that shape tells you is narrower and more useful. A set of large manufacturers has decided the technology is far enough along to put on a purchase order, and the supplier can build and service them inside the same manufacturing region as the buyer.
+
+Capability gets debated at conferences. Purchase orders get delivered on a date.
+
+Comment ORDERBOOK and we will send you the three signals we use to tell a real industrial deployment from a demo.
+
+Source: UBTECH company release, 17 November 2025
+
+#Robotics #DeepTech #Manufacturing #APAC</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>an industrial or logistics floor at scale, or automation working alongside people. Landscape.</dd>
+<dt>Avoid</dt><dd>any humanoid robot stock image, which will look like a render and undercut the post. No</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L010">Copy</button></h3><p class="alttext" id="a-OJV-L010">A large logistics warehouse floor with automated equipment and workers moving goods.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L010">Copy</button></h3><p id="f-OJV-L010" data-raw="Source: UBTECH company release, 17 November 2025
+https://www.prnewswire.com/news-releases/ubtech-humanoid-robot-walker-s2-begins-mass-production-and-delivery-with-orders-exceeding-800-million-yuan-302616924.html?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L010">Source: UBTECH company release, 17 November 2025<br><a href="https://www.prnewswire.com/news-releases/ubtech-humanoid-robot-walker-s2-begins-mass-production-and-delivery-with-orders-exceeding-800-million-yuan-302616924.html?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L010" target="_blank" rel="noopener">https://www.prnewswire.com/news-releases/ubtech-humanoid-robot-walker-s2-begins-mass-production-and-delivery-with-orders-exceeding-800-million-yuan-302616924.html?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L010</a></p></div>
+</article>
+<article data-pid="OJV-L001" class="">
+<div class="head">
+<div class="qno">4</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L001</span><span class="chip">F2 &middot; Diagnostic to call</span><span class="chip tier-hard">hard cta</span><span class="sep">|</span><span>time-boxed-claim</span><span class="sep">|</span><span>expires none</span></div>
+<p class="hookline">Give us 60 minutes with a company entering APAC and we can usually tell which market is going to burn the budget.</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag block"><b>Booking link missing</b><span>The CTA still says TODO(config: booking link). Cannot publish.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1223 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L001">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L001">Give us 60 minutes with a company entering APAC and we can usually tell which market is going to burn the budget.
+
+We start with four things:
+
+→ Which ecosystem
+→ Who actually buys
+→ Price
+→ Route to market
+
+Then we look at what is underneath them.
+
+Are you treating APAC as one market, or have you picked the two ecosystems already pulling on your product?
+
+Is the person who signs off in Jakarta the same function as the one who signs off in Tokyo? Usually not, and the deck rarely knows it.
+
+Has your pricing been rebuilt for the local buyer, or converted from your home currency?
+
+Are you going direct because direct is right, or because the distributor conversation felt slow?
+
+From the inside this almost always looks like a sales problem. Two markets are quiet, so the answer must be more outbound. Sometimes it is. More often the wrong ecosystem went first, and no amount of outbound rescues that.
+
+APAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour, so the job is rapid recalibration, not a rigid playbook.
+
+If you are scaling into APAC and your pipeline has gone quiet in two markets, book a call: TODO(config: booking link)
+
+#APAC #GoToMarket #Founders #VentureStudio</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>one of the four co-founders mid-conversation with a founder across a table, laptop or notebook open, in an office or a cafe. Working posture, not a portrait and not a stage shot. Two or three people maximum. Landscape.</dd>
+<dt>Avoid</dt><dd>a stage, a lectern, a panel, a conference lanyard, a whiteboard with a client&#x27;s name on it, any face that is not a co-founder or someone who has cleared it.</dd>
+<dt>If none</dt><dd>text-only is acceptable. WHY THIS BRIEF: the post claims a working session, so a keynote photo contradicts it. The image has to look like the 60 minutes the copy is offering.</dd>
+<dt>Why</dt><dd>the post claims a working session, so a keynote photo contradicts it. The image has to look like the 60 minutes the copy is offering.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L001">Copy</button></h3><p class="alttext" id="a-OJV-L001">Two people sitting across a table in an office, one talking and one taking notes, a laptop open
+between them.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span></h3><p class="none">None. This post has no outbound link.</p></div>
+</article>
+<article data-pid="OJV-L004" class="">
+<div class="head">
+<div class="qno">5</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L004</span><span class="chip">B &middot; West into Asia</span><span class="chip tier-soft">soft cta</span><span class="sep">|</span><span>local-claim-broken</span><span class="sep">|</span><span>expires 2028-03-31</span></div>
+<p class="hookline">India is supposed to be where Western retail goes to die. IKEA&#x27;s answer was to rebuild the price, not the marketing.</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag warn"><b>Recheck two figures</b><span>The 1,000-products and 30%-sourcing figures came from a page that blocked direct fetch. The two headline claims are solid.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1246 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L004">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L004">India is supposed to be where Western retail goes to die. IKEA&#x27;s answer was to rebuild the price, not the marketing.
+
+When it opened its first Indian store in 2018, the range carried 1,000 products under 200 rupees and 500 under 100 rupees.
+
+That was not a launch promotion. It was a supply chain decision.
+
+Indian rules require a foreign single-brand retailer to source 30% of its materials locally within five years. IKEA treated the requirement as the strategy rather than the obstacle. It moved local sourcing from single digits to 20 to 25%, and by 2020 was saying that sourcing wood locally, including sheesham and bamboo, would let it cut prices by a third. More than a third of the products under those lower prices were made in India.
+
+Most Western teams run this in the opposite order. Land at the home-market price, discover the buyer will not pay it, discount into a margin hole, then conclude the market is difficult.
+
+Price has to be rebuilt from the local cost base up, before launch, not defended after it. That is a large part of what our GTM advisory work actually is.
+
+We have never worked with IKEA. This is commentary from the outside.
+
+Where does your pricing break when you cross a border?
+
+#GoToMarket #India #Retail #APAC</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>a retail floor or warehouse shelving shot, products visible, no readable brand signage. Alternatively a co-founder in a working session with a whiteboard showing pricing tiers. Landscape.</dd>
+<dt>Avoid</dt><dd>any IKEA store or IKEA branding, which would imply a relationship. No stranger&#x27;s face.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L004">Copy</button></h3><p class="alttext" id="a-OJV-L004">Shelving in a large retail store stacked with boxed homeware products.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L004">Copy</button></h3><p id="f-OJV-L004" data-raw="Source: Inside Retail Asia, 2 September 2020
+https://insideretail.asia/2020/09/02/ikea-proposes-one-third-price-cut-by-boosting-local-sourcing/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=B-OJV-L004">Source: Inside Retail Asia, 2 September 2020<br><a href="https://insideretail.asia/2020/09/02/ikea-proposes-one-third-price-cut-by-boosting-local-sourcing/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=B-OJV-L004" target="_blank" rel="noopener">https://insideretail.asia/2020/09/02/ikea-proposes-one-third-price-cut-by-boosting-local-sourcing/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=B-OJV-L004</a></p></div>
+</article>
+<article data-pid="OJV-L005" class="">
+<div class="head">
+<div class="qno">6</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L005</span><span class="chip">A &middot; China signal</span><span class="chip tier-medium">medium cta</span><span class="sep">|</span><span>number-first</span><span class="sep">|</span><span>expires 2027-09-30</span></div>
+<p class="hookline">39.9%. That is one company&#x27;s share of every EV battery installed on earth in the first seven months of 2026.</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag warn"><b>Recheck two figures</b><span>The Hungary numbers (7.3bn euro, 100 GWh, Morocco) were read from search extracts, not a fetched page. Confirm or cut before posting.</span></div>
+<div class="flag asset"><b>RADIUS</b><span>The two supply-chain questions promised by the keyword must exist before this goes out.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1185 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L005">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L005">39.9%. That is one company&#x27;s share of every EV battery installed on earth in the first seven months of 2026.
+
+CATL put 289.6 GWh into vehicles over that period, up 26.6% year on year. The seven Chinese companies in the global top ten held 72.8% between them, three points more than a year earlier.
+
+The usual read is that this is a trade problem, and that tariffs and local content rules will unwind it.
+
+Watch what CATL is doing with the local content rules instead. It is building a plant at Debrecen in Hungary, a 7.3 billion euro investment with 100 GWh of planned annual capacity, and putting cathode and anode plants in Hungary and Morocco to feed it.
+
+Read that again. A rule designed to keep a supply chain out is being answered by moving the supply chain in.
+
+This is the thing a spreadsheet will not tell you. The durable asset is not the cell. It is the ability to rebuild a supply chain inside somebody else&#x27;s border faster than the policy cycle can move.
+
+Comment RADIUS and we will send you the two questions we ask before anyone commits budget to a China-adjacent supply chain.
+
+Source: SNE Research, via CnEVPost, September 2026
+
+#Batteries #DeepTech #SupplyChain #APAC</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>industrial or logistics setting, containers, a plant exterior, or a co-founder walking a facility. Scale should be readable. Landscape.</dd>
+<dt>Avoid</dt><dd>any CATL site or branding, any EV badge that identifies a manufacturer.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L005">Copy</button></h3><p class="alttext" id="a-OJV-L005">Shipping containers stacked at an industrial port with a crane above them.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L005">Copy</button></h3><p id="f-OJV-L005" data-raw="Source: SNE Research data, reported by CnEVPost, 7 September 2026
+https://cnevpost.com/2026/09/07/global-ev-battery-market-share-jan-jul-2026/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L005">Source: SNE Research data, reported by CnEVPost, 7 September 2026<br><a href="https://cnevpost.com/2026/09/07/global-ev-battery-market-share-jan-jul-2026/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L005" target="_blank" rel="noopener">https://cnevpost.com/2026/09/07/global-ev-battery-market-share-jan-jul-2026/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=A-OJV-L005</a></p></div>
+</article>
+<article data-pid="OJV-L006" class="">
+<div class="head">
+<div class="qno">7</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L006</span><span class="chip">D &middot; Rejection to raise</span><span class="chip tier-soft">soft cta</span><span class="sep">|</span><span>promise-to-unpack</span><span class="sep">|</span><span>expires 2028-03-31</span></div>
+<p class="hookline">In June 2008 you could have bought 10% of Airbnb for $150,000. Seven investors were asked and none of them did.</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1262 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L006">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L006">In June 2008 you could have bought 10% of Airbnb for $150,000. Seven investors were asked and none of them did.
+
+Two things are worth unpacking, and only one is about the investors.
+
+Brian Chesky was raising $150,000 at a $1.5 million valuation. Of the seven he approached, five passed and two never replied at all. He published the rejection emails himself, with the names removed.
+
+The reasons were not insults. They were mandate. Not in our area of focus. Not the right opportunity. A long shot for our involvement. One said to come back at Series A.
+
+That is the lesson, and founders hate it. Those investors were not wrong about their own funds. They were answering a different question from the one Chesky thought he was asking.
+
+Seven nos from seven people who do not fund your stage or your category is not information about your company. It is information about your list.
+
+On a raise we cut the list hard and spend the time on warm paths into funds that have actually written cheques into this shape of company recently. A shorter, better-targeted list beats a longer one. We can change who hears the pitch and how it lands, not the answer.
+
+How many investors on your list have funded your stage this year?
+
+#Fundraising #Founders #APAC #VentureStudio</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>a co-founder in a one-to-one working session, or a small workshop table with a founder presenting to two people. Quiet, unglamorous, real. Landscape.</dd>
+<dt>Avoid</dt><dd>anything that visually represents rejection, a thumbs-down, a red cross, a sad founder. Stock metaphor imagery kills this post.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L006">Copy</button></h3><p class="alttext" id="a-OJV-L006">Two people at a table in a small meeting room, one showing the other something on a laptop.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L006">Copy</button></h3><p id="f-OJV-L006" data-raw="Source: Brian Chesky, &quot;7 Rejections&quot;, published on Medium
+https://medium.com/@bchesky/7-rejections-7d894cbaa084?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=D-OJV-L006">Source: Brian Chesky, &quot;7 Rejections&quot;, published on Medium<br><a href="https://medium.com/@bchesky/7-rejections-7d894cbaa084?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=D-OJV-L006" target="_blank" rel="noopener">https://medium.com/@bchesky/7-rejections-7d894cbaa084?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=D-OJV-L006</a></p></div>
+</article>
+<article data-pid="OJV-L008" class="">
+<div class="head">
+<div class="qno">8</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L008</span><span class="chip">B &middot; West into Asia</span><span class="chip tier-medium">medium cta</span><span class="sep">|</span><span>by-design</span><span class="sep">|</span><span>expires 2028-03-31</span></div>
+<p class="hookline">Starbucks bought control of its China business, then sold it again. Not by accident, but by design.</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag asset"><b>DIAL</b><span>The three APAC entry structures promised by the keyword must exist before this goes out.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1285 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L008">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L008">Starbucks bought control of its China business, then sold it again. Not by accident, but by design.
+
+It entered East China with regional partners, Uni-President Enterprises and President Chain Store, and let them build it.
+
+In July 2017 it paid around $1.3 billion in cash for the remaining half of that business, the largest acquisition in its history at the time, taking full ownership of roughly 2,800 stores in China. In the same transaction it handed those partners its 50% of Taiwan for about $175 million.
+
+In November 2025 it went the other way. Boyu Capital took up to 60% of the China retail business for $4 billion, Starbucks kept 40% and the brand licence, and the stated plan is to go from 8,000 stores to 20,000.
+
+Ownership was never the goal. It was a dial.
+
+Partner in to learn a market. Buy in when control is the scarce thing. Sell control when a local operator moves faster than you can and speed becomes the scarce thing.
+
+APAC is not one market. It is 15+ ecosystems with different rules and different buyers, and the ownership structure is one of the things you recalibrate.
+
+We were not involved in any of this. Commentary only.
+
+Comment DIAL and we will send you the three entry structures we see work most often across APAC.
+
+#GoToMarket #China #APAC #Strategy</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>a city street or retail district in an Asian city, shopfronts visible, no readable Western brand signage. Or a co-founder in a working session with a market map. Landscape.</dd>
+<dt>Avoid</dt><dd>any Starbucks store or cup, which would imply a relationship. No coffee-shop cliche.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L008">Copy</button></h3><p class="alttext" id="a-OJV-L008">A busy retail street in an Asian city with shopfronts and pedestrians.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L008">Copy</button></h3><p id="f-OJV-L008" data-raw="Source: Starbucks press releases, July 2017 and November 2025
+https://about.starbucks.com/press/2025/starbucks-and-boyu-announce-joint-venture-for-the-next-chapter-of-growth-in-china/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=B-OJV-L008">Source: Starbucks press releases, July 2017 and November 2025<br><a href="https://about.starbucks.com/press/2025/starbucks-and-boyu-announce-joint-venture-for-the-next-chapter-of-growth-in-china/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=B-OJV-L008" target="_blank" rel="noopener">https://about.starbucks.com/press/2025/starbucks-and-boyu-announce-joint-venture-for-the-next-chapter-of-growth-in-china/?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=B-OJV-L008</a></p></div>
+</article>
+<article data-pid="OJV-L007" class="">
+<div class="head">
+<div class="qno">9</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L007</span><span class="chip">F2 &middot; Diagnostic to call</span><span class="chip tier-hard">hard cta</span><span class="sep">|</span><span>hard-truth</span><span class="sep">|</span><span>expires none</span></div>
+<p class="hookline">Nobody wants to hear this, but a longer investor list usually means a slower raise.</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag block"><b>Booking link missing</b><span>The CTA still says TODO(config: booking link). Cannot publish.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1116 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L007">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L007">Nobody wants to hear this, but a longer investor list usually means a slower raise.
+
+Give us an hour with your list and we can usually tell you why it is not converting.
+
+We start with four things:
+
+→ Stage fit
+→ Category history
+→ Geography
+→ Route in
+
+Then we look at what is underneath them.
+
+How many names on that list have led a round at your stage in the last 18 months? Not participated. Led.
+
+How many have funded your category since it stopped being fashionable?
+
+For how many do you have a warm path that is not a cold LinkedIn message?
+
+And when you do get the meeting, is your first slide answering the question that fund actually asks, or the one you wish it asked?
+
+Most lists fail on the first and the third. The deck is usually fine. The deck is almost always fine.
+
+So we cut the list, we fix who is on it, and we work the warm paths into the rooms where your story already makes sense. We do not promise the yes, because nobody honest can.
+
+If you are mid-raise and the meetings are polite but nothing is moving, book a call: TODO(config: booking link)
+
+#Fundraising #Founders #APAC #VentureStudio</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>a co-founder with a founder, list or spreadsheet visible on a laptop screen but not legible. Working session, two people, table. Landscape.</dd>
+<dt>Avoid</dt><dd>a legible investor name on any screen. A stage. A cheque or money imagery.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L007">Copy</button></h3><p class="alttext" id="a-OJV-L007">Two people looking at a laptop screen together across a desk, one pointing at the screen.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span></h3><p class="none">None. This post has no outbound link.</p></div>
+</article>
+<article data-pid="OJV-L009" class="">
+<div class="head">
+<div class="qno">10</div>
+<div class="headmain">
+<div class="metaline"><span class="pid">OJV-L009</span><span class="chip">C &middot; Asia into the West</span><span class="chip tier-medium">medium cta</span><span class="sep">|</span><span>comparative-receipt</span><span class="sep">|</span><span>expires 2028-03-31</span></div>
+<p class="hookline">Anker did 16.6 billion yuan of revenue in the first half of 2026. Here is exactly which channel each yuan came through:</p>
+</div>
+<label class="donebox"><input type="checkbox"><span>Done</span></label>
+</div>
+<div class="flags">
+<div class="flag asset"><b>CHANNEL</b><span>The channel-testing sequence promised by the keyword must exist before this goes out.</span></div>
+</div>
+<div class="copywrap">
+<div class="copybar"><span class="lbl">The post</span><span class="count">1264 chars &middot; band 900 to 1300</span><button class="copy" data-copy="c-OJV-L009">Copy post</button></div>
+<pre class="copytext" id="c-OJV-L009">Anker did 16.6 billion yuan of revenue in the first half of 2026. Here is exactly which channel each yuan came through:
+
+Amazon: 7.70 billion yuan, 46.37% of the total, up 19.75%
+Own website: 1.84 billion yuan, up 39.19%
+All online: 11.35 billion yuan, up 30.83%
+Offline retail: 5.26 billion yuan, up 25.37%
+
+Group revenue rose 29.05% and net profit rose 45.86% to 1.70 billion yuan.
+
+Now read the growth rates rather than the sizes. The channel that built the company is the slowest growing thing in it.
+
+That is the play, run in the right order. Use a marketplace to reach a Western buyer without a Western brand, salesforce, distributor or inch of shelf space. Then use the volume you built to earn the shelf space. Then move the customer onto a channel you own.
+
+Most Asian companies going west try to start at step three, because owning the customer feels like the real business. It is, eventually. It is a terrible place to begin, because nobody has heard of you yet.
+
+The hard part going west is rarely the product. It is the buyer, the pricing and the story.
+
+No relationship with Anker. Commentary only.
+
+Comment CHANNEL and we will send you the sequence we use to test a Western channel before committing to it.
+
+#CrossBorder #Ecommerce #APAC #GoToMarket</pre>
+</div>
+<div class="grid2">
+<div class="pane"><h3><span>Photo brief</span></h3><dl class="kv">
+<dt>Pick</dt><dd>a warehouse, packing bench or shelf of boxed consumer electronics with no readable brand. Or a co-founder at a laptop with a channel spreadsheet on screen but not legible. Landscape.</dd>
+<dt>Avoid</dt><dd>Anker or Amazon branding or packaging. No legible competitor product.</dd>
+<dt>If none</dt><dd>text-only is acceptable.</dd>
+</dl></div>
+<div class="pane"><h3><span>Alt text</span><button class="mini" data-copy="a-OJV-L009">Copy</button></h3><p class="alttext" id="a-OJV-L009">Boxed consumer electronics stacked on warehouse shelving.</p></div>
+</div>
+<div class="fcbox"><h3><span>First comment</span><button class="mini" data-copy="f-OJV-L009">Copy</button></h3><p id="f-OJV-L009" data-raw="Source: Anker Innovations 2026 interim report, reported by Ebrun, 5 September 2026
+https://english.ebrun.com/20260905/705413.shtml?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=C-OJV-L009">Source: Anker Innovations 2026 interim report, reported by Ebrun, 5 September 2026<br><a href="https://english.ebrun.com/20260905/705413.shtml?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=C-OJV-L009" target="_blank" rel="noopener">https://english.ebrun.com/20260905/705413.shtml?utm_source=linkedin&amp;utm_medium=organic&amp;utm_campaign=C-OJV-L009</a></p></div>
+</article>
+<footer>
+<p>Generated from the OJV LinkedIn skill library by <code>scripts/build-queue-page.py</code>. The copy here is byte-identical to <code>library/paste/&lt;post_id&gt;.txt</code>, which is the source of truth.</p>
+<p>If a comment challenges a number, do not answer it. Send Naman the post id. Every figure is sourced in <code>library/&lt;post_id&gt;.md</code> under Verified facts, with the sentence it came from.</p>
+<p>Ticks are stored in this browser only, so they track your own progress and are not visible to anyone else.</p>
+</footer>
+</div>
+<script>
+function flash(btn, txt){
+  var old = btn.dataset.label || btn.textContent;
+  btn.dataset.label = old;
+  btn.textContent = txt; btn.classList.add('ok');
+  setTimeout(function(){ btn.textContent = btn.dataset.label; btn.classList.remove('ok'); }, 1400);
+}
+function copyFrom(id, btn){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var text = el.getAttribute('data-raw') !== null ? el.getAttribute('data-raw') : el.textContent;
+  function done(){ flash(btn, 'Copied'); }
+  function fail(){ flash(btn, 'Press Cmd C'); var r=document.createRange(); r.selectNodeContents(el);
+                   var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, fail);
+  } else { fail(); }
+}
+document.addEventListener('click', function(e){
+  var b = e.target.closest('[data-copy]');
+  if(b){ copyFrom(b.getAttribute('data-copy'), b); }
+});
+
+/* Per-viewer progress ticks. Stored in this browser only, so it is a convenience
+   for whoever is working the queue, not shared status. */
+var KEY = 'ojv-queue-done-v1';
+function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(err){ return {}; } }
+function save(o){ try { localStorage.setItem(KEY, JSON.stringify(o)); } catch(err){} }
+function paint(){
+  var done = load(), n = 0;
+  document.querySelectorAll('article[data-pid]').forEach(function(a){
+    var on = !!done[a.dataset.pid];
+    a.classList.toggle('is-done', on);
+    var cb = a.querySelector('input[type=checkbox]');
+    if(cb) cb.checked = on;
+    if(on) n++;
+  });
+  var out = document.getElementById('doneCount');
+  if(out) out.firstChild.nodeValue = String(n);
+}
+document.addEventListener('change', function(e){
+  if(e.target.matches('article input[type=checkbox]')){
+    var a = e.target.closest('article'), done = load();
+    if(e.target.checked) done[a.dataset.pid] = 1; else delete done[a.dataset.pid];
+    save(done); paint();
+  }
+});
+paint();
+</script>

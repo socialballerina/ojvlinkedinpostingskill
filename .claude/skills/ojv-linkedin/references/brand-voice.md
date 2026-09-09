@@ -3,8 +3,11 @@
 Three parts: the language OJV already uses in public, what the best cross-border accounts
 actually do on LinkedIn, and the house style rules. Read all three before drafting.
 
-Research pass run 3 September 2026 by reading live posts, not by assumption. Each account's
-rules below are drawn from posts observed on that date, quoted where useful.
+Research pass run 3 September 2026, extended 9 September 2026, by reading live posts, not by
+assumption. Each account's rules below are drawn from posts observed on those dates, quoted
+where useful. Sections 2a to 2c are the 3 September pass. Section 2d is the 9 September pass,
+which exists because the first pass taught the page how to be interesting and did not teach it
+how to ask for a call.
 
 ---
 
@@ -30,6 +33,16 @@ the LinkedIn page.
 | Networking & Events | "Meet the people who matter. We curate intimate, high-value gatherings where founders connect with investors, partners, and fellow builders." |
 | APAC Market Insights | "APAC isn't one market. It's 15+ ecosystems with shifting rules, cultures, and buyer behaviour." |
 | Super-Connector | "We connect founders to the right people: investors, advisors, operators, and talent." |
+
+**Additional site lines confirmed on 9 September 2026.** Re-read of oj.ventures returned these,
+which were not in the first pass. Use them the same way, verbatim.
+- Networking & Events, second line: "targeted conversations that unlock opportunities"
+- APAC Market Insights, second line: founders need "flexible strategies that work across borders", not a rigid playbook
+- The foundational belief: "great companies emerge when founders are backed with clarity, capital, and care"
+
+That last line is the most useful sentence on the site and it has never appeared in a post.
+"Clarity, capital, and care" is the three-part phrase to reach for when a post needs to say what
+OJV is for without listing services.
 
 **The four approach statements**
 - Founder First Mentality: "We work closely with your team to understand your business from the inside out... roll up our sleeves, offer clarity, and back bold ideas with real, timely support."
@@ -114,7 +127,124 @@ copy**, it is the same move as the banned "thrilled to announce".
 **Entrepreneur First** was in the research plan but its LinkedIn page would not load during this
 pass, so no rules were drawn from it. Do not cite EF conventions until that gap is filled.
 
-### 2d. What a company page must not copy from a personal brand
+### 2d. Offer and CTA benchmarks (research pass 9 September 2026)
+
+Three accounts read on 9 September 2026 by opening their recent-activity feeds in a signed-in
+browser and extracting the post text. Five posts each. Metrics below are measured, not estimated.
+
+These three were added because A, B, C and D taught the page how to be interesting and none of
+them taught it how to ask for a call. That is what this pass was for.
+
+#### Charles Wong, MBA, ICD.D (personal brand, Hong Kong to Canada, service-business advisory)
+
+Measured: 826 to 998 characters, median around 880. Ten to fifteen paragraphs, almost all of them
+one sentence. **Zero hashtags in five of five posts. Zero emoji. `→` as the bullet. Link in the
+body via `lnkd.in`. "Book a call" in five of five posts.**
+
+Hooks observed, verbatim:
+- "Give me 60 minutes with a service business and I can usually tell where the money is leaking."
+- "I was born in Hong Kong."
+- "One neglected grandmother is the reason I started CarePros."
+- "I'm currently helping with a $100M capital raise in Asia."
+- "I'm excited to share something I've been thinking about for a while." (weak, see below)
+
+The diagnostic post, transcribed as a skeleton because it is the most directly useful structure
+in the whole research programme:
+
+> Time-boxed capability claim.
+> "I start with 4 things:" then four `→` items of one or two words each.
+> "Then I look at what is happening underneath them."
+> Four diagnostic questions, each its own paragraph, each opening "Are you" or "Are".
+> One anonymised client result with hedged numbers.
+> The "founders cannot see this because they are too close to the business" line.
+> Qualified CTA with the link.
+
+| Move | Adopt? | Why |
+| --- | --- | --- |
+| **Time-boxed capability claim.** "Give me 60 minutes and I can *usually* tell where the money is leaking." | **Adopt.** | "Usually" is doing the work. It claims a competence, not a result, which is the only honest way a services business can open with confidence. This is the hook shape for archetype F. |
+| **Diagnostic question stack.** Three or four questions, each its own paragraph, each answerable in the reader's head. | **Adopt.** | Highest-converting body shape found. It qualifies the reader without asking them for anything, and the reader who answers "no" to two of them has sold themselves the call. |
+| **Hedged numbers on client work.** "roughly $75-$80/hour", "around $135/hour", "while keeping delivery costs relatively similar". | **Adopt verbatim as a habit.** | This is how you use a real engagement number without publishing precision you cannot defend. OJV has no other safe way to put client numbers in a post. |
+| **Anonymised client.** "One company I worked with was charging..." | **Adopt.** | Solves confidentiality and keeps the specificity. Naming the client requires written sign-off, and anonymising is the default. |
+| **Qualified CTA.** "If you're scaling a healthcare or tech-enabled service business, book a call with me: <link>" | **Adopt.** | The qualifier filters the inbound and raises status at the same time. A bare "book a call" begs. A qualified one selects. Never ship the bare form. |
+| **Anaphora for rhythm.** "You have to earn the relationships again. / Understand the market again. / Listen again." | Adopt, sparingly. | One per post at most, or it turns into a poem. |
+| **Link in the body, not the first comment.** | Adopt for archetype F only. | See the note on link placement at the end of Part 3. It costs reach and buys conversion, which is the right trade on an offer post and the wrong one everywhere else. |
+
+**Do not copy:** five of five posts pitching, which is the pattern the 2 value : 1 offer rule
+exists to prevent. Nor the first-person-singular biography, which is his strongest asset and
+unavailable to a page. Nor "I'm excited to share something I've been thinking about for a while",
+which is the same dead opener as "thrilled to announce" and is already on the banned list.
+
+#### Chris Walker (personal brand, formerly Refine Labs, now ENCODED)
+
+Measured: 780 to 2,069 characters. Four to thirty-six paragraphs. **Zero hashtags in four of five
+posts, one hashtag in the fifth. Zero emoji. No CTA of any kind in any of the five.**
+
+Hooks observed, verbatim:
+- "Companies say they want a high-performance culture, but then they run their companies in all the ways that are proven to limit team performance, retention, and satisfaction:"
+- "Bryan Johnson spends $2,000,000 per year on health & performance. I spend $17,993 and score in the 99% percentile on all key metrics. Here's exactly what I spend the money on:"
+- "Nobody wants to hear this, but grinding harder to produce work that AI can produce faster and cheaper isn't a sustainable strategy."
+
+| Move | Adopt? | Why |
+| --- | --- | --- |
+| **Hook that ends in a colon and promises a list.** Then ten numbered items. | **Adopt.** | The colon is a contract with the reader. It earns the "see more" click more reliably than a question. |
+| **The receipt post.** An itemised table with vendor and cost, published in full. | **Adopt where sourced.** | OJV's version is an itemised cost or timeline of a market entry. Radical specificity is the whole effect, so a partial list kills it. |
+| **Comparative number hook.** Two numbers side by side, one of them famous. | **Adopt.** | Stronger than OJV's existing `number-first` pattern, because the contrast does the interpreting for the reader. Logged as `comparative-receipt`. |
+| **"Nobody wants to hear this, but ..."** | **Adopt.** | New hook pattern, logged as `hard-truth`. Works on a page as long as what follows is sourced. |
+| **The p.s.** The commercial argument sits in a "p.s." after the body has already delivered. | **Adopt for medium-CTA posts.** | This is how positioning gets into a post that earned its attention on merit. It reads as an aside rather than a pitch. |
+| **Closing on conviction with no ask at all.** | **Adopt as a third close option.** | Part 3 rule 9 said question or CTA. It is now question, CTA, or conviction. See the close table below. |
+
+**Do not copy:** 2,000-character posts on a company page with no source link. Zero hashtags, since
+OJV keeps three to five for discovery. The thirty-six-line list, which works on a face account
+with a large following and reads as spam from a page.
+
+#### Sarthak Ahuja (personal brand, investment banking and corporate finance, 328K followers)
+
+Headline observed: "Investment Banker | Author | ISB Gold Medalist".
+
+Measured: 1,315 to 2,934 characters. Fourteen to nineteen paragraphs. **Exactly one hashtag on
+every post, and it is his own name tag, `#casarthakahuja`. Zero emoji.**
+
+Hooks observed, verbatim:
+- "Rice Eaters are more loyal than Wheat Eaters..."
+- "Elon Musk has predicted how the AI Bubble will burst soon..."
+- "Indians have become so unhealthy that we are literally failing at the 4 biggest benchmarks to measure health..."
+- "Do you know the name of the baby girl who was interchanged with Krishna on the day of his birth..."
+
+| Move | Adopt? | Why |
+| --- | --- | --- |
+| **Curiosity gap, then an explicit promise to unpack it.** Line 1 is a claim you cannot resolve. Line 2 is always the promise: "So let's understand if this can actually happen and why..." / "And to understand his argument, let's unpack the three constraints that define..." | **Adopt the promise line.** | Logged as `promise-to-unpack`. It converts a hook that could read as clickbait into a contract, and it is the cheapest possible fix for a hook that overpromises. Drop the ellipses. |
+| **Numbered explainer body.** "1/ ... 2/ ... 3/" | Adopt, three sections maximum. | He runs three to seven. Three is the limit at OJV's length. |
+| **Parable, then pivot.** Two thirds of the Krishna post is a story, then it turns on one sentence: "Interestingly, there are two kinds of leaders you find as part of every organisation too..." | **Adopt the pivot sentence as a device.** | OJV pivots from a market fact or a factory floor, never from a myth. The device is the transferable part: name the parallel out loud in one sentence rather than trusting the reader to find it. |
+| **A single brand hashtag on every post.** | Worth testing, do not adopt yet. | Five posts is not a basis for changing the three-to-five rule. Revisit at the monthly review if discovery is flat. |
+
+**Do not copy:** ellipses as sentence glue, which reads as unfinished on a company page.
+Unsourced comparative claims about whole populations. The length.
+
+#### The synthesis: three ways to close a post
+
+This is the most useful single output of the pass. Pick one per post, never two.
+
+| Close | Where it came from | Use it for | Example |
+| --- | --- | --- | --- |
+| **Question** | Sean Upton-McLaughlin, Ashley Dudarenok | Monday, awareness, soft CTA | "How many of the investors on your list have funded your category in the last 18 months?" |
+| **Conviction, no ask** | Chris Walker | Awareness posts where the argument is the point and an ask would cheapen it | "The one-hour radius is the moat. That is not going to be reshored by an announcement." |
+| **Qualified book-a-call** | Charles Wong | Archetype F, and the Friday offer slot only. One per week, maximum. | "If you are a Series A company with a board asking about APAC and no answer yet, book a call: <link>" |
+
+#### New hook patterns added by this pass
+
+Add these to the `hook_pattern` vocabulary in `SKILL.md`.
+
+| Pattern | Template | Source |
+| --- | --- | --- |
+| `hard-truth` | `Nobody wants to hear this, but <sourced claim>.` | Chris Walker |
+| `time-boxed-claim` | `Give us <time> with <specific company type> and we can usually tell <the thing>.` | Charles Wong |
+| `comparative-receipt` | `<Famous entity> spends <big number>. <We/they> spend <small number>. Here is exactly where it goes:` | Chris Walker |
+| `promise-to-unpack` | `<Unresolvable claim>. <Explicit promise to unpack it in n parts>.` | Sarthak Ahuja |
+| `stated-contradiction` | `<Group> say they want <X>, but then they <do all the things that prevent X>:` | Chris Walker |
+
+---
+
+### 2e. What a company page must not copy from a personal brand
 
 1. **Pitching in every post.** Both personal accounts sell constantly. A personal brand is a
    person you follow; a page that sells every time gets muted. Hold 2 value : 1 offer.

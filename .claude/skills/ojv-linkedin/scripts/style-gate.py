@@ -15,15 +15,20 @@ BANNED = [
     "game-changer", "game changer", "in today's fast-paced world",
     "revolutionizing", "revolutionising", "stay tuned",
     "underscores our dedication", "we look forward to supporting",
+    "excited to share",
 ]
-CTA_MARKERS = ("Comment ", "DM ", "Enquiries", "Follow the page", "utm_")
+CTA_MARKERS = ("Comment ", "DM ", "Enquiries", "Follow the page", "utm_",
+               "book a call", "Book a call")
 
 
 def check(path):
     text = open(path).read()
     if "## Copy" not in text:
         return ["no '## Copy' block found"]
-    body = text.split("## Copy", 1)[1].split("## Image", 1)[0].strip()
+    tail = text.split("## Copy", 1)[1]
+    for marker in ("## Image", "## Photo brief"):
+        tail = tail.split(marker, 1)[0]
+    body = tail.strip()
     lines = [l for l in body.split("\n") if l.strip()]
     if not lines:
         return ["empty copy block"]
@@ -63,6 +68,13 @@ def check(path):
 
 
 def main(paths):
+    # SCHEDULE.md and QUEUE files are handoff checklists, not drafts. Skip them so a
+    # glob over a drafts directory does not report a spurious failure.
+    paths = [p for p in paths
+             if not p.split("/")[-1].upper().startswith(("SCHEDULE", "QUEUE"))]
+    if not paths:
+        print("no draft files to check")
+        return 0
     bad = 0
     for p in paths:
         fails = check(p)

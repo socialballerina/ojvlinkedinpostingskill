@@ -18,13 +18,14 @@ from collections import Counter
 from datetime import date, datetime, timedelta
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ARCHETYPES = ["A", "B", "C", "D", "E"]
+ARCHETYPES = ["A", "B", "C", "D", "E", "F"]
 ARCH_NAME = {
     "A": "China signal to tour",
     "B": "West into Asia",
     "C": "Asia into the West",
     "D": "Rejection to raise",
     "E": "Inside the room (first party)",
+    "F": "Situation to solved (offer)",
 }
 IMAGE_REUSE_DAYS = 60
 ENTITY_COOLDOWN_DAYS = 90

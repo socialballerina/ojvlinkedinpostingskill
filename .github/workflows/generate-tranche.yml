@@ -1,0 +1,216 @@
+name: Generate OJV tranche
+
+# Writes the next batch of library posts: evergreen, queued, and publishable by
+# one person with no judgement calls. Separate from "Generate OJV week", which
+# writes three posts pegged to this week's news.
+#
+# Cadence: every second Monday, 10:00 HKT. Cron cannot express "every 10th
+# working day", so this runs every Monday and the gate step below drops the odd
+# ISO weeks. Even ISO weeks fire, which is exactly 14 days and 10 working days
+# apart. First fire: Monday 14 September 2026 (ISO week 38).
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "How many posts to write"
+        required: false
+        type: string
+        default: "10"
+      booking_url:
+        description: "Booking link for archetype F. Blank leaves a TODO marker in the copy."
+        required: false
+        type: string
+        default: ""
+      force:
+        description: "Run even in an odd ISO week"
+        required: false
+        type: boolean
+        default: true
+      dry_run:
+        description: "Skip Claude and just prove the pipeline and the page build"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: ojv-tranche
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  tranche:
+    runs-on: ${{ vars.OJV_RUNNER || 'ubuntu-latest' }}
+    # Ten posts means roughly fifteen primary sources opened and quoted, and a
+    # third of candidates fail verification. Batching saves the drafting, not the
+    # sourcing, so this needs far longer than the weekly run.
+    timeout-minutes: 150
+    env:
+      RUN_ID: ${{ inputs.count && format('tranche-{0}', github.run_id) || format('tranche-sched-{0}', github.run_id) }}
+      SKILL: .claude/skills/ojv-linkedin
+      COUNT: ${{ inputs.count || '10' }}
+      BOOKING_URL: ${{ inputs.booking_url || '' }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Fortnight gate
+        id: gate
+        run: |
+          set -euo pipefail
+          WEEK=$(date -u +%V)
+          if [ "${{ inputs.force }}" = "true" ]; then
+            echo "Forced by hand. ISO week $WEEK."
+            echo "go=yes" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          # 10#$WEEK strips the leading zero so week 08 is not read as octal.
+          if [ $(( 10#$WEEK % 2 )) -eq 0 ]; then
+            echo "ISO week $WEEK is even. This is a tranche week."
+            echo "go=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "ISO week $WEEK is odd. Skipping, next Monday is the tranche."
+            echo "go=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Say the run has started
+        if: steps.gate.outputs.go == 'yes'
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/marker.py start "$RUN_ID"
+          .github/scripts/publish.sh "Tranche $RUN_ID: started"
+
+      - name: Make sure Claude Code is available
+        if: steps.gate.outputs.go == 'yes' && inputs.dry_run != true
+        run: |
+          set -euo pipefail
+          for d in "$HOME/.local-tools"/*/bin /opt/homebrew/bin /usr/local/bin "$HOME/.npm-global/bin"; do
+            [ -d "$d" ] && echo "$d" >> "$GITHUB_PATH" && export PATH="$d:$PATH"
+          done
+          if ! command -v claude >/dev/null 2>&1; then
+            npm install -g --include=optional @anthropic-ai/claude-code
+          fi
+          if ! claude --version >/dev/null 2>&1; then
+            echo "The CLI is present but not working. Repairing."
+            PKG="$(npm root -g)/@anthropic-ai/claude-code"
+            [ -f "$PKG/install.cjs" ] && node "$PKG/install.cjs" || true
+            claude --version >/dev/null 2>&1 || npm install -g --include=optional @anthropic-ai/claude-code
+          fi
+          echo "Claude Code: $(claude --version)"
+
+      - name: Work out how Claude will authenticate
+        id: auth
+        if: steps.gate.outputs.go == 'yes' && inputs.dry_run != true
+        env:
+          API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          # Same order as the weekly workflow: a local login on a self-hosted
+          # runner is free, then the API key, then the subscription token.
+          fail() {
+            python3 .github/scripts/marker.py fail "$RUN_ID" "$1"
+            .github/scripts/publish.sh "Tranche $RUN_ID: failed, $2"
+            echo "::error::$2"; exit 1
+          }
+          if command -v claude >/dev/null 2>&1; then
+            STATUS=$(claude auth status 2>&1 || true)
+            if printf '%s' "$STATUS" | grep -q '"loggedIn" *: *true'; then
+              echo "Using this machine's own Claude Code login."
+              echo "method=local_login" >> "$GITHUB_OUTPUT"; exit 0
+            fi
+          fi
+          if [ -n "${API_KEY:-}" ]; then
+            CLEAN=$(printf '%s' "$API_KEY" | tr -d '[:space:]')
+            case "$CLEAN" in
+              sk-ant-api*) : ;;
+              *) fail "The ANTHROPIC_API_KEY secret should start with sk-ant-api." "the API key is malformed" ;;
+            esac
+            echo "method=api_key" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if [ -n "${OAUTH_TOKEN:-}" ]; then
+            CLEAN=$(printf '%s' "$OAUTH_TOKEN" | tr -d '[:space:]')
+            case "$CLEAN" in
+              sk-ant-oat01-*) : ;;
+              *) fail "The CLAUDE_CODE_OAUTH_TOKEN secret does not start with sk-ant-oat01-." "the OAuth token is malformed" ;;
+            esac
+            echo "method=oauth_token" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          fail "No way to authenticate Claude. Set ANTHROPIC_API_KEY or CLAUDE_CODE_OAUTH_TOKEN as a repository secret." \
+               "no local login and no auth secret"
+
+      - name: Build the prompt
+        if: steps.gate.outputs.go == 'yes' && inputs.dry_run != true
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          t = open('.github/prompts/tranche-run.md').read()
+          for k in ('RUN_ID', 'COUNT', 'BOOKING_URL'):
+              t = t.replace('{{%s}}' % k, os.environ.get(k, ''))
+          open('/tmp/ojv-tranche-prompt.txt', 'w').write(t)
+          print('prompt built, %d chars' % len(t))
+          PY
+
+      - name: Run the skill in Claude Code
+        id: claude
+        if: steps.gate.outputs.go == 'yes' && inputs.dry_run != true
+        continue-on-error: true
+        env:
+          API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          METHOD: ${{ steps.auth.outputs.method }}
+        run: |
+          set -euo pipefail
+          case "$METHOD" in
+            api_key)     export ANTHROPIC_API_KEY="$(printf '%s' "$API_KEY" | tr -d '[:space:]')" ;;
+            oauth_token) export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$OAUTH_TOKEN" | tr -d '[:space:]')" ;;
+            local_login) echo "Using this machine's own Claude Code login." ;;
+            *) echo "::error::The auth step did not choose a method."; exit 1 ;;
+          esac
+          # A tranche is mostly search and fetch, so it needs a far higher turn
+          # budget than the three-post weekly run.
+          claude -p "$(cat /tmp/ojv-tranche-prompt.txt)" \
+            --allowed-tools "Read,Write,Edit,Bash,Glob,Grep,WebSearch,WebFetch" \
+            --permission-mode acceptEdits \
+            --max-turns 400 \
+            2>&1 | tee /tmp/ojv-tranche.log
+          echo "Claude Code exited cleanly."
+
+      - name: Write a dry-run result instead
+        if: steps.gate.outputs.go == 'yes' && inputs.dry_run == true
+        run: python3 .github/scripts/marker.py dry "$RUN_ID"
+
+      - name: Gate the new drafts
+        if: steps.gate.outputs.go == 'yes'
+        run: |
+          set -euo pipefail
+          if ls "$SKILL"/library/OJV-L*.md >/dev/null 2>&1; then
+            python3 "$SKILL"/scripts/style-gate.py "$SKILL"/library/OJV-L*.md
+          else
+            echo "::warning::No library drafts found to gate."
+          fi
+
+      - name: Rebuild the site page
+        if: steps.gate.outputs.go == 'yes'
+        run: |
+          set -euo pipefail
+          python3 "$SKILL"/scripts/build-queue-page.py public/queue.html
+          echo "public/queue.html is $(wc -c < public/queue.html) bytes"
+
+      - name: Say why Claude did not finish
+        if: always() && steps.claude.outcome == 'failure'
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/marker.py fail "$RUN_ID" \
+            "Claude Code ran but did not finish the tranche. Common causes: an expired CLAUDE_CODE_OAUTH_TOKEN, a subscription rate limit, or the turn budget running out mid-sourcing. Any posts it did finish are committed and gated. The workflow log holds the exact error."
+
+      - name: Publish the result
+        if: always() && steps.gate.outputs.go == 'yes'
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/marker.py finish "$RUN_ID" || true
+          python3 .github/scripts/prune.py || true
+          .github/scripts/publish.sh "Tranche $RUN_ID: $(python3 -c "import json;print(json.load(open('runs/$RUN_ID/status.json'))['state'])" 2>/dev/null || echo unknown)"

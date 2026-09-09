@@ -6,14 +6,12 @@ reference you only open when the run tells you to.
 
 ## What you actually do
 
-Either press the button on the web tool, or, in Claude Code, say:
+Once a week, in Claude Code, in this skill's directory:
 
 > run the week
 
-The web tool runs exactly this skill: the button starts a GitHub Actions job that executes it in
-Claude Code, then shows you the result. It also runs itself every Thursday at 10:00 HKT, so
-next week's drafts usually exist before you ask for them. The skill will check what cannot be repeated, research candidate stories, pick one of
-five archetypes per slot, write the three posts, pair an image with each or ask you to attach one,
+That is it. The skill will check what cannot be repeated, research candidate stories, pick one of
+six archetypes per slot, write the three posts, pair an image with each or ask you to attach one,
 and hand you a scheduling checklist.
 
 Then you do three things:
@@ -27,10 +25,6 @@ The skill does not schedule and does not publish. That is deliberate, not a miss
 `references/publish-adapter.md`.
 
 ## Before your first run
-
-The web tool needs one credential that is not in this repo: an `ANTHROPIC_API_KEY` secret on the
-GitHub repository. Without it a run fails on its first step and says so. See the repository README.
-
 
 Fill the `TODO` rows in the config table at the top of `SKILL.md`. The two that block real work:
 
@@ -71,7 +65,7 @@ Three ways to answer:
 Archetype E is the exception. It is a claim about a room that happened, so it needs a real photo.
 If there is no photo, change the post.
 
-## The five archetypes
+## The six archetypes
 
 Each post is exactly one of these, and the choice comes from what you actually have, not from
 preference.
@@ -83,9 +77,40 @@ preference.
 | C | Asia into the West | The mirror case |
 | D | Rejection to raise | A documented rejection count and a documented raise |
 | E | Inside the room | Something OJV actually did: event, workshop, portfolio, partner on stage |
+| F | Situation to solved | **F1:** a real engagement, with the client's sign-off. **F2:** nothing external, just a service we sell and a diagnostic we run. F is the only archetype that asks for a call. |
 
-Typical week: Monday A/B/C/D with a soft close, Wednesday B/C/D with a medium CTA, Friday E or the
-trek with the week's single hard CTA.
+Typical week: Monday A/B/C/D with a soft close, Wednesday B/C/D with a medium CTA, Friday E, F or
+the trek with the week's single hard CTA.
+
+## The other mode: the batch library
+
+The weekly run above writes three posts pegged to this week's news, and it needs you in the loop
+for photos and approval. The batch library is the other mode. Say "write 100 posts" or "next
+tranche" and it writes evergreen posts into `library/`, in a queue, so that publishing takes one
+decision from one person.
+
+Spec: `references/batch-library.md`. Two things to know without opening it:
+
+- **Only A, B, C, D and F2 can be batched.** E and F1 need first-party facts that either expire
+  or need a client's sign-off, so they stay in the weekly run. A library-only page slowly becomes
+  a page that only comments on other people.
+- **Batching saves the drafting, not the sourcing.** A hundred sourced posts is a hundred primary
+  sources opened and quoted. It is written in tranches of ten for that reason.
+
+### If you are the intern publishing from the library
+
+Your whole job, per post:
+
+1. Open `library/QUEUE.csv`, take the top row still marked `library`.
+2. Open `library/paste/<post_id>.txt`. Select all, copy, paste into LinkedIn.
+3. Open `library/<post_id>.md`, read the photo brief, pick a photo from the shared drive that
+   satisfies it. If nothing does and the brief says text-only is acceptable, post without one.
+4. Paste the alt text into LinkedIn's alt-text field.
+5. Post, or schedule for 09:00 HKT. Post the first comment if the file has one.
+6. Mark the queue row `posted`, with the date.
+
+Never change a number, never add or remove hashtags, never publish a post past its `expires`
+date, and never answer a comment that challenges a fact. Pass those to Naman with the post id.
 
 ## Feeding it, so it gets better rather than repetitive
 
@@ -99,7 +124,7 @@ Two habits, and they are the whole difference between a page that compounds and 
    factory floor, a robotics showroom or a partner on stage. The image library is the binding
    constraint on this whole operation right now.
 
-Once a month: "monthly LinkedIn review". It ranks the five archetypes by enquiries per post and
+Once a month: "monthly LinkedIn review". It ranks the six archetypes by enquiries per post and
 tells you what to cut.
 
 ## Things you must not do
@@ -121,10 +146,11 @@ tells you what to cut.
 HANDOFF.md          you are here
 SKILL.md            the run, the config, the guardrails, the error table
 scripts/            rotation-check.py, style-gate.py
-references/         voice, archetypes, funnel, images, publishing
+references/         voice, archetypes, funnel, images, batching, publishing
 data/               calendar, posted log, leads, stories seen
 assets/images/      manifest.csv and the library
-drafts/YYYY-WW/     drafts, SCHEDULE.md, paste/
+drafts/YYYY-WW/     weekly drafts, SCHEDULE.md, paste/
+library/            batch queue: QUEUE.csv, OJV-L###.md, paste/
 ```
 
 Worked example of a finished week, including a post held for a photo:

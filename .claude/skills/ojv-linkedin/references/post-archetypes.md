@@ -1,6 +1,6 @@
 # OJV Post Archetypes
 
-Five archetypes. Each has a purpose, a native funnel tier, an input trigger, a default CTA tier,
+Six archetypes. Each has a purpose, a native funnel tier, an input trigger, a default CTA tier,
 a skeleton, and two worked examples.
 
 **How to read the examples.** Examples marked `VERIFIED 2026-09-03` use facts checked against the
@@ -33,10 +33,14 @@ Every post is exactly one archetype. Pick it from evidence, not preference, in t
    | An Asian company with documented traction in the West, and a named mechanism | C |
    | A funding story with a documented rejection count and a documented raise | D |
    | Something OJV itself did: an event, a workshop, a portfolio move, a partner on stage, a trek update | E |
+   | A real OJV engagement, with the client's sign-off on any detail that identifies them | F1 |
+   | Nothing external at all, just a service OJV sells and a diagnostic it genuinely runs | F2 |
 
 3. **Fill the slots.** Monday takes a news or story archetype (A, B, C or D) with a soft CTA.
-   Wednesday takes a proof archetype (B, C or D) with a medium CTA. Friday defaults to E, and
-   takes A instead when a strong China signal is live and the trek is inside eight weeks.
+   Wednesday takes a proof archetype (B, C or D) with a medium CTA. Friday is the offer slot and
+   takes E, F, or a hard-CTA A when a strong China signal is live and the trek is inside eight
+   weeks. Prefer F when there is a real engagement to write about or the pipeline needs calls,
+   and E when something happened that week worth showing.
 4. **Prefer cold.** Where two archetypes both fit, take the one the rotation check reports as
    never used or longest unused.
 5. **Never twice in one week.** Three posts, three different archetypes, always.
@@ -556,3 +560,190 @@ truncated out of view.
 Archetype E is the mirror case: it is the only archetype where OJV may claim credit, and it must
 claim only what OJV actually did. Co-hosted means co-hosted. A partner judging a track is not OJV
 running the event.
+
+---
+
+## F. Situation to solved
+
+Added 9 September 2026, modelled on the Charles Wong diagnostic structure in
+`references/brand-voice.md`, section 2d.
+
+| Field | Value |
+| --- | --- |
+| Purpose | Convert a reader who recognises their own situation into a booked call. This is the only archetype that asks for a call directly, and the only one whose subject is the reader's problem rather than a company's story. |
+| Native funnel tier | Consideration to enquiry |
+| Input trigger | See the two variants below. F1 needs a real OJV engagement. F2 needs only a service OJV genuinely sells. |
+| Default CTA tier | Hard. F carries the booking link, so at most one F per week, and it uses up the week's single hard CTA. |
+| Length | 900 to 1,200 characters |
+| Image | Partner portrait, workshop, one-to-one session, or whatever satisfies the photo brief. Not required, but it lifts an offer post more than any other kind. |
+
+### The two variants, and why the distinction matters
+
+| | Variant | Needs | Batch-writable? |
+| --- | --- | --- | --- |
+| **F1** | The engagement post. A real situation OJV worked on, what we did, what changed. | A real engagement, plus the client's sign-off on any number or detail. | **No.** |
+| **F2** | The diagnostic post. Claims a competence and a method, not a result. | Nothing but a service OJV actually sells and can describe honestly. | **Yes.** |
+
+F1 is the stronger post and F2 is the one that can be written a hundred at a time. Do not blur
+them. The moment an F2 draft starts implying a specific past result, it has become an F1 and it
+needs the sign-off that F1 needs.
+
+### Skeleton F1, the engagement post
+
+```
+1. The situation.         1 to 2 lines. In the founder's own framing where possible. Anonymised
+                          by default: "A Series A company we worked with", not the name.
+2. What was actually      2 to 3 lines. The diagnosis, not the symptom. The gap between what
+   wrong.                 they thought was broken and what was broken is the whole post.
+3. What we did.           3 to 5 lines. Named service. Concrete verbs. At most four moves, as a
+                          `→` list or numbered. No adjectives about ourselves.
+4. What changed.          2 to 3 lines. Hedged numbers only, and only numbers the client has
+                          cleared for publication. If nothing is cleared, describe the change
+                          qualitatively and do not reach for a number.
+5. The generalisable      1 to 2 lines. Why this was not specific to them.
+   line.
+6. Qualified CTA.         `If you are <specific situation>, book a call: <UTM-tagged link>`
+7. Hashtags.              3 to 5, at the end.
+```
+
+### Skeleton F2, the diagnostic post
+
+```
+1. Time-boxed claim.      `Give us <time> with <specific company type> and we can usually tell
+                          <the thing we can tell>.` The word "usually" is not optional.
+2. The frame.             `We start with <n> things:` then a `→` list, one or two words each,
+                          three or four items. Then one line: `Then we look at what is
+                          underneath them.`
+3. The question stack.    3 or 4 diagnostic questions. Each its own paragraph. Each answerable
+                          in the reader's head. Each one should make a reader who is getting it
+                          wrong feel found out, without insulting anyone.
+4. The insight line.      2 to 3 lines. Why a founder cannot see this from the inside. Name the
+                          wrong conclusion they reach instead.
+5. The house line.        1 to 2 lines. Usually the 15+ ecosystems line, which is the reason the
+                          diagnostic exists at all.
+6. Qualified CTA.         Same form as F1.
+7. Hashtags.
+```
+
+### Example F1 `STRUCTURE DEMO`
+
+> <A Series A company / A European SaaS company / A hardware startup> we worked with had <n>
+> months of runway and three APAC markets open at once.
+>
+> They thought they had a sales problem.
+>
+> <One to two lines on what was actually wrong, from the engagement notes. The diagnosis, not the
+> symptom.>
+>
+> What we did, over <duration>:
+>
+> → <Move one, a concrete verb and object>
+> → <Move two>
+> → <Move three>
+>
+> <Two to three lines on what changed, with hedged numbers the client has cleared. "Roughly",
+> "around", "relatively similar" are the right register. If nothing is cleared, say what changed
+> without a number and stop.>
+>
+> None of that was specific to them. <One line on why.>
+>
+> If you are <the same specific situation, stated tightly enough that the wrong reader
+> self-selects out>, book a call: <UTM-tagged link>
+>
+> #APAC #GoToMarket #Founders #VentureStudio
+
+### Example F2 `VERIFIED 2026-09-09`
+
+Verified in the sense that every claim in it is a claim about what OJV does, checked against the
+service list and the site language. It contains no third-party fact and no client number, which
+is exactly why it is safe to batch.
+
+> Give us 60 minutes with a company entering APAC and we can usually tell which market is going
+> to burn the budget.
+>
+> We start with four things:
+>
+> → Which ecosystem
+> → Who actually buys
+> → Price
+> → Route to market
+>
+> Then we look at what is underneath them.
+>
+> Are you treating APAC as one market, or have you picked the two ecosystems already pulling on
+> your product?
+>
+> Is the person who signs off in Jakarta the same function as the one who signs off in Tokyo?
+> Usually not, and the deck rarely knows it.
+>
+> Has your pricing been rebuilt for the local buyer, or converted from your home currency?
+>
+> Are you going direct because direct is right, or because the distributor conversation felt slow?
+>
+> From the inside this almost always looks like a sales problem. Two markets are quiet, so the
+> answer must be more outbound. Sometimes it is. More often the wrong ecosystem went first, and
+> no amount of outbound rescues that.
+>
+> APAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer
+> behaviour, so the job is rapid recalibration, not a rigid playbook.
+>
+> If you are scaling into APAC and your pipeline has gone quiet in two markets, book a call:
+> <UTM-tagged booking link>
+>
+> #APAC #GoToMarket #Founders #VentureStudio
+
+Notes on why this passes. The hook is 112 characters and claims a competence, not a result.
+"Usually" appears twice and is load-bearing both times. Four questions, each answerable in the
+reader's head, and the second one carries the sharpest insight in the post. The close is a
+qualified CTA with no question attached, so it does not breach the question-plus-CTA rule. There
+is no number in the post at all, which is the point: nothing here can go stale and nothing here
+needs a client's permission.
+
+### Archetype F hard rules
+
+**Consent, for F1 only.**
+- Anonymise by default. A client is named only with written sign-off, held on file, naming the
+  post.
+- Every number in an F1 post is cleared by the client before the post is scheduled. Not
+  after.
+- "A company we worked with" is a claim of a commercial relationship. It must be true. An intro
+  made at an event is not an engagement.
+
+**Numbers.** Hedge them, per Charles Wong. `roughly`, `around`, `relatively similar`, `about`.
+Never a false-precision figure, never a percentage improvement without the base, never a range
+that quietly starts at the best case.
+
+**Outcome language.** The same test as archetype D applies, and for the same reason. Underline
+every sentence where OJV is the subject. If the object of the verb is something the client's
+customers, the client's investors or the market decided, rewrite it.
+
+**Approved phrasings**
+- "One company we worked with was <hedged situation>."
+- "We ran the diagnostic and the answer was <specific>."
+- "What changed was the sequence, not the product."
+- "We rebuilt the list. Their team still made every call."
+- "Roughly <x> to <y>, while <the other thing> stayed relatively similar."
+- "That hour usually tells us whether we are useful to you. Sometimes the answer is no."
+- "If you are <specific situation>, book a call."
+
+**Banned phrasings**
+- "We took them from <x> to <y>." (OJV is not the subject of their revenue)
+- "We scaled them to <number>." / "We grew their revenue by <number>."
+- "We got them funded." / "We closed their round."
+- "Every founder we work with ..." / "We always ..."
+- "Guaranteed", "proven system", "our process delivers".
+- "Book a call" with no qualifier in front of it. The qualifier is the point.
+- Any named client without written sign-off on file.
+- Any number in an F1 post that the client has not cleared.
+
+**The one-per-week rule.** F is a hard CTA. One hard CTA per week, so one F per week at the
+absolute most, and never in the same week as a hard-CTA archetype A trek post.
+
+### Why F exists, and what it replaced
+
+A, B, C and D are commentary. E is proof. None of them ask for anything, which is correct for
+four days out of five and wrong on the fifth. Before F, the offer had to be smuggled into an E
+post about an event, which meant the page could only sell when it had recently held a room.
+
+F decouples the ask from the event. It also gives the batch library something to end on: F2 is
+the only offer-tier post that can be written in advance, because it contains no perishable fact.
