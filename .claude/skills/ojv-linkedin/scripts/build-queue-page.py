@@ -19,14 +19,10 @@ ARCH_NAME = {'A': 'China signal', 'B': 'West into Asia', 'C': 'Asia into the Wes
 # Flags that need a human, keyed by post id. Kept here rather than in the drafts
 # because they are about the state of the operation, not the state of the copy.
 FLAGS = {
-    'OJV-L001': [('block', 'Booking link missing', 'The CTA still says TODO(config: booking link). Cannot publish.')],
-    'OJV-L007': [('block', 'Booking link missing', 'The CTA still says TODO(config: booking link). Cannot publish.')],
-    'OJV-L005': [('warn', 'Recheck two figures', 'The Hungary numbers (7.3bn euro, 100 GWh, Morocco) were read from search extracts, not a fetched page. Confirm or cut before posting.'),
-                 ('asset', 'RADIUS', 'The two supply-chain questions promised by the keyword must exist before this goes out.')],
+    # Resolved 10 September 2026: every post now closes with hello@oj.ventures, so no post is
+    # blocked on a booking link and no keyword asset is owed to anyone.
+    'OJV-L005': [('warn', 'Recheck two figures', 'The Hungary numbers (7.3bn euro, 100 GWh, Morocco) were read from search extracts, not a fetched page. Confirm or cut before posting.')],
     'OJV-L004': [('warn', 'Recheck two figures', 'The 1,000-products and 30%-sourcing figures came from a page that blocked direct fetch. The two headline claims are solid.')],
-    'OJV-L008': [('asset', 'DIAL', 'The three APAC entry structures promised by the keyword must exist before this goes out.')],
-    'OJV-L009': [('asset', 'CHANNEL', 'The channel-testing sequence promised by the keyword must exist before this goes out.')],
-    'OJV-L010': [('asset', 'ORDERBOOK', 'The three deployment signals promised by the keyword must exist before this goes out.')],
 }
 NOTES = {'OJV-L002': 'Post this one first. Its source is IFR World Robotics 2025 and the 2026 edition supersedes the 2024 figures.'}
 
@@ -70,7 +66,7 @@ for row in queue:
     posts.append(d)
 
 n_block = sum(1 for p in posts if any(f[0] == 'block' for f in FLAGS.get(p['id'], [])))
-n_asset = sum(1 for p in posts if any(f[0] == 'asset' for f in FLAGS.get(p['id'], [])))
+n_warn = sum(1 for p in posts if any(f[0] == 'warn' for f in FLAGS.get(p['id'], [])))
 n_ready = len(posts) - n_block
 
 CSS = """
@@ -307,10 +303,12 @@ out.append('<div class="stat"><dt>In queue</dt><dd>' + str(len(posts)) +
            '<small>All ten pass the style gate</small></dd></div>')
 out.append('<div class="stat"><dt>Ready to post</dt><dd>' + str(n_ready) +
            '<small>Copy is final, nothing to edit</small></dd></div>')
-out.append('<div class="stat hot"><dt>Blocked</dt><dd>' + str(n_block) +
-           '<small>Waiting on the booking link</small></dd></div>')
-out.append('<div class="stat"><dt>Need an asset first</dt><dd>' + str(n_asset) +
-           '<small>Keyword replies to write</small></dd></div>')
+out.append('<div class="stat' + (' hot' if n_block else '') + '"><dt>Blocked</dt><dd>' +
+           str(n_block) + '<small>' +
+           ('Nothing is waiting on anyone' if not n_block else 'Needs Naman before posting') +
+           '</small></dd></div>')
+out.append('<div class="stat"><dt>Recheck a figure first</dt><dd>' + str(n_warn) +
+           '<small>Flagged on the post itself</small></dd></div>')
 out.append('<div class="stat"><dt>Ticked off</dt><dd><span id="doneCount">0</span>'
            '<small>Saved in this browser only</small></dd></div>')
 out.append('</dl>')
@@ -323,7 +321,8 @@ out.append('<section class="howto"><h2>How to work the queue</h2><ol>'
            'it, post without one.</li>'
            '<li>Paste the alt text into LinkedIn\'s own alt-text field.</li>'
            '<li>Post the first comment, where there is one.</li>'
-           '<li>Anything flagged in orange needs Naman before it can go out.</li>'
+           '<li>Every post ends with the ask and <strong>hello@oj.ventures</strong>. Do not cut it.</li>'
+           '<li>Anything flagged on a post needs Naman before it goes out.</li>'
            '</ol></section>')
 out.append('<hr class="rule">')
 
