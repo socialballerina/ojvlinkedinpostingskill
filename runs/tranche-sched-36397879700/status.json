@@ -1,6 +1,7 @@
 {
   "runId": "tranche-sched-36397879700",
-  "state": "running",
-  "startedAt": "2026-09-28T08:31:43Z",
+  "state": "failed",
+  "finishedAt": "2026-09-28T08:31:51Z",
+  "error": "Claude Code ran but did not finish the tranche. Common causes: an expired CLAUDE_CODE_OAUTH_TOKEN, a subscription rate limit, or the turn budget running out mid-sourcing. Any posts it did finish are committed and gated. The workflow log holds the exact error.",
   "workflowRunUrl": ""
 }
