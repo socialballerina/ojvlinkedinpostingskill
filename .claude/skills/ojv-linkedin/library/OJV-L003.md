@@ -10,7 +10,7 @@ expires: 2027-06-30
 expiry_note: 2026 deal data moves fast. Recheck the averages before posting after mid-2027.
 status: library
 voice: company-page
-queue_no: 2
+queue_no: 3
 ---
 
 ## Copy

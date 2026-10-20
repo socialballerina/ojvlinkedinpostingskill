@@ -10,7 +10,7 @@ expires: 2026-12-31
 expiry_note: The 2026 capacity target becomes checkable during 2026. Do not post after the year end without rechecking whether 5,000 units was met.
 status: library
 voice: company-page
-queue_no: 3
+queue_no: 2
 ---
 
 ## Copy

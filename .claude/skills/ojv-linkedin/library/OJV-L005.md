@@ -10,7 +10,7 @@ expires: 2027-09-30
 expiry_note: Written as "the first seven months of 2026", which stays true. Recheck the Hungary plant status.
 status: library
 voice: company-page
-queue_no: 6
+queue_no: 12
 ---
 
 ## Copy
