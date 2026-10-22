@@ -1,0 +1,135 @@
+{
+  "runId": "scheduled-39738926451",
+  "state": "done",
+  "week": "2026-W44",
+  "posts": [
+    {
+      "postId": "OJV-202644-M",
+      "day": "Monday",
+      "date": "2026-10-26",
+      "slot": "awareness",
+      "archetype": "A",
+      "archetypeName": "China signal to tour",
+      "ctaTier": "soft",
+      "hookPattern": "number-first",
+      "copy": "90.2%. That is the share of SMIC's second-quarter revenue that came from China. A year earlier it was 84.1%.\n\nThat is not a chip story. It is a customer story.\n\nRead from a desk in London or New York, the headline was export controls. Cut a foundry off from Western tools and Western customers, and it shrinks.\n\nThe filing says otherwise. Revenue was $3,005.6 million in the quarter, up 36.1% on a year earlier. Utilisation was 93.7%.\n\nAmerica fell from 12.9% of revenue to 8.2%. The business grew anyway.\n\nThe customers who replaced that revenue are not named in a results table. The mix gives a hint: industrial and automotive went from 10.6% of wafer revenue to 16.5% in a year.\n\nThat is the part you cannot read from outside. Who the domestic chip designers filling those lines are, what they are building for carmakers and factories, and how quickly they move from a design to an order.\n\nThose answers sit in meeting rooms in China, not in a filing.\n\nWhen a market loses its foreign customers and keeps growing, the demand did not disappear. It moved somewhere you are not looking.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: SMIC results announcement, 13 August 2026\n\n#China #Semiconductors #DeepTech #APAC",
+      "entities": [
+        "SMIC"
+      ],
+      "sourceUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0813/2026081300353.pdf",
+      "sourcePublisher": "SMIC (HKEX results announcement, 13 August 2026)",
+      "firstComment": "Source: SMIC results announcement, 13 August 2026: https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0813/2026081300353.pdf?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-202644-M",
+      "disclosure": "",
+      "verified": true,
+      "verificationNotes": "Every number read from the HKEX filing text on 22 Oct 2026: revenue $3,005.6m in 2Q26 vs $2,209.1m in 2Q25 (+36.1% in the summary table); China 90.2% of revenue vs 84.1% in 2Q25; America 8.2% vs 12.9%; utilisation 93.7%; industrial and automotive 16.5% of wafer revenue vs 10.6%. 'First $3bn quarter' not used because the filing does not say first. Story was the verified reserve smic-q2-2026-first-3bn-quarter in news-seen.csv.",
+      "styleGate": [],
+      "image": "",
+      "altText": "Close-up of a silicon wafer, its grid of chip dies catching the light against a plain background.",
+      "needsTeamPhoto": true,
+      "photoBrief": "No China, semiconductor or industrial image in the manifest. Shot: close-up of a silicon wafer or tray of packaged chips under cleanroom or bench light, die pattern in focus, landscape, eye level. No logos, no readable labels, no faces. No partner needed in frame.",
+      "photoQuery": "silicon wafer close up cleanroom",
+      "whyThisSlot": "Monday is reach with a soft close. A dated China deep-tech number read from a primary filing, already verified and parked as a reserve that expires when 3Q26 results land in November, and SMIC has never appeared on the page. No trek mention because the trek has already run.",
+      "blockers": [
+        "Confirm SMIC has not published 3Q26 results before 26 October",
+        "Photo or text-only decision"
+      ],
+      "draftPath": "runs/scheduled-39738926451/drafts/2026-W44/OJV-202644-M-archetypeA-smic-china-share.md",
+      "charCount": 1288
+    },
+    {
+      "postId": "OJV-202644-W",
+      "day": "Wednesday",
+      "date": "2026-10-28",
+      "slot": "proof",
+      "archetype": "C",
+      "archetypeName": "Asia into the West",
+      "ctaTier": "medium",
+      "hookPattern": "local-claim-broken",
+      "copy": "Britain is supposed to be a hard market for a car brand nobody has heard of. Two Chinese brands passed 100,000 sales there this summer.\n\nOmoda arrived at the end of August 2024. Jaecoo followed at the start of 2025. The 100,000 mark came in less than two years, at a combined share of nearly 5.7% of new registrations.\n\nNobody in Britain was waiting for these names. So the hard part was never the car. It was the buyer, and the route to that buyer.\n\nThe buyer was a household, not a fleet desk. Of the more than 36,500 Omoda 5s sold, 71% went to private retail customers.\n\nThe route was built early: 144 dealerships across the country. Their UK chief executive said it plainly. Getting there \"would require investing heavily in our people, our retailer network and the ownership experience.\"\n\nThat is the pattern in most Asia-to-West moves we see. A new name does not earn trust from an advert. It earns it from a showroom down the road and someone to call when something goes wrong.\n\nThe buyer, the route to them, and the story they hear first. Rebuilding those three is what our GTM advisory work is for.\n\nWe have never worked with Omoda, Jaecoo or Chery. This is commentary from the outside.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: Motoring Research, 13 August 2026\n\n#GTM #MarketEntry #Expansion #UK",
+      "entities": [
+        "Omoda",
+        "Jaecoo",
+        "Chery",
+        "UK"
+      ],
+      "sourceUrl": "https://www.motoringresearch.com/car-news/omoda-jaecoo-100k-uk-sales/",
+      "sourcePublisher": "Motoring Research (John Redfern, 13 August 2026)",
+      "firstComment": "Source: Motoring Research, 13 August 2026: https://www.motoringresearch.com/car-news/omoda-jaecoo-100k-uk-sales/?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-202644-W",
+      "disclosure": "We have never worked with Omoda, Jaecoo or Chery. This is commentary from the outside.",
+      "verified": true,
+      "verificationNotes": "Fetched Motoring Research 13 Aug 2026: 100,000 UK sales; Omoda arrived end of August 2024, Jaecoo start of 2025; under two years; nearly 5.7% share; 144 dealerships; Omoda 5 more than 36,500 sales, 71% private retail; Gary Lan quote on retailer network and ownership experience. Each number cross-checked against the Invicta Motors retailer page (2 Sep 2026), and the 100,000-in-under-two-years milestone against the brand's own jaecoo.co.uk release of 4 Sep 2026. Jaecoo 7 private-buyer share cut because sources conflict (75% vs 66%). September 2026 registration figures cut because they appear only in a secondary blog.",
+      "styleGate": [],
+      "image": "",
+      "altText": "A row of new SUVs parked on a dealership forecourt, the lit showroom behind them.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Nothing in the manifest fits: the only usable B/C images are conference shots with third-party branding. Shot: wide view of a UK town car dealership forecourt or showroom floor, a row of new SUVs, eye level, daylight or dusk with the showroom lit. No badges, dealer signage or number plates legible, no faces. No partner needed in frame.",
+      "photoQuery": "car dealership forecourt row of new SUVs",
+      "whyThisSlot": "Wednesday is proof and archetype C has never run. Documented Western traction from an Asian company, with a mechanism the company's UK CEO states himself: the buyer and the retailer network, not the product. That is the argument OJV's GTM advisory sells.",
+      "blockers": [
+        "Photo or text-only decision"
+      ],
+      "draftPath": "runs/scheduled-39738926451/drafts/2026-W44/OJV-202644-W-archetypeC-omoda-jaecoo-uk.md",
+      "charCount": 1386
+    },
+    {
+      "postId": "OJV-202644-F",
+      "day": "Friday",
+      "date": "2026-10-30",
+      "slot": "offer",
+      "archetype": "F2",
+      "archetypeName": "Situation to solved (diagnostic)",
+      "ctaTier": "hard",
+      "hookPattern": "time-boxed-claim",
+      "copy": "Give us 45 minutes with a startup stuck in a corporate pilot in Asia and we can usually tell whether it will ever become a contract.\n\nWe start with four things:\n\n\u2192 Sponsor\n\u2192 Budget line\n\u2192 Success metric\n\u2192 Next signature\n\nThen we look at what is underneath them.\n\nIs your sponsor the person who owns the budget, or the person who liked the demo?\n\nIs the pilot paid for from a line that exists next year, or from an innovation fund that has to be argued for again?\n\nWas the success metric written down before the pilot started, by someone on their side?\n\nHave you met procurement yet, or only the innovation team?\n\nFrom the inside this looks like patience. The corporate is slow, so the answer must be to wait. Sometimes it is. More often the pilot was set up with nobody on the other side who could say yes, and no amount of waiting fixes that.\n\nAPAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour, and the route to a signature changes with each one.\n\nThat hour usually tells us whether we are useful to you. Sometimes the answer is no.\n\nIf you are six months into a corporate pilot in APAC with no contract in sight, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#APAC #Startups #Corporates #Founders",
+      "entities": [],
+      "sourceUrl": "",
+      "sourcePublisher": "",
+      "firstComment": "",
+      "disclosure": "",
+      "verified": true,
+      "verificationNotes": "F2 contains no third-party fact and no client number. The only figure, 15+ ecosystems, is OJV's own site language. The service is OJV's Asia Superconnector line on oj.ventures ('linking startups with corporates, investors, and customers'). No past result is implied. Naman still needs to confirm OJV offers the conversation in this form.",
+      "styleGate": [],
+      "image": "",
+      "altText": "An OJV partner leaning over a notebook across a small table from a founder, mid-conversation, in window light.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Post is about an OJV service, and the usable partner shots (mic.jpg, studio-blazer.jpg) are inside the 60-day lockout. Shot: Naman (or another OJV partner) across a small table from a founder in an office or cafe, mid-conversation, notebook or laptop open with nothing legible, partner's face visible and in focus, founder side-on or from behind unless they consent, natural window light, landscape, eye level. Partner in frame: Naman.",
+      "photoQuery": "",
+      "whyThisSlot": "Friday carries the week's single hard CTA. E was unavailable because no OJV news was supplied, and a hard-CTA A is out because the trek has already run. F has never run on the page. This F2 covers corporate-pilot conversion, a service the library's three F2 posts do not.",
+      "blockers": [
+        "Naman to confirm the service description",
+        "Team photo or text-only decision"
+      ],
+      "draftPath": "runs/scheduled-39738926451/drafts/2026-W44/OJV-202644-F-archetypeF2-corporate-pilot.md",
+      "charCount": 1257
+    }
+  ],
+  "rotation": {
+    "blockedArchetypes": [],
+    "blockedEntities": [
+      "Unitree",
+      "Shanghai",
+      "Shenzhen",
+      "Notion",
+      "Japan",
+      "Canva",
+      "Melanie Perkins",
+      "Perth"
+    ],
+    "blockedHookPatterns": []
+  },
+  "needsFromAuthor": [
+    "WRITE ACCESS: this CI session was refused write permission under .claude/skills/, so drafts, SCHEDULE.md and paste files are in runs/scheduled-39738926451/drafts/2026-W44/ rather than .claude/skills/ojv-linkedin/drafts/2026-W44/, and data/content-calendar.csv and data/news-seen.csv were NOT updated. Rows to append are in runs/scheduled-39738926451/tracker-rows/. Until they are appended, next week's rotation check cannot see this week's posts. Grant the workflow write access to .claude/skills/ojv-linkedin/ or move the files by hand.",
+    "PHOTO NEEDED for OJV-202644-M (A, Monday): close-up of a silicon wafer or tray of packaged chips, no logos, no faces. Or reply text only.",
+    "PHOTO NEEDED for OJV-202644-W (C, Wednesday): UK car dealership forecourt or showroom, row of new SUVs, no badges or signage legible, no faces. Or reply text only.",
+    "TEAM PHOTO NEEDED for OJV-202644-F (F2, Friday): Naman or another OJV partner across a small table from a founder, mid-conversation, partner's face visible, founder side-on unless they consent. Or reply text only.",
+    "Naman to confirm OJV runs the corporate-pilot diagnostic conversation described in OJV-202644-F before it is scheduled.",
+    "Archetype E: no OJV news was supplied for this run, so E was not used. Tell us what OJV did this month (events, workshops, portfolio moves, partners speaking or judging) so a future Friday can carry first-party proof.",
+    "The China Tech Trek ran 13 to 17 October 2026 and is now in the past. Decide the next flagship offer and update the config table, and say whether there is a trek recap (with photos and partner-checked numbers) for a future archetype E post. ContraVC published source is still TODO.",
+    "Config: DM keyword is TODO, so no post uses a keyword. Enquiry destination was overridden to TODO for this run; every post still closes with the fixed hello@oj.ventures contact line required by the mandatory close. Confirm that address is correct.",
+    "Monday OJV-202644-M uses SMIC 2Q26 figures. Confirm SMIC has not published 3Q26 results before 26 October; if it has, kill or rewrite the post.",
+    "Library post OJV-L001 shares the time-boxed-claim hook pattern with OJV-202644-F. If OJV-L001 is queued within 14 days of 30 October, move one of them."
+  ],
+  "notes": "Weekly run for 2026-W44 (Mon 26, Wed 28, Fri 30 October 2026). Rotation check: 0 archetypes blocked, 8 entities blocked, 0 hook patterns blocked; no usable library image for A, D, E or F. Plan: A (soft) / C (medium, never used) / F2 (hard, never used). E was skipped because no OJV news was supplied. All three drafts pass scripts/style-gate.py. Sources verified 2/2 (F2 needs none). Guardrails: PASS, with TREK and ContraVC not applicable because no post mentions the trek. Drafts, SCHEDULE.md and paste files were written to runs/scheduled-39738926451/drafts/2026-W44/ because writes under .claude/ were denied in this CI session; tracker rows for data/content-calendar.csv (3) and data/news-seen.csv (7 new, plus an edit to the SMIC row) are in runs/scheduled-39738926451/tracker-rows/ and still need appending. Nothing was published or scheduled.",
+  "generatedAt": "2026-10-22T07:19:37Z",
+  "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/39738926451"
+}

@@ -1,478 +1,135 @@
 {
-  "runId": "tranche-39458272009",
+  "runId": "scheduled-39738926451",
   "state": "done",
-  "mode": "tranche",
-  "requested": 10,
-  "written": 10,
-  "firstId": "OJV-L011",
-  "lastId": "OJV-L020",
+  "week": "2026-W44",
   "posts": [
     {
-      "postId": "OJV-L016",
-      "queueNo": 4,
-      "archetype": "C",
-      "archetypeName": "Asia into the West",
-      "ctaTier": "medium",
-      "hookPattern": "by-design",
-      "expires": "2028-02-28",
-      "copy": "Insta360 took 47% of its 2024 revenue from Europe and the United States. Not by accident, but by design.\n\nThe cameras were already good. That is the least interesting part of the story.\n\nWhat it did first was choose a buyer. 54% of its 2024 revenue came from developed countries with low price sensitivity. It sold to people who would pay for a premium device, not to people comparing on price.\n\nThen it went to the shelf where that buyer already stands. Apple Store and Best Buy, and by its 2025 listing more than 10,000 retail stores and over 90 airports worldwide. Revenue went from 2.04 billion yuan in 2022 to 5.57 billion in 2024.\n\nThe West then pushed back in a very Western way. In February 2026 the US International Trade Commission found Insta360 had infringed a GoPro design patent. Insta360 says its existing products can still be sold in the US, and both sides have appealed. First-half 2026 revenue still grew 50.29%, while net profit fell 94.15%.\n\nBuyer, price, shelf, and then the legal terrain an incumbent knows better than you do. None of it is product work.\n\nWe were not involved in Insta360's expansion. This is commentary.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Hardware #GoToMarket #ConsumerTech #APAC",
-      "entities": [
-        "Insta360",
-        "GoPro",
-        "Best Buy"
-      ],
-      "storyKey": "insta360-premium-shelf-west-2024-2026",
-      "sourceUrl": "https://equalocean.com/news/2025061121569-insta360-debuts-star-market-285-surge-market-value-exceeds-cny-70-bn",
-      "sourcePublisher": "EqualOcean (with 36Kr)",
-      "firstComment": "Source: EqualOcean, 11 June 2025, on Insta360's STAR Market listing and prospectus\nhttps://equalocean.com/news/2025061121569-insta360-debuts-star-market-285-surge-market-value-exceeds-cny-70-bn?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L016",
-      "disclosure": "We were not involved in Insta360's expansion. This is commentary.",
-      "verified": true,
-      "verificationNotes": "the prospectus itself was not opened. Every 2024 figure rests on EqualOcean and 36Kr reporting of it, and the two disagree on the overall overseas share (70% vs 76%), which is why the copy uses the Europe and US split instead of either overseas figure. The ITC finding and the appeal status are from 36Kr's report rather than the ITC docket; recheck the appeal before posting.",
-      "styleGate": [
-        "PASS  OJV-L016.md"
-      ],
-      "photoBrief": "PICK: a consumer electronics retail aisle or airport retail space with products on display and no\nreadable brand, or a co-founder with a founder handling a hardware prototype at a table. Landscape.\nAVOID: any Insta360, GoPro, Apple or Best Buy product or branding, which would imply a\nrelationship. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "A brightly lit electronics store aisle with cameras and accessories on display shelves.",
-      "blockers": [
-        "Recheck the status of the GoPro v Insta360 ITC appeal before posting."
-      ],
-      "draftPath": "library/OJV-L016.md",
-      "charCount": 1301,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L013",
-      "queueNo": 6,
+      "postId": "OJV-202644-M",
+      "day": "Monday",
+      "date": "2026-10-26",
+      "slot": "awareness",
       "archetype": "A",
       "archetypeName": "China signal to tour",
       "ctaTier": "soft",
       "hookPattern": "number-first",
-      "expires": "2027-04-01",
-      "copy": "179,877. That is how many cars BYD shipped outside China in September 2026, up 153.9% on a year earlier.\n\nThe monthly number is not the news. The share is.\n\nIn the first nine months of 2026 BYD sold 3,131,576 vehicles. 1,337,831 of them were overseas shipments of passenger cars and pickups. Roughly four in every ten.\n\nRead from a desk in Frankfurt or Detroit, the comfortable conclusion is that this is a subsidy wave that tariffs will stop. That reading misses where the advantage sits.\n\nChina as a whole exported 8.205 million vehicles in those same nine months, more than 4 million of them new energy vehicles. One company did not build that. A supply base did: cells, motors, castings and software suppliers who have spent years being priced against each other at home before any of them looked abroad.\n\nThat is the part you cannot see in a sales disclosure. On the ground in the Pearl River Delta, the question a parts supplier asks is rarely whether you can afford them. It is how fast you need the revision.\n\nThe ecosystem is the product, not the company. Tariffs move a price. They do not move a supply base.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#EV #China #Manufacturing #APAC",
+      "copy": "90.2%. That is the share of SMIC's second-quarter revenue that came from China. A year earlier it was 84.1%.\n\nThat is not a chip story. It is a customer story.\n\nRead from a desk in London or New York, the headline was export controls. Cut a foundry off from Western tools and Western customers, and it shrinks.\n\nThe filing says otherwise. Revenue was $3,005.6 million in the quarter, up 36.1% on a year earlier. Utilisation was 93.7%.\n\nAmerica fell from 12.9% of revenue to 8.2%. The business grew anyway.\n\nThe customers who replaced that revenue are not named in a results table. The mix gives a hint: industrial and automotive went from 10.6% of wafer revenue to 16.5% in a year.\n\nThat is the part you cannot read from outside. Who the domestic chip designers filling those lines are, what they are building for carmakers and factories, and how quickly they move from a design to an order.\n\nThose answers sit in meeting rooms in China, not in a filing.\n\nWhen a market loses its foreign customers and keeps growing, the demand did not disappear. It moved somewhere you are not looking.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: SMIC results announcement, 13 August 2026\n\n#China #Semiconductors #DeepTech #APAC",
       "entities": [
-        "BYD",
-        "CAAM"
+        "SMIC"
       ],
-      "storyKey": "byd-overseas-sales-sep-2026",
-      "sourceUrl": "https://www.thestandard.com.hk/finance/article/344365/Chinas-BYD-sales-rise-in-September-as-export-boom-sustains-momentum",
-      "sourcePublisher": "Reuters via The Standard (HK)",
-      "firstComment": "Source: Reuters, via The Standard, 1 October 2026\nhttps://www.thestandard.com.hk/finance/article/344365/Chinas-BYD-sales-rise-in-September-as-export-boom-sustains-momentum?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-L013",
+      "sourceUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0813/2026081300353.pdf",
+      "sourcePublisher": "SMIC (HKEX results announcement, 13 August 2026)",
+      "firstComment": "Source: SMIC results announcement, 13 August 2026: https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0813/2026081300353.pdf?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-202644-M",
       "disclosure": "",
       "verified": true,
-      "verificationNotes": "the September and nine-month BYD figures are Reuters calculations from BYD's disclosure, not BYD's own release, and definitions differ by outlet (electrive counts 1,342,960 overseas for nine months on a total basis). The copy uses Reuters' passenger-car-and-pickup definition throughout and says so. The national export figure is attributed by Xinhua to \"the data\" in an article that names CAAM; the exact NEV count was not found, so the copy says \"more than 4 million\". The supplier and Pearl River Delta lines are general observation, carry no number and make no claim about a specific visit.",
-      "styleGate": [
-        "PASS  OJV-L013.md"
+      "verificationNotes": "Every number read from the HKEX filing text on 22 Oct 2026: revenue $3,005.6m in 2Q26 vs $2,209.1m in 2Q25 (+36.1% in the summary table); China 90.2% of revenue vs 84.1% in 2Q25; America 8.2% vs 12.9%; utilisation 93.7%; industrial and automotive 16.5% of wafer revenue vs 10.6%. 'First $3bn quarter' not used because the filing does not say first. Story was the verified reserve smic-q2-2026-first-3bn-quarter in news-seen.csv.",
+      "styleGate": [],
+      "image": "",
+      "altText": "Close-up of a silicon wafer, its grid of chip dies catching the light against a plain background.",
+      "needsTeamPhoto": true,
+      "photoBrief": "No China, semiconductor or industrial image in the manifest. Shot: close-up of a silicon wafer or tray of packaged chips under cleanroom or bench light, die pattern in focus, landscape, eye level. No logos, no readable labels, no faces. No partner needed in frame.",
+      "photoQuery": "silicon wafer close up cleanroom",
+      "whyThisSlot": "Monday is reach with a soft close. A dated China deep-tech number read from a primary filing, already verified and parked as a reserve that expires when 3Q26 results land in November, and SMIC has never appeared on the page. No trek mention because the trek has already run.",
+      "blockers": [
+        "Confirm SMIC has not published 3Q26 results before 26 October",
+        "Photo or text-only decision"
       ],
-      "photoBrief": "PICK: an EV charging bay, a car park or street with electric vehicles, or a components workshop\nor factory floor in an Asian city. Mid-shot or wide. Landscape.\nAVOID: any BYD showroom, BYD logo or BYD vehicle in close focus, which would imply a relationship.\nFaces of strangers in focus. Number plates legible.\nFALLBACK: text-only is acceptable.",
-      "altText": "A row of electric cars plugged into charging posts in a city car park.",
-      "blockers": [],
-      "draftPath": "library/OJV-L013.md",
-      "charCount": 1262,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
+      "draftPath": "runs/scheduled-39738926451/drafts/2026-W44/OJV-202644-M-archetypeA-smic-china-share.md",
+      "charCount": 1288
     },
     {
-      "postId": "OJV-L014",
-      "queueNo": 8,
+      "postId": "OJV-202644-W",
+      "day": "Wednesday",
+      "date": "2026-10-28",
+      "slot": "proof",
       "archetype": "C",
       "archetypeName": "Asia into the West",
-      "ctaTier": "soft",
-      "hookPattern": "reframe",
-      "expires": "2028-02-20",
-      "copy": "You can ship a character across the Pacific in a month. You cannot ship the reason people queue for it.\n\nPop Mart's own numbers show both halves of that.\n\nIn 2025 its revenue from the Americas rose 748.4% to 6.81 billion yuan, 18.3% of total sales. Labubu alone sold 14.16 billion yuan worldwide, up 365.7%.\n\nThe product was never the hard part. A collectable is a collectable. What broke through in the West was a story, and it was carried almost entirely by one character.\n\nThen the first half of 2026. Americas revenue fell 16.5% to 1.89 billion yuan, and overseas dropped from 40.3% of the business to 29%.\n\nWhat Pop Mart did in between is the useful part. It set out to take its US stores from 72 to more than 100 in 2026 to pull sales offline, and products outside Labubu grew to about half of its US revenue.\n\nA viral story wins the first buyer. Owning the shelf and the second character is how you keep them. Neither of those is product work.\n\nWe have never worked with Pop Mart. This is commentary from the outside.\n\nIf you want your move into the West to outlast its first hit, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Retail #Consumer #GoToMarket #APAC",
-      "entities": [
-        "Pop Mart",
-        "Labubu"
-      ],
-      "storyKey": "pop-mart-americas-labubu-boom-and-h1-2026",
-      "sourceUrl": "https://mobile.chinadaily.com.cn/html5/2026-04/09/content_013_69d6aa9fed50be540e72e13e.htm",
-      "sourcePublisher": "China Daily",
-      "firstComment": "Source: China Daily, 9 April 2026, on Pop Mart's 2025 annual results\nhttps://mobile.chinadaily.com.cn/html5/2026-04/09/content_013_69d6aa9fed50be540e72e13e.htm?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L014",
-      "disclosure": "We have never worked with Pop Mart. This is commentary from the outside.",
-      "verified": true,
-      "verificationNotes": "the Jiemian page carries no visible date and does not state the period the 50% covers, so the copy says \"grew to about half\" without a date. If challenged, that is the figure to recheck. The HKEX interim PDF could not be read by the fetch tool, so the H1 2026 figures rest on The Standard's report of the results, cross-checked against a Spielwarenmesse report giving overseas revenue down 11.1% to RMB 4.97 billion. Robo-shop counts were seen but could not be verified and were cut.",
-      "styleGate": [
-        "PASS  OJV-L014.md"
-      ],
-      "photoBrief": "PICK: a busy shopping street or mall concourse in a Western city, shopfronts visible but no\nreadable brand, or a co-founder in a working session with product samples on the table.\nLandscape.\nAVOID: any Pop Mart store, Labubu figure or Pop Mart packaging, which would imply a relationship\nor need licensing. Faces of strangers in focus, especially queues.\nFALLBACK: text-only is acceptable.",
-      "altText": "Shoppers walking past brightly lit shopfronts in a city mall.",
-      "blockers": [],
-      "draftPath": "library/OJV-L014.md",
-      "charCount": 1182,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L012",
-      "queueNo": 11,
-      "archetype": "A",
-      "archetypeName": "China signal to tour",
-      "ctaTier": "soft",
+      "ctaTier": "medium",
       "hookPattern": "local-claim-broken",
-      "expires": "2027-03-08",
-      "copy": "Silicon Valley is supposed to be the world's innovation capital. WIPO's 2026 index ranked a Chinese corridor first.\n\nShenzhen, Hong Kong and Guangzhou, counted as one science and technology cluster. Tokyo and Yokohama came second. San Jose and San Francisco came third.\n\nThat is not a ranking story. It is a distance story.\n\nFrom a desk in London the table invites an argument about methodology. The more useful question is what the cluster is made of.\n\nPer million inhabitants over five years, WIPO counted 2,259 international patent applications, 4,060 scientific articles and 138 venture capital deals in that corridor. China hosted 25 of the world's 100 biggest clusters. The United States hosted 20.\n\nOn the ground the three cities work as one place. A paper written in Hong Kong, a prototype turned in Shenzhen, a supplier across the river in Guangzhou, all inside a day's travel. The Loop Hong Kong Park, on the Shenzhen border, opened in December 2025 and had more than 100 companies and institutions signed up by September 2026.\n\nThe ecosystem is the product, not any one city. You can read the ranking anywhere. You only understand the distances by crossing them.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Shenzhen #HongKong #Innovation #DeepTech #APAC",
+      "copy": "Britain is supposed to be a hard market for a car brand nobody has heard of. Two Chinese brands passed 100,000 sales there this summer.\n\nOmoda arrived at the end of August 2024. Jaecoo followed at the start of 2025. The 100,000 mark came in less than two years, at a combined share of nearly 5.7% of new registrations.\n\nNobody in Britain was waiting for these names. So the hard part was never the car. It was the buyer, and the route to that buyer.\n\nThe buyer was a household, not a fleet desk. Of the more than 36,500 Omoda 5s sold, 71% went to private retail customers.\n\nThe route was built early: 144 dealerships across the country. Their UK chief executive said it plainly. Getting there \"would require investing heavily in our people, our retailer network and the ownership experience.\"\n\nThat is the pattern in most Asia-to-West moves we see. A new name does not earn trust from an advert. It earns it from a showroom down the road and someone to call when something goes wrong.\n\nThe buyer, the route to them, and the story they hear first. Rebuilding those three is what our GTM advisory work is for.\n\nWe have never worked with Omoda, Jaecoo or Chery. This is commentary from the outside.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: Motoring Research, 13 August 2026\n\n#GTM #MarketEntry #Expansion #UK",
       "entities": [
-        "WIPO",
-        "Shenzhen",
-        "Hong Kong",
-        "Guangzhou"
+        "Omoda",
+        "Jaecoo",
+        "Chery",
+        "UK"
       ],
-      "storyKey": "gba-cluster-tops-wipo-2026",
-      "sourceUrl": "https://www.wipo.int/pressroom/en/articles/2026/article_0013.html",
-      "sourcePublisher": "WIPO (with news.gov.hk)",
-      "firstComment": "Source: WIPO, Global Innovation Index 2026 press release, 8 September 2026\nhttps://www.wipo.int/pressroom/en/articles/2026/article_0013.html?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-L012",
-      "disclosure": "",
+      "sourceUrl": "https://www.motoringresearch.com/car-news/omoda-jaecoo-100k-uk-sales/",
+      "sourcePublisher": "Motoring Research (John Redfern, 13 August 2026)",
+      "firstComment": "Source: Motoring Research, 13 August 2026: https://www.motoringresearch.com/car-news/omoda-jaecoo-100k-uk-sales/?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-202644-W",
+      "disclosure": "We have never worked with Omoda, Jaecoo or Chery. This is commentary from the outside.",
       "verified": true,
-      "verificationNotes": "the quote tool truncates long sentences at about 125 characters, so the per-million sentence is quoted in two fragments. The reading that \"per 1 million inhabitants\" covers all three counts is the natural reading of the sentence, and WIPO's cluster intensity measures are per capita. WIPO's release is a corrected version (the cluster's VC figures were revised); the 138 figure is from the government page dated the same day. Positions four and five are disputed between secondary sources, so the copy does not state them.",
-      "styleGate": [
-        "PASS  OJV-L012.md"
+      "verificationNotes": "Fetched Motoring Research 13 Aug 2026: 100,000 UK sales; Omoda arrived end of August 2024, Jaecoo start of 2025; under two years; nearly 5.7% share; 144 dealerships; Omoda 5 more than 36,500 sales, 71% private retail; Gary Lan quote on retailer network and ownership experience. Each number cross-checked against the Invicta Motors retailer page (2 Sep 2026), and the 100,000-in-under-two-years milestone against the brand's own jaecoo.co.uk release of 4 Sep 2026. Jaecoo 7 private-buyer share cut because sources conflict (75% vs 66%). September 2026 registration figures cut because they appear only in a secondary blog.",
+      "styleGate": [],
+      "image": "",
+      "altText": "A row of new SUVs parked on a dealership forecourt, the lit showroom behind them.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Nothing in the manifest fits: the only usable B/C images are conference shots with third-party branding. Shot: wide view of a UK town car dealership forecourt or showroom floor, a row of new SUVs, eye level, daylight or dusk with the showroom lit. No badges, dealer signage or number plates legible, no faces. No partner needed in frame.",
+      "photoQuery": "car dealership forecourt row of new SUVs",
+      "whyThisSlot": "Wednesday is proof and archetype C has never run. Documented Western traction from an Asian company, with a mechanism the company's UK CEO states himself: the buyer and the retailer network, not the product. That is the argument OJV's GTM advisory sells.",
+      "blockers": [
+        "Photo or text-only decision"
       ],
-      "photoBrief": "PICK: a cross-border scene in the Greater Bay Area: a Shenzhen or Hong Kong skyline, a border\ncrossing, a high-speed rail platform, or a co-founder walking through a tech park. Wide or\nmid-shot. Landscape.\nAVOID: faces of strangers in focus, any company logo on a building that could read as a client,\nWIPO branding, a stage or award photo.\nFALLBACK: text-only is acceptable.",
-      "altText": "A city skyline at dusk with dense high-rise towers along a waterfront.",
-      "blockers": [],
-      "draftPath": "library/OJV-L012.md",
-      "charCount": 1333,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
+      "draftPath": "runs/scheduled-39738926451/drafts/2026-W44/OJV-202644-W-archetypeC-omoda-jaecoo-uk.md",
+      "charCount": 1386
     },
     {
-      "postId": "OJV-L017",
-      "queueNo": 14,
-      "archetype": "B",
-      "archetypeName": "West into Asia",
-      "ctaTier": "soft",
-      "hookPattern": "hard-truth",
-      "expires": "2028-04-20",
-      "copy": "Nobody wants to hear this, but Netflix grew faster in India by charging less.\n\nIn December 2021 it cut its Indian prices by 18 to 60% across plans. Mobile went from Rs 199 a month to Rs 149. Basic went from Rs 499 to Rs 199.\n\nIn its April 2023 shareholder letter, Netflix said the cuts, with a stronger slate, helped grow engagement in India by nearly 30%, while F/X neutral revenue growth in 2022 accelerated to 24%, from 19% in 2021.\n\nThen came the part that shows it was a strategy, not a promotion. In the first quarter of 2023 it cut prices in another 116 countries, using what India had taught it.\n\nThe unlock was a pricing rebuild. What Netflix did not do was defend one global price and decide the market was too poor to pay it.\n\nMost Western subscription teams convert the home price into local currency and call that localisation. Conversion stays low, and the conclusion is that the market is not ready.\n\nPrice is a market-entry decision, not a finance one. Rebuilt for how that buyer actually pays, it can be the whole unlock. It is one of the first things we test in our GTM advisory work.\n\nWe have never worked with Netflix. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Pricing #GoToMarket #India #APAC",
-      "entities": [
-        "Netflix"
-      ],
-      "storyKey": "netflix-india-price-cut-2021",
-      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1065280/000106528023000119/ex991_q123.htm",
-      "sourcePublisher": "Netflix, SEC filing",
-      "firstComment": "Source: Netflix Q1 2023 shareholder letter, SEC filing, 18 April 2023\nhttps://www.sec.gov/Archives/edgar/data/1065280/000106528023000119/ex991_q123.htm?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L017",
-      "disclosure": "We have never worked with Netflix. This is commentary from the outside.",
-      "verified": true,
-      "verificationNotes": "the letter itself gives the India range as \"20%-60%\", while the December 2021 Netflix statement says \"18-60%\". The copy uses the statement made at the time of the cut. The 24% figure is quoted in the letter's India sentence but the letter does not literally say \"India revenue\", so the copy reproduces the letter's own construction (\"while F/X neutral revenue growth in 2022 accelerated\") rather than calling it India revenue. The original Deadline article was paywalled (402) and was not used.",
-      "styleGate": [
-        "PASS  OJV-L017.md"
-      ],
-      "photoBrief": "PICK: a phone or laptop screen glowing in a home or cafe setting in an Asian city, screen content\nnot legible, or a co-founder in a working session with pricing tiers on a whiteboard. Landscape.\nAVOID: the Netflix logo, interface or any show artwork, which would imply a relationship and\nraise rights issues. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "A person holding a smartphone in a cafe, the screen lit but not readable.",
-      "blockers": [],
-      "draftPath": "library/OJV-L017.md",
-      "charCount": 1323,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L011",
-      "queueNo": 15,
+      "postId": "OJV-202644-F",
+      "day": "Friday",
+      "date": "2026-10-30",
+      "slot": "offer",
       "archetype": "F2",
-      "archetypeName": "Situation to solved (F2 diagnostic)",
+      "archetypeName": "Situation to solved (diagnostic)",
       "ctaTier": "hard",
-      "hookPattern": "stated-contradiction",
-      "expires": "none",
-      "copy": "Companies say they want pipeline in a new APAC market, then run every touch from a desk that has never been there.\n\nGive us an hour with your outbound and we can usually tell why that market is not replying.\n\nWe start with four things:\n\n\u2192 Who you target\n\u2192 What you send\n\u2192 Who sends it\n\u2192 What happens after yes\n\nThen we look at what is underneath them.\n\nWas your list built for how that market's companies are actually organised, or copied from home with the country field changed?\n\nDoes your first message mention anything a buyer there would recognise, or could it have gone to anyone, anywhere?\n\nWho is the sender? A name the buyer can place, a partner they already trust, or a stranger in another time zone?\n\nWhen someone says yes, who takes the meeting, at what hour, and how fast?\n\nFrom the inside, a silent market looks like a market that is not ready. Sometimes it is. More often the outreach was never built for it, and more volume does not fix that.\n\nAPAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour.\n\nIf you are selling into an APAC market with no local team and the outreach has gone quiet, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#LeadGeneration #APAC #B2BSales #GoToMarket",
+      "hookPattern": "time-boxed-claim",
+      "copy": "Give us 45 minutes with a startup stuck in a corporate pilot in Asia and we can usually tell whether it will ever become a contract.\n\nWe start with four things:\n\n\u2192 Sponsor\n\u2192 Budget line\n\u2192 Success metric\n\u2192 Next signature\n\nThen we look at what is underneath them.\n\nIs your sponsor the person who owns the budget, or the person who liked the demo?\n\nIs the pilot paid for from a line that exists next year, or from an innovation fund that has to be argued for again?\n\nWas the success metric written down before the pilot started, by someone on their side?\n\nHave you met procurement yet, or only the innovation team?\n\nFrom the inside this looks like patience. The corporate is slow, so the answer must be to wait. Sometimes it is. More often the pilot was set up with nobody on the other side who could say yes, and no amount of waiting fixes that.\n\nAPAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour, and the route to a signature changes with each one.\n\nThat hour usually tells us whether we are useful to you. Sometimes the answer is no.\n\nIf you are six months into a corporate pilot in APAC with no contract in sight, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#APAC #Startups #Corporates #Founders",
       "entities": [],
-      "storyKey": "none-diagnostic-leadgen-no-local-team",
       "sourceUrl": "",
       "sourcePublisher": "",
       "firstComment": "",
       "disclosure": "",
       "verified": true,
-      "verificationNotes": "No third-party fact in the post. The four diagnostic items are unconfirmed by Naman; that is the weakest point.",
-      "styleGate": [
-        "PASS  OJV-L011.md"
-      ],
-      "photoBrief": "PICK: a co-founder at a desk on a call or working a laptop, a second screen or notebook in view,\ncity or office visible behind. Working posture, one or two people. Landscape.\nAVOID: any legible CRM screen, contact list, prospect name or email on screen. A stage or panel.\nAny face that is not a co-founder or someone who has cleared it.\nFALLBACK: text-only is acceptable.\n\nWHY THIS BRIEF: the post offers outbound and route-in work, so the image should look like that\nwork being done, not like an event.",
-      "altText": "A person working at a desk with a laptop open and a phone beside it, an office window behind.",
+      "verificationNotes": "F2 contains no third-party fact and no client number. The only figure, 15+ ecosystems, is OJV's own site language. The service is OJV's Asia Superconnector line on oj.ventures ('linking startups with corporates, investors, and customers'). No past result is implied. Naman still needs to confirm OJV offers the conversation in this form.",
+      "styleGate": [],
+      "image": "",
+      "altText": "An OJV partner leaning over a notebook across a small table from a founder, mid-conversation, in window light.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Post is about an OJV service, and the usable partner shots (mic.jpg, studio-blazer.jpg) are inside the 60-day lockout. Shot: Naman (or another OJV partner) across a small table from a founder in an office or cafe, mid-conversation, notebook or laptop open with nothing legible, partner's face visible and in focus, founder side-on or from behind unless they consent, natural window light, landscape, eye level. Partner in frame: Naman.",
+      "photoQuery": "",
+      "whyThisSlot": "Friday carries the week's single hard CTA. E was unavailable because no OJV news was supplied, and a hard-CTA A is out because the trek has already run. F has never run on the page. This F2 covers corporate-pilot conversion, a service the library's three F2 posts do not.",
       "blockers": [
-        "Naman to confirm the four diagnostic items (who you target, what you send, who sends it, what happens after yes) are the real lead generation diagnostic.",
-        "TODO(config: booking link) is recorded in the draft, not the copy: SKILL.md says F no longer carries a booking link. Confirm."
+        "Naman to confirm the service description",
+        "Team photo or text-only decision"
       ],
-      "draftPath": "library/OJV-L011.md",
-      "charCount": 1251,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L015",
-      "queueNo": 16,
-      "archetype": "C",
-      "archetypeName": "Asia into the West",
-      "ctaTier": "medium",
-      "hookPattern": "contrarian-bet",
-      "expires": "2028-02-28",
-      "copy": "Would you bet against a Chinese retailer in America because it owns almost none of the characters on its shelves?\n\nMINISO's US sales grew 52.62% in 2025, by the National Retail Federation's count. It ended the year with 351 US stores, 76 of them opened that year.\n\nThe product is not the surprise. Affordable lifestyle goods are everywhere.\n\nWhat it got right was the story, and it licensed that rather than writing it. More than 180 IPs, including Disney, Sanrio and Chiikawa. An American shopper does not need to know the name above the door to recognise what is inside.\n\nThen it turned visits into a relationship. US membership grew more than 150% in 2025, and member sales passed half of total sales for the first time.\n\nMost Asian brands run this in the opposite order. They spend year one explaining who they are to a buyer who never asked. MINISO borrowed recognition first and built its own name on top. By mid-2026 it had 536 stores in North America, against 394 a year earlier.\n\nThe hard part of a move into the West is rarely the product. It is the buyer, the price and the story. Rebuilding those three is what our GTM advisory work is for.\n\nNo relationship with MINISO. Commentary only.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Retail #GoToMarket #Consumer #APAC",
-      "entities": [
-        "MINISO",
-        "Disney",
-        "Sanrio"
-      ],
-      "storyKey": "miniso-us-licensed-ip-membership-2025",
-      "sourceUrl": "https://nrf.com/media-center/press-releases/nrf-2026-hot-25-list-highlights-fastest-growing-retailers",
-      "sourcePublisher": "National Retail Federation (with MINISO release)",
-      "firstComment": "Source: National Retail Federation, 2026 Hot 25 list, 5 August 2026\nhttps://nrf.com/media-center/press-releases/nrf-2026-hot-25-list-highlights-fastest-growing-retailers?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L015",
-      "disclosure": "No relationship with MINISO. Commentary only.",
-      "verified": true,
-      "verificationNotes": "the membership and store figures are MINISO's own press release, so they are company-reported. The 52.62% growth figure is independent (NRF, with Kantar). The 394 to 536 store count was read from a table in the 6-K rather than a sentence. RetailWire returned 429 and was not used.",
-      "styleGate": [
-        "PASS  OJV-L015.md"
-      ],
-      "photoBrief": "PICK: a Western high street or mall interior with a mix of shopfronts, or a co-founder with a\nfounder looking at a retail floor plan or product range on a table. Landscape.\nAVOID: any MINISO store, and any Disney, Sanrio or Chiikawa character, which are licensed IP and\nwould imply a relationship. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "A row of shopfronts along a busy high street, shoppers passing in the foreground.",
-      "blockers": [],
-      "draftPath": "library/OJV-L015.md",
-      "charCount": 1350,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L020",
-      "queueNo": 17,
-      "archetype": "D",
-      "archetypeName": "Rejection to raise",
-      "ctaTier": "soft",
-      "hookPattern": "promise-to-unpack",
-      "expires": "2028-04-20",
-      "copy": "148 investors turned Kathryn Minshew down before The Muse raised its seed round. Three things changed. The idea was not one of them.\n\nShe counted afterwards. \"I had been turned down 148 times,\" she said on Masters of Scale.\n\nThe business stayed a careers site built around content, which was exactly what worried investors.\n\nWhat changed was this.\n\nThe evidence. In her words, most investors were apathetic, but users were rabid fans, and the user feedback and data were what kept her going.\n\nThe objections got sharper. One investor told her to call back once The Muse hit 100,000 monthly active users. Another said she would have a hard time finding women who care about their careers.\n\nThe room. Y Combinator accepted them, which she called definitely a turning point. The seed round, from YC, 500 Startups and others, was announced in January 2013. In May 2015 The Muse raised a $10 million Series A from Aspect Ventures.\n\n148 nos from investors who did not believe the buyer existed is not information about the company. It is information about the list.\n\nThat is the part of fundraising support we do. We cut the list and work the warm paths into rooms where the story already makes sense. We do not promise the yes, because nobody honest can.\n\nIf you want your investor list built around people who already believe in your buyer, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Fundraising #Founders #Startups #VentureStudio",
-      "entities": [
-        "The Muse",
-        "Kathryn Minshew",
-        "Y Combinator"
-      ],
-      "storyKey": "minshew-the-muse-148-nos",
-      "sourceUrl": "https://tim.blog/2018/06/01/the-tim-ferriss-show-transcripts-reid-hoffman-ten-commandments/",
-      "sourcePublisher": "Masters of Scale transcript, tim.blog",
-      "firstComment": "Source: Masters of Scale with Reid Hoffman, transcript via The Tim Ferriss Show, 1 June 2018\nhttps://tim.blog/2018/06/01/the-tim-ferriss-show-transcripts-reid-hoffman-ten-commandments/?utm_source=linkedin&utm_medium=organic&utm_campaign=D-OJV-L020",
-      "disclosure": "",
-      "verified": true,
-      "verificationNotes": "the rejection count is a self-report. It is consistent across every source found (148 in both of Minshew's own accounts; a Cheddar piece seen in search gives the same figure), so it passes the cut-not-average rule. The Varol version says \"no (or failing)\", which slightly widens what the 148 counts, so the copy uses the Masters of Scale wording. The seed amount is reported as $1.2m by VentureBeat and $1m by Women 2.0, so the copy does not state a seed amount at all.",
-      "styleGate": [
-        "PASS  OJV-L020.md"
-      ],
-      "photoBrief": "PICK: a co-founder in a one-to-one working session with a founder, notebook or laptop open, or a\nsmall workshop table. Working posture. Landscape.\nAVOID: any photo of Kathryn Minshew or The Muse branding, which would imply a relationship. Stock\n\"rejected\" imagery. A legible investor name on any screen.\nFALLBACK: text-only is acceptable.",
-      "altText": "Two people working through notes together at a small table, a laptop open between them.",
-      "blockers": [],
-      "draftPath": "library/OJV-L020.md",
-      "charCount": 1443,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L018",
-      "queueNo": 18,
-      "archetype": "B",
-      "archetypeName": "West into Asia",
-      "ctaTier": "medium",
-      "hookPattern": "comparative-receipt",
-      "expires": "2028-04-20",
-      "copy": "Domino's had 1,325 stores in the UK and 1,321 in China at the end of 2025. In India it had 2,396. Here is exactly how it got there:\n\nThose are the counts in Domino's own annual filing, as at 28 December 2025. India was its largest market outside the US by store count.\n\n\u2192 A local operator, not a subsidiary. India is run by Jubilant FoodWorks, a listed Indian company, as master franchisee. Domino's says prospective master franchisees must possess local market knowledge.\n\n\u2192 A local menu. The filing names the Chicken Burst Pizza, a double layer of chicken toppings, as an India offering.\n\n\u2192 A long commitment. In March 2026 the agreement was renewed for another 15 years, with an option for a further decade.\n\nThe unlock was the partner. What Domino's did not do was try to run India from head office.\n\nThat is not a one-off. Eight of its ten largest international markets were run by master franchise companies listed on stock exchanges.\n\nThe right local partner is a go-to-market decision, not a legal formality, and in each of APAC's 15+ ecosystems the right partner looks different. Finding and testing that partner is a large part of our GTM advisory work.\n\nWe have never worked with Domino's or Jubilant. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#GoToMarket #Franchising #India #APAC",
-      "entities": [
-        "Domino's Pizza",
-        "Jubilant FoodWorks"
-      ],
-      "storyKey": "dominos-india-jubilant-master-franchise",
-      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1286681/000119312526062321/dpz-20251228.htm",
-      "sourcePublisher": "Domino's Pizza Inc., SEC 10-K",
-      "firstComment": "Source: Domino's Pizza Inc. annual report on Form 10-K, fiscal 2025, filed 23 February 2026\nhttps://www.sec.gov/Archives/edgar/data/1286681/000119312526062321/dpz-20251228.htm?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L018",
-      "disclosure": "We have never worked with Domino's or Jubilant. This is commentary from the outside.",
-      "verified": true,
-      "verificationNotes": "the 2026 renewal rests on Storyboard18's report; the NSE filing PDF timed out and was not read. The 10-K identifies Jubilant only by its ticker, JUBLFOOD, in the store table; the company name is matched from the ticker. Some 10-K sentences were returned in two fragments by the fetch tool and are joined above.",
-      "styleGate": [
-        "PASS  OJV-L018.md"
-      ],
-      "photoBrief": "PICK: a busy food delivery scene or restaurant street in an Asian city at night, riders or\nshopfronts visible, no readable brand. Or a co-founder in a partner meeting across a table.\nLandscape.\nAVOID: any Domino's or Jubilant branding, uniform or delivery box. Faces of strangers in focus,\nincluding delivery riders.\nFALLBACK: text-only is acceptable.",
-      "altText": "A busy street at night lined with lit restaurant fronts, scooters parked along the kerb.",
-      "blockers": [],
-      "draftPath": "library/OJV-L018.md",
-      "charCount": 1401,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L019",
-      "queueNo": 19,
-      "archetype": "B",
-      "archetypeName": "West into Asia",
-      "ctaTier": "medium",
-      "hookPattern": "local-claim-broken",
-      "expires": "2028-04-20",
-      "copy": "China was supposed to make every foreign carmaker take a local partner. In July 2018 Tesla became the first that did not.\n\nBeijing had promised that April to end the rule requiring foreign automakers to work through local partners. Tesla moved within three months: its first factory outside the US, in Shanghai, as the first wholly foreign-owned automaker in China.\n\nLess than 12 months after breaking ground, Tesla said at the start of 2020 that the plant had already produced just under 1,000 customer salable cars.\n\nThe unlock was regulatory sequencing. Tesla did not wait to see how the new rule would work in practice. It was first through the door the rule opened.\n\nThen the part a 2018 post would have missed. In 2025 the Shanghai plant delivered 851,000 cars, more than half of Tesla's global deliveries. Over the same year, Tesla's retail sales inside China fell 4.78% to 625,698.\n\nBoth are true. Sequencing bought Tesla a structure no foreign rival had. It did not exempt the company from the market that structure sits in.\n\nEvery APAC market has its own version of the ordering problem, and the right order is different in each of the 15+ ecosystems. Sequencing is the first thing we map in a GTM engagement.\n\nWe were not involved in Tesla's expansion. This is commentary.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#MarketEntry #China #EV #APAC",
-      "entities": [
-        "Tesla",
-        "Shanghai"
-      ],
-      "storyKey": "tesla-shanghai-wholly-owned-2018-2025",
-      "sourceUrl": "https://fox11online.com/news/auto-matters/tesla-will-build-its-1st-factory-outside-us-in-shanghai",
-      "sourcePublisher": "Associated Press",
-      "firstComment": "Source: Associated Press, 11 July 2018\nhttps://fox11online.com/news/auto-matters/tesla-will-build-its-1st-factory-outside-us-in-shanghai?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L019",
-      "disclosure": "We were not involved in Tesla's expansion. This is commentary.",
-      "verified": true,
-      "verificationNotes": "the Gasgoo figure for 2025 Shanghai deliveries is trade press rather than a Tesla filing, and Gasgoo's sentence was returned in two fragments. The AP story is read from a syndicated copy on a TV station site rather than apnews.com. \"Within three months\" is derived from the April promise and the 11 July announcement.",
-      "styleGate": [
-        "PASS  OJV-L019.md"
-      ],
-      "photoBrief": "PICK: a Shanghai or other Chinese city skyline, an elevated highway with traffic, or an\nindustrial park exterior. Wide shot. Landscape.\nAVOID: any Tesla vehicle, logo, showroom or factory, which would imply a relationship or a visit.\nFaces of strangers in focus. Legible number plates.\nFALLBACK: text-only is acceptable.",
-      "altText": "An elevated highway curving through a dense city skyline in China.",
-      "blockers": [
-        "If posting after January 2027, recheck Tesla China full-year 2026 sales."
-      ],
-      "draftPath": "library/OJV-L019.md",
-      "charCount": 1427,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    }
-  ],
-  "droppedCandidates": [
-    {
-      "storyKey": "smic-q2-2026-first-3bn-quarter",
-      "archetype": "A",
-      "why": "UNUSED, verified reserve. Q2 2026 revenue $3,005.6m and 25.3% gross margin quoted from the HKEX filing. Dropped only because two A slots were filled. Expires around mid-November 2026 when Q3 results supersede it, so use it in the weekly run or not at all."
-    },
-    {
-      "storyKey": "china-nev-exports-jan-sep-2026",
-      "archetype": "A",
-      "why": "Not used as a standalone post; the 8.205 million Jan-Sep 2026 export figure is used as supporting context in OJV-L013. Do not run it as its own post."
-    },
-    {
-      "storyKey": "china-industrial-robot-output-nbs-2026",
-      "archetype": "A",
-      "why": "DROPPED. September 2026 NBS figure not found; CGTN gives only an August growth rate with no unit count and SCMP returned 403."
-    },
-    {
-      "storyKey": "xiaomi-ev-deliveries-sep-2026",
-      "archetype": "A",
-      "why": "DROPPED. Only a company-stated 'more than 40,000'; model split is aggregator registration data and the annual target is a forecast."
-    },
-    {
-      "storyKey": "mcdonalds-china-citic-carlyle-2017-2025",
-      "archetype": "B",
-      "why": "UNUSED, verified. Dropped because its sell-control-then-buy-back arc repeats the shape of OJV-L008 (Starbucks China). Good candidate for a later tranche once L008 has run. McDonald's corporate page 403, HK release 404; deal terms from Cleary Gottlieb and AFP."
-    },
-    {
-      "storyKey": "byd-europe-dealers-phev-2026",
-      "archetype": "C",
-      "why": "DROPPED for this tranche. BYD is already an entity in OJV-L013 and the library rule bars an entity twice in twenty positions. Also undercut: Brussels asked China in September 2026 to cap Chinese-built hybrids at about 15% of the EU market, which threatens the PHEV mechanism."
-    },
-    {
-      "storyKey": "haier-ge-appliances-2016",
-      "archetype": "C",
-      "why": "DROPPED. No primary source found for GE Appliances revenue since 2016; Haier release gave only rankings; gettex copy 404."
-    },
-    {
-      "storyKey": "luckin-coffee-us-entry-2025",
-      "archetype": "C",
-      "why": "DROPPED. Only a store count, and sources disagree (about 20 to 22). No US revenue, so no documented traction."
-    },
-    {
-      "storyKey": "peloton-foley-400-investors",
-      "archetype": "D",
-      "why": "DROPPED. Counts conflict (400 VCs vs 5,000 to 6,000 rejections). Cut, not averaged."
-    },
-    {
-      "storyKey": "appdynamics-bansal-vc-rejections",
-      "archetype": "D",
-      "why": "DROPPED. Founder says 'at least about 20 VCs', Fortune 2024 says 30. Series A amount also varies. Cut."
-    },
-    {
-      "storyKey": "dream11-harsh-jain-150-nos",
-      "archetype": "D",
-      "why": "DROPPED on what-happened-next: India's 2025 real-money gaming ban reportedly removed most of the revenue, followed by layoffs. Would embarrass the page."
-    },
-    {
-      "storyKey": "tokopedia-tanuwijaya-rejections",
-      "archetype": "D",
-      "why": "DROPPED. 'Nearly a dozen' (TechCrunch) vs '11 pitches' (Bloomberg, paywalled snippet). No exact count; seed amount undisclosed."
-    },
-    {
-      "storyKey": "sugar-cosmetics-vineeta-singh-100-vcs",
-      "archetype": "D",
-      "why": "DROPPED. '100+ VCs' only on a celebrity site relaying a TV interview; YourStory 403; the period also overlaps her earlier venture."
-    },
-    {
-      "storyKey": "razorpay-rejections",
-      "archetype": "D",
-      "why": "DROPPED. The 'nearly 100' figure is bank rejections, not investors."
-    },
-    {
-      "storyKey": "zoom-eric-yuan-investor-rejections",
-      "archetype": "D",
-      "why": "DROPPED. Only 'countless' and 'dozens'; no number."
-    },
-    {
-      "storyKey": "calm-alex-tew-100-investors",
-      "archetype": "D",
-      "why": "DROPPED. '100+' on one secondary site only; founders give no count."
-    },
-    {
-      "storyKey": "bytedance-zhang-yiming-20-investors",
-      "archetype": "D",
-      "why": "DROPPED. Single source that misnames an investor partner. Unreliable."
-    },
-    {
-      "storyKey": "airwallex-nykaa-freshworks-rejections",
-      "archetype": "D",
-      "why": "DROPPED. Airwallex failures were products; Nykaa mentions rejections with no count; Freshworks no count found."
-    },
-    {
-      "storyKey": "insta360-overall-overseas-share",
-      "archetype": "C",
-      "why": "Not a separate story: the 70% vs 76% overseas-share conflict was cut from OJV-L016 and the Europe and US split used instead."
+      "draftPath": "runs/scheduled-39738926451/drafts/2026-W44/OJV-202644-F-archetypeF2-corporate-pilot.md",
+      "charCount": 1257
     }
   ],
   "rotation": {
-    "blockedHookPatterns": [],
+    "blockedArchetypes": [],
     "blockedEntities": [
-      "IFR",
-      "CSPC",
-      "AstraZeneca",
-      "RemeGen",
-      "AbbVie",
-      "IKEA",
-      "CATL",
-      "Debrecen",
-      "Airbnb",
-      "Brian Chesky",
-      "Starbucks",
-      "Uni-President",
-      "Boyu Capital",
-      "Anker Innovations",
-      "Amazon",
-      "UBTECH",
+      "Unitree",
+      "Shanghai",
+      "Shenzhen",
+      "Notion",
+      "Japan",
       "Canva",
       "Melanie Perkins",
-      "Perth",
-      "Notion",
-      "Unitree"
+      "Perth"
     ],
-    "usedF2Pairs": [
-      "GTM advisory x company entering APAC (OJV-L001)",
-      "Fundraising support x mid-raise founder (OJV-L007)",
-      "Lead generation x no local team (OJV-L011)"
-    ]
+    "blockedHookPatterns": []
   },
   "needsFromAuthor": [
-    "OJV-L002 (queue 1) expires 2026-10-31, eleven days after this run, and IFR World Robotics 2026 has probably superseded its 2024 figures. Publish it before then or kill it; do not let the intern post it in November.",
-    "Booking link for archetype F was empty in the run config. SKILL.md says F no longer needs one, and OJV-L001, L007 and L011 carry none, so TODO(config: booking link) is recorded in the OJV-L011 draft notes rather than in the paste copy. Decide whether F2 posts should carry a link; if yes it goes directly above the \"If you are ...\" ask in all three.",
-    "Naman to confirm the four diagnostic items in OJV-L011 (lead generation), as for L001 and L007.",
-    "Archetype D decision from batch-library.md item 6 is still open. Again only one of 14 D candidates verified, and again it is not an Asian founder. Recommend cutting D to about 8 across the hundred, or explicitly widening the trigger; this tranche did neither and moved the slack into B and C.",
-    "Before tranche 4, supply performance numbers for anything already published from the library (batch-library.md, honest limit 3).",
-    "Approver review (Naman) of all ten posts before any is scheduled."
+    "WRITE ACCESS: this CI session was refused write permission under .claude/skills/, so drafts, SCHEDULE.md and paste files are in runs/scheduled-39738926451/drafts/2026-W44/ rather than .claude/skills/ojv-linkedin/drafts/2026-W44/, and data/content-calendar.csv and data/news-seen.csv were NOT updated. Rows to append are in runs/scheduled-39738926451/tracker-rows/. Until they are appended, next week's rotation check cannot see this week's posts. Grant the workflow write access to .claude/skills/ojv-linkedin/ or move the files by hand.",
+    "PHOTO NEEDED for OJV-202644-M (A, Monday): close-up of a silicon wafer or tray of packaged chips, no logos, no faces. Or reply text only.",
+    "PHOTO NEEDED for OJV-202644-W (C, Wednesday): UK car dealership forecourt or showroom, row of new SUVs, no badges or signage legible, no faces. Or reply text only.",
+    "TEAM PHOTO NEEDED for OJV-202644-F (F2, Friday): Naman or another OJV partner across a small table from a founder, mid-conversation, partner's face visible, founder side-on unless they consent. Or reply text only.",
+    "Naman to confirm OJV runs the corporate-pilot diagnostic conversation described in OJV-202644-F before it is scheduled.",
+    "Archetype E: no OJV news was supplied for this run, so E was not used. Tell us what OJV did this month (events, workshops, portfolio moves, partners speaking or judging) so a future Friday can carry first-party proof.",
+    "The China Tech Trek ran 13 to 17 October 2026 and is now in the past. Decide the next flagship offer and update the config table, and say whether there is a trek recap (with photos and partner-checked numbers) for a future archetype E post. ContraVC published source is still TODO.",
+    "Config: DM keyword is TODO, so no post uses a keyword. Enquiry destination was overridden to TODO for this run; every post still closes with the fixed hello@oj.ventures contact line required by the mandatory close. Confirm that address is correct.",
+    "Monday OJV-202644-M uses SMIC 2Q26 figures. Confirm SMIC has not published 3Q26 results before 26 October; if it has, kill or rewrite the post.",
+    "Library post OJV-L001 shares the time-boxed-claim hook pattern with OJV-202644-F. If OJV-L001 is queued within 14 days of 30 October, move one of them."
   ],
-  "notes": "Ten of ten written: A 2, B 3, C 3, D 1, F2 1. Archetype D was capped at 4 but only one candidate (Kathryn Minshew, 148 nos, consistent across sources) passed; the other three D slots went to B and C. E and F1 were not attempted because they cannot be batched. Several C stories had 2026 developments (Pop Mart overseas decline, Insta360 profit fall and GoPro ITC ruling) and those are written into the copy rather than omitted. Every draft passes the style gate; the whole library of 20 passes. QUEUE.csv was rewritten for all 20 posts in order under the rotation rules, hard-CTA posts at positions 10, 15 and 20. Image intake skipped: no raw image folder in CI. Nothing was committed, scheduled or published.",
-  "generatedAt": "2026-10-20T16:58:09Z",
-  "workflowRunUrl": ""
+  "notes": "Weekly run for 2026-W44 (Mon 26, Wed 28, Fri 30 October 2026). Rotation check: 0 archetypes blocked, 8 entities blocked, 0 hook patterns blocked; no usable library image for A, D, E or F. Plan: A (soft) / C (medium, never used) / F2 (hard, never used). E was skipped because no OJV news was supplied. All three drafts pass scripts/style-gate.py. Sources verified 2/2 (F2 needs none). Guardrails: PASS, with TREK and ContraVC not applicable because no post mentions the trek. Drafts, SCHEDULE.md and paste files were written to runs/scheduled-39738926451/drafts/2026-W44/ because writes under .claude/ were denied in this CI session; tracker rows for data/content-calendar.csv (3) and data/news-seen.csv (7 new, plus an edit to the SMIC row) are in runs/scheduled-39738926451/tracker-rows/ and still need appending. Nothing was published or scheduled.",
+  "generatedAt": "2026-10-22T07:19:37Z",
+  "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/39738926451"
 }
