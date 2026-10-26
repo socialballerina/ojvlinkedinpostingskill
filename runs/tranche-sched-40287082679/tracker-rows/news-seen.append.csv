@@ -1,0 +1,27 @@
+date_seen,story_key,source_url,archetype,posted,post_id,notes
+2026-10-26,hesai-q2-2026-robotics-lidar-193pct,https://www.sec.gov/Archives/edgar/data/0001861737/000110465926098050/tm2623467d1_ex99-1.htm,A,library,OJV-L021,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,pony-ai-q2-2026-robotaxi-fleet-1975,https://www.sec.gov/Archives/edgar/data/0001969302/000110465926098113/tm2623382d1_ex99-1.htm,A,library,OJV-L022,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,china-energy-storage-battery-output-h1-2026,https://news.cgtn.com/news/2026-10-15/China-s-energy-storage-output-up-110-as-sector-eyes-innovation-1RgoaUbJmWk/p.html,A,library,OJV-L023,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,walmart-flipkart-acquisition,https://corporate.walmart.com/news/2018/05/09/walmart-to-invest-in-flipkart-group-indias-innovative-ecommerce-company,B,library,OJV-L024,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,apple-india-own-retail,https://www.apple.com/in/newsroom/2026/02/apple-borivali-opens-in-mumbai-this-thursday-february-26/,B,library,OJV-L025,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,uber-japan-licensed-taxi-route,https://news.mynavi.jp/article/20260202-uber/,B,library,OJV-L026,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,ukhi-106-rejections-to-seed,https://www.entrepreneur.com/starting-a-business/i-learned-5-things-after-facing-over-100-investor-rejections/503595,D,library,OJV-L027,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,uniqlo-north-america-stopped-discounting,https://www.fastretailing.com/eng/ir/news/2610081800.html,C,library,OJV-L028,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,apr-medicube-us-tiktok-to-retail,https://www.koreatimes.co.kr/business/companies/20261019/apr-expands-us-retail-presence-as-medicube-hits-costco-shelves,C,library,OJV-L029,Used in tranche-sched-40287082679. See Verified facts in the draft for the weakest source.
+2026-10-26,china-orbital-launches-2025-record,https://english.spacechina.com/n17212/c4521283/content.html,A,no,,"UNUSED, verified reserve. CASC 73 launches in 2025 (CASC, 5 Jan 2026); national total 93 (China Daily) vs 92 (NASASpaceflight). Held back: 2025 data, national count conflicts, and 2026 launch failures would need sourcing."
+2026-10-26,horizon-robotics-h1-2026,,A,no,,DROPPED. HKEX interim PDF unreadable; 2.218m chip shipments only in secondary sources; core operating losses widened and headline profit came from non-operating items.
+2026-10-26,weride-robotaxi-2026,,A,no,,NOT CHECKED. Same story shape as Pony.ai (OJV-L022); one robotaxi post per tranche.
+2026-10-26,dji-2026,,A,no,,NOT CHECKED. Private company; no clean dated number found.
+2026-10-26,amex-china-clearing-licence,,B,no,,"DROPPED. Strong regulatory-sequencing mechanism (LianLian JV, first foreign clearing licence) but no documented traction in China: no cards, volume or revenue figures."
+2026-10-26,mastercard-china-clearing-jv,,B,no,,NOT CHECKED. Same angle as Amex with the same probable lack of traction data.
+2026-10-26,duolingo-japan,,B,no,,"DROPPED. No Japan-specific figure in 2025 or 2026 filings; only ""fastest-growing region"" for Asia."
+2026-10-26,costco-korea-japan-taiwan,,B,no,,DROPPED. No clear mechanism beyond exporting the format; not researched further.
+2026-10-26,jollibee-north-america-beyond-diaspora,https://www.nrn.com/quick-service/jollibee-embraces-differentiation-over-imitation-in-u-s-market-push,C,no,,"UNUSED, verified reserve. NA same-store sales +10.2% in 2025 and Q2 2026 NA system sales +21.6% (JFC releases read only on republication pages; originals 403). Store counts mix brands; US AUV conflicts ($5m vs $4.5m). Good later candidate."
+2026-10-26,webtoon-us-canvas,,C,no,,"DROPPED. Q2 2026 revenue down 2.8% and net loss widened (SEC 8-K, 10 Aug 2026); undercuts the it-worked spine."
+2026-10-26,roborock-europe-us,,C,no,,"DROPPED. 2025 overseas revenue RMB10.442bn, 56% of total, but no US or Europe split and no named Western mechanism in the primary source."
+2026-10-26,samyang-buldak-us,,C,no,,"DROPPED. No Samyang filing or IR source for US or Europe numbers; the CEO ""unsatisfactory"" remark not found in the fetched article."
+2026-10-26,schultz-il-giornale-217-of-242,https://finance.yahoo.com/news/starbucks-howard-schultz-moved-seattle-153007171.html,D,no,,"DROPPED. 217 of 242 in the book quote, but Gale (Encyclopedia.com) gives 24 of 242 said yes, implying 218; cut, not averaged. Raise amount varies ($400k to $1.7m). Also Starbucks is an entity in OJV-L008 and not an Asian founder."
+2026-10-26,rapido-75-investor-rejections,,D,no,,"DROPPED. No founder source for the 75 count (Guntupalli gave none when asked, Outlook Business Dec 2025); secondary sources disagree on which founder was rejected."
+2026-10-26,touchten-67-vcs,,D,no,,"DROPPED. e27 403 and DailySocial 404; ""pitched to 67"" is not a rejection count."
+2026-10-26,meesho-lenskart-groww-boat-licious-rejections,,D,no,,DROPPED. No documented investor-rejection count found for any of them.
+2026-10-26,stoa-money-300-rejections,,D,no,,NOT CHECKED. Not Asia-linked and source not opened.
