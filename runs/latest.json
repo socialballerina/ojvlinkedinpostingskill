@@ -1,502 +1,145 @@
 {
-  "runId": "tranche-sched-40287082679",
+  "runId": "scheduled-40839989263",
   "state": "done",
-  "mode": "tranche",
-  "requested": 10,
-  "written": 10,
-  "firstId": "OJV-L021",
-  "lastId": "OJV-L030",
+  "week": "2026-W45",
   "posts": [
     {
-      "postId": "OJV-L021",
-      "queueNo": 16,
-      "archetype": "A",
-      "archetypeName": "China signal to tour",
-      "ctaTier": "soft",
-      "hookPattern": "comparative-receipt",
-      "expires": "2027-02-18",
-      "copy": "Hesai's lidar shipments rose 78.4% in the second quarter of 2026. Its revenue rose 21.9%.\n\nThat gap is the story, and it is not a weak quarter.\n\nHesai shipped 628,275 lidar units in those three months. 142,371 of them were for robotics rather than cars, up 193.4% on a year earlier. Net revenue was RMB860.8 million, and the quarter was profitable.\n\nRead from a desk in London or San Francisco, units racing ahead of revenue looks like a price war, and the comfortable conclusion is to wait for it to burn out.\n\nThat reading gets the fact right and the meaning wrong. A sensor that gets cheaper every quarter stops being only a car part and starts being a robot part. That is what the robotics line shows. The cost curve moved, and a new set of buyers appeared underneath it.\n\nA results table cannot show you that loop. In China's hardware clusters the robot makers buying these sensors sit close to the people making them, and a cheaper part turns into a new product faster than a Western roadmap expects.\n\nThe ecosystem is the product, not the company. Falling prices are how a component finds its next market.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Robotics #DeepTech #China #Hardware",
-      "entities": [
-        "Hesai Group"
-      ],
-      "storyKey": "hesai-q2-2026-robotics-lidar-193pct",
-      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/0001861737/000110465926098050/tm2623467d1_ex99-1.htm",
-      "sourcePublisher": "Hesai Group via SEC EDGAR (6-K Exhibit 99.1)",
-      "firstComment": "Source: Hesai Group, second quarter 2026 unaudited results, filed with the SEC on 18 August 2026\nhttps://www.sec.gov/Archives/edgar/data/0001861737/000110465926098050/tm2623467d1_ex99-1.htm?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-L021",
-      "disclosure": "",
-      "verified": true,
-      "verificationNotes": "Hesai's own IR pages (hesai.gcs-web.com, investor.hesaitech.com) returned 403 and the HKEX PDF was unreadable, so the figures come from the SEC EDGAR copy of the release, which is primary. The fetch tool returns extracted text, so the quotes are as extracted. The \"cheaper sensor becomes a robot part\" reading is interpretation of the units-versus-revenue gap, not a claim Hesai made; the copy does not state a price per unit. Secondary reports of full-year shipment guidance (3 to 3.5 million) are not in the release and are not used. The hardware-cluster lines are general observation, carry no number and claim no specific visit.",
-      "styleGate": [
-        "PASS  OJV-L021.md"
-      ],
-      "photoBrief": "PICK: a robotics workshop or lab bench with sensors, cabling and a robot arm or mobile robot in\nfocus, or a hardware components market stall with trays of parts. Mid-shot, eye level. Landscape.\nAVOID: any Hesai logo or product, any self-driving car with a branded sensor rig, which would imply\na relationship. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "A workbench in a robotics workshop with sensors, cables and a small robot arm in focus.",
-      "blockers": [
-        "Hesai Q3 2026 results (due about 10 November 2026) will be the newer quarter; the Q2 figures stay true but reread before posting."
-      ],
-      "draftPath": "library/OJV-L021.md",
-      "charCount": 1261,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L022",
-      "queueNo": 12,
-      "archetype": "A",
-      "archetypeName": "China signal to tour",
-      "ctaTier": "soft",
-      "hookPattern": "number-first",
-      "expires": "2027-02-18",
-      "copy": "1,975 robotaxis. That was the global fleet Pony.ai reported in its second-quarter 2026 results.\n\nThe fleet is not the news. The fares are.\n\nIn that quarter Pony.ai's robotaxi revenue reached US$12.1 million, up 691.2% on a year earlier, and fare-charging revenue rose 849.3%. Total revenue was US$36.2 million, up 68.8%, while the net loss narrowed 14.9% to US$45.4 million.\n\nRead from a desk in New York or Munich, driverless ride-hailing still looks like a science project that will burn cash for another decade. These numbers describe something else: a paid service, still loss-making, growing far faster than its losses.\n\nThe reason is not one clever model. A robotaxi fleet is a hardware problem as much as a software one. Every new car needs sensors, compute and a vehicle to put them in, and in China the suppliers for all three already build at electric-vehicle volumes.\n\nThat is the part you cannot read in an earnings release. The software gets the headlines. The speed comes from how close the parts are.\n\nThe ecosystem is the product, not the company.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#AutonomousDriving #Robotaxi #China #DeepTech",
-      "entities": [
-        "Pony.ai"
-      ],
-      "storyKey": "pony-ai-q2-2026-robotaxi-fleet-1975",
-      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/0001969302/000110465926098113/tm2623382d1_ex99-1.htm",
-      "sourcePublisher": "Pony AI Inc. via SEC EDGAR (6-K Exhibit 99.1)",
-      "firstComment": "Source: Pony AI Inc., second quarter 2026 financial results, filed with the SEC on 18 August 2026\nhttps://www.sec.gov/Archives/edgar/data/0001969302/000110465926098113/tm2623382d1_ex99-1.htm?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-L022",
-      "disclosure": "",
-      "verified": true,
-      "verificationNotes": "the fleet sentence does not itself carry an \"as of\" date, so the copy says \"reported in its second-quarter 2026 results\" rather than \"at the end of June\". The footnote on \"vehicles1\" was not read and may cover vehicles operated with partners. The year-end target of more than 3,500 is a forecast and is not in the copy; a reposted article citing 4,000 conflicts with it. The \"suppliers already build at EV volumes\" line is general observation and carries no number.",
-      "styleGate": [
-        "PASS  OJV-L022.md"
-      ],
-      "photoBrief": "PICK: a city road or intersection with traffic, shot from a footbridge or elevated walkway, or a\ncar interior from the back seat looking forward with no driver visible. Landscape.\nAVOID: any branded robotaxi (Pony.ai, Baidu Apollo, WeRide, Waymo or other), which would imply a\nrelationship or a competitor. Legible number plates. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "A busy multi-lane city road seen from above, cars moving through an intersection.",
-      "blockers": [
-        "Pony.ai Q3 2026 results (18 November 2026) supersede the fleet count; reread before posting after January 2027."
-      ],
-      "draftPath": "library/OJV-L022.md",
-      "charCount": 1221,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L023",
-      "queueNo": 7,
-      "archetype": "A",
-      "archetypeName": "China signal to tour",
-      "ctaTier": "medium",
-      "hookPattern": "hard-truth",
-      "expires": "2027-04-15",
-      "copy": "Nobody wants to hear this, but China's energy-storage boom came with a warning from its own regulator.\n\nIn October 2026 China's industry ministry said energy-storage battery output exceeded 420 gigawatt-hours in the first half of 2026, up 110% on a year earlier. Overseas orders signed in those six months reached 298 GWh, up 83%.\n\nIn the same speech the vice minister called on the industry to resolutely prevent \"involution-style\" competition. That is the official phrase for price wars and overcapacity.\n\nRead from Europe, the reflex is to pick one half. Either China is about to own grid storage, or it is a bubble about to pop. Both are true at once, and the useful question is which suppliers come out the other side.\n\nA production statistic cannot answer that. It gets answered in conversations with the cell makers, the system integrators and the buyers behind those overseas orders, by working out who is pricing for share and who is pricing to last.\n\nThat is the kind of ground our OJV Educate tours for executives are built to cover.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#EnergyStorage #Batteries #China #DeepTech",
-      "entities": [
-        "MIIT"
-      ],
-      "storyKey": "china-energy-storage-battery-output-h1-2026",
-      "sourceUrl": "https://news.cgtn.com/news/2026-10-15/China-s-energy-storage-output-up-110-as-sector-eyes-innovation-1RgoaUbJmWk/p.html",
-      "sourcePublisher": "CGTN",
-      "firstComment": "Source: CGTN, 15 October 2026\nhttps://news.cgtn.com/news/2026-10-15/China-s-energy-storage-output-up-110-as-sector-eyes-innovation-1RgoaUbJmWk/p.html?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-L023",
-      "disclosure": "",
-      "verified": true,
-      "verificationNotes": "this is state media reporting a ministry speech, not an MIIT or customs release; the MIIT original was not found. The 298 GWh is signed orders, not shipped exports, and the copy says \"orders\". The CGTN quote attributes 298 GWh to an MIIT centre report rather than to the vice minister directly; the copy attributes both figures to \"China's industry ministry\", which covers both. The battery alliance (CABIA) reports different storage figures on a different definition (58.6 GWh H1 exports); those are not mixed in. \"Price wars and overcapacity\" is our gloss on \"involution-style\", a widely used reading of the term, not a quote. The speech was given at the 2026 World Energy Storage Conference; the copy dates it to October 2026 from the report date.",
-      "styleGate": [
-        "PASS  OJV-L023.md"
-      ],
-      "photoBrief": "PICK: rows of battery storage containers at a solar farm or industrial site, or a wide shot of an\nindustrial park with containers and cabling. Landscape.\nAVOID: any CATL, BYD, Tesla Megapack or other brand logo legible on a container, which would imply\na relationship. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "Rows of white battery storage containers lined up beside solar panels at an industrial site.",
-      "blockers": [],
-      "draftPath": "library/OJV-L023.md",
-      "charCount": 1199,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L024",
-      "queueNo": 24,
+      "postId": "OJV-202645-M",
+      "day": "Monday",
+      "date": "2026-11-02",
+      "slot": "awareness",
       "archetype": "B",
       "archetypeName": "West into Asia",
       "ctaTier": "soft",
-      "hookPattern": "promise-to-unpack",
-      "expires": "2028-04-26",
-      "copy": "In May 2018 Walmart agreed to pay about $16 billion for roughly 77% of Flipkart. Here is what that bought that building could not:\n\nWalmart did not launch its own Indian marketplace. It bought an Indian company that already had the customers, the sellers and the team.\n\n\u2192 The team stayed. Walmart's announcement said Flipkart's leadership would be supported by Walmart, alongside Tencent, Tiger Global and Microsoft.\n\n\u2192 The money went into the business too. The deal included $2 billion of new equity funding.\n\n\u2192 The company moved home. In March 2026 Flipkart completed its redomiciliation to India.\n\nThis is not a victory lap. In the year to March 2026 Flipkart's revenue rose 18% to Rs 1.46 lakh crore, and it still made a consolidated net loss of Rs 8,468 crore. In May 2026 it put its planned IPO on hold.\n\nWhat the deal shows is a choice. In a market that size and that local, Walmart decided time was worth more than building from zero.\n\nIn some of APAC's 15+ ecosystems the fastest way in is a partner or an acquisition, not a launch. Working out which ones is a large part of go-to-market work.\n\nWe have never worked with Walmart or Flipkart. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#MarketEntry #India #Ecommerce #GoToMarket",
+      "hookPattern": "by-design",
+      "copy": "Costco stocks almost a tenth of the products a Korean hypermarket does. Not by accident, but by design.\n\nA typical Costco store carries about 4,000 types of item. Korean big-box stores carry close to ten times that.\n\nIn its 2024 financial year, Costco Korea's average sales per store were 343.6 billion won. That is four to five times what a Korean big-box store does.\n\nIn the year to August 2025 its revenue reached 7.32 trillion won, up 12.1%, from 20 stores. That took it past Homeplus, the No. 2 hypermarket chain, on 6.99 trillion won.\n\nThe unlock was pricing architecture, not localisation.\n\nIt did not widen the range to match local rivals. It did not lift its margins to local levels either. It targets a 15.1% margin per product, against 26.9% at E-Mart. The membership fee does the rest.\n\nThe instinct when entering a new Asian market is to add. Local ranges, local promotions, local everything, until the entrant is a more expensive copy of the incumbent.\n\nSometimes the model is the product. The job is knowing which parts must change for a market, and which must not.\n\nWe have never worked with Costco. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: KED Global, 19 November 2024; The Korea Herald, 20 November 2025\n\n#APAC #GTM #Korea #Retail",
       "entities": [
-        "Walmart",
-        "Flipkart"
+        "Costco",
+        "Korea",
+        "Homeplus",
+        "E-Mart"
       ],
-      "storyKey": "walmart-flipkart-acquisition",
-      "sourceUrl": "https://corporate.walmart.com/news/2018/05/09/walmart-to-invest-in-flipkart-group-indias-innovative-ecommerce-company",
-      "sourcePublisher": "Walmart (corporate newsroom); BW Retail World for FY26",
-      "firstComment": "Source: Walmart, 9 May 2018, and BW Retail World, 16 October 2026\nhttps://corporate.walmart.com/news/2018/05/09/walmart-to-invest-in-flipkart-group-indias-innovative-ecommerce-company?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L024",
-      "disclosure": "We have never worked with Walmart or Flipkart. This is commentary from the outside.",
+      "sourceUrl": "https://www.kedglobal.com/retail/newsView/ked202411190017",
+      "sourcePublisher": "KED Global (19 Nov 2024); The Korea Herald (20 Nov 2025, https://koreaherald.com/article/10620314)",
+      "firstComment": "Sources:\nhttps://www.kedglobal.com/retail/newsView/ked202411190017?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV202645-M\nhttps://koreaherald.com/article/10620314?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV202645-M",
+      "disclosure": "We have never worked with Costco. This is commentary from the outside.",
       "verified": true,
-      "verificationNotes": "the FY26 revenue and loss come from trade press quoting registry filings, not a Walmart or Flipkart filing that was opened; no Flipkart-specific figure was found in Walmart's own FY2026 releases. The MediaNama report of the redomiciliation returned 403; Inside Retail Asia was used instead. \"Did not launch its own Indian marketplace\" is inferred from the deal structure; no source states it in those words. The copy does not call Flipkart India's largest, because no opened source said so.",
-      "styleGate": [
-        "PASS  OJV-L024.md"
-      ],
-      "photoBrief": "PICK: a parcel sorting floor, a delivery rider loading boxes, or a busy market street in an Indian\nor other Asian city, packages visible, no readable brand. Landscape.\nAVOID: any Walmart, Flipkart, Myntra or PhonePe branding, uniform or packaging, which would imply a\nrelationship. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "Stacks of parcels on a sorting floor, a worker loading boxes onto a cart in the background.",
-      "blockers": [],
-      "draftPath": "library/OJV-L024.md",
-      "charCount": 1344,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L025",
-      "queueNo": 29,
-      "archetype": "B",
-      "archetypeName": "West into Asia",
-      "ctaTier": "soft",
-      "hookPattern": "contrarian-bet",
-      "expires": "2028-04-26",
-      "copy": "Would you bet against Apple in India because it arrived late? Its first stores of its own there opened in 2023.\n\nApple's retail presence in India began that year with Apple BKC in Mumbai and Apple Saket in Delhi. In February 2026 Apple Borivali opened as its second store in Mumbai and its sixth in India.\n\nBetween those openings, on the October 2025 earnings call, Tim Cook, then chief executive, said Apple had set an all-time revenue record in India.\n\nThe unlock was distribution it owned, sitting on a supply chain that had moved closer. India's iPhone exports reached Rs 2 trillion in the eleven months to February 2026, up from Rs 1.5 trillion in the previous financial year.\n\nWhat Apple did not do was rush the shopfront. Six stores in three years is a handful of flagships, not a land grab.\n\nMarket entry is not one decision. Distribution, price and supply each have their own order, and that order is different in each of APAC's 15+ ecosystems. Getting it right matters more than getting there first.\n\nMapping that order is where our GTM advisory work starts.\n\nWe have never worked with Apple. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#India #Retail #GoToMarket #APAC",
-      "entities": [
-        "Apple",
-        "Tim Cook",
-        "Mumbai"
-      ],
-      "storyKey": "apple-india-own-retail",
-      "sourceUrl": "https://www.apple.com/in/newsroom/2026/02/apple-borivali-opens-in-mumbai-this-thursday-february-26/",
-      "sourcePublisher": "Apple Newsroom India",
-      "firstComment": "Source: Apple Newsroom India, 25 February 2026\nhttps://www.apple.com/in/newsroom/2026/02/apple-borivali-opens-in-mumbai-this-thursday-february-26/?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L025",
-      "disclosure": "We have never worked with Apple. This is commentary from the outside.",
-      "verified": true,
-      "verificationNotes": "Apple never discloses India revenue in dollars, so \"all-time revenue record\" is the strongest claim available and no amount is stated. The full transcript is from a lesser-known host (Seeking Alpha and Insider Monkey copies were truncated); Outlook Business confirms the quote. The export figure covers April 2025 to February 2026 only, per Business Insider citing Commerce Ministry data, so the copy says \"the eleven months to February 2026\" rather than FY26. Cook's succession was taken from press reports, not Apple's release; the copy's \"then chief executive\" is true either way, since he was CEO on the call date. \"Supply chain that had moved closer\" rests on the export figure, not on an Apple statement.",
-      "styleGate": [
-        "PASS  OJV-L025.md"
-      ],
-      "photoBrief": "PICK: a busy shopping mall concourse or retail street in an Indian or other Asian city, shopfronts\nvisible, no readable brand. Or a co-founder with a founder looking at a product on a table.\nLandscape.\nAVOID: any Apple store, Apple logo or Apple product in focus, which would imply a relationship.\nFaces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "A bright shopping mall concourse with shopfronts on two levels and shoppers walking past.",
+      "verificationNotes": "All figures quoted from the two articles. KED Global (FY2024): 'allowing a typical Costco store to stock 4,000 types of items', 'almost one-tenth the number of Korean big-box stores' item choices', average sales per store 343.6 billion won, 'four to five times more than that of Korean big-box stores', 15.1% target margin vs E-Mart's 26.9%, profits 'thanks to its membership fees'. Korea Herald (20 Nov 2025, audit report): 7.32 trillion won revenue for the fiscal year ending August, up 12.1%; Costco's 20 stores; Homeplus 6.99 trillion won, 'No. 2 hypermarket'. Every figure is dated in the copy. FY2026 audit report may land in November 2026.",
+      "styleGate": [],
+      "image": "",
+      "altText": "A long warehouse-store aisle with tall steel racking and pallets of bulk goods stacked high on both sides.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Nothing in the manifest fits (usable B images are conference shots with third-party branding; mic.jpg is in the 60-day lockout). Shot: wide view down a warehouse-store aisle, high steel racking with pallets of bulk goods stacked to the ceiling, aisle depth visible, eye level, landscape. No faces in focus, no store branding or product labels legible. No partner needed in frame.",
+      "photoQuery": "warehouse store aisle pallets bulk goods",
+      "whyThisSlot": "Monday awareness, soft CTA. B was the coldest story archetype with verified material (A ran last Monday; no D candidate survived sourcing). A documented West-into-Asia unlock that runs against the localise-everything instinct.",
       "blockers": [
-        "Cook's succession (announced April 2026) was taken from press reports, not Apple's release; confirm before posting."
+        "Photo, or a decision to run text-only",
+        "Check whether the Costco Korea FY2026 audit report has published before 2 November"
       ],
-      "draftPath": "library/OJV-L025.md",
-      "charCount": 1286,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
+      "draftPath": "runs/scheduled-40839989263/drafts/2026-W45/OJV-202645-M-archetypeB-costco-korea.md",
+      "charCount": 1366
     },
     {
-      "postId": "OJV-L026",
-      "queueNo": 28,
-      "archetype": "B",
-      "archetypeName": "West into Asia",
+      "postId": "OJV-202645-W",
+      "day": "Wednesday",
+      "date": "2026-11-04",
+      "slot": "proof",
+      "archetype": "C",
+      "archetypeName": "Asia into the West",
       "ctaTier": "medium",
       "hookPattern": "reframe",
-      "expires": "2028-04-26",
-      "copy": "Uber's way into Japan was to stop being Uber.\n\nIn 2015 Japanese authorities ordered Uber to halt its ridesharing pilot in Fukuoka, citing legal and regulatory issues.\n\nIn December 2020 Uber Japan signed a partnership with the taxi operator Hinomaru Kotsu, and the two agreed to oppose illegal ridesharing. From then on, Uber in Japan meant licensed taxis booked through the app.\n\nBy the end of 2025 Uber Taxi ran in all 47 prefectures, two years ahead of its 2027 target, with more than 1,000 partner taxi companies. That is according to the head of Uber Japan, who said in a February 2026 interview that it had grown at roughly double each year for about three years.\n\nThe unlock was regulatory sequencing. Uber did not fight the licensing system. It plugged into it. The drivers, cars and licences stayed with local operators, and Uber brought the demand.\n\nIn plenty of APAC's 15+ ecosystems the regulation is the market structure. The entrant that works through local licences gets to scale. The one that argues with them gets a pilot.\n\nSequencing is the first thing we map in a GTM advisory engagement, before positioning and before pricing.\n\nWe have never worked with Uber or Hinomaru Kotsu. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Japan #MarketEntry #GoToMarket #APAC",
+      "copy": "Asics' lifestyle sneakers grew 77% in Europe in the first half of 2026. Its running shoes grew 10%.\n\nSame company. A lot of the same shoes. A different buyer.\n\nThe product was never the problem. Performance running grew in every region Asics sells in.\n\nWhat changed was who it is for. A runner buys on cushioning and mileage. The SportStyle buyer buys on the archive, the colourway, and who else is wearing it.\n\nSo Asics rebuilt the other two things.\n\nThe price. Its own filing says the range is \"shifting toward a more premium direction, with a focus on products priced above USD100.\"\n\nThe story. Models from the '90s and '00s, restructured as archive lines, and collaborations with designers such as Kiko Kostadinov.\n\nAcross Europe, sales were up 29.7% on a currency-neutral basis, with SportStyle leading.\n\nThis is the pattern in most Asia-to-West moves we see. The product rarely needs to change. The buyer is a different person, the price has to be rebuilt for how they buy, and the story has to be written for them.\n\nRebuilding those three is what our GTM advisory work is for.\n\nWe have never worked with Asics. This is commentary from the outside.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: ASICS results for the six months to 30 June 2026, 14 August 2026\n\n#GTM #Expansion #Europe #Branding",
       "entities": [
-        "Uber",
-        "Hinomaru Kotsu",
-        "Fukuoka"
+        "Asics",
+        "Europe"
       ],
-      "storyKey": "uber-japan-licensed-taxi-route",
-      "sourceUrl": "https://news.mynavi.jp/article/20260202-uber/",
-      "sourcePublisher": "Mynavi News",
-      "firstComment": "Source: Mynavi News interview with the head of Uber Japan, 2 February 2026\nhttps://news.mynavi.jp/article/20260202-uber/?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L026",
-      "disclosure": "We have never worked with Uber or Hinomaru Kotsu. This is commentary from the outside.",
+      "sourceUrl": "https://assets.asics.com/system/media_libraries/25964/file.pdf",
+      "sourcePublisher": "ASICS Corporation, H1 2026 consolidated financial summary, 14 August 2026",
+      "firstComment": "Source: ASICS results for the six months to 30 June 2026\nhttps://assets.asics.com/system/media_libraries/25964/file.pdf?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV202645-W",
+      "disclosure": "We have never worked with Asics. This is commentary from the outside.",
       "verified": true,
-      "verificationNotes": "every growth figure is Uber Japan's own claim in an interview, not audited, and the copy attributes it to the head of Uber Japan for that reason. \"From then on, Uber in Japan meant licensed taxis\" summarises the shift; Uber's Japan service is taxi-based, but the copy makes no claim about every product Uber offers there. A same-period Kyodo report has Uber's COO claiming it passed GO for top market share in April 2026 on card-payment data; that claim is disputed by analyst usage data and is deliberately left out. The US$2bn five-year investment plan came via a third-hand relay (TechNews via CNA via Kyodo) and is not used.",
-      "styleGate": [
-        "PASS  OJV-L026.md"
-      ],
-      "photoBrief": "PICK: a taxi rank or a street with taxis at dusk in a Japanese or other Asian city, shot wide so no\ndriver is identifiable. Or a co-founder mapping a plan on a whiteboard with no client name visible.\nLandscape.\nAVOID: any Uber, GO or taxi-company logo legible, which would imply a relationship. Faces of\ndrivers or passengers in focus. Legible number plates.\nFALLBACK: text-only is acceptable.",
-      "altText": "A line of taxis waiting at a rank on a city street at dusk, shop lights coming on behind them.",
-      "blockers": [],
-      "draftPath": "library/OJV-L026.md",
-      "charCount": 1385,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L027",
-      "queueNo": 30,
-      "archetype": "D",
-      "archetypeName": "Rejection to raise",
-      "ctaTier": "soft",
-      "hookPattern": "number-first",
-      "expires": "2028-04-26",
-      "copy": "106 investor rejections came before Ukhi's first institutional round. Its co-founder counted every one.\n\nVishal Vivek wrote the number down himself in April 2026. Ukhi, founded in India in 2019, makes compostable biomaterials. It was a biomaterials company at the first no and at the yes.\n\nWhat changed was this.\n\nThe pitch narrowed. He had been pitching a broad range of hemp applications. In his words, \"The turning point came when I stripped the pitch down to one product, one market and one clear path to scale.\"\n\nThe route in changed. His first angel investment, he wrote, \"didn't come from a cold email.\" It came through a recommendation from the IIT Mandi Catalyst incubator.\n\nThen the rounds. In November 2024 Ukhi raised $1.2 million in a pre-seed round led by 100Unicorns. In February 2026 it raised Rs 10.5 crore in a seed round led by Venture Catalysts.\n\n106 nos to a pitch that tried to be everything is not a verdict on the company. It is information about the pitch and the list.\n\nThat is the part of fundraising support we do. We tighten the story, cut the list and work the warm paths. We do not promise the yes, because nobody honest can.\n\nWe have never worked with Ukhi. This is commentary from the outside.\n\nIf you want your investor list to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Fundraising #Founders #India #Startups",
-      "entities": [
-        "Ukhi",
-        "Vishal Vivek",
-        "100Unicorns",
-        "Venture Catalysts"
-      ],
-      "storyKey": "ukhi-106-rejections-to-seed",
-      "sourceUrl": "https://www.entrepreneur.com/starting-a-business/i-learned-5-things-after-facing-over-100-investor-rejections/503595",
-      "sourcePublisher": "Entrepreneur (founder byline)",
-      "firstComment": "Source: Vishal Vivek in Entrepreneur, 26 April 2026\nhttps://www.entrepreneur.com/starting-a-business/i-learned-5-things-after-facing-over-100-investor-rejections/503595?utm_source=linkedin&utm_medium=organic&utm_campaign=D-OJV-L027",
-      "disclosure": "We have never worked with Ukhi. This is commentary from the outside.",
-      "verified": true,
-      "verificationNotes": "the 106 count rests on one source, the founder's own article (Yahoo Finance carries the same piece, so it is not independent). No other source gives a count and none contradicts it, so it passes the cut-not-average rule, but it is a single self-report. The article's last line says \"105 of them can teach you more\", a figure of speech that sits oddly beside 106; the copy uses 106, which he states twice. He calls the $1.2m round a \"seed round\"; the press calls it pre-seed, and the copy follows the press and calls the first round \"institutional\" in the hook. \"Before Ukhi's first institutional round\" is our framing: his first angel cheque came earlier, via the incubator, and the copy says so. His line about bringing on a co-founder from the industry is not used, because the press lists all three co-founders from 2019. The seed amount (Rs 10.5 crore) comes from Entrackr, not a filing.",
-      "styleGate": [
-        "PASS  OJV-L027.md"
-      ],
-      "photoBrief": "PICK: a co-founder in a one-to-one working session with a founder, notebook or laptop open, or a\nsmall workshop table with a founder presenting to two or three people. Working posture. Landscape.\nAVOID: any photo of Vishal Vivek, Ukhi products or branding, which would imply a relationship.\nStock \"rejected\" imagery. A legible investor name on any screen.\nFALLBACK: text-only is acceptable.",
-      "altText": "A founder talking through a single page of notes with two people across a small table.",
+      "verificationNotes": "Primary company filing. 'Europe showed significant sales growth by +29.7% YoY driven by SPS (+77.0%) and OT (+46.6%) with steady growth momentum in P.RUN (+10.1%)', footnoted as currency-neutral. 'Performance Running : All regions showed sales and operating profit growth.' 'The portfolio is shifting toward a more premium direction, with a focus on products priced above USD100.' SportStyle lineup lists archive lines from the '90s and '00s and ASICS X KIKO KOSTADINOV. Not used: 'Europe (over 100%)' (reported basis, conflicts with 77.0%) and SGI Europe's paywalled 97.6% Q2 figure. The runner-vs-SportStyle-buyer contrast is OJV characterisation, not a sourced claim.",
+      "styleGate": [],
+      "image": "",
+      "altText": "A row of retro-style running sneakers lined up on a pale shop shelf, toes facing the camera.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Nothing in the manifest fits: usable C images carry third-party logos (Breer, Forbes, OPPO), wrong beside a post about branding; studio-blazer.jpg and mic.jpg are in the 60-day lockout. Shot: close-up of a row of retro-style running sneakers on a light shop shelf, toes to camera, shallow depth of field, no brand logos, stripes or labels legible, no faces. No partner needed in frame.",
+      "photoQuery": "row of sneakers on shop shelf",
+      "whyThisSlot": "Wednesday proof, medium CTA. C carries OJV's core Asia-to-West argument (buyer, pricing, story, not product), and Asics' own filing evidences all three. C ran in this slot last week, which is allowed; next Wednesday should not be C.",
       "blockers": [
-        "The 106 count is a single self-report by the founder; approver should accept or cut."
+        "Photo, or a decision to run text-only"
       ],
-      "draftPath": "library/OJV-L027.md",
-      "charCount": 1376,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
+      "draftPath": "runs/scheduled-40839989263/drafts/2026-W45/OJV-202645-W-archetypeC-asics-sportstyle-europe.md",
+      "charCount": 1377
     },
     {
-      "postId": "OJV-L028",
-      "queueNo": 27,
-      "archetype": "C",
-      "archetypeName": "Asia into the West",
-      "ctaTier": "medium",
-      "hookPattern": "local-claim-broken",
-      "expires": "2028-04-26",
-      "copy": "American shoppers are supposed to buy clothes on sale. Uniqlo stopped discounting there.\n\nThe product was never the problem. Uniqlo spent 17 years in the US before, in 2022, it was poised to book its first annual profit in North America.\n\nWhat it changed was the price and the story.\n\nThe price. \"Our competitors offer discounts of 50 per cent or 60 per cent, but we have basically stopped that,\" its North America chief told Reuters in September 2022. Fast Retailing later described reviewing prices and reducing discounting to lift margins there.\n\nThe story. It opened large flagship stores that it calls media beacons, built to raise brand awareness and push e-commerce sales.\n\nIn the year to August 2026, North America revenue rose 34.6% to 364.9 billion yen, and business profit rose 53.3% to 67.9 billion yen. For the first time, North America and Europe together outsold Greater China.\n\nThe hard part was never the shirts. It was teaching a new buyer to pay full price, and telling them why.\n\nThat is the order our GTM advisory work follows for Asian companies moving West: the buyer, the pricing, then the story.\n\nWe were not involved in Uniqlo's expansion. This is commentary.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Retail #Pricing #GoToMarket #Japan",
-      "entities": [
-        "Uniqlo",
-        "Fast Retailing"
-      ],
-      "storyKey": "uniqlo-north-america-stopped-discounting",
-      "sourceUrl": "https://www.fastretailing.com/eng/ir/news/2610081800.html",
-      "sourcePublisher": "Fast Retailing (IR release)",
-      "firstComment": "Source: Fast Retailing, fiscal 2026 results, 8 October 2026\nhttps://www.fastretailing.com/eng/ir/news/2610081800.html?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L028",
-      "disclosure": "We were not involved in Uniqlo's expansion. This is commentary.",
-      "verified": true,
-      "verificationNotes": "the \"stopped discounting\" mechanism rests mainly on a 2022 Reuters report, republished by Malay Mail; the Reuters original was not opened. Fast Retailing's own FY2025 release confirms \"reducing discounting\" but does not say \"stopped\". The copy quotes the 2022 chief directly and uses the company's softer wording for the later period. \"17 years\" is Reuters' framing, not a Fast Retailing figure. Quotes are as returned by the fetch tool, some as excerpts of longer sentences. The copy calls Tsukagoshi \"its North America chief\" (his role in 2022) and does not name him.",
-      "styleGate": [
-        "PASS  OJV-L028.md"
-      ],
-      "photoBrief": "PICK: a large clothing store interior or a high street in a Western city, folded stock on tables\nor a wide shopfront, no readable brand. Landscape.\nAVOID: any Uniqlo or GU store, logo, bag or product label, which would imply a relationship. Sale\nsignage of any brand. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
-      "altText": "Neatly folded clothes stacked on wooden tables in a large, bright clothing store.",
-      "blockers": [],
-      "draftPath": "library/OJV-L028.md",
-      "charCount": 1336,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L029",
-      "queueNo": 26,
-      "archetype": "C",
-      "archetypeName": "Asia into the West",
-      "ctaTier": "soft",
-      "hookPattern": "stated-contradiction",
-      "expires": "2028-04-26",
-      "copy": "Asian beauty brands call US retail the prize, then start by chasing it. Medicube reached the American shelf last.\n\nAPR, the Korean company behind Medicube, built US demand online first, through marketplaces and TikTok Shop, adjusting its products and sales strategy for each channel.\n\nThen the stores. About 1,400 Ulta Beauty stores in 2025. More than 1,500 Target stores in April 2026. Costco shelves in October 2026.\n\nThe numbers moved with it. The US was 22% of APR's sales in 2024 and 37% in 2025, a year in which its overseas revenue rose 207% to KRW 1.23 trillion. In the first half of 2026 its North American sales reached 647.9 billion won.\n\nThe products were already selling. What changed was which buyer saw the evidence first. A chain's buyer was not asked to take a bet on an unknown Korean brand. The online sales were the pitch.\n\nThat is the pattern in most Asia-to-West moves. The hard part is rarely the product. It is the buyer you convince first, the price they compare you against, and the story they need before they put their name on it.\n\nWe have never worked with APR or Medicube. This is commentary from the outside.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#KBeauty #Retail #GoToMarket #Korea",
-      "entities": [
-        "APR",
-        "Medicube",
-        "TikTok Shop",
-        "Ulta Beauty",
-        "Target",
-        "Costco"
-      ],
-      "storyKey": "apr-medicube-us-tiktok-to-retail",
-      "sourceUrl": "https://www.koreatimes.co.kr/business/companies/20261019/apr-expands-us-retail-presence-as-medicube-hits-costco-shelves",
-      "sourcePublisher": "The Korea Times",
-      "firstComment": "Source: The Korea Times, 19 October 2026\nhttps://www.koreatimes.co.kr/business/companies/20261019/apr-expands-us-retail-presence-as-medicube-hits-costco-shelves?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L029",
-      "disclosure": "We have never worked with APR or Medicube. This is commentary from the outside.",
-      "verified": true,
-      "verificationNotes": "APR's own release gives no US-only figure. The 37% US share is from Korea JoongAng Daily and the H1 2026 figure is North America, not US-only, from The Korea Times; the copy says \"North American\" for that figure. The Ulta entry date conflicts (JoongAng says April 2025, Korea Times says August 2025), so the copy says only \"in 2025\". The channel detail is from The Korea Times, not an APR filing. The Costco date is taken from the 19 October 2026 article reporting it. Walmart (about 3,000 stores, June 2026) and Amazon's ranking are deliberately left out of the copy: both are entities used elsewhere in the queue (OJV-L024, OJV-L009) inside the 20-position window. \"Marketplaces\" covers Amazon without naming it.",
-      "styleGate": [
-        "PASS  OJV-L029.md"
-      ],
-      "photoBrief": "PICK: a beauty or pharmacy aisle in a Western store with skincare on shelves and no readable brand,\nor a phone on a table showing a generic shopping app screen with no brand visible. Landscape.\nAVOID: any Medicube, APR, Ulta, Target, Costco or TikTok branding, which would imply a relationship.\nFaces of strangers in focus. Influencer-style selfie imagery.\nFALLBACK: text-only is acceptable.",
-      "altText": "Rows of skincare products on brightly lit shelves in a store's beauty aisle.",
-      "blockers": [],
-      "draftPath": "library/OJV-L029.md",
-      "charCount": 1290,
-      "needsTeamPhoto": false,
-      "photoQuery": "",
-      "image": ""
-    },
-    {
-      "postId": "OJV-L030",
-      "queueNo": 25,
+      "postId": "OJV-202645-F",
+      "day": "Friday",
+      "date": "2026-11-06",
+      "slot": "offer",
       "archetype": "F2",
-      "archetypeName": "Situation to solved (F2 diagnostic)",
+      "archetypeName": "Situation to solved (diagnostic)",
       "ctaTier": "hard",
-      "hookPattern": "time-boxed-claim",
-      "expires": "none",
-      "copy": "Give us an hour with a hardware company selling into APAC and we can usually tell which link in the chain is costing it the market.\n\nWe start with four things:\n\n\u2192 Certification\n\u2192 Channel\n\u2192 Landed price\n\u2192 Service\n\nThen we look at what is underneath them.\n\nDo you know which certifications each market needs before a distributor will even take the meeting, or are you finding out one rejection at a time?\n\nWho holds your stock? A distributor carrying ten competing brands has no reason to push yours.\n\nIs your price set from your factory cost, or from what the product actually lands at after duty, freight and the channel's margin?\n\nWhen a unit fails three time zones away, who fixes it, and how many days does the customer wait?\n\nFrom the inside, a slow hardware market looks like weak demand. Sometimes it is. More often the product never reached the shelf at a price and a service level the buyer could say yes to, and a better product does not fix that.\n\nAPAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour, so the job is rapid recalibration, not a rigid playbook.\n\nIf you are selling hardware into APAC and your distributors have gone quiet, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Hardware #GoToMarket #APAC #Founders",
+      "hookPattern": "stated-contradiction",
+      "copy": "Companies say they want a real business in APAC, then hand the whole region to one new hire with a laptop and a global target.\n\nWe start with four things:\n\n\u2192 First market\n\u2192 Mandate\n\u2192 Target\n\u2192 Back-up\n\nThen we look at what is underneath them.\n\nDid your hire choose the first market, or inherit a list of six from a slide at head office?\n\nIs their target built from what this market buys, or from your home-market conversion rates?\n\nCan they set price and sign a partner, or does every discount need a late-night call to head office?\n\nWhen a distributor goes quiet, who do they call? Someone who knows the market, or someone who knows the product?\n\nFrom the inside this looks like a hiring problem. The numbers are slow, so the answer must be a better country manager. Sometimes it is. More often the job was set up so that nobody could do it, and the next hire inherits the same job.\n\nAPAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour, and nobody recalibrates fifteen of them alone.\n\nA first conversation usually tells us whether we are useful to you. Sometimes the answer is no.\n\nIf you are a year into your first APAC hire and the pipeline still has not moved, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#APAC #GoToMarket #Hiring #Founders",
       "entities": [],
-      "storyKey": "none-diagnostic-gtm-hardware",
       "sourceUrl": "",
       "sourcePublisher": "",
       "firstComment": "",
       "disclosure": "",
       "verified": true,
-      "verificationNotes": "No third-party fact in the post; the four diagnostic items await Naman.",
-      "styleGate": [
-        "PASS  OJV-L030.md"
-      ],
-      "photoBrief": "PICK: one of the co-founders at a table with a founder and a hardware prototype or device between\nthem, or handling a product sample, notebook open. Working posture, two or three people. Landscape.\nAVOID: any client's product, logo or packaging that could be identified, which would turn this into\nan implied engagement. A stage or panel. Any face that is not a co-founder or someone who has\ncleared it.\nFALLBACK: text-only is acceptable.\n\nWHY THIS BRIEF: the post offers a working diagnostic on a physical product, so the image should\nlook like that hour, not like an event or a factory OJV has not claimed to visit.",
-      "altText": "Two people at a table examining a small electronic device, a notebook open beside it.",
-      "blockers": [
-        "Naman to confirm the four diagnostic items (certification, channel, landed price, service).",
-        "TODO(config: booking link) is recorded in the draft notes, not in the paste copy, matching OJV-L001, L007 and L011."
-      ],
-      "draftPath": "library/OJV-L030.md",
-      "charCount": 1286,
-      "needsTeamPhoto": false,
+      "verificationNotes": "F2: no third-party fact and no client number. Only figure is '15+ ecosystems', OJV's own site language. Claims a competence ('usually'), not a past result. Naman must confirm OJV runs this first-APAC-hire diagnostic as part of GTM advisory.",
+      "styleGate": [],
+      "image": "",
+      "altText": "Naman Tekriwal of Orange Juice Ventures at a whiteboard in a working session, talking through a list of markets with a founder seen from behind.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Post is about an OJV service, and the clean partner shots (mic.jpg, studio-blazer.jpg) are in the 60-day lockout. Shot: Naman (or another OJV partner) at a whiteboard or across a small table from one other person in a working session, a rough list of markets on the board with nothing legible, partner's face visible and in focus, the other person side-on or from behind unless they consent, natural light, landscape, eye level. Partner in frame: Naman.",
       "photoQuery": "",
-      "image": ""
-    }
-  ],
-  "droppedCandidates": [
-    {
-      "storyKey": "china-orbital-launches-2025-record",
-      "archetype": "A",
-      "why": "UNUSED, verified reserve. CASC 73 launches in 2025 (CASC, 5 Jan 2026); national total 93 (China Daily) vs 92 (NASASpaceflight). Held back: 2025 data, national count conflicts, and 2026 launch failures would need sourcing."
-    },
-    {
-      "storyKey": "horizon-robotics-h1-2026",
-      "archetype": "A",
-      "why": "DROPPED. HKEX interim PDF unreadable; 2.218m chip shipments only in secondary sources; core operating losses widened and headline profit came from non-operating items."
-    },
-    {
-      "storyKey": "weride-robotaxi-2026",
-      "archetype": "A",
-      "why": "NOT CHECKED. Same story shape as Pony.ai (OJV-L022); one robotaxi post per tranche."
-    },
-    {
-      "storyKey": "dji-2026",
-      "archetype": "A",
-      "why": "NOT CHECKED. Private company; no clean dated number found."
-    },
-    {
-      "storyKey": "amex-china-clearing-licence",
-      "archetype": "B",
-      "why": "DROPPED. Strong regulatory-sequencing mechanism (LianLian JV, first foreign clearing licence) but no documented traction in China: no cards, volume or revenue figures."
-    },
-    {
-      "storyKey": "mastercard-china-clearing-jv",
-      "archetype": "B",
-      "why": "NOT CHECKED. Same angle as Amex with the same probable lack of traction data."
-    },
-    {
-      "storyKey": "duolingo-japan",
-      "archetype": "B",
-      "why": "DROPPED. No Japan-specific figure in 2025 or 2026 filings; only \"fastest-growing region\" for Asia."
-    },
-    {
-      "storyKey": "costco-korea-japan-taiwan",
-      "archetype": "B",
-      "why": "DROPPED. No clear mechanism beyond exporting the format; not researched further."
-    },
-    {
-      "storyKey": "jollibee-north-america-beyond-diaspora",
-      "archetype": "C",
-      "why": "UNUSED, verified reserve. NA same-store sales +10.2% in 2025 and Q2 2026 NA system sales +21.6% (JFC releases read only on republication pages; originals 403). Store counts mix brands; US AUV conflicts ($5m vs $4.5m). Good later candidate."
-    },
-    {
-      "storyKey": "webtoon-us-canvas",
-      "archetype": "C",
-      "why": "DROPPED. Q2 2026 revenue down 2.8% and net loss widened (SEC 8-K, 10 Aug 2026); undercuts the it-worked spine."
-    },
-    {
-      "storyKey": "roborock-europe-us",
-      "archetype": "C",
-      "why": "DROPPED. 2025 overseas revenue RMB10.442bn, 56% of total, but no US or Europe split and no named Western mechanism in the primary source."
-    },
-    {
-      "storyKey": "samyang-buldak-us",
-      "archetype": "C",
-      "why": "DROPPED. No Samyang filing or IR source for US or Europe numbers; the CEO \"unsatisfactory\" remark not found in the fetched article."
-    },
-    {
-      "storyKey": "schultz-il-giornale-217-of-242",
-      "archetype": "D",
-      "why": "DROPPED. 217 of 242 in the book quote, but Gale (Encyclopedia.com) gives 24 of 242 said yes, implying 218; cut, not averaged. Raise amount varies ($400k to $1.7m). Also Starbucks is an entity in OJV-L008 and not an Asian founder."
-    },
-    {
-      "storyKey": "rapido-75-investor-rejections",
-      "archetype": "D",
-      "why": "DROPPED. No founder source for the 75 count (Guntupalli gave none when asked, Outlook Business Dec 2025); secondary sources disagree on which founder was rejected."
-    },
-    {
-      "storyKey": "touchten-67-vcs",
-      "archetype": "D",
-      "why": "DROPPED. e27 403 and DailySocial 404; \"pitched to 67\" is not a rejection count."
-    },
-    {
-      "storyKey": "meesho-lenskart-groww-boat-licious-rejections",
-      "archetype": "D",
-      "why": "DROPPED. No documented investor-rejection count found for any of them."
-    },
-    {
-      "storyKey": "stoa-money-300-rejections",
-      "archetype": "D",
-      "why": "NOT CHECKED. Not Asia-linked and source not opened."
+      "whyThisSlot": "Friday offer, the week's single hard CTA. E impossible (no OJV news supplied), trek A impossible (trek ended 17 October 2026), F1 impossible (no signed-off engagement), so F2. Hook pattern changed to stated-contradiction because time-boxed-claim is in cooldown from OJV-202644-F.",
+      "blockers": [
+        "Naman to confirm OJV runs this diagnostic",
+        "Team photo, or a decision to run text-only"
+      ],
+      "draftPath": "runs/scheduled-40839989263/drafts/2026-W45/OJV-202645-F-archetypeF2-first-apac-hire.md",
+      "charCount": 1302
     }
   ],
   "rotation": {
-    "blockedHookPatterns": [],
+    "blockedArchetypes": [],
     "blockedEntities": [
-      "AbbVie",
-      "Airbnb",
-      "Amazon",
-      "Anker Innovations",
-      "AstraZeneca",
-      "BYD",
-      "Best Buy",
-      "Boyu Capital",
-      "Brian Chesky",
-      "CAAM",
-      "CATL",
-      "CSPC",
-      "Canva",
-      "Chery",
-      "Debrecen",
-      "Disney",
-      "Domino's Pizza",
-      "GoPro",
-      "Guangzhou",
-      "Hong Kong",
-      "IFR",
-      "IKEA",
-      "Insta360",
-      "Jaecoo",
-      "Jubilant FoodWorks",
-      "Kathryn Minshew",
-      "Labubu",
-      "MINISO",
-      "Melanie Perkins",
-      "Netflix",
-      "Notion",
-      "Omoda",
-      "Pop Mart",
-      "RemeGen",
-      "SMIC",
-      "Sanrio",
+      "Unitree",
       "Shanghai",
       "Shenzhen",
-      "Starbucks",
-      "Tesla",
-      "The Muse",
-      "UBTECH",
-      "Uni-President",
-      "Unitree",
-      "WIPO",
-      "Walker S2",
-      "Y Combinator"
+      "Notion",
+      "Japan",
+      "Canva",
+      "Melanie Perkins",
+      "Perth",
+      "SMIC",
+      "Omoda",
+      "Jaecoo",
+      "Chery",
+      "UK"
     ],
-    "usedF2Pairs": [
-      "GTM advisory x company entering APAC (OJV-L001)",
-      "Fundraising support x mid-raise founder (OJV-L007)",
-      "Lead generation x no local team (OJV-L011)",
-      "GTM advisory x hardware (OJV-L030, new)"
+    "blockedHookPatterns": [
+      "number-first",
+      "local-claim-broken",
+      "time-boxed-claim"
     ]
   },
   "needsFromAuthor": [
-    "WRITE PERMISSION: the Write tool was denied for every path under .claude/ in this CI session, so the tranche is in runs/tranche-sched-40287082679/library/ (a complete 30-post mirror with QUEUE.csv and paste files) and the tracker rows are in runs/tranche-sched-40287082679/tracker-rows/. Copy them into .claude/skills/ojv-linkedin/ as described in tracker-rows/README.txt. public/queue.html is already regenerated.",
-    "OJV-L002 (queue 1) expires 2026-10-31, five days after this run. Publish it by then or kill it.",
-    "Booking link for archetype F was empty. TODO(config: booking link) is recorded in the OJV-L030 draft notes, not in the paste copy, to match OJV-L001, L007 and L011 and SKILL.md, which says F needs no link. Decide whether F2 posts carry one; if so it goes directly above the \"If you are ...\" ask in all four.",
-    "Naman to confirm the four hardware diagnostic items in OJV-L030 (certification, channel, landed price, service).",
-    "OJV-L027 (Ukhi) rests on one self-reported count of 106, from the founder's own article. Nothing contradicts it, but approve or cut.",
-    "Archetype D decision (batch-library.md, honest limit 6) is still open. This tranche verified 1 of 6 D candidates. Recommend cutting D to about 8 across the hundred.",
-    "Before tranche 4 (the next one), supply performance numbers for anything already published from the library (batch-library.md, honest limit 3). No posted-log rows exist yet.",
-    "Approver review (Naman) of all ten posts before any is scheduled."
+    "WRITE ACCESS: this CI session was refused write permission under .claude/skills/, so the W45 drafts, SCHEDULE.md and paste files are in runs/scheduled-40839989263/drafts/2026-W45/ and data/content-calendar.csv and data/news-seen.csv were NOT updated. Rows to append are in runs/scheduled-40839989263/tracker-rows/. The W44 rows in runs/scheduled-39738926451/tracker-rows/ are still unappended too, so the rotation check is two weeks blind. Grant the workflow write access to .claude/skills/ojv-linkedin/ or move the files by hand.",
+    "PHOTO NEEDED for OJV-202645-M (B, Monday): warehouse-store aisle with pallets of bulk goods, no branding legible, no faces. Or reply text only.",
+    "PHOTO NEEDED for OJV-202645-W (C, Wednesday): row of retro-style running sneakers on a shop shelf, no logos legible, no faces. Or reply text only.",
+    "TEAM PHOTO NEEDED for OJV-202645-F (F2, Friday): Naman or another OJV partner in a working session at a whiteboard or small table, partner's face visible, other person side-on or from behind unless they consent. Or reply text only.",
+    "Naman to confirm OJV runs the first-APAC-hire diagnostic described in OJV-202645-F before it is scheduled. If not, kill the post.",
+    "Archetype E: no OJV news was supplied for this run, so E was not used for the second week running. Tell us what OJV did this month (events, workshops, portfolio moves, partners speaking or judging, a trek recap) so next Friday can carry first-party proof. Next Friday cannot be F again (three weeks running is blocked), so without E news the Friday slot has no eligible archetype.",
+    "The China Tech Trek (13 to 17 October 2026) is over but is still the configured flagship offer. Decide the next flagship offer and update the config table. ContraVC published source is still TODO.",
+    "Config: DM keyword is TODO, so no post uses a keyword. Enquiry destination was overridden to TODO for this run; every post still closes with the fixed hello@oj.ventures contact line the mandatory close requires. Confirm that address is right.",
+    "Archetype D: no candidate with a documented investor-rejection count and a documented raise survived sourcing this week or on 2026-10-20. If you know a founder story with both numbers on record, send the source.",
+    "Library cross-check: Costco is listed as an entity of library post OJV-L029 (as an APR retail channel). If L029 is queued within 90 days of 2 November, space them apart."
   ],
-  "notes": "Ten of ten written: A 3 (L021 Hesai, L022 Pony.ai, L023 China energy storage), B 3 (L024 Walmart-Flipkart, L025 Apple India, L026 Uber Japan), C 2 (L028 Uniqlo, L029 APR Medicube), D 1 (L027 Ukhi), F2 1 (L030 GTM advisory x hardware). D was capped at 4 but only Ukhi verified, so the slack went into A and B. E and F1 were not attempted because they cannot be batched. Sourcing was done by four parallel research agents, each told to quote verbatim from opened pages; the quotes are as returned by the fetch tool. Every draft passes the style gate; the whole 30-post library passes. QUEUE.csv was rewritten for all 30 posts under the rotation rules (no archetype more than twice in 5, no hook pattern twice in 6, no shared entity within 20, hard-CTA posts at positions 9, 15, 20 and 25). Some existing posts moved a few positions to make room for the perishable new A posts. Because .claude/ was not writable through the Write tool, all library and tracker output is in runs/tranche-sched-40287082679/ (see README in tracker-rows); public/queue.html was regenerated from that mirror. Image intake skipped: no raw image folder in CI. Nothing was committed, scheduled or published.",
-  "generatedAt": "2026-10-26T08:13:06Z",
-  "workflowRunUrl": ""
+  "notes": "Weekly run for 2026-W45 (Mon 2, Wed 4, Fri 6 November 2026). The rotation check reported 0 archetypes, 8 entities and 0 hook patterns blocked, but it cannot see W44 (OJV-202644-M/W/F), whose tracker rows were never appended. W44 was read from runs/scheduled-39738926451/result.json and treated as on file: hook patterns number-first, local-claim-broken and time-boxed-claim were treated as blocked, and SMIC, Omoda, Jaecoo, Chery and UK as blocked entities. Plan: B (soft, coldest with verified material) / C (medium) / F2 (hard). A was skipped because it ran last Monday. D was skipped because no candidate survived sourcing. E was skipped because no OJV news was supplied. All three drafts pass scripts/style-gate.py (style gate run on the final files). Sources verified 2/2 (F2 needs none). Guardrails: PASS. No post mentions the trek, so the ContraVC check does not apply. No image was assigned: the four library images are all locked, consent-needed or off-subject, so all three posts carry a photo request. Image intake was skipped as instructed. Nothing was published or scheduled.",
+  "generatedAt": "2026-10-29T08:16:36Z",
+  "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/40839989263"
 }

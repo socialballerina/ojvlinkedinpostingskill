@@ -1,6 +1,7 @@
 {
   "runId": "scheduled-40839989263",
-  "state": "running",
-  "startedAt": "2026-10-29T08:08:22Z",
+  "state": "done",
+  "finishedAt": "2026-10-29T08:16:36Z",
+  "posts": 3,
   "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/40839989263"
 }

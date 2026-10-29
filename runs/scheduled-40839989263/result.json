@@ -1,0 +1,145 @@
+{
+  "runId": "scheduled-40839989263",
+  "state": "done",
+  "week": "2026-W45",
+  "posts": [
+    {
+      "postId": "OJV-202645-M",
+      "day": "Monday",
+      "date": "2026-11-02",
+      "slot": "awareness",
+      "archetype": "B",
+      "archetypeName": "West into Asia",
+      "ctaTier": "soft",
+      "hookPattern": "by-design",
+      "copy": "Costco stocks almost a tenth of the products a Korean hypermarket does. Not by accident, but by design.\n\nA typical Costco store carries about 4,000 types of item. Korean big-box stores carry close to ten times that.\n\nIn its 2024 financial year, Costco Korea's average sales per store were 343.6 billion won. That is four to five times what a Korean big-box store does.\n\nIn the year to August 2025 its revenue reached 7.32 trillion won, up 12.1%, from 20 stores. That took it past Homeplus, the No. 2 hypermarket chain, on 6.99 trillion won.\n\nThe unlock was pricing architecture, not localisation.\n\nIt did not widen the range to match local rivals. It did not lift its margins to local levels either. It targets a 15.1% margin per product, against 26.9% at E-Mart. The membership fee does the rest.\n\nThe instinct when entering a new Asian market is to add. Local ranges, local promotions, local everything, until the entrant is a more expensive copy of the incumbent.\n\nSometimes the model is the product. The job is knowing which parts must change for a market, and which must not.\n\nWe have never worked with Costco. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: KED Global, 19 November 2024; The Korea Herald, 20 November 2025\n\n#APAC #GTM #Korea #Retail",
+      "entities": [
+        "Costco",
+        "Korea",
+        "Homeplus",
+        "E-Mart"
+      ],
+      "sourceUrl": "https://www.kedglobal.com/retail/newsView/ked202411190017",
+      "sourcePublisher": "KED Global (19 Nov 2024); The Korea Herald (20 Nov 2025, https://koreaherald.com/article/10620314)",
+      "firstComment": "Sources:\nhttps://www.kedglobal.com/retail/newsView/ked202411190017?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV202645-M\nhttps://koreaherald.com/article/10620314?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV202645-M",
+      "disclosure": "We have never worked with Costco. This is commentary from the outside.",
+      "verified": true,
+      "verificationNotes": "All figures quoted from the two articles. KED Global (FY2024): 'allowing a typical Costco store to stock 4,000 types of items', 'almost one-tenth the number of Korean big-box stores' item choices', average sales per store 343.6 billion won, 'four to five times more than that of Korean big-box stores', 15.1% target margin vs E-Mart's 26.9%, profits 'thanks to its membership fees'. Korea Herald (20 Nov 2025, audit report): 7.32 trillion won revenue for the fiscal year ending August, up 12.1%; Costco's 20 stores; Homeplus 6.99 trillion won, 'No. 2 hypermarket'. Every figure is dated in the copy. FY2026 audit report may land in November 2026.",
+      "styleGate": [],
+      "image": "",
+      "altText": "A long warehouse-store aisle with tall steel racking and pallets of bulk goods stacked high on both sides.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Nothing in the manifest fits (usable B images are conference shots with third-party branding; mic.jpg is in the 60-day lockout). Shot: wide view down a warehouse-store aisle, high steel racking with pallets of bulk goods stacked to the ceiling, aisle depth visible, eye level, landscape. No faces in focus, no store branding or product labels legible. No partner needed in frame.",
+      "photoQuery": "warehouse store aisle pallets bulk goods",
+      "whyThisSlot": "Monday awareness, soft CTA. B was the coldest story archetype with verified material (A ran last Monday; no D candidate survived sourcing). A documented West-into-Asia unlock that runs against the localise-everything instinct.",
+      "blockers": [
+        "Photo, or a decision to run text-only",
+        "Check whether the Costco Korea FY2026 audit report has published before 2 November"
+      ],
+      "draftPath": "runs/scheduled-40839989263/drafts/2026-W45/OJV-202645-M-archetypeB-costco-korea.md",
+      "charCount": 1366
+    },
+    {
+      "postId": "OJV-202645-W",
+      "day": "Wednesday",
+      "date": "2026-11-04",
+      "slot": "proof",
+      "archetype": "C",
+      "archetypeName": "Asia into the West",
+      "ctaTier": "medium",
+      "hookPattern": "reframe",
+      "copy": "Asics' lifestyle sneakers grew 77% in Europe in the first half of 2026. Its running shoes grew 10%.\n\nSame company. A lot of the same shoes. A different buyer.\n\nThe product was never the problem. Performance running grew in every region Asics sells in.\n\nWhat changed was who it is for. A runner buys on cushioning and mileage. The SportStyle buyer buys on the archive, the colourway, and who else is wearing it.\n\nSo Asics rebuilt the other two things.\n\nThe price. Its own filing says the range is \"shifting toward a more premium direction, with a focus on products priced above USD100.\"\n\nThe story. Models from the '90s and '00s, restructured as archive lines, and collaborations with designers such as Kiko Kostadinov.\n\nAcross Europe, sales were up 29.7% on a currency-neutral basis, with SportStyle leading.\n\nThis is the pattern in most Asia-to-West moves we see. The product rarely needs to change. The buyer is a different person, the price has to be rebuilt for how they buy, and the story has to be written for them.\n\nRebuilding those three is what our GTM advisory work is for.\n\nWe have never worked with Asics. This is commentary from the outside.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\nSource: ASICS results for the six months to 30 June 2026, 14 August 2026\n\n#GTM #Expansion #Europe #Branding",
+      "entities": [
+        "Asics",
+        "Europe"
+      ],
+      "sourceUrl": "https://assets.asics.com/system/media_libraries/25964/file.pdf",
+      "sourcePublisher": "ASICS Corporation, H1 2026 consolidated financial summary, 14 August 2026",
+      "firstComment": "Source: ASICS results for the six months to 30 June 2026\nhttps://assets.asics.com/system/media_libraries/25964/file.pdf?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV202645-W",
+      "disclosure": "We have never worked with Asics. This is commentary from the outside.",
+      "verified": true,
+      "verificationNotes": "Primary company filing. 'Europe showed significant sales growth by +29.7% YoY driven by SPS (+77.0%) and OT (+46.6%) with steady growth momentum in P.RUN (+10.1%)', footnoted as currency-neutral. 'Performance Running : All regions showed sales and operating profit growth.' 'The portfolio is shifting toward a more premium direction, with a focus on products priced above USD100.' SportStyle lineup lists archive lines from the '90s and '00s and ASICS X KIKO KOSTADINOV. Not used: 'Europe (over 100%)' (reported basis, conflicts with 77.0%) and SGI Europe's paywalled 97.6% Q2 figure. The runner-vs-SportStyle-buyer contrast is OJV characterisation, not a sourced claim.",
+      "styleGate": [],
+      "image": "",
+      "altText": "A row of retro-style running sneakers lined up on a pale shop shelf, toes facing the camera.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Nothing in the manifest fits: usable C images carry third-party logos (Breer, Forbes, OPPO), wrong beside a post about branding; studio-blazer.jpg and mic.jpg are in the 60-day lockout. Shot: close-up of a row of retro-style running sneakers on a light shop shelf, toes to camera, shallow depth of field, no brand logos, stripes or labels legible, no faces. No partner needed in frame.",
+      "photoQuery": "row of sneakers on shop shelf",
+      "whyThisSlot": "Wednesday proof, medium CTA. C carries OJV's core Asia-to-West argument (buyer, pricing, story, not product), and Asics' own filing evidences all three. C ran in this slot last week, which is allowed; next Wednesday should not be C.",
+      "blockers": [
+        "Photo, or a decision to run text-only"
+      ],
+      "draftPath": "runs/scheduled-40839989263/drafts/2026-W45/OJV-202645-W-archetypeC-asics-sportstyle-europe.md",
+      "charCount": 1377
+    },
+    {
+      "postId": "OJV-202645-F",
+      "day": "Friday",
+      "date": "2026-11-06",
+      "slot": "offer",
+      "archetype": "F2",
+      "archetypeName": "Situation to solved (diagnostic)",
+      "ctaTier": "hard",
+      "hookPattern": "stated-contradiction",
+      "copy": "Companies say they want a real business in APAC, then hand the whole region to one new hire with a laptop and a global target.\n\nWe start with four things:\n\n\u2192 First market\n\u2192 Mandate\n\u2192 Target\n\u2192 Back-up\n\nThen we look at what is underneath them.\n\nDid your hire choose the first market, or inherit a list of six from a slide at head office?\n\nIs their target built from what this market buys, or from your home-market conversion rates?\n\nCan they set price and sign a partner, or does every discount need a late-night call to head office?\n\nWhen a distributor goes quiet, who do they call? Someone who knows the market, or someone who knows the product?\n\nFrom the inside this looks like a hiring problem. The numbers are slow, so the answer must be a better country manager. Sometimes it is. More often the job was set up so that nobody could do it, and the next hire inherits the same job.\n\nAPAC is not one market. It is 15+ ecosystems with different rules, cultures and buyer behaviour, and nobody recalibrates fifteen of them alone.\n\nA first conversation usually tells us whether we are useful to you. Sometimes the answer is no.\n\nIf you are a year into your first APAC hire and the pipeline still has not moved, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#APAC #GoToMarket #Hiring #Founders",
+      "entities": [],
+      "sourceUrl": "",
+      "sourcePublisher": "",
+      "firstComment": "",
+      "disclosure": "",
+      "verified": true,
+      "verificationNotes": "F2: no third-party fact and no client number. Only figure is '15+ ecosystems', OJV's own site language. Claims a competence ('usually'), not a past result. Naman must confirm OJV runs this first-APAC-hire diagnostic as part of GTM advisory.",
+      "styleGate": [],
+      "image": "",
+      "altText": "Naman Tekriwal of Orange Juice Ventures at a whiteboard in a working session, talking through a list of markets with a founder seen from behind.",
+      "needsTeamPhoto": true,
+      "photoBrief": "Post is about an OJV service, and the clean partner shots (mic.jpg, studio-blazer.jpg) are in the 60-day lockout. Shot: Naman (or another OJV partner) at a whiteboard or across a small table from one other person in a working session, a rough list of markets on the board with nothing legible, partner's face visible and in focus, the other person side-on or from behind unless they consent, natural light, landscape, eye level. Partner in frame: Naman.",
+      "photoQuery": "",
+      "whyThisSlot": "Friday offer, the week's single hard CTA. E impossible (no OJV news supplied), trek A impossible (trek ended 17 October 2026), F1 impossible (no signed-off engagement), so F2. Hook pattern changed to stated-contradiction because time-boxed-claim is in cooldown from OJV-202644-F.",
+      "blockers": [
+        "Naman to confirm OJV runs this diagnostic",
+        "Team photo, or a decision to run text-only"
+      ],
+      "draftPath": "runs/scheduled-40839989263/drafts/2026-W45/OJV-202645-F-archetypeF2-first-apac-hire.md",
+      "charCount": 1302
+    }
+  ],
+  "rotation": {
+    "blockedArchetypes": [],
+    "blockedEntities": [
+      "Unitree",
+      "Shanghai",
+      "Shenzhen",
+      "Notion",
+      "Japan",
+      "Canva",
+      "Melanie Perkins",
+      "Perth",
+      "SMIC",
+      "Omoda",
+      "Jaecoo",
+      "Chery",
+      "UK"
+    ],
+    "blockedHookPatterns": [
+      "number-first",
+      "local-claim-broken",
+      "time-boxed-claim"
+    ]
+  },
+  "needsFromAuthor": [
+    "WRITE ACCESS: this CI session was refused write permission under .claude/skills/, so the W45 drafts, SCHEDULE.md and paste files are in runs/scheduled-40839989263/drafts/2026-W45/ and data/content-calendar.csv and data/news-seen.csv were NOT updated. Rows to append are in runs/scheduled-40839989263/tracker-rows/. The W44 rows in runs/scheduled-39738926451/tracker-rows/ are still unappended too, so the rotation check is two weeks blind. Grant the workflow write access to .claude/skills/ojv-linkedin/ or move the files by hand.",
+    "PHOTO NEEDED for OJV-202645-M (B, Monday): warehouse-store aisle with pallets of bulk goods, no branding legible, no faces. Or reply text only.",
+    "PHOTO NEEDED for OJV-202645-W (C, Wednesday): row of retro-style running sneakers on a shop shelf, no logos legible, no faces. Or reply text only.",
+    "TEAM PHOTO NEEDED for OJV-202645-F (F2, Friday): Naman or another OJV partner in a working session at a whiteboard or small table, partner's face visible, other person side-on or from behind unless they consent. Or reply text only.",
+    "Naman to confirm OJV runs the first-APAC-hire diagnostic described in OJV-202645-F before it is scheduled. If not, kill the post.",
+    "Archetype E: no OJV news was supplied for this run, so E was not used for the second week running. Tell us what OJV did this month (events, workshops, portfolio moves, partners speaking or judging, a trek recap) so next Friday can carry first-party proof. Next Friday cannot be F again (three weeks running is blocked), so without E news the Friday slot has no eligible archetype.",
+    "The China Tech Trek (13 to 17 October 2026) is over but is still the configured flagship offer. Decide the next flagship offer and update the config table. ContraVC published source is still TODO.",
+    "Config: DM keyword is TODO, so no post uses a keyword. Enquiry destination was overridden to TODO for this run; every post still closes with the fixed hello@oj.ventures contact line the mandatory close requires. Confirm that address is right.",
+    "Archetype D: no candidate with a documented investor-rejection count and a documented raise survived sourcing this week or on 2026-10-20. If you know a founder story with both numbers on record, send the source.",
+    "Library cross-check: Costco is listed as an entity of library post OJV-L029 (as an APR retail channel). If L029 is queued within 90 days of 2 November, space them apart."
+  ],
+  "notes": "Weekly run for 2026-W45 (Mon 2, Wed 4, Fri 6 November 2026). The rotation check reported 0 archetypes, 8 entities and 0 hook patterns blocked, but it cannot see W44 (OJV-202644-M/W/F), whose tracker rows were never appended. W44 was read from runs/scheduled-39738926451/result.json and treated as on file: hook patterns number-first, local-claim-broken and time-boxed-claim were treated as blocked, and SMIC, Omoda, Jaecoo, Chery and UK as blocked entities. Plan: B (soft, coldest with verified material) / C (medium) / F2 (hard). A was skipped because it ran last Monday. D was skipped because no candidate survived sourcing. E was skipped because no OJV news was supplied. All three drafts pass scripts/style-gate.py (style gate run on the final files). Sources verified 2/2 (F2 needs none). Guardrails: PASS. No post mentions the trek, so the ContraVC check does not apply. No image was assigned: the four library images are all locked, consent-needed or off-subject, so all three posts carry a photo request. Image intake was skipped as instructed. Nothing was published or scheduled.",
+  "generatedAt": "2026-10-29T08:16:36Z",
+  "workflowRunUrl": "https://github.com/socialballerina/ojvlinkedinpostingskill/actions/runs/40839989263"
+}
