@@ -10,7 +10,7 @@ expires: 2027-04-01
 expiry_note: Six months from the 1 October 2026 disclosure. Written as September 2026 and the first nine months of 2026, which stay true. Full-year 2026 figures will invite comparison after January 2027.
 status: library
 voice: company-page
-queue_no: 6
+queue_no: 2
 ---
 
 ## Copy

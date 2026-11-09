@@ -1,0 +1,10 @@
+OJV-L031 A-ifr
+OJV-L032 A-agibot
+OJV-L033 B-yumchina
+OJV-L034 B-thumsup
+OJV-L035 B-maggi
+OJV-L036 C-hyundai
+OJV-L037 C-cj
+OJV-L038 C-kikkoman
+OJV-L039 F2-educate
+OJV-L040 F2-leadgen

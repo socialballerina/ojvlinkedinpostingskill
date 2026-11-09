@@ -10,7 +10,7 @@ expires: 2028-04-20
 expiry_note: Historical case, sourced to Netflix's own SEC-filed shareholder letter. Recheck only if Netflix reverses its India pricing.
 status: library
 voice: company-page
-queue_no: 14
+queue_no: 13
 ---
 
 ## Copy

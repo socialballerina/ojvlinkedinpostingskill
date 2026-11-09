@@ -10,7 +10,7 @@ expires: 2027-03-08
 expiry_note: Six months from the 8 September 2026 WIPO release. The 2027 index replaces it around September 2027; do not post after expiry.
 status: library
 voice: company-page
-queue_no: 11
+queue_no: 10
 ---
 
 ## Copy

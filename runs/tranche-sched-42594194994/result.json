@@ -1,0 +1,552 @@
+{
+  "runId": "tranche-sched-42594194994",
+  "state": "done",
+  "mode": "tranche",
+  "requested": 10,
+  "written": 10,
+  "firstId": "OJV-L031",
+  "lastId": "OJV-L040",
+  "posts": [
+    {
+      "postId": "OJV-L031",
+      "queueNo": 19,
+      "archetype": "A",
+      "archetypeName": "China signal to tour",
+      "ctaTier": "soft",
+      "hookPattern": "number-first",
+      "expires": "2027-03-24",
+      "copy": "354,000. That is how many industrial robots China installed in 2025, 59% of every new robot put to work worldwide.\n\nThe number is not the news. Who sold them is.\n\nThe International Federation of Robotics published the figures in September 2026. China's installations grew 20% in 2025 and beat the previous annual record by almost 60,000 units.\n\nChinese manufacturers supplied 195,000 of them, a 55% share of their home market. In 2024 that share was 57%.\n\nRead from a desk in London or New York, the first number says China is automating and the second says foreign suppliers are being pushed out. Neither is quite right. Local brands now outsell foreign ones at home, and foreign brands still put in roughly 45% of a record year.\n\nWhat that means for a buyer is a credible local option for most jobs, which changes every conversation about price and lead time. You only feel that on the ground, standing next to the integrator who quotes both.\n\nA report gives you the share. It does not give you the room where the share gets decided.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Robotics #Manufacturing #China #Automation",
+      "entities": [
+        "IFR"
+      ],
+      "storyKey": "ifr-world-robotics-2026-china-2025-installs",
+      "sourceUrl": "https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally",
+      "sourcePublisher": "International Federation of Robotics",
+      "firstComment": "Source: International Federation of Robotics, World Robotics press release, 24 September 2026\nhttps://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-L031",
+      "disclosure": "",
+      "verified": true,
+      "verificationNotes": "the IFR China-specific PDF returned binary to the fetch tool and was not read; every figure is from IFR's own HTML press release, read on 9 November 2026 by two separate fetches (research agent and drafter). \"Almost 60,000\" is IFR's wording; the copy does not name the year of the previous record because the release does not.",
+      "styleGate": [
+        "PASS  OJV-L031.md"
+      ],
+      "photoBrief": "PICK: a factory or workshop floor with industrial robot arms or automation cells in view,\nmachines in focus, wide or mid-shot, eye level. Landscape.\nAVOID: any readable robot brand or company logo, which would imply a relationship. Faces of\nworkers in focus. Stock renders of robots.\nFALLBACK: text-only is acceptable.",
+      "altText": "A factory floor with rows of industrial robot arms working along a production line.",
+      "blockers": [
+        "Approver: confirm OJV-L002 is killed; this post replaces it with the 2025 figures."
+      ],
+      "draftPath": "library/OJV-L031.md",
+      "charCount": 1191,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L032",
+      "queueNo": 20,
+      "archetype": "A",
+      "archetypeName": "China signal to tour",
+      "ctaTier": "soft",
+      "hookPattern": "reframe",
+      "expires": "2027-02-20",
+      "copy": "You can still debate whether humanoid robots are useful. You cannot debate who is shipping them.\n\nCounterpoint Research counted more than 22,000 humanoid robots shipped worldwide in the first half of 2026, up nearly 300% on a year earlier.\n\nOne Chinese company, AgiBot, shipped around 9,700 of them. That is a share of over 43%.\n\nThe top five makers took 86% of everything shipped.\n\nRead from a boardroom in London or New York, 9,700 robots in six months sounds like a pilot programme. It is the wrong frame.\n\nA pilot is a handful of units on a test cell. Thousands of units in six months means actuators, reducers, sensors and battery packs arriving at that rate, from suppliers who are already tooled for it.\n\nThat supplier base is the part worth seeing. The robot is only the visible end of it, and it is the end every Western headline photographs.\n\nThe question for a Western operator has moved. It is no longer whether this works. It is who will already be building at scale when it does.\n\nIf you want to see this on the ground for yourself, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#Robotics #Humanoids #China #DeepTech",
+      "entities": [
+        "AgiBot",
+        "Counterpoint Research"
+      ],
+      "storyKey": "agibot-h1-2026-humanoid-shipments-counterpoint",
+      "sourceUrl": "https://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026",
+      "sourcePublisher": "Counterpoint Research",
+      "firstComment": "Source: Counterpoint Research, Ethan Qi and Shaochen Wang, 20 August 2026\nhttps://counterpointresearch.com/en/insights/global-humanoid-robot-shipments-soar-nearly-300-percent-yoy-in-h1-2026?utm_source=linkedin&utm_medium=organic&utm_campaign=A-OJV-L032",
+      "disclosure": "",
+      "verified": true,
+      "verificationNotes": "a single research firm's tracker. Search results attribute lower first-half counts for AgiBot to other trackers (about 8,600 attributed to IDC, about 8,400 to SAG), but those pages were not opened, so they are not quoted and the copy attributes every figure to Counterpoint by name and uses \"around\". Counterpoint's 2026 full-year forecast (over 50,000) was cut from the copy because it becomes checkable, and possibly wrong, inside the post's shelf life. Counterpoint's top five also names Unitree and UBTECH; neither is named in the copy (Unitree is in weekly entity cooldown, UBTECH is OJV-L010).",
+      "styleGate": [
+        "PASS  OJV-L032.md"
+      ],
+      "photoBrief": "PICK: a robotics workshop or lab bench with actuators, motors, cabling or a partly assembled\nrobot limb in focus, shallow depth of field, eye level. Landscape.\nAVOID: any AgiBot branding or product, which would imply a relationship or a visit the copy does\nnot claim. Any other robot maker's logo. Faces of strangers. Stock renders of humanoids.\nFALLBACK: text-only is acceptable.",
+      "altText": "Close-up of a workbench with electric motors, gearing and cabling laid out beside a partly assembled robot arm.",
+      "blockers": [
+        "Single tracker (Counterpoint). Other trackers reportedly count AgiBot lower; copy attributes every figure to Counterpoint by name."
+      ],
+      "draftPath": "library/OJV-L032.md",
+      "charCount": 1143,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L033",
+      "queueNo": 33,
+      "archetype": "B",
+      "archetypeName": "West into Asia",
+      "ctaTier": "medium",
+      "hookPattern": "comparative-receipt",
+      "expires": "2028-05-09",
+      "copy": "In 2016 KFC and Pizza Hut had a little over 7,000 restaurants in China between them. By September 2026 KFC alone had 14,307.\n\nThe fried chicken did not do that. The ownership did.\n\nIn October 2016 Yum! Brands spun its China business off into a separate company, Yum China, listed in New York, with Primavera Capital and Ant Financial putting in $460 million.\n\nFrom then on Yum China was the franchisee, a separate company built around one market, setting its own pace.\n\n\u2192 Pace. 1,706 net new stores in 2025, then 692 in the third quarter of 2026, a quarterly record.\n\u2192 Channel. Delivery was around 48% of company sales in 2025, up from 39% a year earlier.\n\u2192 Partners. By September 2026, 19% of stores were run by franchisees.\n\nNot every number rose. Same-store sales fell 3% in that quarter. The store count kept climbing anyway, to 19,989.\n\nThe unlock was structure. What Yum! Brands did not do was keep China as one line on a global plan.\n\nWho owns the market is a go-to-market decision before it is a legal one, and it is usually the first thing we test in GTM advisory.\n\nWe have never worked with Yum! Brands or Yum China. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#GoToMarket #China #Franchising #APAC",
+      "entities": [
+        "Yum China",
+        "KFC",
+        "Yum! Brands",
+        "Primavera Capital",
+        "Ant Financial"
+      ],
+      "storyKey": "yum-china-spinoff-2016-store-growth-2026",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/0001673358/000119312526444429/yumc-ex99_1.htm",
+      "sourcePublisher": "Yum China Holdings via SEC EDGAR (8-K Exhibit 99.1); Nation's Restaurant News for 2016",
+      "firstComment": "Source: Yum China third-quarter 2026 results, furnished to the SEC as Exhibit 99.1, 3 November 2026\nhttps://www.sec.gov/Archives/edgar/data/0001673358/000119312526444429/yumc-ex99_1.htm?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L033",
+      "disclosure": "We have never worked with Yum! Brands or Yum China. This is commentary from the outside.",
+      "verified": true,
+      "verificationNotes": "the 2016 baseline (more than 7,000 KFC and Pizza Hut combined) and the franchisee line are from Nation's Restaurant News reporting the September 2016 announcement; the Yum China completion release on PR Newswire returned 404 and the Yum China IR site returned 403. The spin-off is written as \"October 2016\", which is when NRN says it was set to complete. A research agent's claim that the 10-K describes a localised menu (congee, youtiao) could not be found in any page read, so the menu is not in the copy.",
+      "styleGate": [
+        "PASS  OJV-L033.md"
+      ],
+      "photoBrief": "PICK: a busy food street or mall food court in an Asian city, shopfronts and diners visible,\nshot wide so nobody is identifiable, no readable brand. Or a co-founder in a partner meeting\nacross a table. Landscape.\nAVOID: any KFC, Pizza Hut or Yum branding, uniform, bucket or delivery bag. Faces of strangers in\nfocus, including delivery riders.\nFALLBACK: text-only is acceptable.",
+      "altText": "A busy food court in an Asian city, diners at tables and lit counters stretching into the distance.",
+      "blockers": [
+        "Genre overlap with OJV-L008 (Starbucks China) and weekly OJV-202646-W (McDonald's China); queued 17 positions from OJV-L008."
+      ],
+      "draftPath": "library/OJV-L033.md",
+      "charCount": 1315,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L034",
+      "queueNo": 38,
+      "archetype": "B",
+      "archetypeName": "West into Asia",
+      "ctaTier": "medium",
+      "hookPattern": "promise-to-unpack",
+      "expires": "2028-05-09",
+      "copy": "In 2022 Coca-Cola's biggest cola in India was not called Coca-Cola. It got there in three stages, and the first one was a mistake.\n\n1/ Buy the local leader. In 1993 Coca-Cola bought the soft drinks portfolio of Parle's Ramesh Chauhan, and Thums Up came with it.\n\n2/ Starve it. By Chauhan's account, Coca-Cola gave Thums Up no budget at all for at least the first two years, and cut supplies where it was strong. Business Today reported Rs 200 crore going behind Coca-Cola itself.\n\n3/ Back it. Later in the decade, support for Thums Up started scaling up. In February 2022 chief executive James Quincey told investors that Thums Up had become a $1 billion brand in India. Nielsen data cited by Business Today put Pepsi second, behind Thums Up.\n\nThe unlock was the local brand. What Coca-Cola eventually stopped doing was insisting the global one had to win.\n\nThat is the uncomfortable version of localisation. Sometimes the asset you need in a market already belongs to it, and the hard part is letting it lead.\n\nThe answer is different in each of APAC's 15+ ecosystems, which is why it is one of the first things we test in GTM advisory.\n\nWe have never worked with Coca-Cola. This is commentary from the outside.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#GoToMarket #India #Branding #APAC",
+      "entities": [
+        "Coca-Cola",
+        "Thums Up",
+        "Ramesh Chauhan",
+        "James Quincey"
+      ],
+      "storyKey": "coca-cola-thums-up-india",
+      "sourceUrl": "https://www.businesstoday.in/latest/corporate/story/tasting-the-thunder-how-thums-up-rose-to-become-a-billion-dollar-brand-325041-2022-03-07",
+      "sourcePublisher": "Business Today (Arnab Dutta); Coca-Cola earnings call transcript via The Motley Fool",
+      "firstComment": "Source: Business Today, Arnab Dutta, 7 March 2022\nhttps://www.businesstoday.in/latest/corporate/story/tasting-the-thunder-how-thums-up-rose-to-become-a-billion-dollar-brand-325041-2022-03-07?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L034",
+      "disclosure": "We have never worked with Coca-Cola. This is commentary from the outside.",
+      "verified": true,
+      "verificationNotes": "the neglect years rest on Ramesh Chauhan, the seller, reported by one outlet, so the copy attributes them to him (\"By Chauhan's account\"). The Rs 200 crore figure is the article's own narration and the copy attributes it to Business Today. The \"biggest cola\" hook rests on Nielsen as cited by Business Today in 2022, and is dated to 2022 for that reason. The 10 Feb 2022 Business Today line was read by a research agent, not re-fetched by the drafter; the copy's 1993 claim is also supported by the 7 Mar article read directly.",
+      "styleGate": [
+        "PASS  OJV-L034.md"
+      ],
+      "photoBrief": "PICK: a busy street stall, kirana shop or roadside drinks cooler in an Indian or other Asian city,\nbottles in view but no readable brand, shot wide so nobody is identifiable. Landscape.\nAVOID: any Coca-Cola, Thums Up or Pepsi branding, bottle shape or red cooler that reads as a\nspecific brand. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
+      "altText": "A small roadside shop in an Asian city with a drinks cooler and shelves of bottles out front.",
+      "blockers": [
+        "Neglect years rest on the seller Ramesh Chauhan's account in one outlet; attributed in the copy."
+      ],
+      "draftPath": "library/OJV-L034.md",
+      "charCount": 1361,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L035",
+      "queueNo": 37,
+      "archetype": "B",
+      "archetypeName": "West into Asia",
+      "ctaTier": "soft",
+      "hookPattern": "by-design",
+      "expires": "2028-05-09",
+      "copy": "When Maggi came back to India in November 2015, it came back in 100 towns, not everywhere. Not by accident, but by design.\n\nIn June 2015 India's food regulator had banned Maggi noodles. In August the Bombay High Court lifted the ban, subject to fresh tests.\n\nWhat Nestl\u00e9 did next was sequencing.\n\n\u2192 Tests first. Maggi passed tests by three government-accredited laboratories before it went back on sale.\n\u2192 Narrow first. It returned in 100 towns through 300-odd distributors, and stayed out of eight states where it was still not allowed.\n\u2192 Online first. Snapdeal sold out the first batch of 60,000 welcome kits within five minutes.\n\nBy October 2016 Nestl\u00e9 said its share of India's instant noodle market was back to 57%, against 75% before the crisis. In its 2023-24 annual report Nestl\u00e9 India said it sold over six billion servings of Maggi in the year, making India the largest Nestl\u00e9 market for Maggi worldwide.\n\nThe unlock was the order of operations. What Nestl\u00e9 did not do was relaunch nationally into a market that had not finished deciding whether to trust it.\n\nEvery APAC market has its own version of that ordering problem, and the right order differs across 15+ ecosystems. Mapping it comes first in our GTM advisory work.\n\nWe were not involved in Nestl\u00e9's recovery. This is commentary.\n\nIf you want your APAC go-to-market to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#GoToMarket #India #FMCG #APAC",
+      "entities": [
+        "Nestl\u00e9",
+        "Maggi",
+        "Snapdeal"
+      ],
+      "storyKey": "maggi-india-ban-relaunch-2015",
+      "sourceUrl": "https://www.thequint.com/news/hot-news/60000-maggi-kits-sold-out-in-5-minutes-on-snapdeal",
+      "sourcePublisher": "PTI via The Quint; Business Today (PTI); DT Next (PTI)",
+      "firstComment": "Source: PTI via The Quint, 12 November 2015\nhttps://www.thequint.com/news/hot-news/60000-maggi-kits-sold-out-in-5-minutes-on-snapdeal?utm_source=linkedin&utm_medium=organic&utm_campaign=B-OJV-L035",
+      "disclosure": "We were not involved in Nestl\u00e9's recovery. This is commentary.",
+      "verified": true,
+      "verificationNotes": "the 57% against 75% share is an unaudited company statement relayed by PTI with no named speaker, so the copy says \"Nestl\u00e9 said\". Business Standard's copy of the Snapdeal story returned 403; the sell-out rests on The Quint's syndication of the PTI report. The FY24 servings line is PTI quoting Nestl\u00e9 India's annual report, not the report itself.",
+      "styleGate": [
+        "PASS  OJV-L035.md"
+      ],
+      "photoBrief": "PICK: a busy neighbourhood grocery shop or market street in an Indian or other Asian city,\nshelves of packaged goods in view, shot wide so no brand or face is readable. Landscape.\nAVOID: any Maggi, Nestl\u00e9 or Snapdeal branding or yellow noodle packs that read as the brand.\nFaces of strangers in focus.\nFALLBACK: text-only is acceptable.",
+      "altText": "A crowded neighbourhood grocery shop in an Asian city, shelves stacked to the ceiling with packaged food.",
+      "blockers": [],
+      "draftPath": "library/OJV-L035.md",
+      "charCount": 1442,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L036",
+      "queueNo": 35,
+      "archetype": "C",
+      "archetypeName": "Asia into the West",
+      "ctaTier": "medium",
+      "hookPattern": "local-claim-broken",
+      "expires": "2028-05-09",
+      "copy": "American buyers were supposed to be finished with Hyundai by 1998. In 1999 its US sales rose 82%.\n\nThe reputation problem was real. When Hyundai first came to the US, NPR later wrote, the name was synonymous with poor quality. It became a punch line on late-night talk shows.\n\nBy 1998 its US sales were heading for their lowest level ever, about 90,000.\n\nIn September 1998 Hyundai Motor America changed what the buyer was being asked to believe.\n\n\u2192 A 10-year, 100,000-mile powertrain warranty, plus five years and 60,000 miles bumper to bumper.\n\u2192 No deductibles on any of it.\n\u2192 A name for it: America's Best Warranty.\n\nSales in 1999 came to 164,190, against 90,217 the year before, and the company named the warranty as one factor bringing buyers into showrooms. In 2025 Hyundai sold 901,686 vehicles in the US, a record for the third year running.\n\nThe buyer did not believe the product. The warranty moved the cost of that doubt from the buyer to the brand.\n\nThat is the pattern in most Asia-to-West moves: the buyer, the pricing and the story, rarely the product. Rebuilding those is what our GTM advisory is for.\n\nWe were not involved in Hyundai's expansion. This is commentary.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#GoToMarket #Automotive #Expansion #APAC",
+      "entities": [
+        "Hyundai Motor America",
+        "Hyundai"
+      ],
+      "storyKey": "hyundai-americas-best-warranty-1998",
+      "sourceUrl": "https://www.theautochannel.com/news/press/date/20000104/press005241.html",
+      "sourcePublisher": "Hyundai Motor America releases (archive copies, The Auto Channel); NPR via KPBS",
+      "firstComment": "Source: Hyundai Motor America, 1999 sales release, 4 January 2000 (archive copy, The Auto Channel)\nhttps://www.theautochannel.com/news/press/date/20000104/press005241.html?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L036",
+      "disclosure": "We were not involved in Hyundai's expansion. This is commentary.",
+      "verified": true,
+      "verificationNotes": "the two 1998 to 2000 releases are verbatim Hyundai Motor America releases hosted on The Auto Channel's archive, not on a Hyundai domain; no Hyundai-hosted original was found. The 2025 total is from a republication of the PR Newswire release. The 82% rise is Hyundai's own figure; the copy says the company named the warranty as \"one factor\", not the cause.",
+      "styleGate": [
+        "PASS  OJV-L036.md"
+      ],
+      "photoBrief": "PICK: a car park, dealership forecourt or city street in a Western city with ordinary cars in\nview, shot wide so no badge or plate is readable. Or a co-founder with a founder going through a\npricing sheet on a laptop (screen not legible). Landscape.\nAVOID: any Hyundai badge, logo or showroom, which would imply a relationship. Readable number\nplates. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
+      "altText": "A row of parked cars on a city street, shot from the pavement in daylight.",
+      "blockers": [],
+      "draftPath": "library/OJV-L036.md",
+      "charCount": 1338,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L037",
+      "queueNo": 39,
+      "archetype": "C",
+      "archetypeName": "Asia into the West",
+      "ctaTier": "soft",
+      "hookPattern": "number-first",
+      "expires": "2028-05-09",
+      "copy": "80,000. That is roughly how many US stores carried Bibigo's Korean range by August 2026.\n\nThe dumplings were never the hard part. Getting them into American freezers was.\n\nIn November 2018 CJ CheilJedang agreed to buy 80% of Schwan's Company, a US frozen-food maker founded in 1952, for $1.84 billion. CJ named what it was buying: logistics, distribution and sales networks throughout the entire US.\n\nIt did not try to build American grocery distribution for a Korean brand one buyer at a time. It bought a company whose brands, Red Baron and Tony's pizza among them, were already in those aisles.\n\nWhat followed, per the Korea Herald in August 2026:\n\n\u2192 Bibigo dumplings led the US dumpling market with a 41% share in 2024.\n\u2192 CJ's US food revenue rose from 3.32 trillion won in 2020 to 4.91 trillion won in 2025.\n\u2192 The US made up 83% of its overseas revenue.\n\nThe buyer for a frozen dumpling in America is not a fan of Korean food. It is a category buyer deciding what earns a freezer door, and a distributor deciding what is worth a truck.\n\nThat is usually where an Asian brand stalls in the West: the route to the buyer.\n\nFinding that route, and sometimes the partner to buy or borrow, is what our GTM advisory is for.\n\nNo relationship with CJ CheilJedang. Commentary only.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#GoToMarket #FoodAndBeverage #Expansion #APAC",
+      "entities": [
+        "CJ CheilJedang",
+        "Bibigo",
+        "Schwan's Company"
+      ],
+      "storyKey": "cj-bibigo-buys-schwans-distribution",
+      "sourceUrl": "https://www.koreaherald.com/article/10849133",
+      "sourcePublisher": "The Korea Herald; CJ Group newsroom; FoodIngredientsFirst",
+      "firstComment": "Source: The Korea Herald, No Kyung-min, 23 August 2026\nhttps://www.koreaherald.com/article/10849133?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L037",
+      "disclosure": "No relationship with CJ CheilJedang. Commentary only.",
+      "verified": true,
+      "verificationNotes": "the store count, dumpling share and revenue figures are Korean press (Korea Herald), not CJ's own IR filings. The deal date: CJ's newsroom page is dated 13 February 2019 and the Korea Herald calls it the \"2019 acquisition\", while FoodIngredientsFirst reported the agreement on 16 November 2018; the copy says \"agreed in November 2018\", which is the agreement, not the close.",
+      "styleGate": [
+        "PASS  OJV-L037.md"
+      ],
+      "photoBrief": "PICK: a supermarket frozen aisle or a cold-chain warehouse in a Western city, freezer doors or\npallets in view, shot so no product label is readable. Landscape.\nAVOID: any Bibigo, CJ or Schwan's brand packaging or logo, which would imply a relationship.\nFaces of shoppers or staff in focus.\nFALLBACK: text-only is acceptable.",
+      "altText": "A long supermarket frozen-food aisle lined with glass freezer doors.",
+      "blockers": [],
+      "draftPath": "library/OJV-L037.md",
+      "charCount": 1436,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L038",
+      "queueNo": 34,
+      "archetype": "C",
+      "archetypeName": "Asia into the West",
+      "ctaTier": "soft",
+      "hookPattern": "hard-truth",
+      "expires": "2028-05-09",
+      "copy": "Nobody wants to hear this, but Kikkoman won American kitchens by telling people to put soy sauce on meat.\n\nIn 1957 it set up a marketing company in San Francisco to break into the US market properly. The soy sauce was already the soy sauce. What changed was the story around it.\n\n\u2192 The label. In 1957 export bottles started carrying the words \"ALL-PURPOSE SEASONING\".\n\u2192 The pitch. A catchphrase, \"Delicious on Meat\", backed by in-store demonstrations at supermarkets.\n\u2192 The product. Teriyaki Sauce, sold from 1961, was launched in the US as a barbecue sauce.\n\nThen the supply chain followed the demand. In 1973 full-scale production began at a plant in Walworth, Wisconsin. Kikkoman says its soy sauce is now made in nine overseas plants and sold in over 100 countries.\n\nIt did not ask American shoppers to learn Japanese cooking first. It walked into the dish they already made, in the aisle they already shopped.\n\nThat is the hard part of most Asia-to-West moves. Rarely the product. Usually the buyer, the pricing and the story, and the story most of all.\n\nRewriting that story for a buyer who has never heard of you is a large part of our GTM advisory work.\n\nWe had nothing to do with this one. We just think it is the clearest example around.\n\nIf you want your move into the West to look like this, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#GoToMarket #Branding #FoodAndBeverage #APAC",
+      "entities": [
+        "Kikkoman",
+        "San Francisco",
+        "Walworth"
+      ],
+      "storyKey": "kikkoman-delicious-on-meat-walworth",
+      "sourceUrl": "http://www.kikkoman.com/en/corporate/business/soysauce/",
+      "sourcePublisher": "Kikkoman Corporation (company history page)",
+      "firstComment": "Source: Kikkoman Corporation, Soy Sauce Business (company history page), read 9 November 2026\nhttp://www.kikkoman.com/en/corporate/business/soysauce/?utm_source=linkedin&utm_medium=organic&utm_campaign=C-OJV-L038",
+      "disclosure": "We had nothing to do with this one. We just think it is the clearest example around.",
+      "verified": true,
+      "verificationNotes": "one undated company history page, and two of its sentences were truncated by the fetch tool, so the copy uses only the parts read. The page's \"Today\" is undated, so the copy attributes the plant and country counts to Kikkoman (\"Kikkoman says\"). North America revenue figures from Kikkoman's FY2025 supplementary schedules PDF were reported by a research agent but could not be read in this session (no PDF tooling), so they were cut.",
+      "styleGate": [
+        "PASS  OJV-L038.md"
+      ],
+      "photoBrief": "PICK: a home or restaurant kitchen in a Western setting with meat on a grill or a pan, sauces\nand bottles in soft focus with no readable label. Or a supermarket condiments aisle shot so no\nbrand is legible. Landscape.\nAVOID: any Kikkoman bottle, logo or the Walworth plant, which would imply a relationship or a\nvisit. Faces of strangers in focus.\nFALLBACK: text-only is acceptable.",
+      "altText": "Meat cooking on a grill in a home kitchen, unlabelled sauce bottles on the counter behind.",
+      "blockers": [],
+      "draftPath": "library/OJV-L038.md",
+      "charCount": 1407,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L039",
+      "queueNo": 31,
+      "archetype": "F2",
+      "archetypeName": "Situation to solved (F2 diagnostic)",
+      "ctaTier": "hard",
+      "hookPattern": "by-design",
+      "expires": "none",
+      "copy": "Too many corporate study trips to China come home with a photo album and no decision. Not by accident, but by design.\n\nGive us an hour with a strategy team planning one and we can usually tell which kind of trip it will be.\n\nWe start with four things:\n\n\u2192 The question\n\u2192 The visits\n\u2192 Who travels\n\u2192 The flight home\n\nThen we look at what is underneath them.\n\nIs there one decision this trip is meant to inform, written down before anyone books a flight?\n\nWere the visits picked to answer that question, or because they were the famous names that said yes?\n\nIs the person who will own the decision on the trip, or reading a summary of it a month later?\n\nWho writes up what the team saw, and by when, before the urgency wears off?\n\nFrom the inside, a trip that changed nothing looks like a trip to the wrong places. Sometimes it was. More often it left without a question, and no visit can answer a question nobody asked.\n\nThat is the part of OJV Educate we care about most. The week is built backwards from the decision.\n\nIf you are planning an executive trip to China and need it to end in a decision, not a deck, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#ExecutiveEducation #China #Strategy #APAC",
+      "entities": [],
+      "storyKey": "none-diagnostic-educate-corporate-strategy",
+      "sourceUrl": "",
+      "sourcePublisher": "",
+      "firstComment": "",
+      "disclosure": "",
+      "verified": true,
+      "verificationNotes": "No third-party fact in the post. The weakest element is the four diagnostic items, which describe an OJV method and await Naman's confirmation.",
+      "styleGate": [
+        "PASS  OJV-L039.md"
+      ],
+      "photoBrief": "PICK: one of the co-founders with two or three executives around a table or standing at a\nwhiteboard, notebooks open, mid-discussion. Working posture, not a tour group pose. Landscape.\nAVOID: a factory floor, showroom or named company's premises, which would imply a visit the copy\ndoes not claim. Any legible client or company name on a screen or whiteboard. Faces of anyone who\nis not a co-founder or has not cleared it. A trek group photo, which turns this into a trek post.\nFALLBACK: text-only is acceptable.\n\nWHY THIS BRIEF: the post sells the thinking before and after the trip, not the trip itself, so\nthe image should look like a working session, not like sightseeing.",
+      "altText": "A small group of executives around a table with notebooks open, one person talking them through a point.",
+      "blockers": [
+        "Naman to confirm the four exec-tour scoping items (the question, the visits, who travels, the flight home).",
+        "TODO(config: booking link): booking link was empty in the run config; recorded in the draft First comment block, not in the paste copy, matching every earlier F2 and SKILL.md (F needs no link)."
+      ],
+      "draftPath": "library/OJV-L039.md",
+      "charCount": 1212,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    },
+    {
+      "postId": "OJV-L040",
+      "queueNo": 36,
+      "archetype": "F2",
+      "archetypeName": "Situation to solved (F2 diagnostic)",
+      "ctaTier": "hard",
+      "hookPattern": "reframe",
+      "expires": "none",
+      "copy": "You can hand a founder's outbound to an agency. You cannot hand over the reason buyers were replying to a founder.\n\nGive us an hour with a founder who still closes every deal and we can usually tell whether that pipeline survives a second seller.\n\nWe start with four things:\n\n\u2192 Who replies\n\u2192 Why they reply\n\u2192 What the founder says on the call\n\u2192 What is written down\n\nThen we look at what is underneath them.\n\nAre buyers answering because the message is good, or because the sender is the founder?\n\nCould anyone else on the team explain in two sentences why your last five customers bought?\n\nWhen a deal stalls, does the founder rescue it with a call nobody else could make?\n\nIs any of that in a playbook, or only in one person's head and inbox?\n\nFrom the inside, founder-led sales looks like a sales process. Often it is a set of relationships nobody has written down, so the first sales hire looks like the wrong hire.\n\nAcross APAC's 15+ ecosystems it gets harder, because what earned the reply in one market rarely earns it in the next.\n\nIf you are a founder still closing every deal yourself and need pipeline that does not depend on you, work with us.\n\nDM us, or write to us at hello@oj.ventures\n\n#LeadGeneration #Founders #B2BSales #APAC",
+      "entities": [],
+      "storyKey": "none-diagnostic-leadgen-founder-led-sales",
+      "sourceUrl": "",
+      "sourcePublisher": "",
+      "firstComment": "",
+      "disclosure": "",
+      "verified": true,
+      "verificationNotes": "No third-party fact in the post. The weakest element is the four diagnostic items, which describe an OJV method and await Naman's confirmation.",
+      "styleGate": [
+        "PASS  OJV-L040.md"
+      ],
+      "photoBrief": "PICK: a co-founder working through a notebook or whiteboard with one founder, sticky notes or a\nhand-drawn sales flow visible but not legible. Two people, working posture. Landscape.\nAVOID: any legible CRM screen, contact list, prospect name or email. A stage or panel. Any face\nthat is not a co-founder or someone who has cleared it.\nFALLBACK: text-only is acceptable.\n\nWHY THIS BRIEF: the post is about getting what lives in a founder's head onto paper, so the image\nshould show that being done.",
+      "altText": "Two people at a whiteboard covered in sticky notes, one of them pointing at a hand-drawn flow.",
+      "blockers": [
+        "Naman to confirm the four founder-led-sales diagnostic items.",
+        "TODO(config: booking link): booking link was empty in the run config; recorded in the draft First comment block, not in the paste copy, matching every earlier F2 and SKILL.md (F needs no link)."
+      ],
+      "draftPath": "library/OJV-L040.md",
+      "charCount": 1242,
+      "needsTeamPhoto": false,
+      "photoQuery": "",
+      "image": ""
+    }
+  ],
+  "droppedCandidates": [
+    {
+      "storyKey": "cpca-sep-2026-nev-exports-vs-domestic-retail",
+      "archetype": "A",
+      "why": "UNUSED, verified reserve. CPCA via SMM and GoodCarBadCar, 12 Oct 2026: September 2026 passenger NEV exports 558,000 (+163.5%), domestic NEV retail -16.7%. Held back: same month and theme as OJV-L013 (BYD overseas, September 2026); CPCA original not reached. Expires 2027-04-12."
+    },
+    {
+      "storyKey": "nbs-sep-2026-industrial-robot-output",
+      "archetype": "A",
+      "why": "UNUSED, verified reserve. NBS: Jan-Sep 2026 industrial robot output 794,781 sets, +29.1% (table row). Held back: overlaps OJV-L031 (IFR); NBS output is not comparable with IFR installations."
+    },
+    {
+      "storyKey": "ehang-q3-2026-deliveries",
+      "archetype": "A",
+      "why": "NOT USABLE YET. Q3 2026 results not published by 9 Nov 2026; Q2 figures not verified on a fetched page."
+    },
+    {
+      "storyKey": "agibot-2025-revenue",
+      "archetype": "A",
+      "why": "DROPPED. RMB 1.05bn appeared only in an aggregator snippet."
+    },
+    {
+      "storyKey": "huawei-ascend-landspace-nmpa-2026",
+      "archetype": "A",
+      "why": "NOT CHECKED. Research time went to verified candidates."
+    },
+    {
+      "storyKey": "lululemon-mainland-china-community-model",
+      "archetype": "B",
+      "why": "DROPPED on what-happened-next. Q2 FY2026 release (3 Sep 2026): China Mainland revenue -2% and comparable sales -8% in constant currency, after +29% in FY2025; CEO transition. No primary source for the ambassador model. A first agent report quoted China +25% with no working URL; that figure was false and discarded. Possible later rise-and-stall post."
+    },
+    {
+      "storyKey": "hindustan-unilever-sachets",
+      "archetype": "B",
+      "why": "DROPPED. A research agent supplied a \"40% of turnover\" sachet quote with no readable page behind it; not verifiable. Sachet pioneering is also widely credited to others, so the mechanism is not clearly HUL's."
+    },
+    {
+      "storyKey": "mondelez-oreo-china",
+      "archetype": "B",
+      "why": "DROPPED. Best figures only in an FT repost PDF and a Foreign Policy summary of a paywalled WSJ piece; no primary."
+    },
+    {
+      "storyKey": "kfc-japan-christmas",
+      "archetype": "B",
+      "why": "DROPPED. Overlaps the KFC brand in OJV-L033; Carlyle took KFC Holdings Japan private in 2024 (snippet only) and Carlyle is a weekly-run entity."
+    },
+    {
+      "storyKey": "decathlon-shopify-stripe-asia",
+      "archetype": "B",
+      "why": "NOT CHECKED. Private or no country-level figures expected."
+    },
+    {
+      "storyKey": "freshworks-us-pricing",
+      "archetype": "C",
+      "why": "DROPPED. S-1 frames it as global from day one, not a move into the West with a named mechanism; 11% layoffs reported May 2026 (not opened)."
+    },
+    {
+      "storyKey": "jollibee-north-america-beyond-diaspora",
+      "archetype": "C",
+      "why": "DROPPED again. FY2025 NA same-store sales +10.2% from wire copies only; no documented mechanism; store counts mix brands."
+    },
+    {
+      "storyKey": "lenovo-ibm-daiso-ajinomoto",
+      "archetype": "C",
+      "why": "NOT CHECKED. Three C candidates verified first."
+    },
+    {
+      "storyKey": "glossier-emily-weiss-11-of-12",
+      "archetype": "D",
+      "why": "DROPPED. Her own post says only \"Everyone else said no\"; the 11-of-12 count is Fortune narration via Wikipedia; seed amount conflicts ($1M vs $2M); stepped down as CEO 2022."
+    },
+    {
+      "storyKey": "fave-kfit-cc-yeoh-61-rejections",
+      "archetype": "D",
+      "why": "DROPPED. Best Asian lead, but \"61 rejections\" seen only in podcast search snippets; every episode page failed (403/503/404); raise amount conflicts ($2.25M vs TechCrunch $3.25M). Worth a second look with a transcript."
+    },
+    {
+      "storyKey": "stage-vinay-singhal-500-rejections",
+      "archetype": "D",
+      "why": "DROPPED. Count is reporter narration and the same article gives 100+ pitches and 500 rejections."
+    },
+    {
+      "storyKey": "zette-yehong-zhu-180-rejections",
+      "archetype": "D",
+      "why": "DROPPED. 180 only in a Substack headline (403); snippet body says \"hundreds\"; raise verified ($1.7M pre-seed)."
+    },
+    {
+      "storyKey": "carta-henry-ward-300-rejections",
+      "archetype": "D",
+      "why": "DROPPED. 300 only in a podcast title; nothing in his own words."
+    },
+    {
+      "storyKey": "indiegogo-93-rejections",
+      "archetype": "D",
+      "why": "DROPPED. 93 (How I Built This title) vs 90 (Entrepreneur headline). Cut, not averaged."
+    },
+    {
+      "storyKey": "mobikwik-mamaearth-classpass-walker-tonkean-canavi-joel-neoh",
+      "archetype": "D",
+      "why": "DROPPED. No documented investor-rejection count for any of them."
+    }
+  ],
+  "rotation": {
+    "blockedHookPatterns": [],
+    "blockedEntities": [
+      "100Unicorns",
+      "APR",
+      "AbbVie",
+      "Airbnb",
+      "Amazon",
+      "Anker Innovations",
+      "Apple",
+      "Asics",
+      "AstraZeneca",
+      "BYD",
+      "Best Buy",
+      "Boyu Capital",
+      "Brian Chesky",
+      "CAAM",
+      "CATL",
+      "CITIC",
+      "CSPC",
+      "Cambricon",
+      "Canva",
+      "Carlyle",
+      "Chery",
+      "Costco",
+      "Debrecen",
+      "Disney",
+      "Domino's Pizza",
+      "E-Mart",
+      "Fast Retailing",
+      "Flipkart",
+      "Fukuoka",
+      "GoPro",
+      "Guangzhou",
+      "Hesai Group",
+      "Hinomaru Kotsu",
+      "Homeplus",
+      "Hong Kong",
+      "IKEA",
+      "Insta360",
+      "Jaecoo",
+      "Jubilant FoodWorks",
+      "Kathryn Minshew",
+      "Labubu",
+      "MIIT",
+      "MINISO",
+      "McDonald's",
+      "Medicube",
+      "Melanie Perkins",
+      "Mumbai",
+      "Netflix",
+      "Notion",
+      "Omoda",
+      "Pony.ai",
+      "Pop Mart",
+      "RemeGen",
+      "SMIC",
+      "Sanrio",
+      "Shanghai",
+      "Shenzhen",
+      "Starbucks",
+      "Target",
+      "Tesla",
+      "The Muse",
+      "TikTok Shop",
+      "Tim Cook",
+      "UBTECH",
+      "Uber",
+      "Ukhi",
+      "Ulta Beauty",
+      "Uni-President",
+      "Uniqlo",
+      "Unitree",
+      "Venture Catalysts",
+      "Vishal Vivek",
+      "WIPO",
+      "Walker S2",
+      "Walmart",
+      "Y Combinator"
+    ],
+    "usedF2Pairs": [
+      "GTM advisory x company entering APAC (OJV-L001)",
+      "Fundraising support x mid-raise founder (OJV-L007)",
+      "Lead generation x no local team (OJV-L011)",
+      "GTM advisory x hardware (OJV-L030)",
+      "OJV Educate exec tours x corporate strategy teams (OJV-L039, new)",
+      "Lead generation x founder-led sales (OJV-L040, new)"
+    ]
+  },
+  "needsFromAuthor": [
+    "Booking link for archetype F was empty in the run config. TODO(config: booking link) is recorded in the First comment block of OJV-L039 and OJV-L040, not in the paste copy, because SKILL.md says F needs no link and no earlier F2 (L001, L007, L011, L030) has a slot for one. If F2 posts should carry a link, it goes on its own line directly above the \"If you are ...\" ask in all six.",
+    "Naman to confirm the four diagnostic items in OJV-L039 (exec tours: the question, the visits, who travels, the flight home) and OJV-L040 (founder-led sales: who replies, why they reply, what the founder says on the call, what is written down).",
+    "OJV-L002 expired on 2026-10-31 unpublished and has been killed (draft status, calendar row, news-seen note) and removed from QUEUE.csv. OJV-L031 replaces it with IFR World Robotics 2026 figures. Confirm, or revive L002 with a rewrite.",
+    "OJV-L010 (queue 1) expires 2026-12-31. Publish before then or recheck the UBTECH 5,000-unit target.",
+    "Archetype D decision (batch-library.md honest limit 6) is still open and now urgent: this tranche verified 0 of 13 D candidates, after 1 of 6 last tranche. Library holds 3 D posts against a plan of 16. Decide: cut D to about 8, or explicitly widen the trigger to documented failures before a documented raise.",
+    "This was tranche 4, written with no performance data (data/posted-log.csv has no rows). batch-library.md asks for the numbers before tranche 4. Supply them before any tranche 5.",
+    "Tranche 3 (OJV-L021 to L030) had only been written to runs/tranche-sched-40287082679/ because .claude/ was not writable then. This run merged it into the library and appended its tracker rows; please check nothing in it was edited by hand in the meantime.",
+    "Weekly-run tracker rows in runs/scheduled-39738926451, -40839989263 and -41999310782/tracker-rows/ are still not appended to data/. This run did not merge them; their entities were respected by hand in rotation.",
+    "A research agent returned fabricated quotes and dead URLs for three B candidates (Yum China menu, Lululemon China +25%, HUL sachets). All were re-checked by direct fetch: the false items were cut or the candidate dropped. Worth knowing when reading earlier agent-sourced tranches.",
+    "Approver review (Naman) of all ten posts before any is scheduled."
+  ],
+  "notes": "Ten of ten written, OJV-L031 to OJV-L040: A 2 (L031 IFR World Robotics 2026, L032 AgiBot via Counterpoint), B 3 (L033 Yum China, L034 Coca-Cola and Thums Up, L035 Maggi relaunch), C 3 (L036 Hyundai warranty, L037 CJ and Schwan's, L038 Kikkoman), D 0, F2 2 (L039 OJV Educate x corporate strategy teams, L040 lead generation x founder-led sales). D was capped at 4; none of 13 candidates passed (no count in the founder's own words, conflicting counts, or unreachable pages), so the slack went into B and C as instructed. E and F1 were not attempted because they cannot be batched. Sourcing by four parallel research agents, then every load-bearing quote in the B and C posts and the A headline figures re-fetched by the drafter; one agent report contained fabricated quotes, which were discarded. Numbering continued at L031 because L021 to L030 existed in the tranche-3 mirror; that mirror was merged into the library first (the earlier write-permission problem did not recur). OJV-L002 expired 2026-10-31 and was killed and removed from the queue. QUEUE.csv rewritten for all 39 live posts: no archetype more than twice in 5, no hook pattern twice in 6, no shared entity within 20, hard-CTA posts at 8, 14, 21, 26, 31 and 36, perishable posts first (L010 at 1; new A posts at 19 and 20, expiring Feb and Mar 2027). All 40 library drafts pass the style gate. Image intake skipped: no raw image folder in CI. Nothing was committed, scheduled or published.",
+  "generatedAt": "2026-11-09T10:08:18Z",
+  "workflowRunUrl": ""
+}

@@ -10,7 +10,7 @@ expires: 2028-04-20
 expiry_note: Store counts are as at 28 December 2025 and are written that way. The fiscal 2026 10-K (around February 2027) will carry new counts; the dated figures stay true.
 status: library
 voice: company-page
-queue_no: 18
+queue_no: 22
 ---
 
 ## Copy

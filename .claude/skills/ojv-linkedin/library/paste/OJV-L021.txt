@@ -1,0 +1,19 @@
+Hesai's lidar shipments rose 78.4% in the second quarter of 2026. Its revenue rose 21.9%.
+
+That gap is the story, and it is not a weak quarter.
+
+Hesai shipped 628,275 lidar units in those three months. 142,371 of them were for robotics rather than cars, up 193.4% on a year earlier. Net revenue was RMB860.8 million, and the quarter was profitable.
+
+Read from a desk in London or San Francisco, units racing ahead of revenue looks like a price war, and the comfortable conclusion is to wait for it to burn out.
+
+That reading gets the fact right and the meaning wrong. A sensor that gets cheaper every quarter stops being only a car part and starts being a robot part. That is what the robotics line shows. The cost curve moved, and a new set of buyers appeared underneath it.
+
+A results table cannot show you that loop. In China's hardware clusters the robot makers buying these sensors sit close to the people making them, and a cheaper part turns into a new product faster than a Western roadmap expects.
+
+The ecosystem is the product, not the company. Falling prices are how a component finds its next market.
+
+If you want to see this on the ground for yourself, work with us.
+
+DM us, or write to us at hello@oj.ventures
+
+#Robotics #DeepTech #China #Hardware

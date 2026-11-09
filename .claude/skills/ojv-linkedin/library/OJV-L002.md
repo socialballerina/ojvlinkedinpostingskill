@@ -7,10 +7,9 @@ hook_pattern: reframe
 entities: IFR; China industrial robotics
 story_key: ifr-world-robotics-2025-china-54pc
 expires: 2026-10-31
-expiry_note: Publish early. World Robotics 2026 is due around September 2026 and will supersede the 2024 figures.
-status: library
+expiry_note: Publish early. World Robotics 2026 is due around September 2026 and will supersede the 2024 figures. KILLED 2026-11-09 in tranche-sched-42594194994: expired 2026-10-31 unpublished; superseded by OJV-L031 (IFR World Robotics 2026).
+status: killed
 voice: company-page
-queue_no: 1
 ---
 
 ## Copy

@@ -1,0 +1,19 @@
+1,975 robotaxis. That was the global fleet Pony.ai reported in its second-quarter 2026 results.
+
+The fleet is not the news. The fares are.
+
+In that quarter Pony.ai's robotaxi revenue reached US$12.1 million, up 691.2% on a year earlier, and fare-charging revenue rose 849.3%. Total revenue was US$36.2 million, up 68.8%, while the net loss narrowed 14.9% to US$45.4 million.
+
+Read from a desk in New York or Munich, driverless ride-hailing still looks like a science project that will burn cash for another decade. These numbers describe something else: a paid service, still loss-making, growing far faster than its losses.
+
+The reason is not one clever model. A robotaxi fleet is a hardware problem as much as a software one. Every new car needs sensors, compute and a vehicle to put them in, and in China the suppliers for all three already build at electric-vehicle volumes.
+
+That is the part you cannot read in an earnings release. The software gets the headlines. The speed comes from how close the parts are.
+
+The ecosystem is the product, not the company.
+
+If you want to see this on the ground for yourself, work with us.
+
+DM us, or write to us at hello@oj.ventures
+
+#AutonomousDriving #Robotaxi #China #DeepTech

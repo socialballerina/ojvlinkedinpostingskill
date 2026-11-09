@@ -13,7 +13,7 @@ expiry_note: No perishable fact. Review if the lead generation service descripti
 review_by: 2027-04-20
 status: library
 voice: company-page
-queue_no: 15
+queue_no: 14
 ---
 
 ## Copy

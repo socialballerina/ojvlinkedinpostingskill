@@ -10,7 +10,7 @@ expires: 2028-02-28
 expiry_note: Written as 2024 prospectus figures plus the dated February 2026 ITC finding and first-half 2026 results. Recheck the GoPro appeal status before posting.
 status: library
 voice: company-page
-queue_no: 4
+queue_no: 3
 ---
 
 ## Copy

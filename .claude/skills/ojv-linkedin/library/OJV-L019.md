@@ -10,7 +10,7 @@ expires: 2028-04-20
 expiry_note: Historical arc to full-year 2025. Recheck Tesla's China sales before posting if 2026 full-year figures are out (January 2027 onward).
 status: library
 voice: company-page
-queue_no: 19
+queue_no: 18
 ---
 
 ## Copy

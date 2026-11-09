@@ -1,6 +1,7 @@
 {
   "runId": "tranche-sched-42594194994",
-  "state": "running",
-  "startedAt": "2026-11-09T09:32:24Z",
+  "state": "done",
+  "finishedAt": "2026-11-09T10:08:18Z",
+  "posts": 10,
   "workflowRunUrl": ""
 }

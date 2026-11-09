@@ -10,7 +10,7 @@ expires: 2028-02-20
 expiry_note: Written as the full-year 2025 and first-half 2026 arc, which stays true. Pop Mart's full-year 2026 results (around March 2027) will extend the arc; reread before posting after that.
 status: library
 voice: company-page
-queue_no: 8
+queue_no: 12
 ---
 
 ## Copy
